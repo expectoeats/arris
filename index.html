@@ -91,16 +91,17 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION & NAVIGATION                                              -->
   <!-- ========================================================================= -->
-  <header class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden">
-    <!-- Hero Background Image with Smooth Ambient Entrance -->
-    <img 
-      src="images/Rectangle 1.png" 
-      alt="Arris Architects Modern Exterior" 
-      class="absolute inset-0 w-full h-full object-cover object-center hero-bg-animate"
-    />
-    
-    <!-- Subtle top vignette gradient for navbar legibility -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 pointer-events-none"></div>
+  <header id="hero-section" class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden z-10">
+    <!-- Hero Background Image with Smooth Ambient Entrance & Parallax Container -->
+    <div class="hero-media-wrapper absolute inset-0 w-full h-full overflow-hidden">
+      <img 
+        src="images/Rectangle 1.png" 
+        alt="Arris Architects Modern Exterior" 
+        class="w-full h-full object-cover object-center hero-bg-animate will-change-transform"
+      />
+      <!-- Subtle top vignette gradient for navbar legibility -->
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 pointer-events-none"></div>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
@@ -161,7 +162,7 @@
   <!-- ========================================================================= -->
   <!-- 2. WHO WE ARE (ABOUT SECTION)                                             -->
   <!-- ========================================================================= -->
-  <section id="who-we-are" class="bg-arris-cream py-16 sm:py-24 lg:py-32 px-6 sm:px-12 xl:px-[97px]">
+  <section id="who-we-are" class="relative z-20 bg-arris-cream py-16 sm:py-24 lg:py-32 px-6 sm:px-12 xl:px-[97px] shadow-[0_-15px_35px_rgba(0,0,0,0.12)]">
     <div class="max-w-[1920px] mx-auto">
       <!-- Desktop Section Tag: SF Pro, 36px, Weight 274, 100% line height, 2% letter spacing -->
       <h3 class="hidden lg:block text-black text-[36px] font-[274] leading-none tracking-[0.02em] mb-10 sm:mb-14" data-reveal-text>
@@ -380,7 +381,7 @@
       </div>
 
       <!-- Gallery Slides (Images 2 & 3 in natural scroll flow) -->
-      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+      <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="sticky_gallery--slide">
           <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
             <img 
@@ -427,14 +428,14 @@
       <div class="sticky_gallery--main-media">
         <figure>
           <img 
-            src="images/Rectangle 6.png" 
+            src="images/project 2.png" 
             alt="DPS Hazaribaug Institutional Campus" 
           />
         </figure>
       </div>
 
       <!-- Gallery Slides -->
-      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+      <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="sticky_gallery--slide">
           <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
             <img 
@@ -488,7 +489,7 @@
       </div>
 
       <!-- Gallery Slides -->
-      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+      <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="sticky_gallery--slide">
           <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
             <img 
@@ -535,14 +536,14 @@
       <div class="sticky_gallery--main-media">
         <figure>
           <img 
-            src="images/Rectangle 6 (3).png" 
+            src="images/project 4.png" 
             alt="Rajhans Precia Luxury Cinema Lobby" 
           />
         </figure>
       </div>
 
       <!-- Gallery Slides -->
-      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+      <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
         <div class="sticky_gallery--slide">
           <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
             <img 
@@ -570,94 +571,9 @@
   <!-- ========================================================================= -->
   <section id="projects-horizontal" class="projects-horizontal-section bg-arris-dark text-white relative h-screen w-full overflow-hidden">
     
-    <!-- Top Indicator / Badge for Demo Mode -->
-    <div class="absolute top-6 sm:top-8 left-6 sm:left-12 xl:left-[97px] z-30 flex items-center space-x-3 text-xs tracking-[0.22em] uppercase text-white/70 font-medium pointer-events-none">
-      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-      <span>Horizontal Showcase &bull; Scroll &rarr;</span>
-    </div>
-
     <!-- Bottom Progress Bar -->
     <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-30 pointer-events-none">
       <div class="horizontal-progress-bar h-full bg-white origin-left transform scale-x-0"></div>
-    </div>
-
-    <!-- Pinned Bottom Content Overlay (Sticky throughout horizontal scroll) -->
-    <div class="horizontal-sticky-overlay absolute inset-0 z-30 pointer-events-none flex flex-col justify-end">
-      <!-- Dark gradient backdrop across bottom -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
-
-      <!-- Container for the 4 project text panels -->
-      <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto min-h-[160px] sm:min-h-[180px] flex items-end">
-        
-        <!-- Text Panel 1: Devgn Cinex Bellona -->
-        <div class="horizontal-text-panel opacity-100 pointer-events-auto translate-y-0 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="0">
-          <div>
-            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
-              Devgn Cinex Bellona
-            </h3>
-            <a href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
-              <span class="btn__text">View Project</span>
-            </a>
-          </div>
-          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
-            <span>CINEMAS</span>
-            <span>THANE</span>
-            <span>2026</span>
-          </div>
-        </div>
-
-        <!-- Text Panel 2: DPS Hazaribaug -->
-        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="1">
-          <div>
-            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
-              DPS Hazaribaug
-            </h3>
-            <a href="project-detail.html?id=dps-hazaribaug" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
-              <span class="btn__text">View Project</span>
-            </a>
-          </div>
-          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
-            <span>SCHOOLS</span>
-            <span>HAZARIBAUG</span>
-            <span>2026</span>
-          </div>
-        </div>
-
-        <!-- Text Panel 3: Aldona Villa -->
-        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="2">
-          <div>
-            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
-              Aldona Villa
-            </h3>
-            <a href="project-detail.html?id=aldona-villa" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
-              <span class="btn__text">View Project</span>
-            </a>
-          </div>
-          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
-            <span>RESIDENTIAL</span>
-            <span>ALDONA, GOA</span>
-            <span>ONGOING</span>
-          </div>
-        </div>
-
-        <!-- Text Panel 4: Rajhans Precia -->
-        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="3">
-          <div>
-            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
-              Rajhans Precia
-            </h3>
-            <a href="project-detail.html?id=rajhans-precia" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
-              <span class="btn__text">View Project</span>
-            </a>
-          </div>
-          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
-            <span>COMMERCIAL</span>
-            <span>SURAT</span>
-            <span>2024</span>
-          </div>
-        </div>
-
-      </div>
     </div>
 
     <!-- Horizontal Track (Moves along X-axis behind the sticky overlay) -->
@@ -666,7 +582,27 @@
       <!-- ------------------------------------------------------------------- -->
       <!-- PROJECT 1: Devgn Cinex Bellona                                      -->
       <!-- ------------------------------------------------------------------- -->
-      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center relative flex-shrink-0" data-project="0">
+        <!-- Sticky Text Overlay for Project 1 -->
+        <div class="horizontal-project-overlay absolute inset-y-0 left-0 w-screen z-20 pointer-events-none flex flex-col justify-end will-change-transform">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+                Devgn Cinex Bellona
+              </h3>
+              <a href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+                <span class="btn__text">View Project</span>
+              </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+              <span>CINEMAS</span>
+              <span>THANE</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Hero Card (Full 100vw, 100vh) -->
         <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
           <img 
@@ -677,7 +613,7 @@
         </div>
 
         <!-- Gallery Slide 1 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/big_3 1.png" 
@@ -688,7 +624,7 @@
         </div>
 
         <!-- Gallery Slide 2 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/thumb_6 1.png" 
@@ -703,18 +639,38 @@
       <!-- ------------------------------------------------------------------- -->
       <!-- PROJECT 2: DPS Hazaribaug                                           -->
       <!-- ------------------------------------------------------------------- -->
-      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center relative flex-shrink-0" data-project="1">
+        <!-- Sticky Text Overlay for Project 2 -->
+        <div class="horizontal-project-overlay absolute inset-y-0 left-0 w-screen z-20 pointer-events-none flex flex-col justify-end will-change-transform">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+                DPS Hazaribaug
+              </h3>
+              <a href="project-detail.html?id=dps-hazaribaug" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+                <span class="btn__text">View Project</span>
+              </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+              <span>SCHOOLS</span>
+              <span>HAZARIBAUG</span>
+              <span>2026</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Hero Card -->
         <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
           <img 
-            src="images/Rectangle 6.png" 
+            src="images/project 2.png" 
             alt="DPS Hazaribaug Institutional Campus" 
             class="w-full h-full object-cover object-center"
           />
         </div>
 
         <!-- Gallery Slide 1 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/big_5 1.png" 
@@ -725,7 +681,7 @@
         </div>
 
         <!-- Gallery Slide 2 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/Rectangle 6 (1).png" 
@@ -740,7 +696,27 @@
       <!-- ------------------------------------------------------------------- -->
       <!-- PROJECT 3: Aldona Villa                                             -->
       <!-- ------------------------------------------------------------------- -->
-      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center relative flex-shrink-0" data-project="2">
+        <!-- Sticky Text Overlay for Project 3 -->
+        <div class="horizontal-project-overlay absolute inset-y-0 left-0 w-screen z-20 pointer-events-none flex flex-col justify-end will-change-transform">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+                Aldona Villa
+              </h3>
+              <a href="project-detail.html?id=aldona-villa" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+                <span class="btn__text">View Project</span>
+              </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+              <span>RESIDENTIAL</span>
+              <span>ALDONA, GOA</span>
+              <span>ONGOING</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Hero Card -->
         <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
           <img 
@@ -751,7 +727,7 @@
         </div>
 
         <!-- Gallery Slide 1 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/big_5 1 (1).png" 
@@ -762,7 +738,7 @@
         </div>
 
         <!-- Gallery Slide 2 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/Rectangle 6 (2).png" 
@@ -777,18 +753,38 @@
       <!-- ------------------------------------------------------------------- -->
       <!-- PROJECT 4: Rajhans Precia                                           -->
       <!-- ------------------------------------------------------------------- -->
-      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center relative flex-shrink-0" data-project="3">
+        <!-- Sticky Text Overlay for Project 4 -->
+        <div class="horizontal-project-overlay absolute inset-y-0 left-0 w-screen z-20 pointer-events-none flex flex-col justify-end will-change-transform">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+          <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+              <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+                Rajhans Precia
+              </h3>
+              <a href="project-detail.html?id=rajhans-precia" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+                <span class="btn__text">View Project</span>
+              </a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+              <span>COMMERCIAL</span>
+              <span>SURAT</span>
+              <span>2024</span>
+            </div>
+          </div>
+        </div>
+
         <!-- Hero Card -->
         <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
           <img 
-            src="images/Rectangle 6 (3).png" 
+            src="images/project 4.png" 
             alt="Rajhans Precia Luxury Cinema Lobby" 
             class="w-full h-full object-cover object-center"
           />
         </div>
 
         <!-- Gallery Slide 1 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/big_5 1 (2).png" 
@@ -799,7 +795,7 @@
         </div>
 
         <!-- Gallery Slide 2 -->
-        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+        <div class="horizontal-slide-gallery w-[88vw] sm:w-[78vw] lg:w-[62vw] h-[85vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
           <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
             <img 
               src="images/Rectangle 6 (4).png" 

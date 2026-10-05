@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
     });
+    window.lenis = lenis;
 
     if (window.gsap && window.ScrollTrigger) {
       gsap.registerPlugin(ScrollTrigger);
@@ -33,6 +34,63 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   } else if (window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // ---------------------------------------------------------------------------
+  // 0B. Hero Scroll Parallax & Curtain Reveal (Matching HBA Reference)
+  // ---------------------------------------------------------------------------
+  const heroSection = document.querySelector('#hero-section');
+  if (heroSection && window.gsap && window.ScrollTrigger) {
+    const heroImg = heroSection.querySelector('.hero-media-wrapper img, .hero-bg-animate');
+    const heroNav = heroSection.querySelector('nav');
+
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: heroSection,
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+        scrub: true,
+        invalidateOnRefresh: true,
+      }
+    });
+
+    if (heroNav) {
+      heroTl.to(heroNav, {
+        opacity: 0,
+        y: -30,
+        ease: 'power1.out',
+        duration: 0.35,
+      }, 0);
+    }
+
+    if (heroImg) {
+      heroTl.to(heroImg, {
+        scale: 1.08,
+        yPercent: 14,
+        ease: 'none',
+        duration: 1,
+      }, 0);
+    }
+  }
+
+  // Who We Are subtle floating parallax image
+  const whoWeAreImg = document.querySelector('#who-we-are [data-reveal-animation] img');
+  if (whoWeAreImg && window.gsap && window.ScrollTrigger) {
+    gsap.fromTo(whoWeAreImg, 
+      { y: 30 },
+      {
+        y: -30,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#who-we-are',
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: 1.2,
+        }
+      }
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -233,46 +291,44 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 6. Horizontal Projects Showcase (X-Axis Scroll with Sticky Text Panels)
+    // 6. Horizontal Projects Showcase (X-Axis Scroll with Sticky Project Overlays)
     // -------------------------------------------------------------------------
     const horizontalSection = document.querySelector('#projects-horizontal');
     if (horizontalSection) {
       const track = horizontalSection.querySelector('.projects-horizontal-track');
       const progressBar = horizontalSection.querySelector('.horizontal-progress-bar');
-      const textPanels = horizontalSection.querySelectorAll('.horizontal-text-panel');
       const projectGroups = horizontalSection.querySelectorAll('.horizontal-project-group');
 
       if (track) {
         const getScrollDistance = () => Math.max(0, track.scrollWidth - window.innerWidth);
 
-        let activeIndex = -1;
-
-        function updateActivePanel(progress) {
-          if (!projectGroups.length || !textPanels.length) return;
-
-          const totalDistance = getScrollDistance();
-          const currentX = progress * totalDistance;
-          const triggerPoint = currentX + (window.innerWidth * 0.45);
-
-          let currentIndex = 0;
-          projectGroups.forEach((group, idx) => {
-            if (triggerPoint >= group.offsetLeft) {
-              currentIndex = idx;
+        function updateStickyOverlays() {
+          const transform = window.getComputedStyle(track).transform;
+          let currentTrackX = 0;
+          if (transform && transform !== 'none') {
+            try {
+              const matrix = new DOMMatrixReadOnly(transform);
+              currentTrackX = matrix.m41;
+            } catch (e) {
+              const match = transform.match(/matrix\([^,]+,[^,]+,[^,]+,[^,]+,\s*([^,]+)/);
+              if (match) currentTrackX = parseFloat(match[1]);
             }
-          });
-
-          if (currentIndex !== activeIndex) {
-            activeIndex = currentIndex;
-            textPanels.forEach((panel, idx) => {
-              if (idx === activeIndex) {
-                panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
-                panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
-              } else {
-                panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
-                panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
-              }
-            });
           }
+
+          const viewportWidth = window.innerWidth;
+
+          projectGroups.forEach((group) => {
+            const overlay = group.querySelector('.horizontal-project-overlay');
+            if (!overlay) return;
+
+            const groupLeft = group.offsetLeft;
+            const groupWidth = group.offsetWidth;
+            const maxShift = Math.max(0, groupWidth - viewportWidth);
+
+            // Shift keeps overlay sticky to viewport while this group is visible
+            const shift = Math.min(Math.max(-currentTrackX - groupLeft, 0), maxShift);
+            overlay.style.transform = `translate3d(${shift}px, 0, 0)`;
+          });
         }
 
         gsap.to(track, {
@@ -290,13 +346,14 @@ document.addEventListener('DOMContentLoaded', () => {
               if (progressBar) {
                 progressBar.style.transform = `scaleX(${self.progress})`;
               }
-              updateActivePanel(self.progress);
+              updateStickyOverlays();
             }
           }
         });
 
-        // Initialize state
-        updateActivePanel(0);
+        // Sync continuously with ticker for smooth scrub easing
+        gsap.ticker.add(updateStickyOverlays);
+        updateStickyOverlays();
       }
     }
 
