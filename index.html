@@ -566,6 +566,255 @@
 
 
   <!-- ========================================================================= -->
+  <!-- 4B. FEATURED PROJECTS - HORIZONTAL VARIANT (X-AXIS SCROLL)                 -->
+  <!-- ========================================================================= -->
+  <section id="projects-horizontal" class="projects-horizontal-section bg-arris-dark text-white relative h-screen w-full overflow-hidden">
+    
+    <!-- Top Indicator / Badge for Demo Mode -->
+    <div class="absolute top-6 sm:top-8 left-6 sm:left-12 xl:left-[97px] z-30 flex items-center space-x-3 text-xs tracking-[0.22em] uppercase text-white/70 font-medium pointer-events-none">
+      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+      <span>Horizontal Showcase &bull; Scroll &rarr;</span>
+    </div>
+
+    <!-- Bottom Progress Bar -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-30 pointer-events-none">
+      <div class="horizontal-progress-bar h-full bg-white origin-left transform scale-x-0"></div>
+    </div>
+
+    <!-- Pinned Bottom Content Overlay (Sticky throughout horizontal scroll) -->
+    <div class="horizontal-sticky-overlay absolute inset-0 z-30 pointer-events-none flex flex-col justify-end">
+      <!-- Dark gradient backdrop across bottom -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent pointer-events-none"></div>
+
+      <!-- Container for the 4 project text panels -->
+      <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-8 sm:pb-12 pointer-events-auto min-h-[160px] sm:min-h-[180px] flex items-end">
+        
+        <!-- Text Panel 1: Devgn Cinex Bellona -->
+        <div class="horizontal-text-panel opacity-100 pointer-events-auto translate-y-0 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="0">
+          <div>
+            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+              Devgn Cinex Bellona
+            </h3>
+            <a href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+              <span class="btn__text">View Project</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+            <span>CINEMAS</span>
+            <span>THANE</span>
+            <span>2026</span>
+          </div>
+        </div>
+
+        <!-- Text Panel 2: DPS Hazaribaug -->
+        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="1">
+          <div>
+            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+              DPS Hazaribaug
+            </h3>
+            <a href="project-detail.html?id=dps-hazaribaug" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+              <span class="btn__text">View Project</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+            <span>SCHOOLS</span>
+            <span>HAZARIBAUG</span>
+            <span>2026</span>
+          </div>
+        </div>
+
+        <!-- Text Panel 3: Aldona Villa -->
+        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="2">
+          <div>
+            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+              Aldona Villa
+            </h3>
+            <a href="project-detail.html?id=aldona-villa" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+              <span class="btn__text">View Project</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+            <span>RESIDENTIAL</span>
+            <span>ALDONA, GOA</span>
+            <span>ONGOING</span>
+          </div>
+        </div>
+
+        <!-- Text Panel 4: Rajhans Precia -->
+        <div class="horizontal-text-panel opacity-0 pointer-events-none translate-y-4 transition-all duration-500 ease-out absolute inset-x-6 sm:inset-x-12 xl:inset-x-[97px] bottom-8 sm:bottom-12 flex flex-col md:flex-row md:items-end justify-between gap-6" data-index="3">
+          <div>
+            <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+              Rajhans Precia
+            </h3>
+            <a href="project-detail.html?id=rajhans-precia" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+              <span class="btn__text">View Project</span>
+            </a>
+          </div>
+          <div class="hidden md:flex items-center space-x-8 text-xs font-normal tracking-[0.22em] text-white/80 uppercase">
+            <span>COMMERCIAL</span>
+            <span>SURAT</span>
+            <span>2024</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Horizontal Track (Moves along X-axis behind the sticky overlay) -->
+    <div class="projects-horizontal-track flex flex-row flex-nowrap h-full items-center will-change-transform">
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- PROJECT 1: Devgn Cinex Bellona                                      -->
+      <!-- ------------------------------------------------------------------- -->
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+        <!-- Hero Card (Full 100vw, 100vh) -->
+        <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
+          <img 
+            src="images/Rectangle 5.png" 
+            alt="Devgn Cinex Bellona Main Arcade" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <!-- Gallery Slide 1 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/big_3 1.png" 
+              alt="Devgn Cinex Turquoise Auditorium Hall" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+
+        <!-- Gallery Slide 2 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/thumb_6 1.png" 
+              alt="Devgn Cinex Luxury Arched Banquet" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- PROJECT 2: DPS Hazaribaug                                           -->
+      <!-- ------------------------------------------------------------------- -->
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+        <!-- Hero Card -->
+        <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
+          <img 
+            src="images/Rectangle 6.png" 
+            alt="DPS Hazaribaug Institutional Campus" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <!-- Gallery Slide 1 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/big_5 1.png" 
+              alt="DPS Hazaribaug Covered Walkway overlooking Lawn" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+
+        <!-- Gallery Slide 2 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/Rectangle 6 (1).png" 
+              alt="Delhi Public School Hazaribag Entrance and Courtyard Stairs" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- PROJECT 3: Aldona Villa                                             -->
+      <!-- ------------------------------------------------------------------- -->
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+        <!-- Hero Card -->
+        <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
+          <img 
+            src="images/Rectangle 7.png" 
+            alt="Aldona Villa Luxury Residence Exterior" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <!-- Gallery Slide 1 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/big_5 1 (1).png" 
+              alt="Aldona Villa Master Bedroom Interior" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+
+        <!-- Gallery Slide 2 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/Rectangle 6 (2).png" 
+              alt="Aldona Villa Poolside Patio Bar" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ------------------------------------------------------------------- -->
+      <!-- PROJECT 4: Rajhans Precia                                           -->
+      <!-- ------------------------------------------------------------------- -->
+      <div class="horizontal-project-group flex flex-row flex-nowrap h-full items-center">
+        <!-- Hero Card -->
+        <div class="horizontal-slide-hero w-screen h-screen flex-shrink-0 relative overflow-hidden">
+          <img 
+            src="images/Rectangle 6 (3).png" 
+            alt="Rajhans Precia Luxury Cinema Lobby" 
+            class="w-full h-full object-cover object-center"
+          />
+        </div>
+
+        <!-- Gallery Slide 1 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/big_5 1 (2).png" 
+              alt="Rajhans Precia Concession Lounge" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+
+        <!-- Gallery Slide 2 -->
+        <div class="horizontal-slide-gallery w-[85vw] sm:w-[70vw] lg:w-[50vw] h-[75vh] flex-shrink-0 px-4 sm:px-6 pr-12 sm:pr-20 relative">
+          <div class="w-full h-full overflow-hidden rounded-xl sm:rounded-sm shadow-2xl bg-neutral-900 group">
+            <img 
+              src="images/Rectangle 6 (4).png" 
+              alt="Rajhans Precia Chevron Illuminated Auditorium" 
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
   <!-- 5. TESTIMONIALS                                                           -->
   <!-- ========================================================================= -->
   <section id="testimonials" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">

@@ -232,6 +232,77 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // -------------------------------------------------------------------------
+    // 6. Horizontal Projects Showcase (X-Axis Scroll with Sticky Text Panels)
+    // -------------------------------------------------------------------------
+    const horizontalSection = document.querySelector('#projects-horizontal');
+    if (horizontalSection) {
+      const track = horizontalSection.querySelector('.projects-horizontal-track');
+      const progressBar = horizontalSection.querySelector('.horizontal-progress-bar');
+      const textPanels = horizontalSection.querySelectorAll('.horizontal-text-panel');
+      const projectGroups = horizontalSection.querySelectorAll('.horizontal-project-group');
+
+      if (track) {
+        const getScrollDistance = () => Math.max(0, track.scrollWidth - window.innerWidth);
+
+        let activeIndex = -1;
+
+        function updateActivePanel(progress) {
+          if (!projectGroups.length || !textPanels.length) return;
+
+          const totalDistance = getScrollDistance();
+          const currentX = progress * totalDistance;
+          const triggerPoint = currentX + (window.innerWidth * 0.45);
+
+          let currentIndex = 0;
+          projectGroups.forEach((group, idx) => {
+            if (triggerPoint >= group.offsetLeft) {
+              currentIndex = idx;
+            }
+          });
+
+          if (currentIndex !== activeIndex) {
+            activeIndex = currentIndex;
+            textPanels.forEach((panel, idx) => {
+              if (idx === activeIndex) {
+                panel.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+                panel.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
+              } else {
+                panel.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
+                panel.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+              }
+            });
+          }
+        }
+
+        gsap.to(track, {
+          x: () => -getScrollDistance(),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: horizontalSection,
+            start: 'top top',
+            end: () => `+=${getScrollDistance()}`,
+            pin: true,
+            scrub: 0.8,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+            onUpdate: (self) => {
+              if (progressBar) {
+                progressBar.style.transform = `scaleX(${self.progress})`;
+              }
+              updateActivePanel(self.progress);
+            }
+          }
+        });
+
+        // Initialize state
+        updateActivePanel(0);
+      }
+    }
+
     ScrollTrigger.refresh();
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
   }
 });
