@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Details | ARRIS ARCHITECTS</title>
+  
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '274',
+            normal: '274',
+            medium: '400',
+            semibold: '500',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#121212',
+              cardDark: '#1E1E1E',
+              galleryDark: '#181818',
+              footerDark: '#161616',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 274;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      image-rendering: auto;
+    }
+
+    /* Subtle image hover zoom */
+    .project-card:hover .project-img {
+      transform: scale(1.025);
+    }
+
+    /* Hide scrollbars for carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* ========================================================================= */
+    /* Dynamic Expanding Gallery Accordion Animation                             */
+    /* ========================================================================= */
+    .gallery-accordion {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      width: 100%;
+      height: 360px;
+    }
+    @media (min-width: 640px) {
+      .gallery-accordion {
+        height: 460px;
+      }
+    }
+    @media (min-width: 1024px) {
+      .gallery-accordion {
+        height: 580px;
+      }
+    }
+    @media (min-width: 1280px) {
+      .gallery-accordion {
+        height: 640px;
+      }
+    }
+
+    .gallery-item {
+      flex: 1 1 0%;
+      min-width: 0;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border-radius: 2px;
+      background-color: #121212;
+      transition: flex 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: flex;
+    }
+
+    /* Soft dimming overlay for non-hovered photos */
+    .gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    /* Desktop Hover Behavior: Hovered photo expands to 3.5 flex, siblings contract to 0.8 flex */
+    @media (hover: hover) and (pointer: fine) {
+      .gallery-accordion:hover .gallery-item {
+        flex: 0.8 1 0%;
+      }
+      .gallery-accordion:hover .gallery-item .gallery-overlay {
+        opacity: 0.35;
+      }
+
+      .gallery-accordion .gallery-item:hover {
+        flex: 3.5 1 0%;
+      }
+      .gallery-accordion .gallery-item:hover .gallery-overlay {
+        opacity: 0;
+      }
+    }
+
+    /* Touch or active state support (e.g. mobile tap) */
+    .gallery-accordion.has-active .gallery-item {
+      flex: 0.8 1 0%;
+    }
+    .gallery-accordion.has-active .gallery-item .gallery-overlay {
+      opacity: 0.35;
+    }
+    .gallery-accordion.has-active .gallery-item.active {
+      flex: 3.5 1 0%;
+    }
+    .gallery-accordion.has-active .gallery-item.active .gallery-overlay {
+      opacity: 0;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    .gallery-item:hover img,
+    .gallery-item.active img {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body class="bg-arris-cream text-black antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO HEADER WITH OVERLAY NAVIGATION (EXACT PROJECTS - 01.PNG)          -->
+  <!-- ========================================================================= -->
+  <section class="relative w-full min-h-[640px] sm:min-h-[720px] lg:min-h-[860px] xl:min-h-[940px] bg-neutral-950 flex flex-col justify-between overflow-hidden">
+    
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0 z-0">
+      <img 
+        id="hero-bg-img" 
+        src="images/project-detail/rajhans_skylar_hero.png" 
+        alt="Project Hero Banner" 
+        class="w-full h-full object-cover object-center brightness-95"
+      />
+      <!-- Gradient overlay to guarantee perfect text contrast -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/60 pointer-events-none"></div>
+    </div>
+
+    <!-- Navigation Bar (Overlay on top of Hero) -->
+    <header class="relative z-20 w-full">
+      <nav class="flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+        <!-- White Logo -->
+        <a href="index.html" class="inline-block transition-opacity hover:opacity-80">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-9 w-auto brightness-100" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <div class="hidden md:flex items-center space-x-10 lg:space-x-14">
+          <ul class="flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-medium tracking-[0.22em] uppercase">
+            <li><a href="projects.html" class="font-semibold text-white border-b border-white pb-0.5">PROJECTS</a></li>
+            <li><a href="index.html#what-we-do" class="text-white/80 hover:text-white transition-colors">EXPERTISE</a></li>
+            <li><a href="index.html#who-we-are" class="text-white/80 hover:text-white transition-colors">PRACTICE</a></li>
+            <li><a href="index.html#leadership" class="text-white/80 hover:text-white transition-colors">STUDIO</a></li>
+            <li><a href="#contact" class="text-white/80 hover:text-white transition-colors">CONTACT</a></li>
+          </ul>
+          
+          <!-- Moon Icon matching design -->
+          <div class="text-white/70 hover:text-white transition-colors cursor-pointer pl-2" title="Theme Mode">
+            <i data-lucide="moon" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10" aria-label="Toggle Navigation">
+          <span class="w-7 h-0.5 bg-white rounded-full"></span>
+          <span class="w-5 h-0.5 bg-white rounded-full"></span>
+          <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
+      </nav>
+
+      <!-- Mobile Drawer Overlay -->
+      <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+        <div class="flex items-center justify-between">
+          <a href="index.html" class="inline-block">
+            <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+          </a>
+          <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+            <i data-lucide="x" class="w-7 h-7"></i>
+          </button>
+        </div>
+
+        <ul class="flex flex-col space-y-6 text-white text-2xl font-[274] tracking-wide my-auto">
+          <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
+          <li><a href="projects.html" class="mobile-nav-link font-medium text-white transition-colors block py-2">Projects</a></li>
+          <li><a href="index.html#what-we-do" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Services</a></li>
+          <li><a href="index.html#who-we-are" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
+          <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
+          <li><a href="#contact" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+        </ul>
+
+        <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+          <span>&copy; 2026 Arris Architects</span>
+          <div class="flex space-x-4 text-white">
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Bottom-Left Project Title Block -->
+    <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-12 sm:pb-16 lg:pb-20 max-w-[1920px] mx-auto mt-auto">
+      <div class="max-w-4xl">
+        <a href="projects.html" class="inline-block text-[11px] sm:text-xs tracking-[0.2em] font-[274] uppercase text-white/80 hover:text-white transition-colors mb-2">
+          PROJECTS
+        </a>
+        <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-[274] leading-tight text-white tracking-tight">
+          Rajhans Skylar
+        </h1>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. PROJECT STORY & SPECIFICATIONS (CREAM SECTION #F4F0EB)                 -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
+        
+        <!-- Left Column: Tall Portrait Project Feature Image -->
+        <div class="lg:col-span-5 w-full">
+          <div class="w-full aspect-[580/770] overflow-hidden bg-neutral-200 shadow-sm">
+            <img 
+              id="story-img" 
+              src="images/project-detail/rajhans_skylar_atrium.png" 
+              alt="Project Architectural Interior" 
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <!-- Right Column: Project Story & Specifications Table -->
+        <div class="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0">
+          
+          <!-- Narrative Description Paragraph -->
+          <p id="project-description" class="text-[17px] sm:text-[19px] lg:text-[20px] font-[274] leading-[170%] text-black text-justify lg:text-left mb-12 sm:mb-16 lg:mb-20">
+            This project brings together contemporary interior spaces with a thoughtfully designed landscape that complements the overall built environment. Our scope focused on the atrium, lobby spaces, gym, café and other key interior areas, creating cohesive and inviting spaces through considered materials and detailing. The landscape integrates lush planting with carefully placed sculptural elements that soften the effect of the built form, creating a more welcoming and engaging experience around the building. Together, the interiors and landscape create a refined environment that balances functionality, visual identity and a sense of openness.
+          </p>
+
+          <!-- Specifications Section -->
+          <div class="w-full">
+            <!-- Table Header Line -->
+            <div class="flex items-center justify-between border-b border-black/40 pb-2.5 mb-6 text-[11px] sm:text-xs tracking-[0.14em] font-[274] uppercase text-black">
+              <span>PROJECT SPECIFICATION</span>
+              <span id="spec-rev" class="tracking-[0.1em]">REV. 04.24</span>
+            </div>
+
+            <!-- Architectural Key-Value List -->
+            <div class="space-y-4 sm:space-y-5 text-sm sm:text-[15px] font-[274]">
+              <!-- LOCATION -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">LOCATION</span>
+                <span id="spec-location" class="text-black text-right font-[274]">Surat</span>
+              </div>
+
+              <!-- SCOPE -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">SCOPE</span>
+                <span id="spec-scope" class="text-black text-right font-[274] max-w-[65%]">Commercial, Interiors, Landscape, F&amp;B</span>
+              </div>
+
+              <!-- TYPOLOGY -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">TYPOLOGY</span>
+                <span id="spec-typology" class="text-black text-right font-[274]">Commercial</span>
+              </div>
+
+              <!-- SITE AREA -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">SITE AREA</span>
+                <span id="spec-site-area" class="text-black text-right font-[274]">1,32,720, sq.ft</span>
+              </div>
+
+              <!-- STATUS -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">STATUS</span>
+                <span id="spec-status" class="text-black text-right font-[274] flex items-center gap-1.5">
+                  <span class="inline-block w-1.5 h-1.5 rounded-full bg-black"></span>
+                  <span>Completed</span>
+                </span>
+              </div>
+
+              <!-- LEAD PARTNER -->
+              <div class="flex items-start justify-between border-b border-black/10 pb-3">
+                <span class="uppercase tracking-[0.12em] text-neutral-700 text-xs sm:text-[13px]">LEAD PARTNER</span>
+                <span id="spec-lead-partner" class="text-black text-right font-[274]">A. Chhatwal, RIBA</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. PROJECT GALLERY SECTION (DARK THEME #181818)                           -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-galleryDark text-white py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      
+      <!-- Section Title -->
+      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[274] leading-tight tracking-tight text-white mb-8 sm:mb-12">
+        Project Gallery
+      </h2>
+
+      <!-- Visual Showcase Layout (Interactive Expanding Flex Accordion) -->
+      <div id="gallery-container" class="gallery-accordion flex flex-row gap-3 sm:gap-4 lg:gap-6 items-stretch w-full">
+        
+        <!-- Gallery Item 1 -->
+        <div class="gallery-item group" data-index="0">
+          <div class="gallery-overlay"></div>
+          <img 
+            id="gallery-img-1" 
+            src="images/project-detail/gallery_1_wide.png" 
+            alt="Gallery View 1" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Gallery Item 2 -->
+        <div class="gallery-item group" data-index="1">
+          <div class="gallery-overlay"></div>
+          <img 
+            id="gallery-img-2" 
+            src="images/project-detail/gallery_2_aerial.png" 
+            alt="Gallery View 2" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Gallery Item 3 -->
+        <div class="gallery-item group" data-index="2">
+          <div class="gallery-overlay"></div>
+          <img 
+            id="gallery-img-3" 
+            src="images/project-detail/gallery_3_pool.png" 
+            alt="Gallery View 3" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Gallery Item 4 -->
+        <div class="gallery-item group" data-index="3">
+          <div class="gallery-overlay"></div>
+          <img 
+            id="gallery-img-4" 
+            src="images/project-detail/gallery_4_lounge.png" 
+            alt="Gallery View 4" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. RELATED PROJECTS SECTION (CREAM #F4F0EB)                               -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px] border-b border-neutral-300">
+    <div class="max-w-[1920px] mx-auto">
+      
+      <!-- Section Title -->
+      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[274] leading-tight tracking-tight text-black mb-10 sm:mb-14">
+        Related Projects
+      </h2>
+
+      <!-- 3 Related Project Cards -->
+      <div id="related-projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-[38px]">
+        <!-- Cards will be populated dynamically from projects-data.js -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. CONTACT US (EXACT FIGMA TYPOGRAPHY & LAYOUT)                           -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="bg-arris-cream pt-20 sm:pt-28 pb-20 sm:pb-24 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-3">
+        Contact us
+      </h2>
+      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[274] leading-[150%] max-w-[646px] mb-12 sm:mb-16">
+        Have any questions? Feel free to contact us for more information.
+      </p>
+
+      <!-- 3 Contact Columns (Stacked on mobile, 3-col on desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+        
+        <!-- Column 1: Email -->
+        <div>
+          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h3 class="text-xl font-normal text-neutral-900 mb-2">Email</h3>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Have a question or idea? Drop us an email we'd love to hear from you.
+          </p>
+          <a href="mailto:arrisarch@gmail.com" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+            arrisarch@gmail.com
+          </a>
+        </div>
+
+        <!-- Column 2: Phone -->
+        <div>
+          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h3 class="text-xl font-normal text-neutral-900 mb-2">Phone</h3>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Have a question? Give us a call &mdash; we're happy to help.
+          </p>
+          <a href="tel:+912225829387" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+            +912225829387, +912225828996
+          </a>
+        </div>
+
+        <!-- Column 3: Office -->
+        <div>
+          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h3 class="text-xl font-normal text-neutral-900 mb-2">Office</h3>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Find us at our office.
+          </p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-sm font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER (DARK THEME)                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900">
+    <div class="max-w-[1920px] mx-auto">
+      
+      <!-- Top / Main Block: Logo, Nav, Socials -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10">
+        <!-- Logo -->
+        <a href="index.html" class="inline-block mx-auto lg:mx-0">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 w-auto" />
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-sm lg:text-xs text-white/90 font-light text-center">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="index.html#who-we-are" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="index.html#what-we-do" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="text-white font-medium">Projects</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-6 lg:space-x-5 text-white/80">
+          <a href="#" class="hover:text-white transition-colors" aria-label="Facebook">
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="Twitter / X">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="YouTube">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full border-t border-neutral-800"></div>
+
+      <!-- Bottom Row: Copyright & Legal -->
+      <div class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[12px] sm:text-[11px] text-neutral-400 font-light gap-4 text-center">
+        <div>
+          &copy; 2026 All rights reserved.
+        </div>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Include Projects Data -->
+  <script src="projects-data.js"></script>
+
+  <!-- Dynamic Page Renderer & Interactions -->
+  <script>
+    // Initialize icons
+    lucide.createIcons();
+
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMenu() {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+    // Get Project ID from URL query param ?id=... (defaults to 'rajhans-skylar')
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('id') || 'rajhans-skylar';
+
+    const project = ARRIS_PROJECTS[projectId] || ARRIS_PROJECTS['rajhans-skylar'];
+
+    // Update Page Meta
+    document.title = `${project.title} | ARRIS ARCHITECTS`;
+
+    // Render Hero Section
+    const heroBgImg = document.getElementById('hero-bg-img');
+    const heroTitle = document.getElementById('hero-title');
+    if (heroBgImg) {
+      heroBgImg.src = project.heroImage;
+      heroBgImg.alt = project.title;
+    }
+    if (heroTitle) {
+      heroTitle.textContent = project.title;
+    }
+
+    // Render Story Section
+    const storyImg = document.getElementById('story-img');
+    const projectDesc = document.getElementById('project-description');
+    if (storyImg) {
+      storyImg.src = project.storyImage;
+      storyImg.alt = `${project.title} Architectural Interior`;
+    }
+    if (projectDesc) {
+      projectDesc.textContent = project.description;
+    }
+
+    // Render Specifications
+    document.getElementById('spec-rev').textContent = project.specs.rev;
+    document.getElementById('spec-location').textContent = project.specs.location;
+    document.getElementById('spec-scope').textContent = project.specs.scope;
+    document.getElementById('spec-typology').textContent = project.specs.typology;
+    document.getElementById('spec-site-area').textContent = project.specs.siteArea;
+    
+    const specStatus = document.getElementById('spec-status');
+    if (specStatus) {
+      specStatus.innerHTML = `
+        <span class="inline-block w-1.5 h-1.5 rounded-full ${project.specs.status.toLowerCase().includes('ongoing') ? 'bg-amber-500' : 'bg-black'}"></span>
+        <span>${project.specs.status}</span>
+      `;
+    }
+    document.getElementById('spec-lead-partner').textContent = project.specs.leadPartner;
+
+    // Render Gallery Images
+    if (project.gallery && project.gallery.length >= 4) {
+      const g1 = document.getElementById('gallery-img-1');
+      const g2 = document.getElementById('gallery-img-2');
+      const g3 = document.getElementById('gallery-img-3');
+      const g4 = document.getElementById('gallery-img-4');
+
+      if (g1) { g1.src = project.gallery[0].url; g1.alt = project.gallery[0].alt; }
+      if (g2) { g2.src = project.gallery[1].url; g2.alt = project.gallery[1].alt; }
+      if (g3) { g3.src = project.gallery[2].url; g3.alt = project.gallery[2].alt; }
+      if (g4) { g4.src = project.gallery[3].url; g4.alt = project.gallery[3].alt; }
+    }
+
+    // Render Related Projects
+    const relatedContainer = document.getElementById('related-projects-grid');
+    if (relatedContainer && project.related) {
+      relatedContainer.innerHTML = '';
+      project.related.forEach(relId => {
+        const relProj = ARRIS_PROJECTS[relId];
+        if (!relProj) return;
+
+        const card = document.createElement('a');
+        card.href = `project-detail.html?id=${relProj.id}`;
+        card.className = 'project-card group cursor-pointer block';
+        card.innerHTML = `
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+            <img 
+              src="${relProj.cardImage}" 
+              alt="${relProj.title}" 
+              class="project-img w-full h-full object-cover transition-transform duration-500 ease-out"
+            />
+          </div>
+          <div class="mt-4 text-[11px] sm:text-xs tracking-[0.08em] uppercase text-neutral-800 font-[274]">
+            <span>${relProj.location}</span>
+          </div>
+          <h3 class="text-[22px] sm:text-[24px] lg:text-[26px] font-[274] leading-tight text-black mt-2 tracking-normal group-hover:underline">
+            ${relProj.title}
+          </h3>
+        `;
+        relatedContainer.appendChild(card);
+      });
+    }
+
+    // =========================================================================
+    // Dynamic Expanding Gallery Accordion Touch & Click Logic
+    // =========================================================================
+    const galleryAccordion = document.getElementById('gallery-container');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    if (galleryAccordion && galleryItems.length) {
+      galleryItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+          const isAlreadyActive = item.classList.contains('active');
+          galleryItems.forEach(i => i.classList.remove('active'));
+          
+          if (!isAlreadyActive) {
+            item.classList.add('active');
+            galleryAccordion.classList.add('has-active');
+          } else {
+            galleryAccordion.classList.remove('has-active');
+          }
+        });
+      });
+
+      // Clear active state on outside click
+      document.addEventListener('click', (e) => {
+        if (!galleryAccordion.contains(e.target)) {
+          galleryItems.forEach(i => i.classList.remove('active'));
+          galleryAccordion.classList.remove('has-active');
+        }
+      });
+    }
+  </script>
+
+  <!-- GSAP & Core Animations Runtime -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>

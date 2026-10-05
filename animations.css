@@ -1,0 +1,310 @@
+/* ========================================================================= */
+/* ARRIS ARCHITECTS - ANIMATIONS SYSTEM                                      */
+/* Derived from Reference Website (HBA) Animation Architecture               */
+/* ========================================================================= */
+
+/* ------------------------------------------------------------------------- */
+/* 1. Signature Image / Media Scroll-Reveal (Clip-Path Unmasking)             */
+/* Reference: [data-reveal-animation] with cubic-bezier(0.19, 1, 0.22, 1)    */
+/* ------------------------------------------------------------------------- */
+[data-reveal-animation] {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-reveal-animation] img,
+[data-reveal-animation] video {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transform: scale(1.08);
+  transition: clip-path 1.8s cubic-bezier(0.19, 1, 0.22, 1), transform 2s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: clip-path, transform;
+}
+
+[data-reveal-animation].is-revealed img,
+[data-reveal-animation].is-revealed video,
+[data-reveal-animation].animation-complete img,
+[data-reveal-animation].animation-complete video {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform: scale(1);
+}
+
+/* ------------------------------------------------------------------------- */
+/* 2. Text & Content Scroll Reveal                                           */
+/* ------------------------------------------------------------------------- */
+[data-reveal-text] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal-text].is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Delays */
+[data-reveal-text][data-delay="1"] { transition-delay: 0.15s; }
+[data-reveal-text][data-delay="2"] { transition-delay: 0.3s; }
+[data-reveal-text][data-delay="3"] { transition-delay: 0.45s; }
+[data-reveal-text][data-delay="4"] { transition-delay: 0.6s; }
+
+/* ------------------------------------------------------------------------- */
+/* 3. Hero Section Entrance Animation                                        */
+/* ------------------------------------------------------------------------- */
+@keyframes heroBgZoom {
+  0% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hero-bg-animate {
+  animation: heroBgZoom 2.2s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes heroContentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content-animate {
+  animation: heroContentFadeIn 1.6s cubic-bezier(0.19, 1, 0.22, 1) 0.3s forwards;
+  opacity: 0;
+}
+
+.hero-nav-animate {
+  animation: heroContentFadeIn 1.4s cubic-bezier(0.19, 1, 0.22, 1) 0.1s forwards;
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------------- */
+/* 4. Button Wipe-Up / Wipe-Out Animation                                    */
+/* Reference: .btn wipe-up / wipe-out from reference site                    */
+/* ------------------------------------------------------------------------- */
+.btn-wipe {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
+}
+
+.btn-wipe .btn__text {
+  position: relative;
+  z-index: 2;
+  transition: color 0.35s ease;
+}
+
+.btn-wipe .btn__bg {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1;
+  transition: top 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.btn-wipe:hover .btn__bg,
+.btn-wipe.wipe-up .btn__bg {
+  top: 0;
+}
+
+.btn-wipe:hover .btn__text {
+  color: #000000 !important;
+}
+
+.btn-wipe.wipe-out .btn__bg {
+  top: -100%;
+}
+
+/* Dark variant */
+.btn-wipe-dark .btn__bg {
+  background-color: #000000;
+}
+
+.btn-wipe-dark:hover .btn__text {
+  color: #ffffff !important;
+}
+
+/* ------------------------------------------------------------------------- */
+/* 5. Smooth Parallax & Subtle Hover Lift                                    */
+/* ------------------------------------------------------------------------- */
+.smooth-hover {
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* ------------------------------------------------------------------------- */
+/* 6. Sticky Gallery Section (Exact implementation from Reference HBA.com)   */
+/* ------------------------------------------------------------------------- */
+.sticky_gallery {
+  position: relative;
+  width: 100%;
+}
+
+.sticky_gallery figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.sticky_gallery figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sticky_gallery--main-media {
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.sticky_gallery--content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+  z-index: 30;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  pointer-events: none;
+}
+
+@media (min-width: 992px) {
+  .sticky_gallery--content-wrapper {
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row;
+  }
+}
+
+.in-view .sticky_gallery--content-wrapper,
+.sticky_gallery.in-view .sticky_gallery--content-wrapper {
+  opacity: 1;
+}
+
+.sticky_gallery--content-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0) 100%);
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+@media (max-width: 991.98px) {
+  .sticky_gallery--content-bg {
+    height: 50%;
+  }
+}
+
+.sticky_gallery--content {
+  position: relative;
+  padding: 2rem 1.5rem;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+@media (min-width: 640px) {
+  .sticky_gallery--content {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sticky_gallery--content {
+    padding-left: 97px;
+    padding-bottom: 3rem;
+  }
+}
+
+.sticky_gallery--content-details {
+  position: relative;
+  padding: 2rem 1.5rem;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  pointer-events: auto;
+}
+
+@media (min-width: 640px) {
+  .sticky_gallery--content-details {
+    padding: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .sticky_gallery--content-details {
+    padding-right: 97px;
+    padding-bottom: 3rem;
+  }
+}
+
+.sticky_gallery--slide {
+  position: relative;
+  z-index: 2;
+  margin-bottom: clamp(60px, 8vw, 140px);
+}
+
+.sticky_gallery--slide:first-child {
+  margin-top: clamp(60px, 8vw, 140px);
+}
+
+.sticky_gallery--slide:last-child {
+  margin-bottom: clamp(80px, 12vw, 200px);
+}
+
+.sticky_gallery--slide img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lenis Smooth Scroll body styles */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+

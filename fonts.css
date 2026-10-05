@@ -1,0 +1,175 @@
+/* ========================================================================= */
+/* ARRIS ARCHITECTS - LOCAL SF PRO TYPOGRAPHY                                 */
+/* Loaded directly from font/San-Francisco-Pro-Fonts-master/                  */
+/* ========================================================================= */
+
+/* ------------------------------------------------------------------------- */
+/* 1. SF PRO DISPLAY (Headings, Project Titles, Hero Overlays, Navigation)   */
+/* ------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Ultralight.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Thin.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 274;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* 2. SF PRO TEXT (Paragraphs, Body Copy, Specifications, Labels)            */
+/* ------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Light.otf') format('opentype');
+  font-weight: 274;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro Text';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* 3. SF PRO (Universal Master Alias)                                        */
+/* ------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 274;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SF Pro';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

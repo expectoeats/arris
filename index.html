@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARRIS ARCHITECTS | Architecture, Urban & Design</title>
+  
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '274',
+            normal: '274',
+            medium: '400',
+            semibold: '500',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#121212',
+              cardDark: '#1E1E1E',
+              footerDark: '#161616',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 274;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Figma Exact Service Card Glass Bar */
+    .card-glass-bar {
+      background: rgba(217, 217, 217, 0.1);
+      backdrop-filter: blur(25.53px);
+      -webkit-backdrop-filter: blur(25.53px);
+      box-shadow: inset -12.77px 12.77px 12.77px rgba(255, 255, 255, 0.1), inset 12.77px -12.77px 12.77px rgba(165, 165, 165, 0.1);
+    }
+
+    /* Custom subtle glassmorphism */
+    .glass-card {
+      background: rgba(18, 18, 18, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Hide scrollbar for mobile carousels while allowing smooth touch swiping */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Smooth image rendering */
+    img {
+      image-rendering: auto;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION & NAVIGATION                                              -->
+  <!-- ========================================================================= -->
+  <header class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden">
+    <!-- Hero Background Image with Smooth Ambient Entrance -->
+    <img 
+      src="images/Rectangle 1.png" 
+      alt="Arris Architects Modern Exterior" 
+      class="absolute inset-0 w-full h-full object-cover object-center hero-bg-animate"
+    />
+    
+    <!-- Subtle top vignette gradient for navbar legibility -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/20 pointer-events-none"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
+      <!-- Logo -->
+      <a href="#" class="inline-block">
+        <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-11 w-auto drop-shadow-sm brightness-100" />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="hidden md:flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-medium tracking-[0.22em] uppercase">
+        <li><a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a></li>
+        <li><a href="#what-we-do" class="hover:text-white/70 transition-colors">EXPERTISE</a></li>
+        <li><a href="#who-we-are" class="hover:text-white/70 transition-colors">PRACTICE</a></li>
+        <li><a href="#leadership" class="hover:text-white/70 transition-colors">STUDIO</a></li>
+        <li><a href="#contact" class="hover:text-white/70 transition-colors">CONTACT</a></li>
+      </ul>
+
+      <!-- Mobile Menu Trigger (Hamburger matching Slice 1) -->
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10" aria-label="Toggle Navigation">
+        <span class="w-7 h-0.5 bg-white rounded-full"></span>
+        <span class="w-5 h-0.5 bg-white rounded-full"></span>
+        <span class="w-6 h-0.5 bg-white rounded-full"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+      <div class="flex items-center justify-between">
+        <a href="#" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+        </a>
+        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <ul class="flex flex-col space-y-6 text-white text-2xl font-[274] tracking-wide my-auto">
+        <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
+        <li><a href="#what-we-do" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Services</a></li>
+        <li><a href="#who-we-are" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
+        <li><a href="#testimonials" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Testimonials</a></li>
+        <li><a href="#publications" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Publications</a></li>
+        <li><a href="#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
+        <li><a href="#contact" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+      </ul>
+
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. WHO WE ARE (ABOUT SECTION)                                             -->
+  <!-- ========================================================================= -->
+  <section id="who-we-are" class="bg-arris-cream py-16 sm:py-24 lg:py-32 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Desktop Section Tag: SF Pro, 36px, Weight 274, 100% line height, 2% letter spacing -->
+      <h3 class="hidden lg:block text-black text-[36px] font-[274] leading-none tracking-[0.02em] mb-10 sm:mb-14" data-reveal-text>
+        Who We Are
+      </h3>
+
+      <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-start">
+        
+        <!-- Left: Honeycomb Architecture Image (Below text on mobile, Left on desktop) -->
+        <div class="w-full lg:w-1/2 overflow-hidden rounded-2xl lg:rounded-sm shadow-sm" data-reveal-animation>
+          <img 
+            src="images/Rectangle 3.png" 
+            alt="Arris Architects Parametric Golden Facade" 
+            class="w-full h-auto object-cover block"
+          />
+        </div>
+
+        <!-- Right: Text Content (Above image on mobile, Right on desktop) -->
+        <div class="w-full lg:w-1/2 flex flex-col justify-start items-start pt-0">
+          <!-- Mobile-only Section Tag: SF Pro, 28px on mobile -->
+          <h3 class="lg:hidden text-black text-[28px] sm:text-[32px] font-[274] leading-none tracking-[0.02em] mb-6 sm:mb-8" data-reveal-text>
+            Who we are
+          </h3>
+
+          <!-- Desktop Main Heading: SF Pro, 48px, Weight 274, perfectly top-aligned with top edge of image -->
+          <h2 class="hidden lg:block text-black text-[34px] sm:text-[40px] lg:text-[48px] font-[274] leading-none tracking-normal mb-8 lg:-mt-2" data-reveal-text data-delay="1">
+            Arris Architects
+          </h2>
+          
+          <!-- Body text: SF Pro, 22px on desktop, 15px on mobile, Justified -->
+          <div class="space-y-4 text-black text-[15px] sm:text-[18px] lg:text-[22px] font-[274] leading-[26px] sm:leading-[30px] lg:leading-[36px] tracking-normal text-left sm:text-justify" data-reveal-text data-delay="2">
+            <p>
+              Arris is a collaboration of individuals with excelling capacities in various facets of Architectural, Urban &amp; Design practices. Setup in 2004-05, Arris has delivered a gamut of designed buildings and spaces including Shopping Malls and Multiplexes, Amusement parks, Educational Institutions and High-End Residential Complexes and Corporate Offices.
+            </p>
+            <p>
+              Arris's articulated practice has built a reputation for High Quality Design Solutions delivered within record time schedules. Distinctive aspect of the firm has been an accurate interpretation of the client's requirements and converting them into reality through cost effective design solutions.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. WHAT WE DO (SERVICES / CAROUSEL STRIP)                                 -->
+  <!-- ========================================================================= -->
+  <section id="what-we-do" class="bg-arris-dark text-white pt-24 pb-20 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Header Row: What we do (36px, 52px line-height) & Explore services (22px, 32px line-height, max-w-[704px]) -->
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between mb-12 sm:mb-16 gap-6">
+        <div>
+          <h2 class="text-white text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-[38px] sm:leading-[46px] lg:leading-[52px] tracking-normal" data-reveal-text>
+            What we do
+          </h2>
+        </div>
+        <p class="text-white text-[16px] sm:text-[19px] lg:text-[22px] font-[274] leading-[26px] sm:leading-[29px] lg:leading-[32px] tracking-[0.01em] max-w-[704px]" data-reveal-text data-delay="1">
+          Explore our range of services designed to meet your needs and deliver the right solutions.
+        </p>
+      </div>
+
+      <!-- 5 Service Cards Carousel on Mobile, Grid on Desktop -->
+      <div class="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-4 lg:gap-5 pb-6 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory">
+        
+        <!-- Card 1: Architecture -->
+        <div class="flex-none w-[78vw] sm:w-[320px] lg:w-auto snap-center group relative rounded-2xl lg:rounded-xl overflow-hidden aspect-[9/14] bg-neutral-900 flex flex-col justify-between shadow-lg" data-reveal-animation>
+          <img 
+            src="images/Rectangle 58.png" 
+            alt="Architecture Service" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+          
+          <!-- Top Arrow Icon -->
+          <div class="relative z-10 p-4 sm:p-5 flex justify-end">
+            <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+          <!-- Bottom Label -->
+          <div class="absolute bottom-0 inset-x-0 h-[75px] card-glass-bar rounded-b-2xl lg:rounded-b-xl flex items-center justify-center px-2 z-10">
+            <span class="text-white text-[16px] sm:text-[18px] lg:text-[22px] font-[274] leading-[36px] tracking-[0.01em] text-center">Architecture</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Interior Design -->
+        <div class="flex-none w-[78vw] sm:w-[320px] lg:w-auto snap-center group relative rounded-2xl lg:rounded-xl overflow-hidden aspect-[9/14] bg-neutral-900 flex flex-col justify-between shadow-lg" data-reveal-animation>
+          <img 
+            src="images/Rectangle 6.png" 
+            alt="Interior Design Service" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+          
+          <!-- Top Arrow Icon -->
+          <div class="relative z-10 p-4 sm:p-5 flex justify-end">
+            <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+          <!-- Bottom Label -->
+          <div class="absolute bottom-0 inset-x-0 h-[75px] card-glass-bar rounded-b-2xl lg:rounded-b-xl flex items-center justify-center px-2 z-10">
+            <span class="text-white text-[16px] sm:text-[18px] lg:text-[22px] font-[274] leading-[36px] tracking-[0.01em] text-center">Interior Design</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Theatre Consultancy -->
+        <div class="flex-none w-[78vw] sm:w-[320px] lg:w-auto snap-center group relative rounded-2xl lg:rounded-xl overflow-hidden aspect-[9/14] bg-neutral-900 flex flex-col justify-between shadow-lg" data-reveal-animation>
+          <img 
+            src="images/Rectangle 60.png" 
+            alt="Theatre Consultancy Service" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+          
+          <!-- Top Arrow Icon -->
+          <div class="relative z-10 p-4 sm:p-5 flex justify-end">
+            <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+          <!-- Bottom Label -->
+          <div class="absolute bottom-0 inset-x-0 h-[75px] card-glass-bar rounded-b-2xl lg:rounded-b-xl flex items-center justify-center px-2 z-10">
+            <span class="text-white text-[16px] sm:text-[18px] lg:text-[22px] font-[274] leading-[36px] tracking-[0.01em] text-center">Theatre Consultancy</span>
+          </div>
+        </div>
+
+        <!-- Card 4: AEC Services -->
+        <div class="flex-none w-[78vw] sm:w-[320px] lg:w-auto snap-center group relative rounded-2xl lg:rounded-xl overflow-hidden aspect-[9/14] bg-neutral-900 flex flex-col justify-between shadow-lg" data-reveal-animation>
+          <img 
+            src="images/Rectangle 61.png" 
+            alt="AEC Services" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+          
+          <!-- Top Arrow Icon -->
+          <div class="relative z-10 p-4 sm:p-5 flex justify-end">
+            <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+          <!-- Bottom Label -->
+          <div class="absolute bottom-0 inset-x-0 h-[75px] card-glass-bar rounded-b-2xl lg:rounded-b-xl flex items-center justify-center px-2 z-10">
+            <span class="text-white text-[16px] sm:text-[18px] lg:text-[22px] font-[274] leading-[36px] tracking-[0.01em] text-center">AEC Services</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Software & Project Management -->
+        <div class="flex-none w-[78vw] sm:w-[320px] lg:w-auto snap-center group relative rounded-2xl lg:rounded-xl overflow-hidden aspect-[9/14] bg-neutral-900 flex flex-col justify-between shadow-lg" data-reveal-animation>
+          <img 
+            src="images/Rectangle 62.png" 
+            alt="Software & Project Management Service" 
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+          
+          <!-- Top Arrow Icon -->
+          <div class="relative z-10 p-4 sm:p-5 flex justify-end">
+            <span class="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 group-hover:bg-white group-hover:text-black transition-colors duration-300">
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </span>
+          </div>
+
+          <!-- Bottom Label -->
+          <div class="absolute bottom-0 inset-x-0 h-[75px] card-glass-bar rounded-b-2xl lg:rounded-b-xl flex items-center justify-center px-2 z-10">
+            <span class="text-white text-[16px] sm:text-[18px] lg:text-[22px] font-[274] leading-[36px] tracking-[0.01em] text-center">Software &amp; Project Management</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. FEATURED PROJECTS (FULL SHOWCASE SECTIONS)                             -->
+  <!-- ========================================================================= -->
+  <section id="projects" class="bg-arris-dark text-white">
+
+    <!-- ===================================================================== -->
+    <!-- PROJECT 1: Devgn Cinex Bellona                                        -->
+    <!-- ===================================================================== -->
+    <div class="sticky_gallery" data-colour-scheme="#121212">
+      <!-- Pinned Content Overlay (Title, CTA button, Metadata, Gradient) -->
+      <div class="sticky_gallery--content-wrapper">
+        <div class="sticky_gallery--content">
+          <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+            Devgn Cinex Bellona
+          </h3>
+          <a href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+            <span class="btn__text">View Project</span>
+          </a>
+        </div>
+        <div class="sticky_gallery--content-details hidden md:flex">
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">CINEMAS</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">THANE</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">2026</span>
+        </div>
+        <div class="sticky_gallery--content-bg"></div>
+      </div>
+
+      <!-- Pinned Main Hero Media (Image 1) -->
+      <div class="sticky_gallery--main-media">
+        <figure>
+          <img 
+            src="images/Rectangle 5.png" 
+            alt="Devgn Cinex Bellona Main Arcade" 
+          />
+        </figure>
+      </div>
+
+      <!-- Gallery Slides (Images 2 & 3 in natural scroll flow) -->
+      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/big_3 1.png" 
+              alt="Devgn Cinex Turquoise Auditorium Hall" 
+            />
+          </figure>
+        </div>
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/thumb_6 1.png" 
+              alt="Devgn Cinex Luxury Arched Banquet" 
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================== -->
+    <!-- PROJECT 2: DPS Hazaribaug                                             -->
+    <!-- ===================================================================== -->
+    <div class="sticky_gallery" data-colour-scheme="#121212">
+      <!-- Pinned Content Overlay -->
+      <div class="sticky_gallery--content-wrapper">
+        <div class="sticky_gallery--content">
+          <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+            DPS Hazaribaug
+          </h3>
+          <a href="project-detail.html?id=dps-hazaribaug" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+            <span class="btn__text">View Project</span>
+          </a>
+        </div>
+        <div class="sticky_gallery--content-details hidden md:flex">
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">SCHOOLS</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">HAZARIBAUG</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">2026</span>
+        </div>
+        <div class="sticky_gallery--content-bg"></div>
+      </div>
+
+      <!-- Pinned Main Hero Media -->
+      <div class="sticky_gallery--main-media">
+        <figure>
+          <img 
+            src="images/Rectangle 6.png" 
+            alt="DPS Hazaribaug Institutional Campus" 
+          />
+        </figure>
+      </div>
+
+      <!-- Gallery Slides -->
+      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/big_5 1.png" 
+              alt="DPS Hazaribaug Covered Walkway overlooking Lawn" 
+            />
+          </figure>
+        </div>
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/Rectangle 6 (1).png" 
+              alt="Delhi Public School Hazaribag Entrance and Courtyard Stairs" 
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================== -->
+    <!-- PROJECT 3: Aldona Villa                                               -->
+    <!-- ===================================================================== -->
+    <div class="sticky_gallery" data-colour-scheme="#121212">
+      <!-- Pinned Content Overlay -->
+      <div class="sticky_gallery--content-wrapper">
+        <div class="sticky_gallery--content">
+          <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+            Aldona Villa
+          </h3>
+          <a href="project-detail.html?id=aldona-villa" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+            <span class="btn__text">View Project</span>
+          </a>
+        </div>
+        <div class="sticky_gallery--content-details hidden md:flex">
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">RESIDENTIAL</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">ALDONA, GOA</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">ONGOING</span>
+        </div>
+        <div class="sticky_gallery--content-bg"></div>
+      </div>
+
+      <!-- Pinned Main Hero Media -->
+      <div class="sticky_gallery--main-media">
+        <figure>
+          <img 
+            src="images/Rectangle 7.png" 
+            alt="Aldona Villa Luxury Residence Exterior" 
+          />
+        </figure>
+      </div>
+
+      <!-- Gallery Slides -->
+      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/big_5 1 (1).png" 
+              alt="Aldona Villa Master Bedroom Interior" 
+            />
+          </figure>
+        </div>
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/Rectangle 6 (2).png" 
+              alt="Aldona Villa Poolside Patio Bar" 
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ===================================================================== -->
+    <!-- PROJECT 4: Rajhans Precia                                             -->
+    <!-- ===================================================================== -->
+    <div class="sticky_gallery" data-colour-scheme="#121212">
+      <!-- Pinned Content Overlay -->
+      <div class="sticky_gallery--content-wrapper">
+        <div class="sticky_gallery--content">
+          <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
+            Rajhans Precia
+          </h3>
+          <a href="project-detail.html?id=rajhans-precia" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+            <span class="btn__text">View Project</span>
+          </a>
+        </div>
+        <div class="sticky_gallery--content-details hidden md:flex">
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">COMMERCIAL</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">SURAT</span>
+          <span class="text-xs font-normal tracking-[0.22em] text-white/80 uppercase">2024</span>
+        </div>
+        <div class="sticky_gallery--content-bg"></div>
+      </div>
+
+      <!-- Pinned Main Hero Media -->
+      <div class="sticky_gallery--main-media">
+        <figure>
+          <img 
+            src="images/Rectangle 6 (3).png" 
+            alt="Rajhans Precia Luxury Cinema Lobby" 
+          />
+        </figure>
+      </div>
+
+      <!-- Gallery Slides -->
+      <div class="max-w-6xl mx-auto px-5 sm:px-12">
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/big_5 1 (2).png" 
+              alt="Rajhans Precia Concession Lounge" 
+            />
+          </figure>
+        </div>
+        <div class="sticky_gallery--slide">
+          <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
+            <img 
+              src="images/Rectangle 6 (4).png" 
+              alt="Rajhans Precia Chevron Illuminated Auditorium" 
+            />
+          </figure>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. TESTIMONIALS                                                           -->
+  <!-- ========================================================================= -->
+  <section id="testimonials" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-8 sm:mb-10">
+        Testimonials
+      </h2>
+
+      <!-- Testimonials Card & Carousel -->
+      <div class="relative flex items-center">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          
+          <!-- Testimonial 1 (Active) -->
+          <div class="bg-white rounded-2xl sm:rounded-xl p-6 sm:p-9 shadow-sm border border-neutral-100 flex flex-col justify-between min-h-[340px] sm:min-h-[380px]">
+            <div>
+              <!-- Author Header -->
+              <div class="flex items-center space-x-4 mb-6">
+                <div class="w-12 h-12 rounded-full bg-neutral-950 flex items-center justify-center text-white font-medium text-sm flex-shrink-0">
+                  AG
+                </div>
+                <div>
+                  <h4 class="text-base sm:text-sm font-medium text-neutral-900">Atul Goel</h4>
+                  <p class="text-xs text-neutral-500 font-light mt-0.5">Managing Director - E-City Ventures, Essel Group</p>
+                </div>
+              </div>
+
+              <!-- Quote Body -->
+              <p class="text-sm sm:text-sm text-neutral-700 font-light leading-relaxed">
+                Your design has helped contribute to the success of both our malls. As always, your design has helped contribute to the success of both our malls at Lucknow and Coimbatore. The resounding testimony to the successful design is that both the malls have been 100% occupied even during the severe global recession.
+              </p>
+            </div>
+
+            <!-- 5 Star Rating -->
+            <div class="flex items-center space-x-1 text-amber-400 mt-6">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 (Desktop Placeholder) -->
+          <div class="hidden md:block bg-white rounded-xl p-8 shadow-sm border border-neutral-100 min-h-[380px]"></div>
+
+          <!-- Testimonial 3 (Desktop Placeholder) -->
+          <div class="hidden md:block bg-white rounded-xl p-8 shadow-sm border border-neutral-100 min-h-[380px]"></div>
+
+        </div>
+
+        <!-- Next Arrow Floating Button (Desktop) -->
+        <button class="hidden md:flex absolute -right-4 sm:-right-6 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200 z-10" aria-label="Next Testimonial">
+          <i data-lucide="chevron-right" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. PUBLICATIONS (MATCHING SLICE 15 & 16)                                   -->
+  <!-- ========================================================================= -->
+  <section id="publications" class="bg-arris-cream py-10 sm:py-16 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-8 sm:mb-10">
+        Publications
+      </h2>
+
+      <!-- Publications Carousel on Mobile, Grid on Desktop -->
+      <div class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 lg:gap-8 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory">
+        <!-- Publication 1 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Wav - Cinema</h4>
+          <p class="text-xs text-neutral-500 font-light mt-0.5">2012</p>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Design Solution</h4>
+          <p class="text-xs text-neutral-500 font-light mt-0.5">Dec - Jan 2015</p>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-base sm:text-sm font-normal text-neutral-900">AWI</h4>
+          <p class="text-xs text-neutral-500 font-light mt-0.5">2011</p>
+        </div>
+
+        <!-- Publication 4 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Cinema</h4>
+          <p class="text-xs text-neutral-500 font-light mt-0.5">2009</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 7. OUR LEADERSHIP TEAM (MATCHING SLICE 16 & 17)                           -->
+  <!-- ========================================================================= -->
+  <section id="leadership" class="bg-arris-cream pt-10 sm:pt-16 pb-20 sm:pb-24 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-8 sm:mb-10" data-reveal-text>
+        Our Leadership Team
+      </h2>
+
+      <!-- Team Members Carousel on Mobile, Grid on Desktop -->
+      <div class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-5 lg:gap-8 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory">
+        
+        <!-- Member 1: AR. Subhashish Modi -->
+        <div class="flex-none w-[75vw] sm:w-[280px] lg:w-auto snap-center" data-reveal-animation>
+          <div class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-neutral-200">
+            <img 
+              src="images/Group 15.png" 
+              alt="AR. Subhashish Modi - Director" 
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <h4 class="text-lg sm:text-base font-normal text-neutral-900 mt-4 tracking-tight">AR. Subhashish Modi</h4>
+          <p class="text-sm sm:text-xs text-neutral-500 font-light mt-0.5">Director</p>
+        </div>
+
+        <!-- Member 2: AR. Satish Shetty -->
+        <div class="flex-none w-[75vw] sm:w-[280px] lg:w-auto snap-center" data-reveal-animation>
+          <div class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-neutral-200">
+            <img 
+              src="images/Rectangle 17.png" 
+              alt="AR. Satish Shetty - Director" 
+              class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <h4 class="text-lg sm:text-base font-normal text-neutral-900 mt-4 tracking-tight">AR. Satish Shetty</h4>
+          <p class="text-sm sm:text-xs text-neutral-500 font-light mt-0.5">Director</p>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 8. PRE-FOOTER FULL-WIDTH ARCHWAY                                          -->
+  <!-- ========================================================================= -->
+  <div class="w-full h-[50vh] sm:h-[70vh] lg:h-[85vh] min-h-[340px] max-h-[850px] overflow-hidden" data-reveal-animation>
+    <img 
+      src="images/bottom-1.png" 
+      alt="Arris Architects Glowing Archway Portal" 
+      class="w-full h-full object-cover object-center"
+    />
+  </div>
+
+
+  <!-- ========================================================================= -->
+  <!-- 9. CONTACT US (MATCHING SLICE 19 & 20)                                    -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-3" data-reveal-text>
+        Contact us
+      </h2>
+      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[274] leading-[150%] max-w-[646px] mb-12 sm:mb-16" data-reveal-text data-delay="1">
+        Have any questions? Feel free to contact us for more information.
+      </p>
+
+      <!-- 3 Contact Columns (Stacked on mobile, 3-col on desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+        
+        <!-- Column 1: Email -->
+        <div>
+          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h4 class="text-xl font-normal text-neutral-900 mb-2">Email</h4>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Have a question or idea? Drop us an email we'd love to hear from you.
+          </p>
+          <a href="mailto:arrisarch@gmail.com" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+            arrisarch@gmail.com
+          </a>
+        </div>
+
+        <!-- Column 2: Phone -->
+        <div>
+          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h4 class="text-xl font-normal text-neutral-900 mb-2">Phone</h4>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Have a question? Give us a call &mdash; we're happy to help.
+          </p>
+          <a href="tel:+912225829387" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+            +912225829387, +912225828996
+          </a>
+        </div>
+
+        <!-- Column 3: Office -->
+        <div>
+          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <h4 class="text-xl font-normal text-neutral-900 mb-2">Office</h4>
+          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+            Find us at our office.
+          </p>
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-sm font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 10. FOOTER (MATCHING SLICE 20 & 21)                                       -->
+  <!-- ========================================================================= -->
+  <footer class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900">
+    <div class="max-w-[1920px] mx-auto">
+      
+      <!-- Top / Main Block: Logo, Nav, Socials (Stacked centered on mobile, flex-row on desktop) -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10">
+        <!-- Logo -->
+        <a href="#" class="inline-block mx-auto lg:mx-0">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 w-auto" />
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-sm lg:text-xs text-white/90 font-light text-center">
+          <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="#who-we-are" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#what-we-do" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-6 lg:space-x-5 text-white/80">
+          <a href="#" class="hover:text-white transition-colors" aria-label="Facebook">
+            <i data-lucide="facebook" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="Instagram">
+            <i data-lucide="instagram" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="Twitter / X">
+            <i data-lucide="twitter" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <a href="#" class="hover:text-white transition-colors" aria-label="YouTube">
+            <i data-lucide="youtube" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full border-t border-neutral-800"></div>
+
+      <!-- Bottom Row: Copyright & Legal (Centered on mobile, spaced on desktop) -->
+      <div class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[12px] sm:text-[11px] text-neutral-400 font-light gap-4 text-center">
+        <div>
+          &copy; 2026. All rights reserved.
+        </div>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons & Mobile Menu Toggle -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMenu() {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+  </script>
+
+  <!-- Lenis Smooth Scroll (Matching Reference HBA) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP & Core Animations Runtime (Matching Reference) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+</body>
+</html>
