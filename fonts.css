@@ -25,14 +25,6 @@
 @font-face {
   font-family: 'SF Pro Display';
   src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
-  font-weight: 274;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -77,14 +69,6 @@
 @font-face {
   font-family: 'SF Pro Text';
   src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Light.otf') format('opentype');
-  font-weight: 274;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'SF Pro Text';
-  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Text-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -126,14 +110,6 @@
 /* ------------------------------------------------------------------------- */
 /* 3. SF PRO (Universal Master Alias)                                        */
 /* ------------------------------------------------------------------------- */
-@font-face {
-  font-family: 'SF Pro';
-  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
-  font-weight: 274;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: 'SF Pro';
   src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
