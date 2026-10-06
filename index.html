@@ -31,7 +31,7 @@
             arris: {
               cream: '#F4F0EB',
               creamDark: '#EAE5DD',
-              dark: '#121212',
+              dark: '#202020',
               cardDark: '#1E1E1E',
               footerDark: '#161616',
             }
@@ -111,7 +111,7 @@
       </a>
 
       <!-- Desktop Navigation Links -->
-      <ul class="hidden md:flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-medium tracking-[0.22em] uppercase">
+      <ul class="hidden md:flex items-center space-x-10 lg:space-x-14 text-white text-[16px] font-medium tracking-[0.22em] uppercase">
         <li><a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a></li>
         <li><a href="#what-we-do" class="hover:text-white/70 transition-colors">EXPERTISE</a></li>
         <li><a href="#who-we-are" class="hover:text-white/70 transition-colors">PRACTICE</a></li>
@@ -193,7 +193,7 @@
           </h2>
           
           <!-- Body text: SF Pro, 22px on desktop, 15px on mobile, Justified -->
-          <div class="space-y-4 text-black text-[15px] sm:text-[18px] lg:text-[22px] font-[274] leading-[26px] sm:leading-[30px] lg:leading-[36px] tracking-normal text-left sm:text-justify" data-reveal-text data-delay="2">
+          <div class="space-y-4 text-black text-[22px] sm:text-[18px] lg:text-[22px] font-[274] leading-[26px] sm:leading-[30px] lg:leading-[36px] tracking-normal text-left sm:text-justify" data-reveal-text data-delay="2">
             <p>
               Arris is a collaboration of individuals with excelling capacities in various facets of Architectural, Urban &amp; Design practices. Setup in 2004-05, Arris has delivered a gamut of designed buildings and spaces including Shopping Malls and Multiplexes, Amusement parks, Educational Institutions and High-End Residential Complexes and Corporate Offices.
             </p>
@@ -358,7 +358,7 @@
           <h3 class="text-[32px] sm:text-[50px] lg:text-[64px] font-[274] leading-tight tracking-[0.02em] text-white mb-4">
             Devgn Cinex Bellona
           </h3>
-          <a href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60 rounded-full px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
+          <a style="border-radius: 10px;" href="project-detail.html?id=devgn-cinex-bellona" class="btn-wipe inline-block border border-white/60  px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-medium text-white transition-colors duration-300">
             <span class="btn__text">View Project</span>
           </a>
         </div>
@@ -810,6 +810,48 @@
   </section>
 
 
+    <!-- ========================================================================= -->
+  <!-- 6. PUBLICATIONS (MATCHING SLICE 15 & 16)                                   -->
+  <!-- ========================================================================= -->
+  <section id="publications" class="bg-arris-cream py-10 sm:py-16 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-8 sm:mb-10">
+        Publications
+      </h2>
+
+      <!-- Publications Carousel on Mobile, Grid on Desktop -->
+      <div class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 lg:gap-8 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory">
+        <!-- Publication 1 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-[28px] font-normal text-neutral-900">Wav - Cinema</h4>
+          <p class="text-[20px] text-neutral-500 font-light mt-0.5">2012</p>
+        </div>
+
+        <!-- Publication 2 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-[28px] font-normal text-neutral-900">Design Solution</h4>
+          <p class="text-[20px] text-neutral-500 font-light mt-0.5">Dec - Jan 2015</p>
+        </div>
+
+        <!-- Publication 3 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-[28px] font-normal text-neutral-900">AWI</h4>
+          <p class="text-[20px] text-neutral-500 font-light mt-0.5">2011</p>
+        </div>
+
+        <!-- Publication 4 -->
+        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
+          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
+          <h4 class="text-[28px] font-normal text-neutral-900">Cinema</h4>
+          <p class="text-[20px] text-neutral-500 font-light mt-0.5">2009</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========================================================================= -->
   <!-- 5. TESTIMONIALS                                                           -->
   <!-- ========================================================================= -->
@@ -832,24 +874,24 @@
                   AG
                 </div>
                 <div>
-                  <h4 class="text-base sm:text-sm font-medium text-neutral-900">Atul Goel</h4>
-                  <p class="text-xs text-neutral-500 font-light mt-0.5">Managing Director - E-City Ventures, Essel Group</p>
+                  <h4 class="text-[24px] font-medium text-neutral-900">Atul Goel</h4>
+                  <p class="text-[18px] text-neutral-500 font-light mt-0.5">Managing Director - E-City Ventures, Essel Group</p>
                 </div>
               </div>
 
               <!-- Quote Body -->
-              <p class="text-sm sm:text-sm text-neutral-700 font-light leading-relaxed">
+              <p class="text-[20px] text-neutral-700 font-light leading-relaxed">
                 Your design has helped contribute to the success of both our malls. As always, your design has helped contribute to the success of both our malls at Lucknow and Coimbatore. The resounding testimony to the successful design is that both the malls have been 100% occupied even during the severe global recession.
               </p>
             </div>
 
             <!-- 5 Star Rating -->
             <div class="flex items-center space-x-1 text-amber-400 mt-6">
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
-              <i data-lucide="star" class="w-4 h-4 fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-[32px] h-[32px] fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-[32px] h-[32px] fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-[32px] h-[32px] fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-[32px] h-[32px] fill-amber-400 stroke-none"></i>
+              <i data-lucide="star" class="w-[32px] h-[32px] fill-amber-400 stroke-none"></i>
             </div>
           </div>
 
@@ -865,49 +907,6 @@
         <button class="hidden md:flex absolute -right-4 sm:-right-6 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200 z-10" aria-label="Next Testimonial">
           <i data-lucide="chevron-right" class="w-5 h-5"></i>
         </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================================================= -->
-  <!-- 6. PUBLICATIONS (MATCHING SLICE 15 & 16)                                   -->
-  <!-- ========================================================================= -->
-  <section id="publications" class="bg-arris-cream py-10 sm:py-16 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
-      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[274] leading-none tracking-tight mb-8 sm:mb-10">
-        Publications
-      </h2>
-
-      <!-- Publications Carousel on Mobile, Grid on Desktop -->
-      <div class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 lg:gap-8 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory">
-        <!-- Publication 1 -->
-        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
-          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Wav - Cinema</h4>
-          <p class="text-xs text-neutral-500 font-light mt-0.5">2012</p>
-        </div>
-
-        <!-- Publication 2 -->
-        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
-          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Design Solution</h4>
-          <p class="text-xs text-neutral-500 font-light mt-0.5">Dec - Jan 2015</p>
-        </div>
-
-        <!-- Publication 3 -->
-        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
-          <h4 class="text-base sm:text-sm font-normal text-neutral-900">AWI</h4>
-          <p class="text-xs text-neutral-500 font-light mt-0.5">2011</p>
-        </div>
-
-        <!-- Publication 4 -->
-        <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-          <div class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"></div>
-          <h4 class="text-base sm:text-sm font-normal text-neutral-900">Cinema</h4>
-          <p class="text-xs text-neutral-500 font-light mt-0.5">2009</p>
-        </div>
       </div>
     </div>
   </section>
@@ -934,8 +933,8 @@
               class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <h4 class="text-lg sm:text-base font-normal text-neutral-900 mt-4 tracking-tight">AR. Subhashish Modi</h4>
-          <p class="text-sm sm:text-xs text-neutral-500 font-light mt-0.5">Director</p>
+          <h4 class="text-[26px] font-normal text-neutral-900 mt-4 tracking-tight">AR. Subhashish Modi</h4>
+          <p class="text-[20px] text-neutral-500 font-light mt-0.5">Director</p>
         </div>
 
         <!-- Member 2: AR. Satish Shetty -->
@@ -947,8 +946,8 @@
               class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
             />
           </div>
-          <h4 class="text-lg sm:text-base font-normal text-neutral-900 mt-4 tracking-tight">AR. Satish Shetty</h4>
-          <p class="text-sm sm:text-xs text-neutral-500 font-light mt-0.5">Director</p>
+          <h4 class="text-[26px] font-normal text-neutral-900 mt-4 tracking-tight">AR. Satish Shetty</h4>
+          <p class="text-[20px]-xs text-neutral-500 font-light mt-0.5">Director</p>
         </div>
 
 
@@ -987,11 +986,11 @@
         <!-- Column 1: Email -->
         <div>
           <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h4 class="text-xl font-normal text-neutral-900 mb-2">Email</h4>
-          <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+          <p class="text-black text-[16px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
             Have a question or idea? Drop us an email we'd love to hear from you.
           </p>
-          <a href="mailto:arrisarch@gmail.com" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+          <a href="mailto:arrisarch@gmail.com" class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
             arrisarch@gmail.com
           </a>
         </div>
@@ -999,11 +998,11 @@
         <!-- Column 2: Phone -->
         <div>
           <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h4 class="text-xl font-normal text-neutral-900 mb-2">Phone</h4>
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
           <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
             Have a question? Give us a call &mdash; we're happy to help.
           </p>
-          <a href="tel:+912225829387" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+          <a href="tel:+912225829387" class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
             +912225829387, +912225828996
           </a>
         </div>
@@ -1011,11 +1010,11 @@
         <!-- Column 3: Office -->
         <div>
           <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h4 class="text-xl font-normal text-neutral-900 mb-2">Office</h4>
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Office</h4>
           <p class="text-black text-[15px] sm:text-[16px] font-[274] leading-[150%] max-w-[379px] mb-3">
             Find us at our office.
           </p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-sm font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-[18px]  font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
             711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
           </a>
         </div>
@@ -1039,7 +1038,7 @@
         </a>
 
         <!-- Footer Navigation Links -->
-        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-sm lg:text-xs text-white/90 font-light text-center">
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[20px] text-white/90 font-light text-center">
           <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
           <li><a href="#who-we-are" class="hover:text-white transition-colors">About Us</a></li>
           <li><a href="#what-we-do" class="hover:text-white transition-colors">Services</a></li>
@@ -1072,7 +1071,7 @@
       <div class="w-full border-t border-neutral-800"></div>
 
       <!-- Bottom Row: Copyright & Legal (Centered on mobile, spaced on desktop) -->
-      <div class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[12px] sm:text-[11px] text-neutral-400 font-light gap-4 text-center">
+      <div class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[16px]  text-neutral-400 font-light gap-4 text-center">
         <div>
           &copy; 2026. All rights reserved.
         </div>
