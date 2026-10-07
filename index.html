@@ -16,16 +16,9 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: [
-                '"SF Pro Display"',
-                '"SF Pro"',
-                '"SF Pro Text"',
-                "-apple-system",
-                "BlinkMacSystemFont",
-                "sans-serif",
-              ],
-              display: ['"SF Pro Display"', '"SF Pro"', "sans-serif"],
-              text: ['"SF Pro Text"', '"SF Pro"', "sans-serif"],
+              sans: ['"SF Pro Display"', 'sans-serif'],
+              display: ['"SF Pro Display"', 'sans-serif'],
+              text: ['"SF Pro Display"', 'sans-serif'],
             },
             fontWeight: {
               light: "300",
@@ -53,13 +46,7 @@
 
     <style>
       body {
-        font-family:
-          "SF Pro Display",
-          "SF Pro",
-          "SF Pro Text",
-          -apple-system,
-          BlinkMacSystemFont,
-          sans-serif;
+        font-family: "SF Pro Display", sans-serif;
         font-weight: 300;
         background-color: #f4f0eb;
         color: #000000;
@@ -337,7 +324,7 @@
 
             <!-- Desktop Main Heading: SF Pro, 48px, Weight 274, perfectly top-aligned with top edge of image -->
             <h2
-              class="hidden lg:block text-black text-[34px] sm:text-[40px] lg:text-[30px] font-[300] leading-none tracking-normal mb-4 lg:-mt-1"
+              class="text-black text-[26px] sm:text-[32px] lg:text-[30px] font-[300] leading-none tracking-normal mb-4 lg:-mt-1"
               data-reveal-text
               data-delay="1"
             >
@@ -401,12 +388,12 @@
 
         <!-- 5 Service Cards Carousel on Mobile, Grid on Desktop -->
         <div
-          class="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-4 lg:gap-5 pb-6 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory"
+          class="flex overflow-x-auto lg:grid lg:grid-cols-5 gap-3 lg:gap-3 pb-6 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory"
         >
           <!-- Card 1: Architecture -->
           <div
           style="border-radius: 5px;"
-            class="flex-none w-[95vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[430px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[430px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -441,7 +428,7 @@
           <!-- Card 2: Interior Design -->
           <div
            style="border-radius: 5px;"
-            class="flex-none w-[90vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -476,7 +463,7 @@
           <!-- Card 3: Theatre Consultancy -->
           <div
            style="border-radius: 5px;"
-            class="flex-none w-[90vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -511,7 +498,7 @@
           <!-- Card 4: commercial-->
           <div
            style="border-radius: 5px;"
-            class="flex-none w-[90vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -546,7 +533,7 @@
           <!-- Card 5: School -->
           <div
            style="border-radius: 5px;"
-            class="flex-none w-[90vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px]  bg-neutral-900 flex flex-col justify-between shadow-lg"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px]  bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -633,7 +620,7 @@
         </div>
 
         <!-- Gallery Slides (Images 2 & 3 in natural scroll flow) -->
-        <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="max-w-7xl xl:max-w-[1840px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
@@ -701,7 +688,7 @@
         </div>
 
         <!-- Gallery Slides -->
-        <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="max-w-7xl xl:max-w-[1840px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
@@ -769,7 +756,7 @@
         </div>
 
         <!-- Gallery Slides -->
-        <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="max-w-7xl xl:max-w-[1840px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
@@ -837,7 +824,7 @@
         </div>
 
         <!-- Gallery Slides -->
-        <div class="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12">
+        <div class="max-w-7xl xl:max-w-[1840px] mx-auto px-4 sm:px-8 lg:px-12">
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
@@ -869,7 +856,7 @@
         <h2
           class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-8 sm:mb-10"
         >
-          Publications
+          Awards & Recognition
         </h2>
 
         <!-- Publications Carousel on Mobile, Grid on Desktop -->
@@ -881,10 +868,10 @@
             <div
               class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"
             ></div>
-            <h4 class="text-[28px] font-normal text-neutral-900">
+            <h4 class="text-[24px] font-normal text-neutral-900">
               Wav - Cinema
             </h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">2012</p>
+            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2012</p>
           </div>
 
           <!-- Publication 2 -->
@@ -892,10 +879,10 @@
             <div
               class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"
             ></div>
-            <h4 class="text-[28px] font-normal text-neutral-900">
+            <h4 class="text-[24px] font-normal text-neutral-900">
               Design Solution
             </h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">
+            <p class="text-[16px] text-neutral-500 font-light mt-0.5">
               Dec - Jan 2015
             </p>
           </div>
@@ -905,8 +892,8 @@
             <div
               class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"
             ></div>
-            <h4 class="text-[28px] font-normal text-neutral-900">AWI</h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">2011</p>
+            <h4 class="text-[24px] font-normal text-neutral-900">AWI</h4>
+            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2011</p>
           </div>
 
           <!-- Publication 4 -->
@@ -914,8 +901,8 @@
             <div
               class="w-full aspect-[3/4] bg-[#D9D9D9] rounded-2xl lg:rounded-md shadow-sm mb-4"
             ></div>
-            <h4 class="text-[28px] font-normal text-neutral-900">Cinema</h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">2009</p>
+            <h4 class="text-[24px] font-normal text-neutral-900">Cinema</h4>
+            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2009</p>
           </div>
         </div>
       </div>
@@ -1094,7 +1081,7 @@
     <!-- 8. PRE-FOOTER FULL-WIDTH ARCHWAY                                          -->
     <!-- ========================================================================= -->
     <div
-      class="w-full h-[50vh] sm:h-[70vh] lg:h-[85vh] min-h-[340px] max-h-[850px] overflow-hidden"
+      class="w-full h-[50vh] sm:h-[70vh] lg:h-[100vh] min-h-[340px] max-h-[950px] overflow-hidden"
       data-reveal-animation
     >
       <img
@@ -1219,7 +1206,7 @@
 
           <!-- Footer Navigation Links -->
           <ul
-            class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[20px] text-white/90 font-light text-center"
+            class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[16px] text-white/90 font-light text-center"
           >
             <li>
               <a href="#" class="hover:text-white transition-colors">Home</a>
@@ -1252,41 +1239,21 @@
           </ul>
 
           <!-- Social Icons -->
-          <div class="flex items-center space-x-6 lg:space-x-5 text-white/80">
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              aria-label="Facebook"
-            >
-              <i data-lucide="facebook" class="w-4 h-4"></i>
+          <div class="flex items-center space-x-6 lg:space-x-5">
+            <a href="#" aria-label="Facebook">
+              <img src="images/Vector.png" alt="Facebook" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              aria-label="Instagram"
-            >
-              <i data-lucide="instagram" class="w-4 h-4"></i>
+            <a href="#" aria-label="Instagram">
+              <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              aria-label="Twitter / X"
-            >
-              <i data-lucide="twitter" class="w-4 h-4"></i>
+            <a href="#" aria-label="Twitter / X">
+              <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              aria-label="LinkedIn"
-            >
-              <i data-lucide="linkedin" class="w-4 h-4"></i>
+            <a href="#" aria-label="LinkedIn">
+              <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
-            <a
-              href="#"
-              class="hover:text-white transition-colors"
-              aria-label="YouTube"
-            >
-              <i data-lucide="youtube" class="w-4 h-4"></i>
+            <a href="#" aria-label="YouTube">
+              <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
           </div>
         </div>
@@ -1294,9 +1261,9 @@
         <!-- Divider -->
         <div class="w-full border-t border-neutral-800"></div>
 
-        <!-- Bottom Row: Copyright & Legal (Centered on mobile, spaced on desktop) -->
+        <!-- Bottom Row: Copyright & Legal -->
         <div
-          class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[16px] text-neutral-400 font-light gap-4 text-center"
+          class="flex flex-col sm:flex-row items-center justify-center pt-8 text-[16px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
         >
           <div>&copy; 2026. All rights reserved.</div>
           <div
