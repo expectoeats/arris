@@ -86,6 +86,53 @@
       img {
         image-rendering: auto;
       }
+
+      /* Navbar Dropdown for PRACTICE */
+      .nav-dropdown {
+        position: relative;
+      }
+      .nav-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        min-width: 220px;
+        background: rgba(22, 22, 22, 0.97);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        padding: 14px 0;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        z-index: 100;
+      }
+      .nav-dropdown:hover .nav-dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+      }
+      .nav-dropdown-menu li {
+        width: 100%;
+      }
+      .nav-dropdown-menu a {
+        display: block;
+        padding: 10px 22px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 12px;
+        font-weight: 300;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-align: left;
+        white-space: nowrap;
+        transition: color 0.2s ease, background-color 0.2s ease;
+      }
+      .nav-dropdown-menu a:hover {
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.06);
+      }
     </style>
   </head>
   <body class="antialiased">
@@ -136,7 +183,7 @@
           <img
             src="images/image 7.png"
             alt="Arris Architects Logo"
-            class="h-10 sm:h-11 lg:h-14 w-auto drop-shadow-sm brightness-100"
+            class="h-8 sm:h-10 lg:h-10 w-auto drop-shadow-sm brightness-100"
           />
         </a>
 
@@ -158,10 +205,18 @@
               >EXPERTISE</a
             >
           </li>
-          <li>
-            <a href="#who-we-are" class="hover:text-white/70 transition-colors"
+          <li class="nav-dropdown">
+            <a href="#who-we-are" class="hover:text-white/70 transition-colors cursor-default"
               >PRACTICE</a
             >
+            <ul class="nav-dropdown-menu">
+              <li><a href="about-arris.html">About Arris</a></li>
+              <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
+              <li><a href="about-arris.html#design-process">Design Process</a></li>
+              <li><a href="about-arris.html#careers">Careers</a></li>
+              <li><a href="about-arris.html#legacy">Legacy</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
           </li>
           <li>
             <a href="#leadership" class="hover:text-white/70 transition-colors"
@@ -169,7 +224,7 @@
             >
           </li>
           <li>
-            <a href="#contact" class="hover:text-white/70 transition-colors"
+            <a href="contact.html" class="hover:text-white/70 transition-colors"
               >CONTACT</a
             >
           </li>
@@ -256,7 +311,7 @@
           </li>
           <li>
             <a
-              href="#contact"
+              href="contact.html"
               class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
               >Contact Us</a
             >
@@ -1119,7 +1174,7 @@
           <div>
             <i
               data-lucide="mail"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"
+              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
             ></i>
             <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
             <p
@@ -1140,7 +1195,7 @@
           <div>
             <i
               data-lucide="phone"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"
+              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
             ></i>
             <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
             <p
@@ -1160,7 +1215,7 @@
           <div>
             <i
               data-lucide="map-pin"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"
+              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
             ></i>
             <h4 class="text-[32px] font-normal text-neutral-900 mb-2">
               Office
@@ -1212,7 +1267,7 @@
               <a href="#" class="hover:text-white transition-colors">Home</a>
             </li>
             <li>
-              <a href="#who-we-are" class="hover:text-white transition-colors"
+              <a href="about-arris.html" class="hover:text-white transition-colors"
                 >About Us</a
               >
             </li>
@@ -1232,7 +1287,7 @@
               >
             </li>
             <li>
-              <a href="#contact" class="hover:text-white transition-colors"
+              <a href="contact.html" class="hover:text-white transition-colors"
                 >Contact Us</a
               >
             </li>

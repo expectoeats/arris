@@ -287,7 +287,7 @@
 }
 
 .sticky_gallery--slide:last-child {
-  margin-bottom: calc(var(--section-padding) * 3);
+  margin-bottom: calc(var(--section-padding) * 2.4);
 }
 
 .sticky_gallery--slide img {

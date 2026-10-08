@@ -72,6 +72,53 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
+    /* Navbar Dropdown for PRACTICE */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 220px;
+      background: rgba(22, 22, 22, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu li {
+      width: 100%;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -94,16 +141,26 @@
       <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
         <!-- Logo -->
         <a href="index.html" class="inline-block">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-9 w-auto" />
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-10 sm:h-11 lg:h-14 w-auto" />
         </a>
 
         <!-- Desktop Nav Links -->
         <ul class="hidden md:flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
           <li><a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a></li>
           <li><a href="expertise-interior.html" class="font-[300] text-white border-b border-white pb-0.5">EXPERTISE</a></li>
-          <li><a href="index.html#who-we-are" class="hover:text-white/70 transition-colors">PRACTICE</a></li>
+          <li class="nav-dropdown">
+            <a href="index.html#who-we-are" class="hover:text-white/70 transition-colors cursor-default">PRACTICE</a>
+            <ul class="nav-dropdown-menu">
+              <li><a href="about-arris.html">About Arris</a></li>
+              <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
+              <li><a href="about-arris.html#design-process">Design Process</a></li>
+              <li><a href="about-arris.html#careers">Careers</a></li>
+              <li><a href="about-arris.html#legacy">Legacy</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </li>
           <li><a href="index.html#leadership" class="hover:text-white/70 transition-colors">STUDIO</a></li>
-          <li><a href="#contact" class="hover:text-white/70 transition-colors">CONTACT</a></li>
+          <li><a href="contact.html" class="hover:text-white/70 transition-colors">CONTACT</a></li>
         </ul>
 
         <!-- Mobile Menu Trigger -->
@@ -138,9 +195,9 @@
         <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
         <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
         <li><a href="expertise-interior.html" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Expertise</a></li>
-        <li><a href="index.html#who-we-are" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
+        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
         <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
-        <li><a href="#contact" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+        <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
       </ul>
 
       <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
@@ -166,7 +223,7 @@
         <!-- Left Column: Intro Text + Arched Corridor Image -->
         <div class="w-full lg:w-1/2">
           <!-- Intro Headline -->
-          <h2 class="text-black text-[22px] sm:text-[26px] lg:text-[30px] font-[300] leading-[1.4] tracking-normal mb-8 sm:mb-10 max-w-[520px]">
+          <h2 class="text-black text-[18px] sm:text-[22px] lg:text-[26px] font-[300] leading-[1.4] tracking-normal mb-8 sm:mb-10 max-w-[520px]">
             We design interiors where thoughtful details, functionality, and aesthetics come together seamlessly.
           </h2>
 
@@ -185,14 +242,14 @@
           <!-- Modern Room with Orange Sofa Image -->
           <div class="w-full overflow-hidden mb-6 sm:mb-8">
             <img 
-              src="images/expertise/Rectangle 66.png" 
+              src="images/expertise/image 9.png" 
               alt="Modern Living Space with Designer Furniture" 
               class="w-full h-auto object-cover"
             />
           </div>
 
           <!-- Description Paragraph -->
-          <div class="text-black text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[1.7] tracking-normal text-justify max-w-[600px]">
+          <div class="text-black text-[15px] sm:text-[16px] lg:text-[18px] font-[300] leading-[24px] sm:leading-[26px] lg:leading-[30px] tracking-normal text-left sm:text-justify max-w-[600px]">
             <p>
               At Arris, we believe that well-designed interiors have the power to shape experiences, influence emotions, and transform the way people interact with a space. Our interior design approach brings together creativity, functionality, comfort, and attention to detail to create environments that are both visually distinctive and deeply purposeful.
             </p>
@@ -210,19 +267,19 @@
   <section class="bg-arris-cardDark py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <!-- Thin Divider Line -->
-      <div class="w-full border-t border-white/20 mb-10 sm:mb-14"></div>
-
       <!-- Section Title: "Interior" centered -->
-      <h2 class="text-center text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-none text-white tracking-normal mb-10 sm:mb-14">
+      <h2 class="text-center text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none text-white tracking-normal mb-6 sm:mb-8">
         Interior
       </h2>
+
+      <!-- Thin Divider Line -->
+      <div class="w-full max-w-[320px] mx-auto border-t border-white/30 mb-10 sm:mb-14"></div>
 
       <!-- Content: Image Left + Text Right -->
       <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
         
-        <!-- Left: Dining Room with Peach Chairs Image -->
-        <div class="w-full lg:w-[42%] overflow-hidden">
+        <!-- Left: Dining Room with Peach Chairs Image — slightly smaller -->
+        <div class="w-full lg:w-[35%] overflow-hidden">
           <img 
             src="images/expertise/Rectangle 66.png" 
             alt="Modern Dining Room Interior Design" 
@@ -231,15 +288,15 @@
         </div>
 
         <!-- Right: Text Content -->
-        <div class="w-full lg:w-[58%] flex flex-col justify-start pt-0 lg:pt-2">
+        <div class="w-full lg:w-[65%] flex flex-col justify-start pt-0 lg:pt-2">
           
           <!-- Sub Heading -->
-          <h3 class="text-white text-[22px] sm:text-[26px] lg:text-[30px] font-[300] leading-[1.3] tracking-normal mb-6 sm:mb-8">
+          <h3 class="text-white text-[18px] sm:text-[22px] lg:text-[26px] font-[300] leading-[1.3] tracking-normal mb-6 sm:mb-8">
             Curating spaces that inspire, comfort, and endure
           </h3>
 
           <!-- Body Paragraphs -->
-          <div class="space-y-5 text-white/85 text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[1.75] tracking-normal text-justify">
+          <div class="space-y-5 text-white/85 text-[15px] sm:text-[16px] lg:text-[18px] font-[300] leading-[24px] sm:leading-[26px] lg:leading-[30px] tracking-normal text-left sm:text-justify">
             <p>
               Preparing proposal layouts for over 150 cinema screens, our expertise in interior design comes naturally. With a deep understanding of cinematic spaces, we create environments that seamlessly blend plush interiors, glamour, functionality, and contemporary aesthetics. Every project is approached with a strong focus on spatial planning, material selection, detailing, and the overall experience of the audience.
             </p>
@@ -257,11 +314,11 @@
   <!-- ========================================================================= -->
   <!-- 4. PROJECTS SECTION - 3x2 GRID                                            -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+  <section class="bg-arris-cream pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
       <!-- Section Title: "Projects" -->
-      <h2 class="text-black text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-none tracking-normal mb-10 sm:mb-14">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal mb-10 sm:mb-14">
         Projects
       </h2>
 
@@ -270,7 +327,7 @@
 
         <!-- Project 1: Aldona Villa -->
         <a href="project-detail.html?id=aldona-villa" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 67.png" 
               alt="Aldona Villa Interior" 
@@ -289,7 +346,7 @@
 
         <!-- Project 2: IB Suncity -->
         <a href="project-detail.html?id=ib-suncity" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 68.png" 
               alt="IB Suncity Interior" 
@@ -308,7 +365,7 @@
 
         <!-- Project 3: The Grand Residence -->
         <a href="project-detail.html?id=the-grand-residence" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 69.png" 
               alt="The Grand Residence Interior" 
@@ -327,7 +384,7 @@
 
         <!-- Project 4: Devgn Cinex Ahmedabad -->
         <a href="project-detail.html?id=devgn-cinex-ahmedabad" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 67 (1).png" 
               alt="Devgn Cinex Ahmedabad Interior" 
@@ -346,7 +403,7 @@
 
         <!-- Project 5: Hazaribaug Bungalow -->
         <a href="project-detail.html?id=hazaribaug-bungalow" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 68 (1).png" 
               alt="Hazaribaug Bungalow Interior" 
@@ -365,7 +422,7 @@
 
         <!-- Project 6: LA Trichy -->
         <a href="project-detail.html?id=la-trichy" class="project-card group cursor-pointer block">
-          <div class="w-full aspect-[4/3] overflow-hidden bg-neutral-200">
+          <div class="w-full h-[480px] sm:h-[540px] lg:h-[600px] overflow-hidden bg-neutral-200">
             <img 
               src="images/expertise/Rectangle 69 (1).png" 
               alt="LA Trichy Interior" 
@@ -387,28 +444,6 @@
   </section>
 
 
-  <!-- ========================================================================= -->
-  <!-- 5. CTA BANNER - FULL WIDTH DARK IMAGE                                     -->
-  <!-- ========================================================================= -->
-  <section class="relative w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] min-h-[320px] max-h-[700px] overflow-hidden">
-    <img 
-      src="images/expertise/image 9.png" 
-      alt="Interior Design Showcase" 
-      class="w-full h-full object-cover object-center"
-    />
-    <!-- Dark overlay for text -->
-    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 pointer-events-none"></div>
-    
-    <!-- CTA Content -->
-    <div class="absolute bottom-10 sm:bottom-16 left-6 sm:left-12 xl:left-[97px] z-10">
-      <h2 class="text-white text-[26px] sm:text-[34px] lg:text-[42px] font-[300] leading-tight tracking-normal mb-5">
-        Ready to talk about your project?
-      </h2>
-      <a href="#contact" class="inline-block border border-white/70 rounded-md px-6 py-2.5 text-[12px] sm:text-[13px] uppercase tracking-[0.18em] font-[300] text-white hover:bg-white hover:text-black transition-colors duration-300">
-        Contact us
-      </a>
-    </div>
-  </section>
 
 
   <!-- ========================================================================= -->
@@ -428,36 +463,36 @@
         
         <!-- Column 1: Email -->
         <div>
-          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h3 class="text-xl font-normal text-neutral-900 mb-2">Email</h3>
+          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
+          <h3 class="text-[32px] font-normal text-neutral-900 mb-2">Email</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Have a question or idea? Drop us an email we'd love to hear from you.
           </p>
-          <a href="mailto:arrisarch@gmail.com" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+          <a href="mailto:arrisarch@gmail.com" class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
             arrisarch@gmail.com
           </a>
         </div>
 
         <!-- Column 2: Phone -->
         <div>
-          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h3 class="text-xl font-normal text-neutral-900 mb-2">Phone</h3>
+          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
+          <h3 class="text-[32px] font-normal text-neutral-900 mb-2">Phone</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Have a question? Give us a call &mdash; we're happy to help.
           </p>
-          <a href="tel:+912225829387" class="text-sm font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
+          <a href="tel:+912225829387" class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors">
             +912225829387, +912225828996
           </a>
         </div>
 
         <!-- Column 3: Office -->
         <div>
-          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
-          <h3 class="text-xl font-normal text-neutral-900 mb-2">Office</h3>
+          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
+          <h3 class="text-[32px] font-normal text-neutral-900 mb-2">Office</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Find us at our office.
           </p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-sm font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
+          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="text-[18px] font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block">
             711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
           </a>
         </div>
@@ -472,39 +507,39 @@
   <!-- ========================================================================= -->
   <footer class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900">
     <div class="max-w-[1920px] mx-auto">
-      
-      <!-- Top Block: Logo, Nav, Socials -->
+      <!-- Top / Main Block: Logo, Nav, Socials -->
       <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10">
         <!-- Logo -->
         <a href="index.html" class="inline-block mx-auto lg:mx-0">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 w-auto" />
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 lg:h-14 w-auto" />
         </a>
 
         <!-- Footer Navigation Links -->
-        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[20px] text-white/90 font-light text-center">
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[16px] text-white/90 font-light text-center">
           <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="index.html#who-we-are" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
           <li><a href="index.html#what-we-do" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
-          <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="index.html#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
 
         <!-- Social Icons -->
-        <div class="flex items-center space-x-6 lg:space-x-5 text-white/80">
-          <a href="#" class="hover:text-white transition-colors" aria-label="Facebook">
-            <i data-lucide="facebook" class="w-4 h-4"></i>
+        <div class="flex items-center space-x-6 lg:space-x-5">
+          <a href="#" aria-label="Facebook">
+            <img src="images/Vector.png" alt="Facebook" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </a>
-          <a href="#" class="hover:text-white transition-colors" aria-label="Instagram">
-            <i data-lucide="instagram" class="w-4 h-4"></i>
+          <a href="#" aria-label="Instagram">
+            <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </a>
-          <a href="#" class="hover:text-white transition-colors" aria-label="Twitter / X">
-            <i data-lucide="twitter" class="w-4 h-4"></i>
+          <a href="#" aria-label="Twitter / X">
+            <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </a>
-          <a href="#" class="hover:text-white transition-colors" aria-label="LinkedIn">
-            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </a>
-          <a href="#" class="hover:text-white transition-colors" aria-label="YouTube">
-            <i data-lucide="youtube" class="w-4 h-4"></i>
+          <a href="#" aria-label="YouTube">
+            <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
           </a>
         </div>
       </div>
@@ -513,17 +548,14 @@
       <div class="w-full border-t border-neutral-800"></div>
 
       <!-- Bottom Row: Copyright & Legal -->
-      <div class="flex flex-col-reverse sm:flex-row items-center justify-between pt-8 text-[16px] text-neutral-400 font-light gap-4 text-center">
-        <div>
-          &copy; 2026. All rights reserved.
-        </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center pt-8 text-[16px] text-neutral-400 font-light gap-4 sm:gap-10 text-center">
+        <div>&copy; 2026. All rights reserved.</div>
         <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
           <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
           <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
           <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
         </div>
       </div>
-
     </div>
   </footer>
 

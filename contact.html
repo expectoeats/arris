@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | ARRIS ARCHITECTS</title>
+
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '300',
+            normal: '300',
+            medium: '400',
+            semibold: '500',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#121212',
+              cardDark: '#1E1E1E',
+              footerDark: '#161616',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      image-rendering: auto;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Navbar Dropdown for PRACTICE */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 220px;
+      background: rgba(22, 22, 22, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu li {
+      width: 100%;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* Contact Form Styles */
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 34px;
+    }
+    @media (min-width: 1024px) {
+      .form-row {
+        margin-bottom: 46px;
+      }
+    }
+    .form-row-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.6);
+      line-height: 1.35;
+      margin-bottom: 16px;
+      font-family: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    @media (min-width: 1024px) {
+      .form-row-label {
+        font-size: 11.5px;
+        margin-bottom: 20px;
+      }
+    }
+    .form-row-fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+    @media (min-width: 1024px) {
+      .form-row-fields {
+        gap: 0 48px;
+      }
+    }
+    @media (min-width: 1440px) {
+      .form-row-fields {
+        gap: 0 64px;
+      }
+    }
+    .form-row-fields.single {
+      grid-template-columns: 1fr;
+    }
+    @media (max-width: 640px) {
+      .form-row-fields {
+        grid-template-columns: 1fr;
+        gap: 24px 0;
+      }
+    }
+    .form-field {
+      border: none;
+      background: transparent;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+      width: 100%;
+      padding: 6px 0 10px 0;
+      color: #000;
+      font-size: 18px;
+      font-weight: 300;
+      font-family: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      outline: none;
+      transition: border-color 0.25s ease;
+      border-radius: 0;
+      -webkit-appearance: none;
+      appearance: none;
+      line-height: 1.3;
+    }
+    @media (min-width: 640px) {
+      .form-field {
+        font-size: 20px;
+        padding: 6px 0 12px 0;
+      }
+    }
+    @media (min-width: 1024px) {
+      .form-field {
+        font-size: 22px;
+        padding: 8px 0 14px 0;
+      }
+    }
+    .form-field:focus {
+      border-color: #000;
+    }
+    .form-field::placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+    .form-field::-webkit-input-placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+    .form-field::-moz-placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+    .form-field:-ms-input-placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+    .form-field:-moz-placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+    .form-field:-webkit-autofill {
+      -webkit-text-fill-color: #000;
+      -webkit-box-shadow: 0 0 0 1000px transparent inset;
+      transition: background-color 5000s ease-in-out 0s;
+      box-shadow: 0 0 0 1000px transparent inset;
+    }
+    select.form-field {
+      cursor: pointer;
+      color: #000000;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0px center;
+      background-size: 15px 15px;
+      padding-right: 28px;
+    }
+    select.form-field option {
+      background-color: #ffffff;
+      color: #000;
+    }
+    textarea.form-field {
+      border: 1px solid rgba(0, 0, 0, 0.65);
+      padding: 16px 18px;
+      min-height: 200px;
+      resize: none;
+      font-size: 18px;
+    }
+    @media (min-width: 640px) {
+      textarea.form-field {
+        font-size: 19px;
+        min-height: 240px;
+      }
+    }
+    @media (min-width: 1024px) {
+      textarea.form-field {
+        font-size: 20px;
+        min-height: 290px;
+      }
+    }
+    textarea.form-field:focus {
+      border-color: #000;
+    }
+  </style>
+</head>
+<body class="bg-arris-cream text-black antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. NAVIGATION BAR                                                         -->
+  <!-- ========================================================================= -->
+  <header id="navbar" class="relative z-30 w-full bg-arris-cream">
+    <nav
+      class="relative flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate"
+    >
+      <!-- Logo -->
+      <a href="index.html" class="inline-block">
+        <img
+          src="images/image 7.png"
+          alt="Arris Architects Logo"
+          class="h-8 sm:h-10 lg:h-10 w-auto"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul
+        class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-black text-[12px] font-[300] tracking-[0.22em] uppercase"
+      >
+        <li>
+          <a href="projects.html" class="hover:text-black/60 transition-colors">PROJECTS</a>
+        </li>
+        <li>
+          <a href="expertise-interior.html" class="hover:text-black/60 transition-colors">EXPERTISE</a>
+        </li>
+        <li class="nav-dropdown">
+          <a href="about-arris.html" class="hover:text-black/60 transition-colors cursor-default">PRACTICE</a>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about-arris.html">About Arris</a></li>
+            <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
+            <li><a href="about-arris.html#design-process">Design Process</a></li>
+            <li><a href="about-arris.html#careers">Careers</a></li>
+            <li><a href="about-arris.html#legacy">Legacy</a></li>
+            <li><a href="#contact-info">Contact</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="index.html#leadership" class="hover:text-black/60 transition-colors">STUDIO</a>
+        </li>
+        <li>
+          <a href="contact.html" class="font-[300] text-black border-b border-black pb-0.5">CONTACT</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Trigger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-black p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10"
+        aria-label="Toggle Navigation"
+      >
+        <span class="w-7 h-0.5 bg-black rounded-full"></span>
+        <span class="w-5 h-0.5 bg-black rounded-full"></span>
+        <span class="w-6 h-0.5 bg-black rounded-full"></span>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img
+            src="images/image 7.png"
+            alt="Arris Architects Logo"
+            class="h-8 w-auto brightness-100"
+          />
+        </a>
+        <button
+          id="mobile-menu-close"
+          class="text-white p-2 focus:outline-none"
+          aria-label="Close Menu"
+        >
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <ul
+        class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto"
+      >
+        <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
+        <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
+        <li><a href="expertise-interior.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Expertise</a></li>
+        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Arris</a></li>
+        <li><a href="about-arris.html#design-philosophy" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Design Philosophy</a></li>
+        <li><a href="about-arris.html#design-process" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Design Process</a></li>
+        <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Studio</a></li>
+        <li><a href="contact.html" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Contact</a></li>
+      </ul>
+
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. WORK WITH US SECTION (Cream BG)                                        -->
+  <!-- ========================================================================= -->
+  <section class="relative bg-arris-cream pt-6 sm:pt-10 lg:pt-14 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24 items-start">
+
+        <!-- Left Column: Heading + Living Room Image -->
+        <div class="w-full lg:w-1/2" data-reveal-text>
+          <h1 class="text-black text-[32px] sm:text-[40px] lg:text-[48px] xl:text-[56px] font-[300] leading-[1.05] tracking-normal mb-8 sm:mb-10">
+            Work with Us
+          </h1>
+          <div
+            class="w-full overflow-hidden max-w-[640px] xl:max-w-[760px]"
+            data-reveal-animation
+          >
+            <img
+              src="images/contact/Rectangle 76.png"
+              alt="Modern Living Room with Exposed Ceiling Beams and Chandelier"
+              class="w-full h-auto object-cover block"
+            />
+          </div>
+        </div>
+
+        <!-- Right Column: Contact Form -->
+        <div class="w-full lg:w-1/2 pt-0 lg:pt-2">
+          <div class="max-w-[640px] xl:max-w-[850px] w-full mx-auto lg:mx-0">
+            <span
+              class="block text-black/70 text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-2"
+              data-reveal-text
+            >
+              CONTACT US
+            </span>
+            <p
+              class="text-black text-[20px] sm:text-[24px] lg:text-[28px] xl:text-[32px] font-[300] leading-[1.3] mb-10 sm:mb-12 max-w-[680px]"
+              data-reveal-text
+              data-delay="1"
+            >
+              Fill out the contact form and share the details of your project with us
+            </p>
+
+            <form
+              id="contact-form"
+              class=""
+              onsubmit="event.preventDefault(); submitContactForm();"
+              data-reveal-text
+              data-delay="2"
+            >
+              <!-- YOUR DETAILS -->
+              <div class="form-row">
+                <label class="form-row-label">YOUR DETAILS</label>
+                <div class="form-row-fields">
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      placeholder="First Name"
+                      class="form-field"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      placeholder="Last Name"
+                      class="form-field"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- TYPE -->
+              <div class="form-row">
+                <label class="form-row-label">TYPE</label>
+                <div class="form-row-fields">
+                  <div>
+                    <select name="enquiryType" class="form-field" required>
+                      <option value="" disabled selected hidden>Project Enquiry</option>
+                      <option value="project-enquiry">Project Enquiry</option>
+                      <option value="collaboration">Collaboration</option>
+                      <option value="internship">Internship / Careers</option>
+                      <option value="press-media">Press &amp; Media</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <select name="studio" class="form-field">
+                      <option value="" disabled selected hidden>Select Studio</option>
+                      <option value="mumbai-studio">Mumbai Studio</option>
+                      <option value="thane-studio">Thane Studio</option>
+                      <option value="international">International Office</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- COMPANY DETAILS -->
+              <div class="form-row">
+                <label class="form-row-label">COMPANY</label>
+                <div class="form-row-fields">
+                  <div>
+                    <input
+                      type="text"
+                      name="companyName"
+                      placeholder="Company Name"
+                      class="form-field"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="email"
+                      name="companyEmail"
+                      placeholder="Company Email"
+                      class="form-field"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- DETAILS TEXTAREA -->
+              <div class="form-row">
+                <label class="form-row-label">DETAILS</label>
+                <div class="form-row-fields single">
+                  <textarea
+                    name="message"
+                    placeholder=""
+                    class="form-field"
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="pt-4 sm:pt-6">
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="bg-[#1c1c1c] hover:bg-neutral-800 text-white px-12 sm:px-14 py-3.5 sm:py-4 text-[14px] sm:text-[15px] font-[300] tracking-normal transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-arris-cream"
+                >
+                  Send Enquiry
+                </button>
+              </div>
+
+              <!-- Success Message (hidden by default) -->
+              <div
+                id="form-success"
+                class="hidden pt-6 text-[14px] text-green-800 font-[300] leading-relaxed max-w-[540px]"
+              >
+                Thank you for your enquiry. We have received your message and our team will get back to you shortly.
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. GLOBAL WORKS SECTION (Dark BG + World Map)                              -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-dark text-white pt-16 sm:pt-20 lg:pt-28 pb-20 sm:pb-24 lg:pb-32 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+
+      <h2
+        class="text-white text-[28px] sm:text-[36px] lg:text-[44px] xl:text-[52px] font-[300] leading-[1.05] tracking-normal mb-10 sm:mb-14 lg:mb-16"
+        data-reveal-text
+      >
+        Global Works
+      </h2>
+
+      <!-- Polygon World Map -->
+      <div
+        class="w-full flex items-center justify-center"
+        data-reveal-animation
+      >
+        <img
+          src="images/contact/image 12.png"
+          alt="Global Project Locations - World Map with Yellow Highlighted Regions"
+          class="w-full max-w-[1300px] h-auto object-contain block"
+        />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. CONTACT US - 3 COLUMNS (Cream BG)                                      -->
+  <!-- ========================================================================= -->
+  <section
+    id="contact-info"
+    class="bg-arris-cream pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-12 xl:px-[97px]"
+  >
+    <div class="max-w-[1920px] mx-auto">
+      <h2
+        class="text-black text-[28px] sm:text-[36px] lg:text-[44px] xl:text-[52px] font-[300] leading-[1.05] tracking-tight mb-3"
+        data-reveal-text
+        style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400;"
+      >
+        Contact us
+      </h2>
+      <p
+        class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
+        data-reveal-text
+        data-delay="1"
+      >
+        Have any questions? Feel free to contact us for more information.
+      </p>
+
+      <!-- 3 Contact Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+
+        <!-- Column 1: Email -->
+        <div data-reveal-text>
+          <i
+            data-lucide="mail"
+            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+          <p
+            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+          </p>
+          <a
+            href="mailto:hello@arelme.io"
+            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors opacity-80"
+          >
+            hello@arelme.io
+          </a>
+        </div>
+
+        <!-- Column 2: Phone -->
+        <div data-reveal-text data-delay="1">
+          <i
+            data-lucide="phone"
+            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
+          <p
+            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+          </p>
+          <a
+            href="tel:+15550000000"
+            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors opacity-80"
+          >
+            +1 (555) 000-0000
+          </a>
+        </div>
+
+        <!-- Column 3: Office -->
+        <div data-reveal-text data-delay="2">
+          <i
+            data-lucide="map-pin"
+            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">
+            Office
+          </h4>
+          <p
+            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+          </p>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block opacity-80"
+          >
+            123 Sample St, Sydney NSW 2000 AU
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FOOTER                                                                  -->
+  <!-- ========================================================================= -->
+  <footer
+    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
+  >
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Top / Main Block: Logo, Nav, Socials -->
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="inline-block mx-auto lg:mx-0">
+          <img
+            src="images/image 7.png"
+            alt="Arris Architects Logo"
+            class="h-8 sm:h-9 lg:h-12 w-auto"
+          />
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <ul
+          class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white/90 font-light text-center"
+        >
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="expertise-interior.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-5 lg:space-x-5">
+          <a href="#" aria-label="Facebook">
+            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full border-t border-neutral-800"></div>
+
+      <!-- Bottom Row: Copyright & Legal -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center pt-7 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
+      >
+        <div>&copy; 2026. All rights reserved.</div>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+
+    // Submit handler
+    function submitContactForm() {
+      const form = document.getElementById("contact-form");
+      const btn = document.getElementById("submit-btn");
+      const msg = document.getElementById("form-success");
+      if (!form || !btn || !msg) return;
+
+      const originalText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = "Sending...";
+      btn.style.opacity = "0.7";
+
+      setTimeout(function () {
+        form.reset();
+        btn.disabled = false;
+        btn.textContent = originalText;
+        btn.style.opacity = "1";
+        msg.classList.remove("hidden");
+        setTimeout(function () {
+          msg.classList.add("hidden");
+        }, 6000);
+      }, 1000);
+    }
+
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("mobile-menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelectorAll(".mobile-nav-link");
+
+    function openMenu() {
+      mobileMenu.classList.remove("opacity-0", "pointer-events-none", "translate-x-full");
+      mobileMenu.classList.add("opacity-100", "pointer-events-auto", "translate-x-0");
+      document.body.classList.add("overflow-hidden");
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove("opacity-100", "pointer-events-auto", "translate-x-0");
+      mobileMenu.classList.add("opacity-0", "pointer-events-none", "translate-x-full");
+      document.body.classList.remove("overflow-hidden");
+    }
+    if (menuBtn) menuBtn.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    navLinks.forEach(function (l) { l.addEventListener("click", closeMenu); });
+  </script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP & Animations Runtime -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+
+</body>
+</html>

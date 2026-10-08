@@ -74,6 +74,53 @@
       scrollbar-width: none;
     }
 
+    /* Navbar Dropdown for PRACTICE */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 220px;
+      background: rgba(22, 22, 22, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu li {
+      width: 100%;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
     /* ========================================================================= */
     /* Dynamic Expanding Gallery Accordion Animation                             */
     /* ========================================================================= */
@@ -202,9 +249,19 @@
           <ul class="flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
             <li><a href="projects.html" class="font-[300] text-white border-b border-white pb-0.5">PROJECTS</a></li>
             <li><a href="index.html#what-we-do" class="text-white/80 hover:text-white transition-colors">EXPERTISE</a></li>
-            <li><a href="index.html#who-we-are" class="text-white/80 hover:text-white transition-colors">PRACTICE</a></li>
+            <li class="nav-dropdown">
+              <a href="index.html#who-we-are" class="text-white/80 hover:text-white transition-colors cursor-default">PRACTICE</a>
+              <ul class="nav-dropdown-menu">
+                <li><a href="about-arris.html">About Arris</a></li>
+                <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
+                <li><a href="about-arris.html#design-process">Design Process</a></li>
+                <li><a href="about-arris.html#careers">Careers</a></li>
+                <li><a href="about-arris.html#legacy">Legacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </li>
             <li><a href="index.html#leadership" class="text-white/80 hover:text-white transition-colors">STUDIO</a></li>
-            <li><a href="#contact" class="text-white/80 hover:text-white transition-colors">CONTACT</a></li>
+            <li><a href="contact.html" class="text-white/80 hover:text-white transition-colors">CONTACT</a></li>
           </ul>
           
           <!-- Moon Icon matching design -->
@@ -236,9 +293,9 @@
           <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
           <li><a href="projects.html" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Projects</a></li>
           <li><a href="index.html#what-we-do" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Services</a></li>
-          <li><a href="index.html#who-we-are" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
+          <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
           <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
-          <li><a href="#contact" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+          <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
         </ul>
 
         <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
@@ -451,7 +508,7 @@
         
         <!-- Column 1: Email -->
         <div>
-          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Email</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Have a question or idea? Drop us an email we'd love to hear from you.
@@ -463,7 +520,7 @@
 
         <!-- Column 2: Phone -->
         <div>
-          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Phone</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Have a question? Give us a call &mdash; we're happy to help.
@@ -475,7 +532,7 @@
 
         <!-- Column 3: Office -->
         <div>
-          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-4"></i>
+          <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Office</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
             Find us at our office.
@@ -506,10 +563,10 @@
         <!-- Footer Navigation Links -->
         <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-sm lg:text-xs text-white/90 font-light text-center">
           <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="index.html#who-we-are" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
           <li><a href="index.html#what-we-do" class="hover:text-white transition-colors">Services</a></li>
           <li><a href="projects.html" class="text-white font-[300]">Projects</a></li>
-          <li><a href="#contact" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
         </ul>
 
         <!-- Social Icons -->
