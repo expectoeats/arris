@@ -118,7 +118,7 @@
   <!-- 1. NAVIGATION BAR (CREAM BACKGROUND / BLACK LOGO & TEXT)                  -->
   <!-- ========================================================================= -->
   <header class="w-full bg-arris-cream">
-    <nav class="flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+    <nav class="relative flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
       <!-- Logo -->
       <a href="index.html" class="inline-block">
         <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-9 w-auto" />
@@ -127,17 +127,163 @@
       <!-- Desktop Nav Links -->
       <ul class="hidden md:flex items-center space-x-10 lg:space-x-14 text-black text-[12px] font-[300] tracking-[0.22em] uppercase">
         <li><a href="projects.html" class="font-[300] text-black border-b border-black pb-0.5">PROJECTS</a></li>
-        <li><a href="expertise-interior.html" class="hover:text-black/60 transition-colors">EXPERTISE</a></li>
-        <li class="nav-dropdown">
-          <a href="index.html#who-we-are" class="hover:text-black/60 transition-colors cursor-default">PRACTICE</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="about-arris.html">About Arris</a></li>
-            <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
-            <li><a href="about-arris.html#design-process">Design Process</a></li>
-            <li><a href="about-arris.html#careers">Careers</a></li>
-            <li><a href="about-arris.html#legacy">Legacy</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <li class="nav-dropdown-expertise">
+          <a href="expertise-interior.html" class="hover:text-black/60 transition-colors py-2 block">EXPERTISE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="expertise-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="expertise-interior.html#architecture" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Architecture
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      Interiors
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                      Commercial
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      Residential
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                      Cinema &amp; Multiplex Design
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      Entertainment Spaces
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      Schools
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Installations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="expertise-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="expertise-img-peek"
+                      src="images/dorpdow-shuffle/project1.2.png"
+                      alt="Preview Stack"
+                      class="expertise-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="expertise-img-main"
+                      src="images/dorpdow-shuffle/DPS.png"
+                      alt="Architecture - Delhi Public School"
+                      class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="expertise-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="expertise-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-dropdown-practice">
+          <a href="about-arris.html" class="hover:text-black/60 transition-colors py-2 block">PRACTICE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="practice-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                      About Arris
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                      Design Philosophy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#design-process" class="practice-nav-item" data-img="images/about/Rectangle 4.png" data-peek="images/about/Rectangle 29.png">
+                      Design Process
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#careers" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#legacy" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 31.png">
+                      Legacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="practice-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="practice-img-peek"
+                      src="images/about/Rectangle 3.png"
+                      alt="Preview Stack"
+                      class="practice-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="practice-card-main" class="practice-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="practice-img-main"
+                      src="images/about/Rectangle 1.png"
+                      alt="About Arris Preview"
+                      class="practice-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="practice-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li><a href="index.html#leadership" class="hover:text-black/60 transition-colors">STUDIO</a></li>
         <li><a href="contact.html" class="hover:text-black/60 transition-colors">CONTACT</a></li>

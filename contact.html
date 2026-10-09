@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | ARRIS ARCHITECTS</title>
 
+  <!-- Google Fonts: Cormorant Garamond for luxury serif typography matching Figma -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
   <!-- Local SF Pro Fonts & Animations -->
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="animations.css">
@@ -19,12 +24,14 @@
             sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
             text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            cormorant: ['"Cormorant Garamond"', 'Georgia', 'serif'],
           },
           fontWeight: {
             light: '300',
-            normal: '300',
-            medium: '400',
-            semibold: '500',
+            normal: '400',
+            medium: '500',
+            semibold: '600',
             bold: '700',
           },
           colors: {
@@ -53,6 +60,10 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
+    }
+
+    .font-cormorant {
+      font-family: "Cormorant Garamond", Georgia, serif;
     }
 
     img {
@@ -114,41 +125,43 @@
       background: rgba(255, 255, 255, 0.06);
     }
 
-    /* Contact Form Styles */
+    /* Contact Form Styles Matching Figma */
     .form-row {
       display: flex;
       flex-direction: column;
-      margin-bottom: 34px;
+      margin-bottom: 28px;
     }
     @media (min-width: 1024px) {
       .form-row {
-        margin-bottom: 46px;
+        margin-bottom: 40px;
       }
     }
     .form-row-label {
       display: block;
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 400;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(0, 0, 0, 0.6);
+      color: rgba(0, 0, 0, 0.65);
       line-height: 1.35;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
       font-family: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     }
     @media (min-width: 1024px) {
       .form-row-label {
-        font-size: 11.5px;
-        margin-bottom: 20px;
+        font-size: 11px;
+        margin-bottom: 16px;
       }
     }
     .form-row-fields {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px 0;
     }
     @media (min-width: 1024px) {
       .form-row-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: 0 48px;
       }
     }
@@ -158,41 +171,35 @@
       }
     }
     .form-row-fields.single {
-      grid-template-columns: 1fr;
-    }
-    @media (max-width: 640px) {
-      .form-row-fields {
-        grid-template-columns: 1fr;
-        gap: 24px 0;
-      }
+      display: block;
     }
     .form-field {
       border: none;
       background: transparent;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.65);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.7);
       width: 100%;
-      padding: 6px 0 10px 0;
+      padding: 4px 0 10px 0;
       color: #000;
-      font-size: 18px;
-      font-weight: 300;
-      font-family: "SF Pro Display", "SF Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 23px;
+      font-weight: 400;
+      font-family: "Cormorant Garamond", Georgia, serif;
       outline: none;
       transition: border-color 0.25s ease;
       border-radius: 0;
       -webkit-appearance: none;
       appearance: none;
-      line-height: 1.3;
+      line-height: 1.25;
     }
     @media (min-width: 640px) {
       .form-field {
-        font-size: 20px;
-        padding: 6px 0 12px 0;
+        font-size: 24px;
+        padding: 5px 0 11px 0;
       }
     }
     @media (min-width: 1024px) {
       .form-field {
-        font-size: 22px;
-        padding: 8px 0 14px 0;
+        font-size: 25px;
+        padding: 6px 0 12px 0;
       }
     }
     .form-field:focus {
@@ -201,22 +208,26 @@
     .form-field::placeholder {
       color: #000000;
       opacity: 1;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
     }
     .form-field::-webkit-input-placeholder {
       color: #000000;
       opacity: 1;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
     }
     .form-field::-moz-placeholder {
       color: #000000;
       opacity: 1;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
     }
     .form-field:-ms-input-placeholder {
       color: #000000;
       opacity: 1;
-    }
-    .form-field:-moz-placeholder {
-      color: #000000;
-      opacity: 1;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
     }
     .form-field:-webkit-autofill {
       -webkit-text-fill-color: #000;
@@ -227,33 +238,38 @@
     select.form-field {
       cursor: pointer;
       color: #000000;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
       background-repeat: no-repeat;
-      background-position: right 0px center;
-      background-size: 15px 15px;
+      background-position: right 2px center;
+      background-size: 16px 16px;
       padding-right: 28px;
     }
     select.form-field option {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 15px;
       background-color: #ffffff;
       color: #000;
     }
     textarea.form-field {
-      border: 1px solid rgba(0, 0, 0, 0.65);
-      padding: 16px 18px;
-      min-height: 200px;
+      border: 1px solid rgba(0, 0, 0, 0.7);
+      padding: 16px;
+      min-height: 280px;
       resize: none;
-      font-size: 18px;
+      font-size: 21px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      line-height: 1.35;
+      border-radius: 0;
     }
     @media (min-width: 640px) {
       textarea.form-field {
-        font-size: 19px;
-        min-height: 240px;
+        min-height: 300px;
+        font-size: 22px;
       }
     }
     @media (min-width: 1024px) {
       textarea.form-field {
-        font-size: 20px;
-        min-height: 290px;
+        min-height: 320px;
+        font-size: 23px;
       }
     }
     textarea.form-field:focus {
@@ -270,12 +286,12 @@
     <nav
       class="relative flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate"
     >
-      <!-- Logo -->
+      <!-- Logo: ARRIS ARCHITECTS in pure black -->
       <a href="index.html" class="inline-block">
         <img
           src="images/image 7.png"
           alt="Arris Architects Logo"
-          class="h-8 sm:h-10 lg:h-10 w-auto"
+          class="h-8 sm:h-10 lg:h-10 w-auto brightness-0"
         />
       </a>
 
@@ -286,19 +302,163 @@
         <li>
           <a href="projects.html" class="hover:text-black/60 transition-colors">PROJECTS</a>
         </li>
-        <li>
-          <a href="expertise-interior.html" class="hover:text-black/60 transition-colors">EXPERTISE</a>
+        <li class="nav-dropdown-expertise">
+          <a href="expertise-interior.html" class="hover:text-black/60 transition-colors py-2 block">EXPERTISE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="expertise-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="expertise-interior.html#architecture" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Architecture
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      Interiors
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                      Commercial
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      Residential
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                      Cinema &amp; Multiplex Design
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      Entertainment Spaces
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      Schools
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Installations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="expertise-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="expertise-img-peek"
+                      src="images/dorpdow-shuffle/project1.2.png"
+                      alt="Preview Stack"
+                      class="expertise-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="expertise-img-main"
+                      src="images/dorpdow-shuffle/DPS.png"
+                      alt="Architecture - Delhi Public School"
+                      class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="expertise-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="expertise-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li class="nav-dropdown">
-          <a href="about-arris.html" class="hover:text-black/60 transition-colors cursor-default">PRACTICE</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="about-arris.html">About Arris</a></li>
-            <li><a href="about-arris.html#design-philosophy">Design Philosophy</a></li>
-            <li><a href="about-arris.html#design-process">Design Process</a></li>
-            <li><a href="about-arris.html#careers">Careers</a></li>
-            <li><a href="about-arris.html#legacy">Legacy</a></li>
-            <li><a href="#contact-info">Contact</a></li>
-          </ul>
+        <li class="nav-dropdown-practice">
+          <a href="about-arris.html" class="hover:text-black/60 transition-colors py-2 block">PRACTICE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="practice-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                      About Arris
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                      Design Philosophy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#design-process" class="practice-nav-item" data-img="images/about/Rectangle 4.png" data-peek="images/about/Rectangle 29.png">
+                      Design Process
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#careers" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#legacy" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 31.png">
+                      Legacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact-info" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="practice-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="practice-img-peek"
+                      src="images/about/Rectangle 3.png"
+                      alt="Preview Stack"
+                      class="practice-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="practice-card-main" class="practice-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="practice-img-main"
+                      src="images/about/Rectangle 1.png"
+                      alt="About Arris Preview"
+                      class="practice-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="practice-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li>
           <a href="index.html#leadership" class="hover:text-black/60 transition-colors">STUDIO</a>
@@ -308,15 +468,15 @@
         </li>
       </ul>
 
-      <!-- Mobile Menu Trigger -->
+      <!-- Mobile Menu Trigger matching Figma staggered bars -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden text-black p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10"
+        class="md:hidden text-black p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-11 h-10"
         aria-label="Toggle Navigation"
       >
-        <span class="w-7 h-0.5 bg-black rounded-full"></span>
-        <span class="w-5 h-0.5 bg-black rounded-full"></span>
-        <span class="w-6 h-0.5 bg-black rounded-full"></span>
+        <span class="w-7 h-[2px] bg-black rounded-full transition-transform"></span>
+        <span class="w-7 h-[2px] bg-black rounded-full mr-1 transition-transform"></span>
+        <span class="w-7 h-[2px] bg-black rounded-full mr-2 transition-transform"></span>
       </button>
     </nav>
 
@@ -366,47 +526,41 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- 2. WORK WITH US SECTION (Cream BG)                                        -->
+  <!-- 2. WORK WITH US & CONTACT FORM SECTION (Cream BG)                          -->
   <!-- ========================================================================= -->
-  <section class="relative bg-arris-cream pt-6 sm:pt-10 lg:pt-14 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+  <section class="relative bg-arris-cream pt-4 sm:pt-8 lg:pt-12 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 xl:gap-24 items-start">
+      <!-- Responsive Grid: Mobile stacks Heading -> Form -> Living Room Image; Desktop places Image under Heading -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-0 lg:gap-x-16 xl:gap-x-24 items-start">
 
-        <!-- Left Column: Heading + Living Room Image -->
-        <div class="w-full lg:w-1/2" data-reveal-text>
-          <h1 class="text-black text-[32px] sm:text-[40px] lg:text-[48px] xl:text-[56px] font-[300] leading-[1.05] tracking-normal mb-8 sm:mb-10">
+        <!-- 1. Heading: Mobile Order 1, Desktop Col 1 Row 1 -->
+        <div class="order-1 lg:col-start-1 lg:row-start-1 lg:mb-8" data-reveal-text>
+          <h1 class="font-cormorant text-black text-[38px] sm:text-[44px] lg:text-[48px] xl:text-[56px] font-normal leading-[1.05] tracking-normal mb-8 sm:mb-10 lg:mb-0">
             Work with Us
           </h1>
-          <div
-            class="w-full overflow-hidden max-w-[640px] xl:max-w-[760px]"
-            data-reveal-animation
-          >
-            <img
-              src="images/contact/Rectangle 76.png"
-              alt="Modern Living Room with Exposed Ceiling Beams and Chandelier"
-              class="w-full h-auto object-cover block"
-            />
-          </div>
         </div>
 
-        <!-- Right Column: Contact Form -->
-        <div class="w-full lg:w-1/2 pt-0 lg:pt-2">
-          <div class="max-w-[640px] xl:max-w-[850px] w-full mx-auto lg:mx-0">
-            <span
-              class="block text-black/70 text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-2"
-              data-reveal-text
-            >
-              CONTACT US
-            </span>
-            <p
-              class="text-black text-[20px] sm:text-[24px] lg:text-[28px] xl:text-[32px] font-[300] leading-[1.3] mb-10 sm:mb-12 max-w-[680px]"
-              data-reveal-text
-              data-delay="1"
-            >
-              Fill out the contact form and share the details of your project with us
-            </p>
+        <!-- 2. Form Intro (CONTACT + Subtitle): Mobile Order 2, Desktop Col 2 Row 1 -->
+        <div class="order-2 lg:col-start-2 lg:row-start-1 pt-0 lg:pt-1 mb-8 sm:mb-10 lg:mb-8">
+          <span
+            class="block text-black/70 text-[11px] sm:text-[12px] font-sans font-normal tracking-[0.2em] uppercase mb-2"
+            data-reveal-text
+          >
+            CONTACT
+          </span>
+          <p
+            class="font-cormorant text-black text-[24px] sm:text-[27px] lg:text-[30px] xl:text-[34px] font-normal leading-[1.25] max-w-[680px]"
+            data-reveal-text
+            data-delay="1"
+          >
+            Fill out the contact form and share the details of your project with us
+          </p>
+        </div>
 
+        <!-- 3. Form: Mobile Order 3, Desktop Col 2 Row 2 -->
+        <div class="order-3 lg:col-start-2 lg:row-start-2 w-full mb-12 sm:mb-16 lg:mb-0">
+          <div class="max-w-[640px] xl:max-w-[850px] w-full mx-auto lg:mx-0">
             <form
               id="contact-form"
               class=""
@@ -464,7 +618,7 @@
                 </div>
               </div>
 
-              <!-- COMPANY DETAILS -->
+              <!-- COMPANY -->
               <div class="form-row">
                 <label class="form-row-label">COMPANY</label>
                 <div class="form-row-fields">
@@ -501,11 +655,11 @@
               </div>
 
               <!-- Submit Button -->
-              <div class="pt-4 sm:pt-6">
+              <div class="pt-2 sm:pt-4">
                 <button
                   type="submit"
                   id="submit-btn"
-                  class="bg-[#1c1c1c] hover:bg-neutral-800 text-white px-12 sm:px-14 py-3.5 sm:py-4 text-[14px] sm:text-[15px] font-[300] tracking-normal transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-arris-cream"
+                  class="bg-[#1c1c1c] hover:bg-neutral-800 text-white px-9 sm:px-11 py-3.5 sm:py-4 text-[14px] sm:text-[15px] font-[400] font-sans tracking-normal transition-colors focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 focus:ring-offset-arris-cream"
                 >
                   Send Enquiry
                 </button>
@@ -522,81 +676,83 @@
             </form>
           </div>
         </div>
+
+        <!-- 4. Living Room Image: Mobile Order 4, Desktop Col 1 Row 2 -->
+        <div class="order-4 lg:col-start-1 lg:row-start-2 w-full" data-reveal-animation>
+          <div class="w-full overflow-hidden rounded-[8px] sm:rounded-[10px] max-w-[640px] xl:max-w-[760px] mx-auto lg:mx-0 shadow-sm">
+            <img
+              src="images/contact/Rectangle 76.png"
+              alt="Modern Living Room with Exposed Ceiling Beams and Chandelier"
+              class="w-full h-auto object-cover block rounded-[8px] sm:rounded-[10px]"
+            />
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 3. GLOBAL WORKS SECTION (Dark BG + World Map)                              -->
+  <!-- 3. GLOBAL WORKS SECTION (Deep Dark BG + Polygon World Map)                 -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-dark text-white pt-16 sm:pt-20 lg:pt-28 pb-20 sm:pb-24 lg:pb-32 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
-
-      <h2
-        class="text-white text-[28px] sm:text-[36px] lg:text-[44px] xl:text-[52px] font-[300] leading-[1.05] tracking-normal mb-10 sm:mb-14 lg:mb-16"
-        data-reveal-text
-      >
-        Global Works
-      </h2>
-
-      <!-- Polygon World Map -->
+  <section class="bg-[#121212] text-white py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto flex items-center justify-center">
+      <!-- Polygon World Map matching Figma -->
       <div
-        class="w-full flex items-center justify-center"
+        class="w-full max-w-[400px] sm:max-w-[720px] lg:max-w-[1200px] xl:max-w-[1300px] flex items-center justify-center"
         data-reveal-animation
       >
         <img
           src="images/contact/image 12.png"
           alt="Global Project Locations - World Map with Yellow Highlighted Regions"
-          class="w-full max-w-[1300px] h-auto object-contain block"
+          class="w-full h-auto object-contain block"
         />
       </div>
-
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 4. CONTACT US - 3 COLUMNS (Cream BG)                                      -->
+  <!-- 4. CONTACT US - 3 INFO ITEMS (Cream BG)                                   -->
   <!-- ========================================================================= -->
   <section
     id="contact-info"
-    class="bg-arris-cream pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-12 xl:px-[97px]"
+    class="bg-arris-cream pt-14 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-24 px-6 sm:px-12 xl:px-[97px]"
   >
     <div class="max-w-[1920px] mx-auto">
       <h2
-        class="text-black text-[28px] sm:text-[36px] lg:text-[44px] xl:text-[52px] font-[300] leading-[1.05] tracking-tight mb-3"
+        class="font-cormorant text-black text-[36px] sm:text-[42px] lg:text-[48px] xl:text-[52px] font-normal leading-[1.08] tracking-tight mb-2 sm:mb-3"
         data-reveal-text
-        style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: 400;"
       >
         Contact us
       </h2>
       <p
-        class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
+        class="text-black/80 text-[14px] sm:text-[15px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
         data-reveal-text
         data-delay="1"
       >
         Have any questions? Feel free to contact us for more information.
       </p>
 
-      <!-- 3 Contact Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+      <!-- 3 Contact Columns / Mobile vertical stack -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-16">
 
         <!-- Column 1: Email -->
         <div data-reveal-text>
           <i
             data-lucide="mail"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+          <h4 class="font-cormorant text-[26px] sm:text-[28px] lg:text-[32px] font-normal text-black mb-2">Email</h4>
           <p
-            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            Have a question or idea? Drop us an email we'd love to hear from you.
           </p>
           <a
-            href="mailto:hello@arelme.io"
-            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors opacity-80"
+            href="mailto:arrisarch@gmail.com"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
           >
-            hello@arelme.io
+            arrisarch@gmail.com
           </a>
         </div>
 
@@ -604,19 +760,19 @@
         <div data-reveal-text data-delay="1">
           <i
             data-lucide="phone"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
+          <h4 class="font-cormorant text-[26px] sm:text-[28px] lg:text-[32px] font-normal text-black mb-2">Phone</h4>
           <p
-            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            Have a question? Give us a call — we're happy to help.
           </p>
           <a
-            href="tel:+15550000000"
-            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors opacity-80"
+            href="tel:+912225829387"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
           >
-            +1 (555) 000-0000
+            +912225829387, +912225828996
           </a>
         </div>
 
@@ -624,23 +780,23 @@
         <div data-reveal-text data-delay="2">
           <i
             data-lucide="map-pin"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">
+          <h4 class="font-cormorant text-[26px] sm:text-[28px] lg:text-[32px] font-normal text-black mb-2">
             Office
           </h4>
           <p
-            class="text-black text-[12px] sm:text-[13px] lg:text-[14px] font-[300] leading-[160%] max-w-[320px] mb-3 opacity-80"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.
+            Find us at our office.
           </p>
           <a
             href="https://maps.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-[12px] sm:text-[13px] lg:text-[14px] font-[300] text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block opacity-80"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 leading-relaxed hover:text-neutral-600 transition-colors block max-w-[380px]"
           >
-            123 Sample St, Sydney NSW 2000 AU
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
           </a>
         </div>
 
@@ -649,69 +805,71 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 5. FOOTER                                                                  -->
+  <!-- 5. FOOTER (Matching Figma Mobile Centered Layout & Desktop Responsive)    -->
   <!-- ========================================================================= -->
   <footer
-    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
+    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-12 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
   >
     <div class="max-w-[1920px] mx-auto">
-      <!-- Top / Main Block: Logo, Nav, Socials -->
+      <!-- Desktop & Tablet: Row; Mobile: Centered Vertical Stack matching Figma exactly -->
       <div
-        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
+        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 lg:pb-10"
       >
         <!-- Logo -->
         <a href="index.html" class="inline-block mx-auto lg:mx-0">
           <img
             src="images/image 7.png"
             alt="Arris Architects Logo"
-            class="h-8 sm:h-9 lg:h-12 w-auto"
+            class="h-8 sm:h-9 lg:h-11 w-auto brightness-0 invert"
           />
         </a>
 
-        <!-- Footer Navigation Links -->
+        <!-- Footer Navigation Links: Stacked centered on mobile, horizontal on desktop -->
         <ul
-          class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white/90 font-light text-center"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white font-light text-center"
         >
-          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="expertise-interior.html" class="hover:text-white transition-colors">Services</a></li>
-          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
-          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="index.html" class="hover:text-white/70 transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white/70 transition-colors">About Us</a></li>
+          <li><a href="expertise-interior.html" class="hover:text-white/70 transition-colors">Link Three</a></li>
+          <li><a href="projects.html" class="hover:text-white/70 transition-colors">Link Four</a></li>
+          <li><a href="contact.html" class="hover:text-white/70 transition-colors">Link Five</a></li>
         </ul>
 
-        <!-- Social Icons -->
-        <div class="flex items-center space-x-5 lg:space-x-5">
+        <!-- Social Icons: Centered 5 icons -->
+        <div class="flex items-center justify-center space-x-6 sm:space-x-5 my-2 lg:my-0">
           <a href="#" aria-label="Facebook">
-            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="Instagram">
-            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="Twitter / X">
-            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="LinkedIn">
-            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="YouTube">
-            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
         </div>
       </div>
 
       <!-- Divider -->
-      <div class="w-full border-t border-neutral-800"></div>
+      <div class="w-full max-w-[380px] sm:max-w-none mx-auto border-t border-neutral-700/60 my-6 sm:my-0"></div>
 
-      <!-- Bottom Row: Copyright & Legal -->
+      <!-- Bottom Row / Mobile Stack: Copyright & Legal Links -->
       <div
-        class="flex flex-col sm:flex-row items-center justify-center pt-7 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
+        class="flex flex-col sm:flex-row items-center justify-center pt-6 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
       >
-        <div>&copy; 2026. All rights reserved.</div>
-        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
-          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
-          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        <div
+          class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 text-[13px] sm:text-[14px] text-white/90"
+        >
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Cookies Settings</a>
         </div>
+        <div class="pt-2 sm:pt-0 text-neutral-400">&copy; 2026 . All rights reserved.</div>
       </div>
     </div>
   </footer>

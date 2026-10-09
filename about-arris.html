@@ -22,16 +22,16 @@
           },
           fontWeight: {
             light: '300',
-            normal: '300',
-            medium: '400',
-            semibold: '500',
+            normal: '400',
+            medium: '500',
+            semibold: '600',
             bold: '700',
           },
           colors: {
             arris: {
               cream: '#F4F0EB',
               creamDark: '#EAE5DD',
-              dark: '#121212',
+              dark: '#141414',
               cardDark: '#1E1E1E',
               footerDark: '#161616',
             }
@@ -117,10 +117,10 @@
 
     /* Process Accordion */
     .process-item {
-      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
     .process-item:last-child {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
     .process-toggle {
       cursor: pointer;
@@ -137,10 +137,10 @@
 
     /* Proposal list items */
     .proposal-item {
-      border-top: 1px solid rgba(0, 0, 0, 0.15);
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
     }
     .proposal-item:last-child {
-      border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
   </style>
 </head>
@@ -149,15 +149,15 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION WITH NAVIGATION                                           -->
   <!-- ========================================================================= -->
-  <header id="hero-section" class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden z-10">
-    <!-- Hero Background Image -->
+  <header id="hero-section" class="relative w-full h-[90vh] sm:h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden z-10">
+    <!-- Hero Background Image: Golden Chandelier Cinema Lounge -->
     <div class="hero-media-wrapper absolute inset-0 w-full h-full overflow-hidden">
       <img
         src="images/about/Rectangle 1.png"
-        alt="Arris Architects - About Us Hero"
+        alt="Arris Architects - About Us Hero Lounge"
         class="w-full h-full object-cover object-center hero-bg-animate"
       />
-      <!-- Gradient overlay for legibility -->
+      <!-- Gradient overlay for legibility on desktop -->
       <div
         class="absolute inset-0 pointer-events-none"
         style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
@@ -168,7 +168,7 @@
     <nav
       class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate"
     >
-      <!-- Logo -->
+      <!-- Logo: Pure White on dark hero image -->
       <a href="index.html" class="inline-block">
         <img
           src="images/image 7.png"
@@ -184,19 +184,163 @@
         <li>
           <a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a>
         </li>
-        <li>
-          <a href="expertise-interior.html" class="hover:text-white/70 transition-colors">EXPERTISE</a>
+        <li class="nav-dropdown-expertise">
+          <a href="expertise-interior.html" class="hover:text-white/70 transition-colors py-2 block">EXPERTISE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="expertise-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="expertise-interior.html#architecture" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Architecture
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      Interiors
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                      Commercial
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      Residential
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                      Cinema &amp; Multiplex Design
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      Entertainment Spaces
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      Schools
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Installations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="expertise-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="expertise-img-peek"
+                      src="images/dorpdow-shuffle/project1.2.png"
+                      alt="Preview Stack"
+                      class="expertise-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="expertise-img-main"
+                      src="images/dorpdow-shuffle/DPS.png"
+                      alt="Architecture - Delhi Public School"
+                      class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="expertise-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="expertise-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
-        <li class="nav-dropdown">
-          <a href="about-arris.html" class="font-[300] text-white border-b border-white pb-0.5 cursor-default">PRACTICE</a>
-          <ul class="nav-dropdown-menu">
-            <li><a href="about-arris.html">About Arris</a></li>
-            <li><a href="#design-philosophy">Design Philosophy</a></li>
-            <li><a href="#design-process">Design Process</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="#legacy">Legacy</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <li class="nav-dropdown-practice">
+          <a href="about-arris.html" class="font-[300] text-white border-b border-white pb-0.5 py-2 block">PRACTICE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="practice-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                      About Arris
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                      Design Philosophy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#design-process" class="practice-nav-item" data-img="images/about/Rectangle 4.png" data-peek="images/about/Rectangle 29.png">
+                      Design Process
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#careers" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#legacy" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 31.png">
+                      Legacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="practice-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="practice-img-peek"
+                      src="images/about/Rectangle 3.png"
+                      alt="Preview Stack"
+                      class="practice-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="practice-card-main" class="practice-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="practice-img-main"
+                      src="images/about/Rectangle 1.png"
+                      alt="About Arris Preview"
+                      class="practice-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="practice-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
         <li>
           <a href="index.html#leadership" class="hover:text-white/70 transition-colors">STUDIO</a>
@@ -206,20 +350,20 @@
         </li>
       </ul>
 
-      <!-- Mobile Menu Trigger -->
+      <!-- Mobile Menu Trigger matching Figma staggered bars -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10"
+        class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-11 h-10"
         aria-label="Toggle Navigation"
       >
-        <span class="w-7 h-0.5 bg-white rounded-full"></span>
-        <span class="w-5 h-0.5 bg-white rounded-full"></span>
-        <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        <span class="w-7 h-[2px] bg-white rounded-full transition-transform"></span>
+        <span class="w-7 h-[2px] bg-white rounded-full mr-1 transition-transform"></span>
+        <span class="w-7 h-[2px] bg-white rounded-full mr-2 transition-transform"></span>
       </button>
     </nav>
 
-    <!-- Hero Text Overlay - Bottom Left -->
-    <div class="absolute bottom-12 sm:bottom-16 lg:bottom-24 left-6 sm:left-12 xl:left-[97px] z-10 hero-content-animate">
+    <!-- Desktop Hero Text Overlay (Hidden on Mobile matching Figma About us phone.jpg) -->
+    <div class="hidden lg:block absolute bottom-12 sm:bottom-16 lg:bottom-24 left-6 sm:left-12 xl:left-[97px] z-10 hero-content-animate">
       <span class="block text-white/80 text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3 sm:mb-4">
         ABOUT US
       </span>
@@ -274,59 +418,46 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- 2. VISION SECTION - Cream Background                                      -->
+  <!-- 2. VISION & STORY SECTION - Cream Background                              -->
   <!-- ========================================================================= -->
-  <section id="design-philosophy" class="relative z-20 bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+  <section id="design-philosophy" class="relative z-20 bg-arris-cream py-12 sm:py-16 lg:py-24 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+      <!-- Responsive Grid: Mobile stacks Title -> Concession Image -> Text -> Corridor Image; Desktop aligns 2 columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 sm:gap-y-10 lg:gap-y-0 lg:gap-x-16 xl:gap-x-20 items-start">
 
-        <!-- Left Column: Headline + Corridor Image -->
-        <div class="w-full lg:w-1/2">
+        <!-- 1. Headline: Mobile Order 1, Desktop Col 1 Row 1 -->
+        <div class="order-1 lg:col-start-1 lg:row-start-1 lg:mb-8" data-reveal-text>
           <h2
-            class="text-black text-[18px] sm:text-[22px] lg:text-[24px] font-[300] leading-[1.45] tracking-normal mb-8 sm:mb-10 max-w-[500px]"
-            data-reveal-text
+            class="text-black text-[24px] sm:text-[28px] lg:text-[32px] xl:text-[36px] font-[300] leading-[1.3] tracking-tight max-w-[520px]"
           >
-            Where vision takes shape, and spaces come to life.
+            Where vision takes shape, &<br class="hidden sm:inline"> spaces come to life.
           </h2>
-
-          <!-- Arched Mural Corridor Image (Left, below headline) -->
-          <div
-            class="w-full overflow-hidden max-w-[500px]"
-            data-reveal-animation
-          >
-            <img
-              src="images/about/Rectangle 3.png"
-              alt="Arched Corridor with Mural and Checkerboard Floor"
-              class="w-full h-auto object-cover block"
-            />
-          </div>
         </div>
 
-        <!-- Right Column: Lobby Image + Philosophy Text -->
-        <div class="w-full lg:w-1/2 flex flex-col">
-          <!-- Grand Lobby Image (Top Right) -->
-          <div
-            class="w-full overflow-hidden mb-6 sm:mb-8"
-            data-reveal-animation
-          >
-            <img
-              src="images/about/Rectangle 4.png"
-              alt="Grand Lobby with Textured Floor and Feature Lighting"
-              class="w-full h-auto object-cover block"
-            />
-          </div>
+        <!-- 2. Grand Lobby / Concession Image: Mobile Order 2, Desktop Col 2 Row 1 -->
+        <div class="order-2 lg:col-start-2 lg:row-start-1 w-full overflow-hidden mb-0 lg:mb-8" data-reveal-animation>
+          <img
+            src="images/about/Rectangle 4.png"
+            alt="Grand Cinema Concession Lobby with Slatted Wooden Ceiling"
+            class="w-full h-[192px] sm:h-[240px] lg:h-auto object-cover block"
+          />
+        </div>
 
-          <!-- Philosophy Paragraph (Below right image) -->
-          <div
-            class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[22px] sm:leading-[24px] lg:leading-[26px] tracking-normal text-left sm:text-justify max-w-[620px]"
-            data-reveal-text
-            data-delay="1"
-          >
-            <p>
-              It's philosophy is built on the dual concepts of client service and design excellence. Aspect of energy efficiency forms an integral part of the design process and is reflected in the company's commitment to incorporate advanced simulation tools to predict the performance of the proposal at the conceptual design stages.
-            </p>
-          </div>
+        <!-- 3. Philosophy Paragraph: Mobile Order 3, Desktop Col 2 Row 2 -->
+        <div class="order-3 lg:col-start-2 lg:row-start-2 text-black text-[13.5px] sm:text-[14.5px] lg:text-[15px] font-[300] leading-[22px] sm:leading-[24px] lg:leading-[26px] tracking-normal max-w-[620px]" data-reveal-text data-delay="1">
+          <p>
+            It’s philosophy is built on the dual concepts of client service and design excellence. Aspect of energy efficiency forms an integral part of the design process and is reflected in the company's commitment to incorporate advanced simulation tools to predict the performance of the proposal at the conceptual design stages.
+          </p>
+        </div>
+
+        <!-- 4. Arched Corridor Image: Mobile Order 4, Desktop Col 1 Row 2 -->
+        <div class="order-4 lg:col-start-1 lg:row-start-2 w-full overflow-hidden max-w-[520px]" data-reveal-animation>
+          <img
+            src="images/about/Rectangle 3.png"
+            alt="Arched Corridor with Mural Wall and Tile Flooring"
+            class="w-full h-auto object-cover block"
+          />
         </div>
 
       </div>
@@ -336,68 +467,66 @@
   <!-- ========================================================================= -->
   <!-- 3. ARCHITECTURE + EXPERIENCE SECTION - Dark Background                    -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-dark text-white pt-16 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+  <section class="bg-arris-dark text-white pt-14 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <!-- Title Row: Left title + Right paragraph -->
-      <div class="flex flex-col lg:flex-row lg:items-start justify-between mb-10 sm:mb-14 lg:mb-20 gap-8 lg:gap-16">
+      <!-- Title & Paragraph -->
+      <div class="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-12 lg:mb-16 gap-6 lg:gap-16">
         <h2
-          class="w-full lg:w-[45%] text-white text-[28px] sm:text-[36px] lg:text-[44px] font-[300] leading-[1.1] tracking-normal"
+          class="w-full lg:w-[45%] text-white text-[28px] sm:text-[34px] lg:text-[44px] font-[300] leading-[1.15] tracking-tight"
           data-reveal-text
         >
           Where architecture<br>meets experience.
         </h2>
         <p
-          class="w-full lg:w-[55%] text-white/75 text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[22px] sm:leading-[24px] lg:leading-[26px] tracking-normal max-w-[620px]"
+          class="w-full lg:w-[55%] text-white/80 text-[13.5px] sm:text-[14.5px] lg:text-[15px] font-[300] leading-[22px] sm:leading-[24px] lg:leading-[26px] tracking-normal max-w-[620px]"
           data-reveal-text
           data-delay="1"
         >
-          We believe exceptional architecture begins with understanding how people interact with a space. Every detail, from material and texture to light and proportion is carefully considered to create spaces that feel distinctive and enduring.
+          We believe exceptional architecture begins with understanding how people interact with a space. Every detail from material and texture to light and proportion is carefully considered to create spaces that feel distinctive and enduring.
         </p>
       </div>
 
-      <!-- Three Image Row -->
+      <!-- Carousel / Responsive Images Row -->
+      <!-- Mobile: Horizontal swipe carousel with peek; Desktop: 3-column grid matching Figma -->
       <div
-        class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-5 mb-12 sm:mb-16 lg:mb-20"
+        class="flex md:grid md:grid-cols-3 gap-4 lg:gap-5 overflow-x-auto no-scrollbar snap-x snap-mandatory mb-12 sm:mb-16 lg:mb-20 pb-2 md:pb-0"
       >
-        <div class="overflow-hidden" data-reveal-animation>
-          <img
-            src="images/about/Rectangle 29.png"
-            alt="Spiral Staircase Architecture Detail"
-            class="w-full h-full object-cover"
-          />
-        </div>
-        <div class="overflow-hidden" data-reveal-animation data-delay="1">
+        <div class="w-[88%] sm:w-[75%] md:w-full h-[168px] sm:h-[200px] md:h-[300px] lg:h-[340px] flex-shrink-0 snap-start overflow-hidden" data-reveal-animation>
           <img
             src="images/about/Rectangle 30.png"
-            alt="Interior Lounge with Wood Paneling and Bar Counter"
-            class="w-full h-full object-cover"
+            alt="Grand Curved Lounge Architecture Detail"
+            class="w-full h-full object-cover block"
           />
         </div>
-        <div class="overflow-hidden" data-reveal-animation data-delay="2">
+        <div class="w-[88%] sm:w-[75%] md:w-full h-[168px] sm:h-[200px] md:h-[300px] lg:h-[340px] flex-shrink-0 snap-start overflow-hidden" data-reveal-animation data-delay="1">
+          <img
+            src="images/about/Rectangle 29.png"
+            alt="Interior Architecture Lighting Detail"
+            class="w-full h-full object-cover block"
+          />
+        </div>
+        <div class="w-[88%] sm:w-[75%] md:w-full h-[168px] sm:h-[200px] md:h-[300px] lg:h-[340px] flex-shrink-0 snap-start overflow-hidden" data-reveal-animation data-delay="2">
           <img
             src="images/about/Rectangle 31.png"
-            alt="Rumao World School Building Exterior"
-            class="w-full h-full object-cover"
+            alt="School and Institutional Architecture Exterior"
+            class="w-full h-full object-cover block"
           />
         </div>
       </div>
 
-      <!-- Brand Partners Row: 4 circular placeholders + Text Right -->
+      <!-- Brand Partners Row: Mobile shows centered title + 2x2 grid circles; Desktop shows row -->
       <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-        <div class="grid grid-cols-4 gap-6 sm:gap-10 lg:gap-14 items-center w-full md:w-auto">
-          <!-- Partner Circle 1 -->
-          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-neutral-300/30 border border-white/10"></div>
-          <!-- Partner Circle 2 -->
-          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-neutral-300/30 border border-white/10"></div>
-          <!-- Partner Circle 3 -->
-          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-neutral-300/30 border border-white/10"></div>
-          <!-- Partner Circle 4 -->
-          <div class="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-neutral-300/30 border border-white/10"></div>
-        </div>
-        <p class="text-white/75 text-[15px] sm:text-[16px] lg:text-[18px] font-[300] leading-tight tracking-normal w-full md:w-auto text-right md:text-right">
-          We work with the<br>best brands
+        <p class="text-white/80 text-[15px] sm:text-[16px] lg:text-[18px] font-[300] leading-tight tracking-normal text-center md:text-right order-1 md:order-2">
+          We work with the best brands
         </p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 items-center justify-center order-2 md:order-1">
+          <!-- 4 circular partner placeholders matching Figma -->
+          <div class="w-14 h-14 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-[#D9D9D9]"></div>
+          <div class="w-14 h-14 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-[#D9D9D9]"></div>
+          <div class="w-14 h-14 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-[#D9D9D9]"></div>
+          <div class="w-14 h-14 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-full bg-[#D9D9D9]"></div>
+        </div>
       </div>
 
     </div>
@@ -406,21 +535,21 @@
   <!-- ========================================================================= -->
   <!-- 4. OUR PROCESS SECTION - Cream Background                                 -->
   <!-- ========================================================================= -->
-  <section id="design-process" class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+  <section id="design-process" class="bg-arris-cream py-14 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
 
-        <!-- Left Column: Our Process Heading + Accordion -->
-        <div class="w-full lg:w-[48%] order-2 lg:order-1">
+        <!-- Left Column: Our Process Heading + Accordion (Comes first on mobile matching Figma) -->
+        <div class="w-full lg:w-[48%] order-1 lg:order-1">
           <h2
-            class="text-black text-[24px] sm:text-[28px] lg:text-[32px] font-[300] leading-none tracking-normal mb-3 sm:mb-4"
+            class="text-black text-[26px] sm:text-[30px] lg:text-[34px] font-[300] leading-none tracking-normal mb-3 sm:mb-4"
             data-reveal-text
           >
             Our Process
           </h2>
           <p
-            class="text-black/70 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] tracking-normal mb-6 sm:mb-8 max-w-[520px]"
+            class="text-black/70 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[22px] tracking-normal mb-8 sm:mb-10 max-w-[520px]"
             data-reveal-text
             data-delay="1"
           >
@@ -433,30 +562,30 @@
             <!-- 01 Research -->
             <div class="process-item" data-reveal-text>
               <div class="process-toggle flex items-center justify-between py-4 sm:py-5" onclick="toggleProcess(this)">
-                <div class="flex items-center gap-5 sm:gap-7">
-                  <span class="text-black text-[12px] sm:text-[13px] font-[300] tracking-widest opacity-60">01</span>
-                  <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Research</span>
+                <div class="flex items-center gap-6 sm:gap-7">
+                  <span class="text-black text-[13px] font-[300] tracking-widest opacity-60">01</span>
+                  <span class="text-black text-[16px] font-[300] tracking-normal">Research</span>
                 </div>
                 <i data-lucide="plus" class="w-4 h-4 text-black/70 process-icon"></i>
               </div>
               <div class="process-content">
-                <p class="text-black/65 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] pb-5 pl-[60px] sm:pl-[72px] max-w-[460px]">
+                <p class="text-black/70 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[22px] pb-5 pl-[52px] sm:pl-[64px] max-w-[460px]">
                   We begin by deeply understanding the site, context, client aspirations, and end-user needs. Through research, analysis, and immersive dialogue, every constraint and opportunity is mapped, providing a clear foundation for the design journey ahead.
                 </p>
               </div>
             </div>
 
-            <!-- 02 Plan - DEFAULT OPEN -->
+            <!-- 02 Plan - DEFAULT OPEN matching Figma -->
             <div class="process-item" data-reveal-text data-delay="1">
               <div class="process-toggle flex items-center justify-between py-4 sm:py-5" onclick="toggleProcess(this)">
-                <div class="flex items-center gap-5 sm:gap-7">
-                  <span class="text-black text-[12px] sm:text-[13px] font-[300] tracking-widest opacity-60">02</span>
-                  <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Plan</span>
+                <div class="flex items-center gap-6 sm:gap-7">
+                  <span class="text-black text-[13px] font-[300] tracking-widest opacity-60">02</span>
+                  <span class="text-black text-[16px] font-[300] tracking-normal">Plan</span>
                 </div>
                 <i data-lucide="minus" class="w-4 h-4 text-black/70 process-icon"></i>
               </div>
               <div class="process-content is-open">
-                <p class="text-black/65 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] pb-5 pl-[60px] sm:pl-[72px] max-w-[460px]">
+                <p class="text-black/70 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[22px] pb-5 pl-[52px] sm:pl-[64px] max-w-[460px]">
                   We transform the design vision into a clear, detailed plan. Every space is thoughtfully organized around its purpose. We carefully consider movement, proportions, and functionality. Layouts are refined to create a seamless flow between spaces. Materials, details, and technical requirements are thoughtfully integrated. The result is a strong foundation for the project to take shape.
                 </p>
               </div>
@@ -465,14 +594,14 @@
             <!-- 03 Design -->
             <div class="process-item" data-reveal-text data-delay="2">
               <div class="process-toggle flex items-center justify-between py-4 sm:py-5" onclick="toggleProcess(this)">
-                <div class="flex items-center gap-5 sm:gap-7">
-                  <span class="text-black text-[12px] sm:text-[13px] font-[300] tracking-widest opacity-60">03</span>
-                  <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Design</span>
+                <div class="flex items-center gap-6 sm:gap-7">
+                  <span class="text-black text-[13px] font-[300] tracking-widest opacity-60">03</span>
+                  <span class="text-black text-[16px] font-[300] tracking-normal">Design</span>
                 </div>
                 <i data-lucide="plus" class="w-4 h-4 text-black/70 process-icon"></i>
               </div>
               <div class="process-content">
-                <p class="text-black/65 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] pb-5 pl-[60px] sm:pl-[72px] max-w-[460px]">
+                <p class="text-black/70 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[22px] pb-5 pl-[52px] sm:pl-[64px] max-w-[460px]">
                   Conceptual ideas evolve into refined architectural language. Materials, light, texture, and form come together in precise detail. Every visual, structural, and experiential layer is carefully crafted and reviewed until the final design direction is resolved with clarity and conviction.
                 </p>
               </div>
@@ -481,14 +610,14 @@
             <!-- 04 Realize -->
             <div class="process-item" data-reveal-text data-delay="3">
               <div class="process-toggle flex items-center justify-between py-4 sm:py-5" onclick="toggleProcess(this)">
-                <div class="flex items-center gap-5 sm:gap-7">
-                  <span class="text-black text-[12px] sm:text-[13px] font-[300] tracking-widest opacity-60">04</span>
-                  <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Realize</span>
+                <div class="flex items-center gap-6 sm:gap-7">
+                  <span class="text-black text-[13px] font-[300] tracking-widest opacity-60">04</span>
+                  <span class="text-black text-[16px] font-[300] tracking-normal">Realize</span>
                 </div>
                 <i data-lucide="plus" class="w-4 h-4 text-black/70 process-icon"></i>
               </div>
               <div class="process-content">
-                <p class="text-black/65 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] pb-5 pl-[60px] sm:pl-[72px] max-w-[460px]">
+                <p class="text-black/70 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[22px] pb-5 pl-[52px] sm:pl-[64px] max-w-[460px]">
                   On-site execution is closely supervised from groundbreaking to handover. Quality control, coordination, timelines, and finishes are managed rigorously so the built outcome stays faithful to the design intent and delivers the experience originally envisioned.
                 </p>
               </div>
@@ -497,9 +626,9 @@
           </div>
         </div>
 
-        <!-- Right Column: Large Villa with Pool Image -->
+        <!-- Right Column: Large Villa with Pool Image (Comes after Accordion on mobile) -->
         <div
-          class="w-full lg:w-[52%] overflow-hidden order-1 lg:order-2"
+          class="w-full lg:w-[52%] overflow-hidden order-2 lg:order-2 mt-4 lg:mt-0"
           data-reveal-animation
         >
           <img
@@ -516,14 +645,14 @@
   <!-- ========================================================================= -->
   <!-- 5. OUR PROPOSALS SECTION - Cream Background                               -->
   <!-- ========================================================================= -->
-  <section id="legacy" class="bg-arris-cream pt-8 sm:pt-10 lg:pt-16 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+  <section id="legacy" class="bg-arris-cream pt-6 sm:pt-10 lg:pt-16 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <div class="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
 
         <!-- Left Column: "Our Proposals" title -->
         <div class="w-full lg:w-[45%]" data-reveal-text>
-          <h2 class="text-black text-[24px] sm:text-[28px] lg:text-[32px] font-[300] leading-none tracking-normal">
+          <h2 class="text-black text-[26px] sm:text-[30px] lg:text-[34px] font-[300] leading-none tracking-normal">
             Our Proposals
           </h2>
         </div>
@@ -531,55 +660,55 @@
         <!-- Right Column: Intro Text + List of Proposals -->
         <div class="w-full lg:w-[55%] max-w-[680px]">
           <p
-            class="text-black/70 text-[13px] sm:text-[14px] font-[300] leading-[20px] sm:leading-[22px] tracking-normal mb-6 sm:mb-8"
+            class="text-black/75 text-[13.5px] sm:text-[14px] font-[300] leading-[21px] sm:leading-[23px] tracking-normal mb-8 sm:mb-10"
             data-reveal-text
           >
-            We design spaces that balance form, function, and character.Every detail is thoughtfully considered, from materials to natural light.Our approach blends contemporary ideas with timeless design principles.<br>Creating spaces that are purposeful, distinctive, and built to endure.
+            We design spaces that balance form, function, and character.Every detail is thoughtfully considered, from materials to natural light. Our approach blends contemporary ideas with timeless design principles.Creating spaces that are purposeful, distinctive, and built to endure.
           </p>
 
-          <!-- Proposals List with arrows -->
+          <!-- Proposals List with arrows matching Figma -->
           <div class="w-full">
-            <!-- Proposal 1 -->
+            <!-- Proposal 1: Upvan Presentation -->
             <a
-              href="#"
+              href="project-detail.html"
               class="proposal-item group flex items-center justify-between py-4 sm:py-5 transition-colors hover:bg-black/[0.02]"
               data-reveal-text
             >
-              <div class="flex items-center justify-between w-full pr-3">
-                <span class="text-black text-[14px] sm:text-[15px] font-[300] tracking-normal">Urban Presentation</span>
-                <div class="flex items-center gap-8 sm:gap-12">
-                  <span class="text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2013</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/70 group-hover:translate-x-1 transition-transform"></i>
+              <div class="flex items-center justify-between w-full pr-2">
+                <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Upvan Presentation</span>
+                <div class="flex items-center gap-6 sm:gap-10">
+                  <span class="hidden sm:inline text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2013</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/80 group-hover:translate-x-1 transition-transform"></i>
                 </div>
               </div>
             </a>
-            <!-- Proposal 2 -->
+            <!-- Proposal 2: The Aqualand at Mulshi -->
             <a
-              href="#"
+              href="project-detail.html"
               class="proposal-item group flex items-center justify-between py-4 sm:py-5 transition-colors hover:bg-black/[0.02]"
               data-reveal-text
               data-delay="1"
             >
-              <div class="flex items-center justify-between w-full pr-3">
-                <span class="text-black text-[14px] sm:text-[15px] font-[300] tracking-normal">The Aqualand at Murbhi</span>
-                <div class="flex items-center gap-8 sm:gap-12">
-                  <span class="text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2014</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/70 group-hover:translate-x-1 transition-transform"></i>
+              <div class="flex items-center justify-between w-full pr-2">
+                <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">The Aqualand at Mulshi</span>
+                <div class="flex items-center gap-6 sm:gap-10">
+                  <span class="hidden sm:inline text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2014</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/80 group-hover:translate-x-1 transition-transform"></i>
                 </div>
               </div>
             </a>
-            <!-- Proposal 3 -->
+            <!-- Proposal 3: Excel World at Mumbai -->
             <a
-              href="#"
+              href="project-detail.html"
               class="proposal-item group flex items-center justify-between py-4 sm:py-5 transition-colors hover:bg-black/[0.02]"
               data-reveal-text
               data-delay="2"
             >
-              <div class="flex items-center justify-between w-full pr-3">
-                <span class="text-black text-[14px] sm:text-[15px] font-[300] tracking-normal">Excel World at Mumbai</span>
-                <div class="flex items-center gap-8 sm:gap-12">
-                  <span class="text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2016</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/70 group-hover:translate-x-1 transition-transform"></i>
+              <div class="flex items-center justify-between w-full pr-2">
+                <span class="text-black text-[15px] sm:text-[16px] font-[300] tracking-normal">Excel World at Mumbai</span>
+                <div class="flex items-center gap-6 sm:gap-10">
+                  <span class="hidden sm:inline text-black/55 text-[12px] sm:text-[13px] font-[300] tracking-wide">2016</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4 text-black/80 group-hover:translate-x-1 transition-transform"></i>
                 </div>
               </div>
             </a>
@@ -595,40 +724,40 @@
   <!-- ========================================================================= -->
   <section
     id="contact"
-    class="bg-arris-cream pt-8 sm:pt-10 pb-16 sm:pb-24 px-6 sm:px-12 xl:px-[97px]"
+    class="bg-arris-cream pt-10 sm:pt-14 pb-16 sm:pb-24 px-6 sm:px-12 xl:px-[97px]"
   >
     <div class="max-w-[1920px] mx-auto">
       <h2
-        class="text-black text-[24px] sm:text-[28px] lg:text-[32px] font-[300] leading-none tracking-tight mb-3"
+        class="text-black text-[28px] sm:text-[34px] lg:text-[38px] font-[300] leading-tight tracking-tight mb-2 sm:mb-3"
         data-reveal-text
       >
         Contact us
       </h2>
       <p
-        class="text-black text-[14px] sm:text-[16px] lg:text-[18px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
+        class="text-black/80 text-[14px] sm:text-[15px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
         data-reveal-text
         data-delay="1"
       >
         Have any questions? Feel free to contact us for more information.
       </p>
 
-      <!-- 3 Contact Columns -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+      <!-- 3 Contact Columns / Mobile vertical stack -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-16">
         <!-- Column 1: Email -->
         <div data-reveal-text>
           <i
             data-lucide="mail"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">Email</h4>
           <p
-            class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[150%] max-w-[379px] mb-3"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
             Have a question or idea? Drop us an email we'd love to hear from you.
           </p>
           <a
             href="mailto:arrisarch@gmail.com"
-            class="text-[15px] sm:text-[16px] lg:text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
           >
             arrisarch@gmail.com
           </a>
@@ -638,17 +767,17 @@
         <div data-reveal-text data-delay="1">
           <i
             data-lucide="phone"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">Phone</h4>
           <p
-            class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[150%] max-w-[379px] mb-3"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
-            Have a question? Give us a call &mdash; we're happy to help.
+            Have a question? Give us a call — we're happy to help.
           </p>
           <a
             href="tel:+912225829387"
-            class="text-[15px] sm:text-[16px] lg:text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
           >
             +912225829387, +912225828996
           </a>
@@ -658,13 +787,13 @@
         <div data-reveal-text data-delay="2">
           <i
             data-lucide="map-pin"
-            class="w-6 h-6 sm:w-7 sm:h-7 stroke-[1.5] text-neutral-800 mb-2"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
           ></i>
-          <h4 class="text-[24px] sm:text-[28px] lg:text-[32px] font-normal text-neutral-900 mb-2">
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">
             Office
           </h4>
           <p
-            class="text-black text-[13px] sm:text-[14px] lg:text-[15px] font-[300] leading-[150%] max-w-[379px] mb-3"
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
           >
             Find us at our office.
           </p>
@@ -672,9 +801,9 @@
             href="https://maps.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            class="text-[15px] sm:text-[16px] lg:text-[18px] font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 leading-relaxed hover:text-neutral-600 transition-colors block max-w-[380px]"
           >
-            711-713 Opal Square, SG Barve Rd, opp. Railadevi<br>TMC Office, Wagle Industrial Estate, Thane West,<br>Thane, Maharashtra 400604
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
           </a>
         </div>
       </div>
@@ -682,70 +811,71 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 7. FOOTER                                                                  -->
+  <!-- 7. FOOTER (Matching Figma Mobile Centered Layout & Desktop Responsive)    -->
   <!-- ========================================================================= -->
   <footer
-    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-10 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
+    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-12 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
   >
     <div class="max-w-[1920px] mx-auto">
-      <!-- Top / Main Block: Logo, Nav, Socials -->
+      <!-- Desktop & Tablet: Row; Mobile: Centered Vertical Stack matching Figma exactly -->
       <div
-        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
+        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 lg:pb-10"
       >
         <!-- Logo -->
         <a href="index.html" class="inline-block mx-auto lg:mx-0">
           <img
             src="images/image 7.png"
             alt="Arris Architects Logo"
-            class="h-8 sm:h-9 lg:h-12 w-auto"
+            class="h-8 sm:h-9 lg:h-11 w-auto brightness-0 invert"
           />
         </a>
 
-        <!-- Footer Navigation Links -->
+        <!-- Footer Navigation Links: Stacked centered on mobile, horizontal on desktop -->
         <ul
-          class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white/90 font-light text-center"
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white font-light text-center"
         >
-          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
-          <li><a href="expertise-interior.html" class="hover:text-white transition-colors">Services</a></li>
-          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
-          <li><a href="#legacy" class="hover:text-white transition-colors">Legacy</a></li>
-          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="index.html" class="hover:text-white/70 transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white/70 transition-colors">About Us</a></li>
+          <li><a href="expertise-interior.html" class="hover:text-white/70 transition-colors">Link Three</a></li>
+          <li><a href="projects.html" class="hover:text-white/70 transition-colors">Link Four</a></li>
+          <li><a href="contact.html" class="hover:text-white/70 transition-colors">Link Five</a></li>
         </ul>
 
-        <!-- Social Icons -->
-        <div class="flex items-center space-x-5 lg:space-x-5">
+        <!-- Social Icons: Centered 5 icons -->
+        <div class="flex items-center justify-center space-x-6 sm:space-x-5 my-2 lg:my-0">
           <a href="#" aria-label="Facebook">
-            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="Instagram">
-            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="Twitter / X">
-            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="LinkedIn">
-            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
           <a href="#" aria-label="YouTube">
-            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
           </a>
         </div>
       </div>
 
       <!-- Divider -->
-      <div class="w-full border-t border-neutral-800"></div>
+      <div class="w-full max-w-[380px] sm:max-w-none mx-auto border-t border-neutral-700/60 my-6 sm:my-0"></div>
 
-      <!-- Bottom Row: Copyright & Legal -->
+      <!-- Bottom Row / Mobile Stack: Copyright & Legal Links -->
       <div
-        class="flex flex-col sm:flex-row items-center justify-center pt-7 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
+        class="flex flex-col sm:flex-row items-center justify-center pt-6 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
       >
-        <div>&copy; 2026. All rights reserved.</div>
-        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
-          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
-          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
-          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        <div
+          class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 text-[13px] sm:text-[14px] text-white/90"
+        >
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Cookies Settings</a>
         </div>
+        <div class="pt-2 sm:pt-0 text-neutral-400">&copy; 2026 . All rights reserved.</div>
       </div>
     </div>
   </footer>

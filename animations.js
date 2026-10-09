@@ -362,4 +362,205 @@ document.addEventListener('DOMContentLoaded', () => {
       ScrollTrigger.refresh();
     });
   }
+
+  // ---------------------------------------------------------------------------
+  // 7. Navbar Mega Dropdowns (Expertise & Practice) - Ultra-Smooth Card Shuffle
+  // ---------------------------------------------------------------------------
+  function initMegaDropdownShuffle() {
+    // 1. Preload all shuffle images into browser memory to eliminate decoding stutter
+    const preloadList = [
+      // Expertise images
+      'images/dorpdow-shuffle/DPS.png',
+      'images/dorpdow-shuffle/Rectangle 1.png',
+      'images/dorpdow-shuffle/project 4.png',
+      'images/dorpdow-shuffle/Rectangle 6 (2).png',
+      'images/dorpdow-shuffle/project1.2.png',
+      'images/dorpdow-shuffle/Rectangle 6 (3).png',
+      'images/dorpdow-shuffle/Rectangle 6 (4).png',
+      // Practice images
+      'images/about/Rectangle 1.png',
+      'images/about/Rectangle 3.png',
+      'images/about/Rectangle 4.png',
+      'images/about/Rectangle 29.png',
+      'images/about/Rectangle 30.png',
+      'images/about/Rectangle 31.png',
+    ];
+    preloadList.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    const dropdowns = document.querySelectorAll('.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
+    dropdowns.forEach((dropdown) => {
+      const items = dropdown.querySelectorAll('.expertise-nav-item, .practice-nav-item, .mega-nav-item');
+      const mainCard = dropdown.querySelector('#expertise-card-main, #practice-card-main, .expertise-card-main, .practice-card-main, .mega-card-main');
+      const mainImg = dropdown.querySelector('#expertise-img-main, #practice-img-main, .expertise-img-main, .practice-img-main, .mega-img-main');
+      const peekCard = dropdown.querySelector('#expertise-card-peek, #practice-card-peek, .expertise-card-peek, .practice-card-peek, .mega-card-peek');
+      const peekImg = dropdown.querySelector('#expertise-img-peek, #practice-img-peek, .expertise-img-peek, .practice-img-peek, .mega-img-peek');
+
+      if (!items.length || !mainImg || !mainCard) return;
+
+      // 2. Ensure dual-layer crossfade image element exists inside front card
+      let fadeImg = mainCard.querySelector('.expertise-img-fade, .practice-img-fade, .mega-img-fade');
+      if (!fadeImg) {
+        fadeImg = document.createElement('img');
+        fadeImg.className = 'mega-img-fade expertise-img-fade practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform';
+        fadeImg.alt = 'Crossfade Preview';
+        mainCard.appendChild(fadeImg);
+      }
+
+      let currentSrc = mainImg.getAttribute('src');
+
+      items.forEach((item) => {
+        item.addEventListener('mouseenter', () => {
+          // Update active menu link within this dropdown
+          items.forEach((it) => it.classList.remove('active'));
+          item.classList.add('active');
+
+          const newSrc = item.getAttribute('data-img');
+          const peekSrc = item.getAttribute('data-peek');
+
+          if (!newSrc || currentSrc === newSrc) return;
+          currentSrc = newSrc;
+
+          if (window.gsap) {
+            // Stop any ongoing tweens for buttery smooth transition without jumps
+            gsap.killTweensOf([mainCard, peekCard, fadeImg]);
+
+            // Set new image on crossfade layer
+            fadeImg.src = newSrc;
+            gsap.set(fadeImg, { opacity: 0 });
+
+            // Create coordinated luxury deck shuffle timeline
+            const tl = gsap.timeline();
+
+            // A. Top card lifts with subtle tilt & glide
+            tl.to(mainCard, {
+              y: -14,
+              x: 6,
+              rotate: -1,
+              scale: 1.025,
+              duration: 0.22,
+              ease: 'power2.out',
+            }, 0)
+            // B. Seamlessly crossfades to incoming image
+            .to(fadeImg, {
+              opacity: 1,
+              duration: 0.28,
+              ease: 'power1.inOut',
+            }, 0.04)
+            // C. Glides smoothly back into deck with luxury deceleration
+            .to(mainCard, {
+              y: 0,
+              x: 0,
+              rotate: 0,
+              scale: 1,
+              duration: 0.44,
+              ease: 'power3.out',
+              onComplete: () => {
+                mainImg.src = newSrc;
+                gsap.set(fadeImg, { opacity: 0 });
+              }
+            }, 0.22);
+
+            // D. Peek card reacts underneath
+            if (peekCard) {
+              if (peekImg && peekSrc) {
+                setTimeout(() => {
+                  if (peekImg) peekImg.src = peekSrc;
+                }, 100);
+              }
+
+              tl.to(peekCard, {
+                y: 34,
+                x: -5,
+                rotate: 1.2,
+                scale: 0.96,
+                duration: 0.2,
+                ease: 'power2.out',
+              }, 0)
+              .to(peekCard, {
+                y: 22,
+                x: 0,
+                rotate: 0,
+                scale: 0.98,
+                duration: 0.44,
+                ease: 'power3.out',
+              }, 0.2);
+            }
+          } else {
+            mainImg.src = newSrc;
+            if (peekImg && peekSrc) peekImg.src = peekSrc;
+          }
+        });
+      });
+    });
+  }
+
+  // ---------------------------------------------------------------------------
+  // 8. Navbar Mega Dropdowns - Hover Intent Grace Period Manager
+  // ---------------------------------------------------------------------------
+  function initMegaDropdownHoverIntent() {
+    const dropdownGroups = [
+      {
+        trigger: document.querySelector('.nav-dropdown-expertise'),
+        menu: document.querySelector('.expertise-dropdown-menu'),
+      },
+      {
+        trigger: document.querySelector('.nav-dropdown-practice'),
+        menu: document.querySelector('.practice-dropdown-menu'),
+      }
+    ];
+
+    let closeTimer = null;
+    let activeMenu = null;
+
+    function open(menu) {
+      if (!menu) return;
+      clearTimeout(closeTimer);
+      dropdownGroups.forEach((g) => {
+        if (g.menu && g.menu !== menu) {
+          g.menu.classList.remove('is-active');
+        }
+      });
+      menu.classList.add('is-active');
+      activeMenu = menu;
+    }
+
+    function delayClose(menu) {
+      if (!menu) return;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => {
+        menu.classList.remove('is-active');
+        if (activeMenu === menu) activeMenu = null;
+      }, 280); // 280ms generous buffer gives user plenty of time to glide cursor down
+    }
+
+    dropdownGroups.forEach(({ trigger, menu }) => {
+      if (!trigger || !menu) return;
+
+      // Nav trigger hover
+      trigger.addEventListener('mouseenter', () => open(menu));
+      trigger.addEventListener('mouseleave', () => delayClose(menu));
+
+      // Dropdown panel hover
+      menu.addEventListener('mouseenter', () => open(menu));
+      menu.addEventListener('mouseleave', () => delayClose(menu));
+    });
+
+    // When hovering other non-dropdown items (PROJECTS, STUDIO, CONTACT), close cleanly
+    const otherNavItems = document.querySelectorAll('nav ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice)');
+    otherNavItems.forEach((li) => {
+      li.addEventListener('mouseenter', () => {
+        clearTimeout(closeTimer);
+        dropdownGroups.forEach((g) => {
+          if (g.menu) g.menu.classList.remove('is-active');
+        });
+        activeMenu = null;
+      });
+    });
+  }
+
+  initMegaDropdownShuffle();
+  initMegaDropdownHoverIntent();
 });
