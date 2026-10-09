@@ -146,28 +146,18 @@
       <!-- Hero Background Videos -->
       <div class="hero-media-wrapper absolute inset-0 w-full h-full overflow-hidden">
 
-        <!-- Video 1 -->
+        <!-- Hero Video -->
         <video
-          id="hero-video-0"
-          class="hero-video absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-1000"
-          src="https://reversethought.b-cdn.net/04%20RAJHANS%20SKYLAR%2C%20SURAT.mp4"
+          class="absolute inset-0 w-full h-full object-cover"
+          src="video/Video Project.mp4"
           autoplay
           muted
+          loop
           playsinline
           preload="auto"
         ></video>
 
-        <!-- Video 2 -->
-        <video
-          id="hero-video-1"
-          class="hero-video absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-1000"
-          src="https://reversethought.b-cdn.net/9%20ALDONA%20VILLA%20GOA.mp4"
-          muted
-          playsinline
-          preload="auto"
-        ></video>
-
-        <!-- Gradient overlay — same as reference: dark bottom, slight top -->
+        <!-- Gradient overlay -->
         <div
           class="absolute inset-0 pointer-events-none"
           style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
@@ -211,7 +201,7 @@
                 <div class="w-[44%] flex flex-col justify-center">
                   <ul class="flex flex-col space-y-3 xl:space-y-4">
                     <li>
-                      <a href="expertise-interior.html#architecture" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
                         Architecture
                       </a>
                     </li>
@@ -481,13 +471,12 @@
     <!-- ========================================================================= -->
     <section
       id="who-we-are"
-      class="relative z-20 bg-arris-cream py-16 sm:py-24 lg:py-20 px-6 sm:px-12 xl:px-[97px] shadow-[0_-15px_35px_rgba(0,0,0,0.12)]"
+      class="bg-arris-cream py-16 sm:py-24 lg:py-20 px-6 sm:px-12 xl:px-[97px]"
     >
       <div class="max-w-[1920px] mx-auto">
         <!-- Desktop Section Tag: SF Pro, 36px, Weight 274, 100% line height, 2% letter spacing -->
         <h3
           class="hidden lg:block text-black text-[36px] font-[300] leading-none tracking-[0.02em] mb-5 sm:mb-7"
-          data-reveal-text
         >
           Who We Are
         </h3>
@@ -498,7 +487,6 @@
           <!-- Left: Honeycomb Architecture Image (Below text on mobile, Left on desktop) -->
           <div
             class="w-full lg:w-[800px] overflow-hidden rounded-2xl lg:rounded-sm shadow-sm"
-            data-reveal-animation
           >
             <img
               src="images/Rectangle 3.png"
@@ -514,7 +502,6 @@
             <!-- Mobile-only Section Tag: SF Pro, 28px on mobile -->
             <h3
               class="lg:hidden text-black text-[28px] sm:text-[32px] font-[300] leading-none tracking-[0.02em] mb-6 sm:mb-8"
-              data-reveal-text
             >
               Who we are
             </h3>
@@ -522,8 +509,6 @@
             <!-- Desktop Main Heading: SF Pro, 48px, Weight 274, perfectly top-aligned with top edge of image -->
             <h2
               class="text-black text-[26px] sm:text-[32px] lg:text-[30px] font-[300] leading-none tracking-normal mb-4 lg:-mt-1"
-              data-reveal-text
-              data-delay="1"
             >
               Arris Architects
             </h2>
@@ -531,8 +516,6 @@
             <!-- Body text: SF Pro, 22px on desktop, 15px on mobile, Justified -->
             <div
               class="space-y-1 text-black text-[15px] sm:text-[18px] lg:text-[18px] font-[300] leading-[24px] sm:leading-[30px] lg:leading-[30px] tracking-normal text-left sm:text-justify"
-              data-reveal-text
-              data-delay="2"
             >
               <p>
                 Arris is a collaboration of individuals with excelling
@@ -558,7 +541,7 @@
     <!-- ========================================================================= -->
     <section
       id="what-we-do"
-      class="bg-arris-dark text-white pt-24 pb-20 px-6 sm:px-12 xl:px-[97px]"
+      class="relative z-20 bg-arris-dark text-white pt-24 pb-20 px-6 sm:px-12 xl:px-[97px]"
     >
       <div class="max-w-[1920px] mx-auto">
         <!-- Header Row: What we do (36px, 52px line-height) & Explore services (22px, 32px line-height, max-w-[704px]) -->
@@ -1531,37 +1514,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="animations.js"></script>
 
-    <!-- Hero Video Playlist -->
-    <script>
-      (function () {
-        const videos = Array.from(document.querySelectorAll('.hero-video'));
-        let current = 0;
-
-        function playNext() {
-          const prev = current;
-          current = (current + 1) % videos.length;
-
-          // Fade in next, fade out prev
-          videos[current].opacity = 0;
-          videos[current].play();
-          videos[current].style.opacity = '1';
-          videos[prev].style.opacity  = '0';
-
-          // Reset prev video after fade so it's ready next cycle
-          setTimeout(function () {
-            videos[prev].pause();
-            videos[prev].currentTime = 0;
-          }, 1000); // matches transition-duration-1000
-        }
-
-        // When current video ends, switch to next
-        videos.forEach(function (vid) {
-          vid.addEventListener('ended', playNext);
-        });
-
-        // Ensure first video starts (autoplay may be blocked in some contexts)
-        videos[0].play().catch(function () {});
-      })();
-    </script>
   </body>
 </html>

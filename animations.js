@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         start: 'top top',
         end: 'bottom top',
         pin: true,
-        pinSpacing: false,
+        pinSpacing: true,
         scrub: true,
         invalidateOnRefresh: true,
       }
@@ -432,36 +432,37 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.set(fadeImg, { opacity: 0 });
 
             // Create coordinated luxury deck shuffle timeline
+            // — intentionally slowed to premium speed to match HBA reference calmness
             const tl = gsap.timeline();
 
             // A. Top card lifts with subtle tilt & glide
             tl.to(mainCard, {
-              y: -14,
-              x: 6,
-              rotate: -1,
-              scale: 1.025,
-              duration: 0.22,
+              y: -18,
+              x: 8,
+              rotate: -1.3,
+              scale: 1.03,
+              duration: 0.52,
               ease: 'power2.out',
             }, 0)
             // B. Seamlessly crossfades to incoming image
             .to(fadeImg, {
               opacity: 1,
-              duration: 0.28,
+              duration: 0.68,
               ease: 'power1.inOut',
-            }, 0.04)
+            }, 0.12)
             // C. Glides smoothly back into deck with luxury deceleration
             .to(mainCard, {
               y: 0,
               x: 0,
               rotate: 0,
               scale: 1,
-              duration: 0.44,
+              duration: 0.9,
               ease: 'power3.out',
               onComplete: () => {
                 mainImg.src = newSrc;
                 gsap.set(fadeImg, { opacity: 0 });
               }
-            }, 0.22);
+            }, 0.5);
 
             // D. Peek card reacts underneath
             if (peekCard) {
@@ -472,21 +473,21 @@ document.addEventListener('DOMContentLoaded', () => {
               }
 
               tl.to(peekCard, {
-                y: 34,
-                x: -5,
-                rotate: 1.2,
-                scale: 0.96,
-                duration: 0.2,
+                y: 42,
+                x: -7,
+                rotate: 1.4,
+                scale: 0.955,
+                duration: 0.48,
                 ease: 'power2.out',
               }, 0)
               .to(peekCard, {
-                y: 22,
+                y: 24,
                 x: 0,
                 rotate: 0,
                 scale: 0.98,
-                duration: 0.44,
+                duration: 0.9,
                 ease: 'power3.out',
-              }, 0.2);
+              }, 0.48);
             }
           } else {
             mainImg.src = newSrc;
@@ -514,38 +515,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let closeTimer = null;
     let activeMenu = null;
+    let isTransitioning = false;
+    // CSS transition duration is 0.78s — guard must outlast it to prevent double-animation
+    const TRANSITION_MS = 820;
 
-    function open(menu) {
+    function open(menu, trigger) {
       if (!menu) return;
+      // Strict guard: if already open, bail — no style mutation, no re-trigger of CSS transition
+      if (menu.classList.contains('is-active')) return;
+      if (isTransitioning) return;
       clearTimeout(closeTimer);
-      dropdownGroups.forEach((g) => {
-        if (g.menu && g.menu !== menu) {
-          g.menu.classList.remove('is-active');
+
+      const rect = trigger ? trigger.getBoundingClientRect() : null;
+      const newLeft = rect ? Math.max(0, rect.left - 40) : null;
+
+      // If another menu is already open, slide left first then swap content
+      if (activeMenu && activeMenu !== menu) {
+        isTransitioning = true;
+        if (newLeft !== null) activeMenu.style.left = newLeft + 'px';
+
+        setTimeout(() => {
+          activeMenu.classList.remove('is-active');
+          if (newLeft !== null) {
+            menu.style.left = newLeft + 'px';
+            menu.style.paddingLeft = '52px';
+          }
+          menu.classList.add('is-active');
+          activeMenu = menu;
+          setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
+        }, 550);
+
+      } else {
+        // No active menu — open normally, one animation pass only
+        isTransitioning = true;
+        dropdownGroups.forEach((g) => {
+          if (g.menu && g.menu !== menu) g.menu.classList.remove('is-active');
+        });
+        if (newLeft !== null) {
+          menu.style.left = newLeft + 'px';
+          menu.style.paddingLeft = '52px';
         }
-      });
-      menu.classList.add('is-active');
-      activeMenu = menu;
+        menu.classList.add('is-active');
+        activeMenu = menu;
+        setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
+      }
     }
 
-    function delayClose(menu) {
+    function isPointerOverMenu(menu, x, y) {
+      // Check if coordinates are within the menu's bounding rect
+      const rect = menu.getBoundingClientRect();
+      return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+    }
+
+    function scheduleClose(menu, trigger) {
       if (!menu) return;
       clearTimeout(closeTimer);
       closeTimer = setTimeout(() => {
         menu.classList.remove('is-active');
         if (activeMenu === menu) activeMenu = null;
-      }, 280); // 280ms generous buffer gives user plenty of time to glide cursor down
+      }, 150);
+
+      // Bridge the gap: if cursor moves into menu area before timer fires, cancel close
+      function onMove(e) {
+        if (isPointerOverMenu(menu, e.clientX, e.clientY)) {
+          clearTimeout(closeTimer);
+          document.removeEventListener('mousemove', onMove);
+        }
+      }
+      document.addEventListener('mousemove', onMove);
+      // Clean up the mousemove listener once timer fires
+      setTimeout(() => document.removeEventListener('mousemove', onMove), 200);
     }
 
     dropdownGroups.forEach(({ trigger, menu }) => {
       if (!trigger || !menu) return;
 
-      // Nav trigger hover
-      trigger.addEventListener('mouseenter', () => open(menu));
-      trigger.addEventListener('mouseleave', () => delayClose(menu));
+      trigger.addEventListener('mouseenter', () => open(menu, trigger));
+      trigger.addEventListener('mouseleave', () => scheduleClose(menu, trigger));
 
-      // Dropdown panel hover
-      menu.addEventListener('mouseenter', () => open(menu));
-      menu.addEventListener('mouseleave', () => delayClose(menu));
+      // Entering the menu cancels any pending close
+      menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => scheduleClose(menu, trigger));
     });
 
     // When hovering other non-dropdown items (PROJECTS, STUDIO, CONTACT), close cleanly

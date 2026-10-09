@@ -447,22 +447,23 @@ nav [data-lucide="moon"],
 .mega-dropdown-menu {
   position: fixed !important;
   top: 0;
+  left: 0;
   right: 0;
-  width: 58vw;
-  min-width: 640px;
+  width: auto;
   max-width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.80) !important;
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
   padding: 105px 48px 48px 52px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(10px);
-  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s ease;
-  z-index: 40 !important; /* Kept at 40 so navbar links at 90 are cleanly above */
+  transform: translateY(22px);
+  /* Slow, luxury smooth slide + fade - 0.78s with premium ease to eliminate rapid-fire jump */
+  transition: opacity 0.78s cubic-bezier(0.16, 1, 0.3, 1), transform 0.78s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.78s ease, left 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 40 !important;
   box-shadow: -25px 0 70px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -474,7 +475,8 @@ nav [data-lucide="moon"],
   .expertise-dropdown-menu,
   .practice-dropdown-menu,
   .mega-dropdown-menu {
-    padding: 110px 56px 52px 64px;
+    padding-top: 110px;
+    padding-bottom: 52px;
   }
 }
 
@@ -482,24 +484,21 @@ nav [data-lucide="moon"],
   .expertise-dropdown-menu,
   .practice-dropdown-menu,
   .mega-dropdown-menu {
-    padding: 120px 80px 60px 88px;
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
 }
 
-/* Open states: both CSS hover and JS is-active class with grace period */
+/* Open state: strictly JS-managed via .is-active class to eliminate CSS:hover + JS double-trigger
+   (CSS :hover rules intentionally removed to prevent dual animation passes that cause the
+   visible double-slide bug. Hover intent is exclusively managed in animations.js.) */
 .expertise-dropdown-menu.is-active,
 .practice-dropdown-menu.is-active,
-.mega-dropdown-menu.is-active,
-.nav-dropdown-expertise:hover .expertise-dropdown-menu,
-.expertise-dropdown-menu:hover,
-.nav-dropdown-practice:hover .practice-dropdown-menu,
-.practice-dropdown-menu:hover,
-.nav-dropdown-mega:hover .mega-dropdown-menu,
-.mega-dropdown-menu:hover {
+.mega-dropdown-menu.is-active {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  transform: translateX(0) !important;
+  transform: translateY(0) !important;
 }
 
 /* Ensure navbar items on right half remain bright, crisp, and high-contrast over the dark fixed panel */
