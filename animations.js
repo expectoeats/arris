@@ -432,37 +432,36 @@ document.addEventListener('DOMContentLoaded', () => {
             gsap.set(fadeImg, { opacity: 0 });
 
             // Create coordinated luxury deck shuffle timeline
-            // — intentionally slowed to premium speed to match HBA reference calmness
             const tl = gsap.timeline();
 
             // A. Top card lifts with subtle tilt & glide
             tl.to(mainCard, {
-              y: -18,
-              x: 8,
-              rotate: -1.3,
-              scale: 1.03,
-              duration: 0.52,
+              y: -14,
+              x: 6,
+              rotate: -1,
+              scale: 1.025,
+              duration: 0.22,
               ease: 'power2.out',
             }, 0)
             // B. Seamlessly crossfades to incoming image
             .to(fadeImg, {
               opacity: 1,
-              duration: 0.68,
+              duration: 0.28,
               ease: 'power1.inOut',
-            }, 0.12)
+            }, 0.04)
             // C. Glides smoothly back into deck with luxury deceleration
             .to(mainCard, {
               y: 0,
               x: 0,
               rotate: 0,
               scale: 1,
-              duration: 0.9,
+              duration: 0.44,
               ease: 'power3.out',
               onComplete: () => {
                 mainImg.src = newSrc;
                 gsap.set(fadeImg, { opacity: 0 });
               }
-            }, 0.5);
+            }, 0.22);
 
             // D. Peek card reacts underneath
             if (peekCard) {
@@ -473,21 +472,21 @@ document.addEventListener('DOMContentLoaded', () => {
               }
 
               tl.to(peekCard, {
-                y: 42,
-                x: -7,
-                rotate: 1.4,
-                scale: 0.955,
-                duration: 0.48,
+                y: 34,
+                x: -5,
+                rotate: 1.2,
+                scale: 0.96,
+                duration: 0.2,
                 ease: 'power2.out',
               }, 0)
               .to(peekCard, {
-                y: 24,
+                y: 22,
                 x: 0,
                 rotate: 0,
                 scale: 0.98,
-                duration: 0.9,
+                duration: 0.44,
                 ease: 'power3.out',
-              }, 0.48);
+              }, 0.2);
             }
           } else {
             mainImg.src = newSrc;
@@ -499,7 +498,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
-  // 8. Navbar Mega Dropdowns - Hover Intent Grace Period Manager
+  // 8. Navbar Mega Dropdowns - Luxury Curtain Slide & Hover Manager (Reference HBA-style)
   // ---------------------------------------------------------------------------
   function initMegaDropdownHoverIntent() {
     const dropdownGroups = [
@@ -515,99 +514,190 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let closeTimer = null;
     let activeMenu = null;
-    let isTransitioning = false;
-    // CSS transition duration is 0.78s — guard must outlast it to prevent double-animation
-    const TRANSITION_MS = 820;
+
+    // 1. Create or attach the background dim overlay
+    let overlay = document.querySelector('.mega-dropdown-overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'mega-dropdown-overlay';
+      document.body.appendChild(overlay);
+    }
+
+    // 2. Add circular Close button with 90deg hover spin to each dropdown panel
+    dropdownGroups.forEach(({ menu }) => {
+      if (!menu) return;
+      if (!menu.querySelector('.mega-dropdown-close')) {
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'mega-dropdown-close';
+        closeBtn.setAttribute('aria-label', 'Close Menu');
+        closeBtn.innerHTML = `
+          <svg width="44" height="44" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M29.3118 15L29.8775 15.5657L23.0044 22.4388L29.8492 29.2836L29.2836 29.8492L22.4388 23.0044L15.5657 29.8775L15 29.3118L21.8731 22.4388L15.0283 15.594L15.594 15.0283L22.4388 21.8731L29.3118 15Z" fill="#FBFBF9"></path>
+            <circle cx="22.5" cy="22.5" r="22" stroke="rgba(255,255,255,0.35)"></circle>
+          </svg>
+        `;
+        menu.appendChild(closeBtn);
+        closeBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          closeAll();
+        });
+      }
+    });
+
+    // Helper: checks whether cursor is currently hovering any trigger or dropdown menu
+    function isAnyDropdownHovered() {
+      for (const g of dropdownGroups) {
+        if (!g.trigger || !g.menu) continue;
+        if (g.trigger.matches(':hover') || g.menu.matches(':hover')) {
+          return true;
+        }
+      }
+      return false;
+    }
 
     function open(menu, trigger) {
       if (!menu) return;
-      // Strict guard: if already open, bail — no style mutation, no re-trigger of CSS transition
-      if (menu.classList.contains('is-active')) return;
-      if (isTransitioning) return;
       clearTimeout(closeTimer);
 
       const rect = trigger ? trigger.getBoundingClientRect() : null;
-      const newLeft = rect ? Math.max(0, rect.left - 40) : null;
+      const targetLeft = rect ? Math.max(0, rect.left - 40) : null;
 
-      // If another menu is already open, slide left first then swap content
-      if (activeMenu && activeMenu !== menu) {
-        isTransitioning = true;
-        if (newLeft !== null) activeMenu.style.left = newLeft + 'px';
+      // Activate dim overlay
+      if (overlay) overlay.classList.add('is-active');
 
-        setTimeout(() => {
-          activeMenu.classList.remove('is-active');
-          if (newLeft !== null) {
-            menu.style.left = newLeft + 'px';
-            menu.style.paddingLeft = '52px';
-          }
-          menu.classList.add('is-active');
-          activeMenu = menu;
-          setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
-        }, 550);
+      // Case A: Switching from an already open menu to a different menu
+      if (activeMenu && activeMenu !== menu && targetLeft !== null) {
+        const oldLeft = activeMenu.style.left || (activeMenu.getBoundingClientRect().left + 'px');
+
+        // Instantly align new menu curtain with old menu position without animation
+        menu.style.transition = 'none';
+        menu.style.left = oldLeft;
+        menu.classList.add('is-active');
+        // Force reflow so browser registers the starting position
+        menu.offsetHeight;
+
+        // Restore standard 0.75s slide transition and glide across to new position
+        menu.style.transition = '';
+        menu.style.left = targetLeft + 'px';
+        menu.style.paddingLeft = '52px';
+
+        // Clean up outgoing menu
+        activeMenu.classList.remove('is-active');
+        activeMenu.style.left = '100vw';
+        activeMenu = menu;
 
       } else {
-        // No active menu — open normally, one animation pass only
-        isTransitioning = true;
+        // Case B: Opening fresh from closed state
         dropdownGroups.forEach((g) => {
-          if (g.menu && g.menu !== menu) g.menu.classList.remove('is-active');
+          if (g.menu && g.menu !== menu) {
+            g.menu.classList.remove('is-active');
+            g.menu.style.left = '100vw';
+          }
         });
-        if (newLeft !== null) {
-          menu.style.left = newLeft + 'px';
+
+        // Ensure starts from right off-screen
+        if (!menu.classList.contains('is-active')) {
+          menu.style.transition = 'none';
+          menu.style.left = '100vw';
+          menu.offsetHeight; // force reflow
+          menu.style.transition = '';
+        }
+
+        if (targetLeft !== null) {
+          menu.style.left = targetLeft + 'px';
           menu.style.paddingLeft = '52px';
         }
         menu.classList.add('is-active');
         activeMenu = menu;
-        setTimeout(() => { isTransitioning = false; }, TRANSITION_MS);
       }
     }
 
-    function isPointerOverMenu(menu, x, y) {
-      // Check if coordinates are within the menu's bounding rect
-      const rect = menu.getBoundingClientRect();
-      return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+    function closeAll() {
+      clearTimeout(closeTimer);
+      if (overlay) overlay.classList.remove('is-active');
+
+      dropdownGroups.forEach((g) => {
+        if (g.menu) {
+          g.menu.style.left = '100vw'; // Slide curtain back offscreen to the right
+          g.menu.classList.remove('is-active');
+        }
+      });
+      activeMenu = null;
     }
 
-    function scheduleClose(menu, trigger) {
-      if (!menu) return;
+    function scheduleClose() {
       clearTimeout(closeTimer);
       closeTimer = setTimeout(() => {
-        menu.classList.remove('is-active');
-        if (activeMenu === menu) activeMenu = null;
-      }, 150);
-
-      // Bridge the gap: if cursor moves into menu area before timer fires, cancel close
-      function onMove(e) {
-        if (isPointerOverMenu(menu, e.clientX, e.clientY)) {
-          clearTimeout(closeTimer);
-          document.removeEventListener('mousemove', onMove);
-        }
-      }
-      document.addEventListener('mousemove', onMove);
-      // Clean up the mousemove listener once timer fires
-      setTimeout(() => document.removeEventListener('mousemove', onMove), 200);
+        // Only close if neither trigger nor dropdown menu is hovered
+        if (isAnyDropdownHovered()) return;
+        closeAll();
+      }, 320); // 320ms generous buffer gives user plenty of time to glide cursor down
     }
 
     dropdownGroups.forEach(({ trigger, menu }) => {
       if (!trigger || !menu) return;
 
+      // 1. Top nav item hover & click:
       trigger.addEventListener('mouseenter', () => open(menu, trigger));
-      trigger.addEventListener('mouseleave', () => scheduleClose(menu, trigger));
+      trigger.addEventListener('mouseleave', () => scheduleClose());
 
-      // Entering the menu cancels any pending close
+      // Only the top-level anchor (EXPERTISE / PRACTICE) toggles menu on click
+      const triggerLink = trigger.querySelector(':scope > a');
+      if (triggerLink) {
+        triggerLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if (menu.classList.contains('is-active')) {
+            closeAll();
+          } else {
+            open(menu, trigger);
+          }
+        });
+      }
+
+      // 2. Dropdown panel hover keeps it open and cancels any pending close
       menu.addEventListener('mouseenter', () => clearTimeout(closeTimer));
-      menu.addEventListener('mouseleave', () => scheduleClose(menu, trigger));
+      menu.addEventListener('mousemove', () => clearTimeout(closeTimer));
+      menu.addEventListener('mouseleave', () => scheduleClose());
+
+      // 3. Dropdown navigation links: allow natural browser navigation without interference
+      const menuLinks = menu.querySelectorAll('a');
+      menuLinks.forEach((link) => {
+        link.addEventListener('click', (e) => {
+          // Do NOT preventDefault - let the browser navigate to the target page!
+          e.stopPropagation();
+          closeAll();
+        });
+      });
     });
 
-    // When hovering other non-dropdown items (PROJECTS, STUDIO, CONTACT), close cleanly
-    const otherNavItems = document.querySelectorAll('nav ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice)');
-    otherNavItems.forEach((li) => {
+    // 3. When hovering other TOP-LEVEL navbar items (PROJECTS, STUDIO, CONTACT), close cleanly.
+    const otherTopNavItems = document.querySelectorAll(
+      'header nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice), ' +
+      'nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice)'
+    );
+
+    otherTopNavItems.forEach((li) => {
       li.addEventListener('mouseenter', () => {
-        clearTimeout(closeTimer);
-        dropdownGroups.forEach((g) => {
-          if (g.menu) g.menu.classList.remove('is-active');
-        });
-        activeMenu = null;
+        if (li.closest('.expertise-dropdown-menu, .practice-dropdown-menu, .mega-dropdown-menu')) return;
+        closeAll();
       });
+    });
+
+    // 4. Close if user clicks on the dim overlay
+    if (overlay) {
+      overlay.addEventListener('click', () => closeAll());
+    }
+
+    // 5. Close if user clicks outside of navbar and dropdowns
+    document.addEventListener('click', (e) => {
+      const isInside = e.target.closest(
+        '.nav-dropdown-expertise, .nav-dropdown-practice, .expertise-dropdown-menu, .practice-dropdown-menu, .mega-dropdown-menu'
+      );
+      if (!isInside) {
+        closeAll();
+      }
     });
   }
 

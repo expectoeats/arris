@@ -73,7 +73,7 @@
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
@@ -417,18 +417,18 @@ nav {
   z-index: 100 !important;
 }
 
-nav ul {
+nav > ul {
   position: relative;
   z-index: 100 !important;
 }
 
 /* Prevent individual list items from trapping fixed dropdowns in child stacking contexts */
-nav ul > li {
+nav > ul > li {
   position: static !important;
 }
 
 /* Elevate all top navbar links so they are 100% in front of the fixed dropdown panel */
-nav ul > li > a,
+nav > ul > li > a,
 nav a.inline-block,
 nav [data-lucide="moon"],
 #mobile-menu-btn {
@@ -440,35 +440,60 @@ nav [data-lucide="moon"],
 .nav-dropdown-practice,
 .nav-dropdown-mega {
   position: static !important;
+  pointer-events: auto;
+  z-index: 55;
 }
 
+/* Background Dim Overlay (Left side dimmed for focused immersion) */
+.mega-dropdown-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 38;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.75s cubic-bezier(0.19, 1, 0.22, 1), visibility 0.75s ease;
+}
+
+.mega-dropdown-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Mega dropdown panel sliding curtain (Reference HBA-style) */
 .expertise-dropdown-menu,
 .practice-dropdown-menu,
 .mega-dropdown-menu {
   position: fixed !important;
   top: 0;
-  left: 0;
+  left: 100vw; /* Hidden offscreen to the right by default */
   right: 0;
   width: auto;
   max-width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.80) !important;
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   padding: 105px 48px 48px 52px;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transform: translateY(22px);
-  /* Slow, luxury smooth slide + fade - 0.78s with premium ease to eliminate rapid-fire jump */
-  transition: opacity 0.78s cubic-bezier(0.16, 1, 0.3, 1), transform 0.78s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.78s ease, left 0.95s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Luxury curtain slide from right - 0.75s cubic-bezier matching reference website */
+  transition: left 0.75s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.4s ease, visibility 0.4s ease;
   z-index: 40 !important;
   box-shadow: -25px 0 70px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
+  will-change: left;
 }
 
 @media (min-width: 1280px) {
@@ -489,19 +514,59 @@ nav [data-lucide="moon"],
   }
 }
 
-/* Open state: strictly JS-managed via .is-active class to eliminate CSS:hover + JS double-trigger
-   (CSS :hover rules intentionally removed to prevent dual animation passes that cause the
-   visible double-slide bug. Hover intent is exclusively managed in animations.js.) */
+/* Circular Close Button with 90deg hover spin matching reference site */
+.mega-dropdown-close {
+  position: absolute;
+  top: 36px;
+  right: 48px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 0;
+  opacity: 0.8;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.mega-dropdown-close:hover {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.mega-dropdown-close svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mega-dropdown-close svg path {
+  fill: #fbfbf9;
+}
+
+.mega-dropdown-close svg circle {
+  stroke: rgba(255, 255, 255, 0.35);
+  transition: stroke 0.3s ease;
+}
+
+.mega-dropdown-close:hover svg circle {
+  stroke: #ffffff;
+}
+
+/* Open state: active dropdown curtain is visible & captures pointer */
 .expertise-dropdown-menu.is-active,
 .practice-dropdown-menu.is-active,
 .mega-dropdown-menu.is-active {
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
-  transform: translateY(0) !important;
 }
 
-/* Ensure navbar items on right half remain bright, crisp, and high-contrast over the dark fixed panel */
+/* Ensure navbar items on right half remain bright, crisp, and high-contrast */
 nav:has(.is-active) ul > li > a,
 nav:has(.nav-dropdown-expertise:hover) ul > li > a,
 nav:has(.expertise-dropdown-menu:hover) ul > li > a,
@@ -513,13 +578,62 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
 }
 
-/* On mobile/small screens, hide desktop fixed mega panels to prevent touch overlap */
+/* On mobile/small screens, hide desktop fixed mega panels */
 @media (max-width: 767px) {
   .expertise-dropdown-menu,
   .practice-dropdown-menu,
-  .mega-dropdown-menu {
+  .mega-dropdown-menu,
+  .mega-dropdown-overlay {
     display: none !important;
   }
+}
+
+/* Waterfall Cascade: Sub-links initial state (pushed down and hidden) */
+.expertise-dropdown-menu ul > li,
+.practice-dropdown-menu ul > li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Staggered waterfall cascade when curtain reaches docked position (0.75s initial delay) */
+.expertise-dropdown-menu.is-active ul > li,
+.practice-dropdown-menu.is-active ul > li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.expertise-dropdown-menu.is-active ul > li:nth-child(1),
+.practice-dropdown-menu.is-active ul > li:nth-child(1) {
+  transition: opacity 0.5s ease 0.75s, transform 0.5s ease 0.75s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(2),
+.practice-dropdown-menu.is-active ul > li:nth-child(2) {
+  transition: opacity 0.5s ease 0.80s, transform 0.5s ease 0.80s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(3),
+.practice-dropdown-menu.is-active ul > li:nth-child(3) {
+  transition: opacity 0.5s ease 0.85s, transform 0.5s ease 0.85s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(4),
+.practice-dropdown-menu.is-active ul > li:nth-child(4) {
+  transition: opacity 0.5s ease 0.90s, transform 0.5s ease 0.90s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(5),
+.practice-dropdown-menu.is-active ul > li:nth-child(5) {
+  transition: opacity 0.5s ease 0.95s, transform 0.5s ease 0.95s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(6),
+.practice-dropdown-menu.is-active ul > li:nth-child(6) {
+  transition: opacity 0.5s ease 1.00s, transform 0.5s ease 1.00s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(7),
+.practice-dropdown-menu.is-active ul > li:nth-child(7) {
+  transition: opacity 0.5s ease 1.05s, transform 0.5s ease 1.05s;
+}
+.expertise-dropdown-menu.is-active ul > li:nth-child(8),
+.practice-dropdown-menu.is-active ul > li:nth-child(8) {
+  transition: opacity 0.5s ease 1.10s, transform 0.5s ease 1.10s;
 }
 
 /* Menu items inside dropdown */
@@ -529,13 +643,14 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   display: inline-block;
   font-size: 16px;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.42);
-  transition: color 0.28s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), font-size 0.28s ease;
+  color: rgba(255, 255, 255, 0.45);
   letter-spacing: 0.015em;
   cursor: pointer;
   padding: 6px 0;
   line-height: 1.35;
   text-transform: none;
+  /* 10px right shift transition on hover matching reference site */
+  transition: color 0.28s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1), font-size 0.28s ease !important;
 }
 
 @media (min-width: 1440px) {
@@ -547,6 +662,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   }
 }
 
+/* Link hover: glows white, expands slightly, and glides 10px to the right */
 .expertise-nav-item:hover,
 .expertise-nav-item.active,
 .practice-nav-item:hover,
@@ -556,7 +672,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   color: #ffffff;
   font-size: 21px;
   font-weight: 400;
-  transform: translateX(6px);
+  padding-left: 10px !important;
 }
 
 @media (min-width: 1440px) {
@@ -567,16 +683,27 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   .mega-nav-item:hover,
   .mega-nav-item.active {
     font-size: 23px;
+    padding-left: 10px !important;
   }
 }
 
-/* Card stack */
+/* Card stack fades in as curtain lands */
 .expertise-card-stack,
 .practice-card-stack,
 .mega-card-stack {
   position: relative;
   width: 310px;
   height: 390px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease 0.70s, transform 0.6s ease 0.70s;
+}
+
+.expertise-dropdown-menu.is-active .expertise-card-stack,
+.practice-dropdown-menu.is-active .practice-card-stack,
+.mega-dropdown-menu.is-active .mega-card-stack {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @media (min-width: 1280px) {
