@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | ARRIS ARCHITECTS</title>
+
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '300',
+            normal: '300',
+            medium: '400',
+            semibold: '500',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#121212',
+              cardDark: '#151515',
+              footerDark: '#161616',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      image-rendering: auto;
+    }
+
+    /* Publication section heading with trailing line */
+    .pub-heading {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .pub-heading .pub-title {
+      white-space: nowrap;
+    }
+    .pub-heading .pub-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(0, 0, 0, 0.2);
+      margin-left: 20px;
+    }
+
+    /* Publication card hover lift */
+    .pub-card {
+      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .pub-card:hover {
+      transform: translateY(-6px);
+    }
+    .pub-card img {
+      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .pub-card:hover img {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="bg-arris-cream text-black antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION WITH NAVIGATION (CONFERENCE ROOM BG - FIGMA)              -->
+  <!-- ========================================================================= -->
+  <header class="relative w-full overflow-hidden">
+    <div class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[460px] overflow-hidden">
+
+      <!-- Hero Background Image -->
+      <div class="absolute inset-0 w-full h-full overflow-hidden">
+        <img
+          src="images/publications/Rectangle 53.png"
+          alt="Arris Architects Studio - Conference Room"
+          class="w-full h-full object-cover object-center"
+        />
+        <!-- Gradient overlay for legibility -->
+        <div
+          class="absolute inset-0 pointer-events-none"
+          style="background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.4) 100%);"
+        ></div>
+      </div>
+
+      <!-- Navigation Bar -->
+      <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+        <!-- Logo -->
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-10 sm:h-11 lg:h-14 w-auto" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
+          <li><a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a></li>
+          <li class="nav-dropdown-expertise">
+            <a
+              href="expertise-architecture.html"
+              class="font-[300] text-white hover:text-white/70 transition-colors py-2 block"
+              >EXPERTISE</a
+            >
+            <!-- Mega Dropdown Panel with Image Shuffle -->
+            <div class="expertise-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <!-- Left: Category List -->
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="expertise-architecture.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                        Architecture
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                        Interiors
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                        Commercial
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                        Residential
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                        Cinema &amp; Multiplex Design
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                        Entertainment Spaces
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Schools
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                        Installations
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Right: Image Card Stack with Shuffle Animation -->
+                <div class="w-[56%] flex justify-end">
+                  <div class="expertise-card-stack relative">
+                    <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                      <img id="expertise-img-peek" src="images/dorpdow-shuffle/project1.2.png" alt="Preview Stack" class="expertise-img-peek w-full h-full object-cover block" />
+                    </div>
+                    <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img id="expertise-img-main" src="images/dorpdow-shuffle/DPS.png" alt="Preview" class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform" />
+                      <img id="expertise-img-fade" src="" alt="Crossfade" class="expertise-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-dropdown-practice">
+            <a href="about-arris.html" class="font-[300] text-white hover:text-white/70 transition-colors py-2 block">PRACTICE</a>
+            <!-- Mega Dropdown Panel with Image Shuffle -->
+            <div class="practice-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="about-arris.html" class="practice-nav-item" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                        About Arris
+                      </a>
+                    </li>
+                    <li>
+                      <a href="about-arris.html#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                        Design Philosophy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="design-process.html" class="practice-nav-item" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
+                        Design Process
+                      </a>
+                    </li>
+                    <li>
+                      <a href="careers.html" class="practice-nav-item" data-img="images/careers/image 10.png" data-peek="images/about/Rectangle 30.png">
+                        Careers
+                      </a>
+                    </li>
+                    <li>
+                      <a href="legacy.html" class="practice-nav-item" data-img="images/legacy/Rectangle 3.png" data-peek="images/legacy/Rectangle 4.png">
+                        Legacy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
+                        Contact
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="w-[56%] flex justify-end">
+                  <div class="practice-card-stack relative">
+                    <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                      <img id="practice-img-peek" src="images/about/Rectangle 3.png" alt="Preview Stack" class="practice-img-peek w-full h-full object-cover block" />
+                    </div>
+                    <div id="practice-card-main" class="practice-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img id="practice-img-main" src="images/about/Rectangle 1.png" alt="Preview" class="practice-img-main absolute inset-0 w-full h-full object-cover block will-change-transform" />
+                      <img id="practice-img-fade" src="" alt="Crossfade" class="practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="index.html#leadership" class="font-[300] text-white border-b border-white pb-0.5 py-2 block">STUDIO</a></li>
+          <li><a href="contact.html" class="hover:text-white/70 transition-colors">CONTACT</a></li>
+        </ul>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10" aria-label="Toggle Navigation">
+          <span class="w-7 h-0.5 bg-white rounded-full"></span>
+          <span class="w-5 h-0.5 bg-white rounded-full"></span>
+          <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
+      </nav>
+
+      <!-- Hero Text Overlay (Bottom Left) -->
+      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px]">
+        <span class="block text-white text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3">PUBLICATIONS</span>
+        <h1 class="text-white text-[40px] sm:text-[52px] lg:text-[68px] font-[300] leading-[1.05] tracking-tight">
+          Stories that define<br>
+          our journey
+        </h1>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+        </a>
+        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <ul class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto">
+        <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
+        <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
+        <li><a href="expertise-architecture.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Expertise</a></li>
+        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
+        <li><a href="design-process.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Design Process</a></li>
+        <li><a href="index.html#leadership" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Studio</a></li>
+        <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+      </ul>
+
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 object-contain opacity-80" /></a>
+          <a href="#" aria-label="LinkedIn"><img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 object-contain opacity-80" /></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ========================================================================= -->
+  <!-- 2. BOOKS SECTION                                                          -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Section Heading with trailing line -->
+      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
+        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
+          Books
+        </h2>
+        <span class="pub-line"></span>
+      </div>
+
+      <!-- 3 Publication Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
+
+        <!-- Book 1 -->
+        <div class="pub-card" data-reveal-text>
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/1.png"
+              alt="Wav-Cinema - Arris Architects Publication"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2021</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Wav-Cinema
+          </h3>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="pub-card" data-reveal-text data-delay="1">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/2.png"
+              alt="Cinema Architecture - Arris Architects Publication"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2017</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Cinema Architecture
+          </h3>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="pub-card" data-reveal-text data-delay="2">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/3.png"
+              alt="Atlas of World Interior Design - Arris Architects Publication"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2019</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Atlas of World Interior<br class="hidden sm:block"> Design
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAGAZINES SECTION                                                      -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Section Heading with trailing line -->
+      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
+        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
+          Magazines
+        </h2>
+        <span class="pub-line"></span>
+      </div>
+
+      <!-- 3 Publication Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
+
+        <!-- Magazine 1 -->
+        <div class="pub-card" data-reveal-text>
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/1.png"
+              alt="Commercial Design - Arris Architects Magazine Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2015</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Commercial Design
+          </h3>
+        </div>
+
+        <!-- Magazine 2 -->
+        <div class="pub-card" data-reveal-text data-delay="1">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/2.png"
+              alt="Design Matrix - Arris Architects Magazine Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2015</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Design Matrix
+          </h3>
+        </div>
+
+        <!-- Magazine 3 -->
+        <div class="pub-card" data-reveal-text data-delay="2">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/3.png"
+              alt="Design Solution - Arris Architects Magazine Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2014</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Design Solution
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 4. NEWSPAPER SECTION                                                     -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Section Heading with trailing line -->
+      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
+        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
+          Newspaper
+        </h2>
+        <span class="pub-line"></span>
+      </div>
+
+      <!-- 3 Publication Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
+
+        <!-- Newspaper 1 -->
+        <div class="pub-card" data-reveal-text>
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/1.png"
+              alt="DNA - Arris Architects Newspaper Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Jan 2009</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            DNA
+          </h3>
+        </div>
+
+        <!-- Newspaper 2 -->
+        <div class="pub-card" data-reveal-text data-delay="1">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/2.png"
+              alt="WAN - Arris Architects Newspaper Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Sep 2009</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            WAN
+          </h3>
+        </div>
+
+        <!-- Newspaper 3 -->
+        <div class="pub-card" data-reveal-text data-delay="2">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+            <img
+              src="images/publications/3.png"
+              alt="WAN - Arris Architects Newspaper Feature"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">July 2009</p>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            WAN
+          </h3>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 5. CONTACT SECTION (MATCHING HOMEPAGE)                                     -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2
+        class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3"
+        data-reveal-text
+      >
+        Contact us
+      </h2>
+      <p
+        class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16"
+        data-reveal-text
+        data-delay="1"
+      >
+        Have any questions? Feel free to contact us for more information.
+      </p>
+
+      <!-- 3 Contact Columns (Stacked on mobile, 3-col on desktop) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+        <!-- Column 1: Email -->
+        <div>
+          <i
+            data-lucide="mail"
+            class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+          <p
+            class="text-black text-[16px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+          >
+            Have a question or idea? Drop us an email we'd love to hear from
+            you.
+          </p>
+          <a
+            href="mailto:arrisarch@gmail.com"
+            class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+          >
+            arrisarch@gmail.com
+          </a>
+        </div>
+
+        <!-- Column 2: Phone -->
+        <div>
+          <i
+            data-lucide="phone"
+            class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
+          <p
+            class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+          >
+            Have a question? Give us a call &mdash; we're happy to help.
+          </p>
+          <a
+            href="tel:+912225829387"
+            class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+          >
+            +912225829387, +912225828996
+          </a>
+        </div>
+
+        <!-- Column 3: Office -->
+        <div>
+          <i
+            data-lucide="map-pin"
+            class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+          ></i>
+          <h4 class="text-[32px] font-normal text-neutral-900 mb-2">
+            Office
+          </h4>
+          <p
+            class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+          >
+            Find us at our office.
+          </p>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[18px] font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
+          >
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle
+            Industrial Estate, Thane West, Thane, Maharashtra 400604
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER (DARK THEME)                                                     -->
+  <!-- ========================================================================= -->
+  <footer class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900">
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Top / Main Block: Logo, Nav, Socials -->
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10">
+        <!-- Logo -->
+        <a href="index.html" class="inline-block mx-auto lg:mx-0">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 lg:h-14 w-auto" />
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[16px] text-white/90 font-light text-center">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="index.html#what-we-do" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex items-center space-x-6 lg:space-x-5">
+          <a href="#" aria-label="Facebook">
+            <img src="images/Vector.png" alt="Facebook" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full border-t border-neutral-800"></div>
+
+      <!-- Bottom Row: Copyright & Legal -->
+      <div class="flex flex-col sm:flex-row items-center justify-center pt-8 text-[16px] text-neutral-400 font-light gap-4 sm:gap-10 text-center">
+        <div>&copy; 2026. All rights reserved.</div>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMenu() {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+  </script>
+
+  <!-- GSAP & Core Animations Runtime -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+
+</body>
+</html>
