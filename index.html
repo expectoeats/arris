@@ -373,98 +373,177 @@
           <span class="w-6 h-0.5 bg-white rounded-full"></span>
         </button>
       </nav>
+    </header>
 
-      <!-- Mobile Drawer Overlay -->
-      <div
-        id="mobile-menu"
-        class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
-      >
-        <div class="flex items-center justify-between">
-          <a href="#" class="inline-block">
-            <img
-              src="images/image 7.png"
-              alt="Arris Architects Logo"
-              class="h-8 w-auto brightness-100"
-            />
-          </a>
-          <button
-            id="mobile-menu-close"
-            class="text-white p-2 focus:outline-none"
-            aria-label="Close Menu"
-          >
-            <i data-lucide="x" class="w-7 h-7"></i>
-          </button>
-        </div>
-
-        <ul
-          class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto"
+    <!-- Mobile Drawer Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img
+            src="images/image 7.png"
+            alt="Arris Architects Logo"
+            class="h-8 w-auto brightness-100"
+          />
+        </a>
+        <button
+          id="mobile-menu-close"
+          class="text-white p-2 focus:outline-none"
+          aria-label="Close Menu"
         >
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Navigation Items Container -->
+      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+        <ul
+          class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide"
+        >
+          <!-- 1. Projects -->
           <li>
             <a
               href="projects.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
+              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
               >Projects</a
             >
           </li>
+
+          <!-- 2. Expertise Accordion -->
+          <li class="mobile-accordion-item">
+            <button
+              type="button"
+              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
+            >
+              <span>Expertise</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div
+              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
+            >
+              <a
+                href="expertise-architecture.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Architecture</a
+              >
+              <a
+                href="expertise-interior.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Interior Design</a
+              >
+              <a
+                href="expertise-interior.html#commercial"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Commercial</a
+              >
+              <a
+                href="expertise-interior.html#residential"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Residential</a
+              >
+              <a
+                href="expertise-interior.html#cinema"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Cinema &amp; Multiplex</a
+              >
+              <a
+                href="expertise-interior.html#schools"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Schools</a
+              >
+              <a
+                href="expertise-interior.html#installations"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Installations</a
+              >
+            </div>
+          </li>
+
+          <!-- 3. Practice Accordion -->
+          <li class="mobile-accordion-item">
+            <button
+              type="button"
+              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
+            >
+              <span>Practice</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div
+              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
+            >
+              <a
+                href="about-arris.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >About Arris</a
+              >
+              <a
+                href="about-arris.html#design-philosophy"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Design Philosophy</a
+              >
+              <a
+                href="design-process.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Design Process</a
+              >
+              <a
+                href="careers.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Careers</a
+              >
+              <a
+                href="legacy.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Legacy</a
+              >
+            </div>
+          </li>
+
+          <!-- 4. Studio -->
           <li>
             <a
-              href="#what-we-do"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
-              >Services</a
+              href="index.html#leadership"
+              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
+              >Studio</a
             >
           </li>
+
+          <!-- 5. Publications -->
           <li>
             <a
-              href="#who-we-are"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
-              >About Us</a
-            >
-          </li>
-          <li>
-            <a
-              href="#testimonials"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
-              >Testimonials</a
-            >
-          </li>
-          <li>
-            <a
-              href="#publications"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
+              href="publications.html"
+              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
               >Publications</a
             >
           </li>
-          <li>
-            <a
-              href="#leadership"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
-              >Leadership</a
-            >
-          </li>
+
+          <!-- 6. Contact Us -->
           <li>
             <a
               href="contact.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-2"
+              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
               >Contact Us</a
             >
           </li>
         </ul>
+      </div>
 
-        <div
-          class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400"
-        >
-          <span>&copy; 2026 Arris Architects</span>
-          <div class="flex space-x-4 text-white">
-            <a href="#" aria-label="Instagram"
-              ><i data-lucide="instagram" class="w-4 h-4"></i
-            ></a>
-            <a href="#" aria-label="LinkedIn"
-              ><i data-lucide="linkedin" class="w-4 h-4"></i
-            ></a>
-          </div>
+      <div
+        class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400"
+      >
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"
+            ><i data-lucide="instagram" class="w-4 h-4"></i
+          ></a>
+          <a href="#" aria-label="LinkedIn"
+            ><i data-lucide="linkedin" class="w-4 h-4"></i
+          ></a>
         </div>
       </div>
-    </header>
+    </div>
 
     <!-- ========================================================================= -->
     <!-- 2. WHO WE ARE (ABOUT SECTION)                                             -->

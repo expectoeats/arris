@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -296,36 +296,92 @@
         <span class="w-6 h-0.5 bg-black rounded-full"></span>
       </button>
     </nav>
+  </header>
 
-    <!-- Mobile Drawer Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="inline-block">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
-        </a>
-        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
-          <i data-lucide="x" class="w-7 h-7"></i>
-        </button>
-      </div>
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-block">
+        <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+      </a>
+      <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+        <i data-lucide="x" class="w-7 h-7"></i>
+      </button>
+    </div>
 
-      <ul class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto">
-        <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
-        <li><a href="projects.html" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Projects</a></li>
-        <li><a href="index.html#what-we-do" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Services</a></li>
-        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
-        <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
-        <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+    <!-- Scrollable Navigation Items Container -->
+    <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+      <ul class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide">
+        <!-- 1. Projects -->
+        <li>
+          <a href="projects.html" class="mobile-nav-link text-white font-[400] hover:text-white/70 transition-colors block py-1.5">
+            Projects
+          </a>
+        </li>
+
+        <!-- 2. Expertise Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Expertise</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
+            <a href="expertise-interior.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interior Design</a>
+            <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
+            <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
+            <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinema &amp; Multiplex</a>
+            <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
+            <a href="expertise-interior.html#installations" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Installations</a>
+          </div>
+        </li>
+
+        <!-- 3. Practice Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Practice</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
+            <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+            <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
+            <a href="careers.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Careers</a>
+            <a href="legacy.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Legacy</a>
+          </div>
+        </li>
+
+        <!-- 4. Studio -->
+        <li>
+          <a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Studio
+          </a>
+        </li>
+
+        <!-- 5. Publications -->
+        <li>
+          <a href="publications.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Publications
+          </a>
+        </li>
+
+        <!-- 6. Contact Us -->
+        <li>
+          <a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Contact Us
+          </a>
+        </li>
       </ul>
+    </div>
 
-      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
-        <span>&copy; 2026 Arris Architects</span>
-        <div class="flex space-x-4 text-white">
-          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-        </div>
+    <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+      <span>&copy; 2026 Arris Architects</span>
+      <div class="flex space-x-4 text-white">
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
       </div>
     </div>
-  </header>
+  </div>
 
 
   <!-- ========================================================================= -->
@@ -335,12 +391,12 @@
     <div class="max-w-[1920px] mx-auto">
       
       <!-- Page Title: "Projects" (SF Pro, 48px, Weight 274, Centered) -->
-      <h1 class="text-center text-[36px] sm:text-[42px] lg:text-[48px] font-[300] leading-none text-black tracking-normal mb-8 sm:mb-12">
+      <h1 class="text-center text-[36px] sm:text-[42px] lg:text-[48px] font-[300] leading-none text-black tracking-normal mb-8 sm:mb-12" data-reveal-text>
         Projects
       </h1>
 
       <!-- Category Filter Dropdown Pill Button -->
-      <div class="relative inline-block text-left mb-6 sm:mb-10">
+      <div class="relative inline-block text-left mb-6 sm:mb-10" data-reveal-text data-delay="1">
         <div>
           <button 
             type="button" 
@@ -375,7 +431,7 @@
 
         <!-- CARD 1: Devgn Cinex Bellona -->
         <a href="project-detail.html?id=devgn-cinex-bellona" class="project-card group cursor-pointer block" data-category="cinemas">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/devgn_cinex_bellona.png" 
               alt="Devgn Cinex Bellona" 
@@ -394,7 +450,7 @@
 
         <!-- CARD 2: DPS Hazaribaug -->
         <a href="project-detail.html?id=dps-hazaribaug" class="project-card group cursor-pointer block" data-category="schools">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/dps_hazaribaug.png" 
               alt="DPS Hazaribaug" 
@@ -413,7 +469,7 @@
 
         <!-- CARD 3: Aldona Villa -->
         <a href="project-detail.html?id=aldona-villa" class="project-card group cursor-pointer block" data-category="residential">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/aldona_villa.png" 
               alt="Aldona Villa" 
@@ -432,7 +488,7 @@
 
         <!-- CARD 4: Times Tower New -->
         <a href="project-detail.html?id=times-tower-new" class="project-card group cursor-pointer block" data-category="commercial">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/times_tower_new.png" 
               alt="Times Tower New" 
@@ -451,7 +507,7 @@
 
         <!-- CARD 5: Devgn Cinex Ahmedabad -->
         <a href="project-detail.html?id=devgn-cinex-ahmedabad" class="project-card group cursor-pointer block" data-category="cinemas">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/devgn_cinex_ahmedabad.png" 
               alt="Devgn Cinex Ahmedabad" 
@@ -470,7 +526,7 @@
 
         <!-- CARD 6: IB Suncity -->
         <a href="project-detail.html?id=ib-suncity" class="project-card group cursor-pointer block" data-category="schools">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/ib_suncity.png" 
               alt="IB Suncity" 
@@ -489,7 +545,7 @@
 
         <!-- CARD 7: AHS Hazaribaug -->
         <a href="project-detail.html?id=ahs-hazaribaug" class="project-card group cursor-pointer block" data-category="schools">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/ahs_hazaribaug.png" 
               alt="AHS Hazaribaug" 
@@ -508,7 +564,7 @@
 
         <!-- CARD 8: LA Trichy -->
         <a href="project-detail.html?id=la-trichy" class="project-card group cursor-pointer block" data-category="cinemas">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/la_trichy.png" 
               alt="LA Trichy" 
@@ -527,7 +583,7 @@
 
         <!-- CARD 9: Bottle House -->
         <a href="project-detail.html?id=bottle-house" class="project-card group cursor-pointer block" data-category="residential">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/bottle_house.png" 
               alt="Bottle House" 
@@ -546,7 +602,7 @@
 
         <!-- CARD 10: Hazaribaug Bungalow -->
         <a href="project-detail.html?id=hazaribaug-bungalow" class="project-card group cursor-pointer block" data-category="residential">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/hazaribaug_bungalow.png" 
               alt="Hazaribaug Bungalow" 
@@ -565,7 +621,7 @@
 
         <!-- CARD 11: Devgn Cinex Elan -->
         <a href="project-detail.html?id=devgn-cinex-elan" class="project-card group cursor-pointer block" data-category="cinemas">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/devgn_cinex_elan.png" 
               alt="Devgn Cinex Elan" 
@@ -584,7 +640,7 @@
 
         <!-- CARD 12: Rajhans Skylar -->
         <a href="project-detail.html?id=rajhans-skylar" class="project-card group cursor-pointer block" data-category="commercial">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/rajhans_skylar.png" 
               alt="Rajhans Skylar" 
@@ -603,7 +659,7 @@
 
         <!-- CARD 13: Rajhans Precia -->
         <a href="project-detail.html?id=rajhans-precia" class="project-card group cursor-pointer block" data-category="commercial">
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="images/projects/rajhans_precia.png" 
               alt="Rajhans Precia" 
@@ -630,10 +686,10 @@
   <!-- ========================================================================= -->
   <section id="contact" class="bg-arris-cream pt-20 sm:pt-28 pb-20 sm:pb-24 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
-      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3" data-reveal-text>
         Contact us
       </h2>
-      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16">
+      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16" data-reveal-text data-delay="1">
         Have any questions? Feel free to contact us for more information.
       </p>
 
@@ -641,7 +697,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
         
         <!-- Column 1: Email -->
-        <div>
+        <div data-reveal-text data-delay="1">
           <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Email</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -653,7 +709,7 @@
         </div>
 
         <!-- Column 2: Phone -->
-        <div>
+        <div data-reveal-text data-delay="2">
           <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Phone</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -665,7 +721,7 @@
         </div>
 
         <!-- Column 3: Office -->
-        <div>
+        <div data-reveal-text data-delay="3">
           <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Office</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -805,9 +861,13 @@
     });
   </script>
 
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- GSAP & Core Animations Runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="animations.js"></script>
 </body>
 </html>
+

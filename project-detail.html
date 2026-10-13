@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -124,43 +124,27 @@
     /* ========================================================================= */
     /* Dynamic Expanding Gallery Accordion Animation                             */
     /* ========================================================================= */
+    /* Mobile First: Stacked vertically, full-width images */
     .gallery-accordion {
       display: flex;
-      flex-direction: row;
-      align-items: stretch;
+      flex-direction: column;
       width: 100%;
-      height: 360px;
-    }
-    @media (min-width: 640px) {
-      .gallery-accordion {
-        height: 460px;
-      }
-    }
-    @media (min-width: 1024px) {
-      .gallery-accordion {
-        height: 580px;
-      }
-    }
-    @media (min-width: 1280px) {
-      .gallery-accordion {
-        height: 640px;
-      }
+      height: auto;
+      gap: 16px;
     }
 
     .gallery-item {
-      flex: 1 1 0%;
-      min-width: 0;
-      height: 100%;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
       position: relative;
       overflow: hidden;
-      cursor: pointer;
-      border-radius: 2px;
+      border-radius: 4px;
       background-color: #121212;
-      transition: flex 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: flex;
+      cursor: pointer;
     }
 
-    /* Soft dimming overlay for non-hovered photos */
+    /* Soft dimming overlay for non-hovered photos on desktop */
     .gallery-item .gallery-overlay {
       position: absolute;
       inset: 0;
@@ -171,8 +155,56 @@
       z-index: 10;
     }
 
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: transform;
+    }
+
+    /* Desktop (md: 768px+): Expanding Horizontal Accordion */
+    @media (min-width: 768px) {
+      .gallery-accordion {
+        flex-direction: row;
+        align-items: stretch;
+        height: 520px;
+        gap: 16px;
+      }
+
+      .gallery-item {
+        flex: 1 1 0%;
+        min-width: 0;
+        height: 100%;
+        aspect-ratio: auto;
+        border-radius: 2px;
+        transition: flex 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: flex;
+      }
+
+      .gallery-item:hover img,
+      .gallery-item.active img {
+        transform: scale(1.04);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .gallery-accordion {
+        height: 580px;
+        gap: 20px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .gallery-accordion {
+        height: 640px;
+        gap: 24px;
+      }
+    }
+
     /* Desktop Hover Behavior: Hovered photo expands to 3.5 flex, siblings contract to 0.8 flex */
-    @media (hover: hover) and (pointer: fine) {
+    @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
       .gallery-accordion:hover .gallery-item {
         flex: 0.8 1 0%;
       }
@@ -188,32 +220,20 @@
       }
     }
 
-    /* Touch or active state support (e.g. mobile tap) */
-    .gallery-accordion.has-active .gallery-item {
-      flex: 0.8 1 0%;
-    }
-    .gallery-accordion.has-active .gallery-item .gallery-overlay {
-      opacity: 0.35;
-    }
-    .gallery-accordion.has-active .gallery-item.active {
-      flex: 3.5 1 0%;
-    }
-    .gallery-accordion.has-active .gallery-item.active .gallery-overlay {
-      opacity: 0;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: transform;
-    }
-
-    .gallery-item:hover img,
-    .gallery-item.active img {
-      transform: scale(1.04);
+    /* Desktop Clicked / Active State */
+    @media (min-width: 768px) {
+      .gallery-accordion.has-active .gallery-item {
+        flex: 0.8 1 0%;
+      }
+      .gallery-accordion.has-active .gallery-item .gallery-overlay {
+        opacity: 0.35;
+      }
+      .gallery-accordion.has-active .gallery-item.active {
+        flex: 3.5 1 0%;
+      }
+      .gallery-accordion.has-active .gallery-item.active .gallery-overlay {
+        opacity: 0;
+      }
     }
   </style>
 </head>
@@ -423,43 +443,99 @@
           <span class="w-6 h-0.5 bg-white rounded-full"></span>
         </button>
       </nav>
+    </header>
 
-      <!-- Mobile Drawer Overlay -->
-      <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
-        <div class="flex items-center justify-between">
-          <a href="index.html" class="inline-block">
-            <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
-          </a>
-          <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
-            <i data-lucide="x" class="w-7 h-7"></i>
-          </button>
-        </div>
+    <!-- Mobile Drawer Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+        </a>
+        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
 
-        <ul class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto">
-          <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
-          <li><a href="projects.html" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Projects</a></li>
-          <li><a href="index.html#what-we-do" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Services</a></li>
-          <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
-          <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Leadership</a></li>
-          <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
+      <!-- Scrollable Navigation Items Container -->
+      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+        <ul class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide">
+          <!-- 1. Projects -->
+          <li>
+            <a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+              Projects
+            </a>
+          </li>
+
+          <!-- 2. Expertise Accordion -->
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+              <span>Expertise</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
+              <a href="expertise-interior.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interior Design</a>
+              <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
+              <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
+              <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinema &amp; Multiplex</a>
+              <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
+              <a href="expertise-interior.html#installations" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Installations</a>
+            </div>
+          </li>
+
+          <!-- 3. Practice Accordion -->
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+              <span>Practice</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
+              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+              <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
+              <a href="careers.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Careers</a>
+              <a href="legacy.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Legacy</a>
+            </div>
+          </li>
+
+          <!-- 4. Studio -->
+          <li>
+            <a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+              Studio
+            </a>
+          </li>
+
+          <!-- 5. Publications -->
+          <li>
+            <a href="publications.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+              Publications
+            </a>
+          </li>
+
+          <!-- 6. Contact Us -->
+          <li>
+            <a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+              Contact Us
+            </a>
+          </li>
         </ul>
+      </div>
 
-        <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
-          <span>&copy; 2026 Arris Architects</span>
-          <div class="flex space-x-4 text-white">
-            <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-            <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-          </div>
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
         </div>
       </div>
-    </header>
+    </div>
 
     <!-- Hero Bottom-Left Project Title Block -->
     <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-12 sm:pb-16 lg:pb-20 max-w-[1920px] mx-auto mt-auto">
-      <div class="max-w-4xl">
-        <a href="projects.html" class="inline-block text-[11px] sm:text-xs tracking-[0.2em] font-[300] uppercase text-white/80 hover:text-white transition-colors mb-2">
-          PROJECTS
-        </a>
+      <div class="max-w-4xl" data-reveal-text>
+        <div id="hero-sec" class="text-[11px] sm:text-xs tracking-[0.2em] font-[300] uppercase text-white/80 mb-2">
+          SEC. 2019
+        </div>
         <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[56px] xl:text-[64px] font-[300] leading-tight text-white tracking-tight">
           Rajhans Skylar
         </h1>
@@ -475,9 +551,9 @@
     <div class="max-w-[1920px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
         
-        <!-- Left Column: Tall Portrait Project Feature Image -->
-        <div class="lg:col-span-5 w-full">
-          <div class="w-full aspect-[580/770] overflow-hidden bg-neutral-200 shadow-sm">
+        <!-- Left Column: Tall Portrait Project Feature Image (Below specs on mobile, left on desktop) -->
+        <div class="lg:col-span-5 w-full order-2 lg:order-1">
+          <div class="w-full aspect-[580/770] overflow-hidden bg-neutral-200 shadow-sm" data-reveal-animation>
             <img 
               id="story-img" 
               src="images/project-detail/rajhans_skylar_atrium.png" 
@@ -487,16 +563,16 @@
           </div>
         </div>
 
-        <!-- Right Column: Project Story & Specifications Table -->
-        <div class="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0">
+        <!-- Right Column: Project Story & Specifications Table (Top on mobile, right on desktop) -->
+        <div class="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0 order-1 lg:order-2">
           
           <!-- Narrative Description Paragraph -->
-          <p id="project-description" class="text-[17px] sm:text-[19px] lg:text-[20px] font-[300] leading-[170%] text-black text-justify lg:text-left mb-12 sm:mb-16 lg:mb-20">
+          <p id="project-description" data-reveal-text class="text-[17px] sm:text-[19px] lg:text-[20px] font-[300] leading-[170%] text-black text-justify lg:text-left mb-12 sm:mb-16 lg:mb-20">
             This project brings together contemporary interior spaces with a thoughtfully designed landscape that complements the overall built environment. Our scope focused on the atrium, lobby spaces, gym, café and other key interior areas, creating cohesive and inviting spaces through considered materials and detailing. The landscape integrates lush planting with carefully placed sculptural elements that soften the effect of the built form, creating a more welcoming and engaging experience around the building. Together, the interiors and landscape create a refined environment that balances functionality, visual identity and a sense of openness.
           </p>
 
           <!-- Specifications Section -->
-          <div class="w-full">
+          <div class="w-full" data-reveal-text data-delay="1">
             <!-- Table Header Line -->
             <div class="flex items-center justify-between border-b border-black/40 pb-2.5 mb-6 text-[11px] sm:text-xs tracking-[0.14em] font-[300] uppercase text-black">
               <span>PROJECT SPECIFICATION</span>
@@ -560,12 +636,12 @@
     <div class="max-w-[1920px] mx-auto">
       
       <!-- Section Title -->
-      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-tight tracking-tight text-white mb-8 sm:mb-12">
+      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-tight tracking-tight text-white mb-8 sm:mb-12" data-reveal-text>
         Project Gallery
       </h2>
 
-      <!-- Visual Showcase Layout (Interactive Expanding Flex Accordion) -->
-      <div id="gallery-container" class="gallery-accordion flex flex-row gap-3 sm:gap-4 lg:gap-6 items-stretch w-full">
+      <!-- Visual Showcase Layout (Mobile: Stacked full-width, Desktop: Interactive Expanding Flex Accordion) -->
+      <div id="gallery-container" class="gallery-accordion w-full">
         
         <!-- Gallery Item 1 -->
         <div class="gallery-item group" data-index="0">
@@ -624,7 +700,7 @@
     <div class="max-w-[1920px] mx-auto">
       
       <!-- Section Title -->
-      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-tight tracking-tight text-black mb-10 sm:mb-14">
+      <h2 class="text-[28px] sm:text-[34px] lg:text-[40px] font-[300] leading-tight tracking-tight text-black mb-10 sm:mb-14" data-reveal-text>
         Related Projects
       </h2>
 
@@ -642,10 +718,10 @@
   <!-- ========================================================================= -->
   <section id="contact" class="bg-arris-cream pt-20 sm:pt-28 pb-20 sm:pb-24 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
-      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3">
+      <h2 class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3" data-reveal-text>
         Contact us
       </h2>
-      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16">
+      <p class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16" data-reveal-text data-delay="1">
         Have any questions? Feel free to contact us for more information.
       </p>
 
@@ -653,7 +729,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
         
         <!-- Column 1: Email -->
-        <div>
+        <div data-reveal-text data-delay="1">
           <i data-lucide="mail" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Email</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -665,7 +741,7 @@
         </div>
 
         <!-- Column 2: Phone -->
-        <div>
+        <div data-reveal-text data-delay="2">
           <i data-lucide="phone" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Phone</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -677,7 +753,7 @@
         </div>
 
         <!-- Column 3: Office -->
-        <div>
+        <div data-reveal-text data-delay="3">
           <i data-lucide="map-pin" class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"></i>
           <h3 class="text-xl font-normal text-neutral-900 mb-2">Office</h3>
           <p class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3">
@@ -795,12 +871,16 @@
     // Render Hero Section
     const heroBgImg = document.getElementById('hero-bg-img');
     const heroTitle = document.getElementById('hero-title');
+    const heroSec = document.getElementById('hero-sec');
     if (heroBgImg) {
       heroBgImg.src = project.heroImage;
       heroBgImg.alt = project.title;
     }
     if (heroTitle) {
       heroTitle.textContent = project.title;
+    }
+    if (heroSec) {
+      heroSec.textContent = project.sec || 'SEC. 2026';
     }
 
     // Render Story Section
@@ -855,7 +935,7 @@
         card.href = `project-detail.html?id=${relProj.id}`;
         card.className = 'project-card group cursor-pointer block';
         card.innerHTML = `
-          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200">
+          <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="${relProj.cardImage}" 
               alt="${relProj.title}" 
@@ -882,6 +962,7 @@
     if (galleryAccordion && galleryItems.length) {
       galleryItems.forEach(item => {
         item.addEventListener('click', (e) => {
+          if (window.innerWidth < 768) return; // Mobile uses full-width vertical stack
           const isAlreadyActive = item.classList.contains('active');
           galleryItems.forEach(i => i.classList.remove('active'));
           
@@ -904,9 +985,15 @@
     }
   </script>
 
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- GSAP & Core Animations Runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="animations.js"></script>
 </body>
 </html>
+
+

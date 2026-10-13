@@ -436,6 +436,35 @@ nav [data-lucide="moon"],
   z-index: 90 !important;
 }
 
+/* ========================================================================= */
+/* Mobile Drawer Fullscreen Overlay & Header Synchronization                */
+/* ========================================================================= */
+#mobile-menu {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  height: 100dvh !important;
+  z-index: 99999 !important;
+  background-color: #0c0c0c !important; /* Pure solid dark background prevents underlying navbar ghosting */
+  padding: 1.5rem 1.5rem !important; /* 24px matches navbar exactly */
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 640px) {
+  #mobile-menu {
+    padding: 2rem 3rem !important;
+  }
+}
+
+/* Hide the hamburger button completely when mobile menu drawer is open */
+body.overflow-hidden #mobile-menu-btn {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+
 .nav-dropdown-expertise,
 .nav-dropdown-practice,
 .nav-dropdown-mega {

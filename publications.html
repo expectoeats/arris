@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -258,7 +258,7 @@
       </nav>
 
       <!-- Hero Text Overlay (Bottom Left) -->
-      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px]">
+      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px]" data-reveal-text>
         <span class="block text-white text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3">PUBLICATIONS</span>
         <h1 class="text-white text-[40px] sm:text-[52px] lg:text-[68px] font-[300] leading-[1.05] tracking-tight">
           Stories that define<br>
@@ -317,7 +317,7 @@
 
         <!-- Book 1 -->
         <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/1.png"
               alt="Wav-Cinema - Arris Architects Publication"
@@ -332,7 +332,7 @@
 
         <!-- Book 2 -->
         <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/2.png"
               alt="Cinema Architecture - Arris Architects Publication"
@@ -347,7 +347,7 @@
 
         <!-- Book 3 -->
         <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/3.png"
               alt="Atlas of World Interior Design - Arris Architects Publication"
@@ -383,7 +383,7 @@
 
         <!-- Magazine 1 -->
         <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/1.png"
               alt="Commercial Design - Arris Architects Magazine Feature"
@@ -398,7 +398,7 @@
 
         <!-- Magazine 2 -->
         <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/2.png"
               alt="Design Matrix - Arris Architects Magazine Feature"
@@ -413,7 +413,7 @@
 
         <!-- Magazine 3 -->
         <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/3.png"
               alt="Design Solution - Arris Architects Magazine Feature"
@@ -449,7 +449,7 @@
 
         <!-- Newspaper 1 -->
         <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/1.png"
               alt="DNA - Arris Architects Newspaper Feature"
@@ -464,7 +464,7 @@
 
         <!-- Newspaper 2 -->
         <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/2.png"
               alt="WAN - Arris Architects Newspaper Feature"
@@ -479,7 +479,7 @@
 
         <!-- Newspaper 3 -->
         <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4">
+          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/3.png"
               alt="WAN - Arris Architects Newspaper Feature"
@@ -519,7 +519,7 @@
       <!-- 3 Contact Columns (Stacked on mobile, 3-col on desktop) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
         <!-- Column 1: Email -->
-        <div>
+        <div data-reveal-text data-delay="1">
           <i
             data-lucide="mail"
             class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
@@ -540,7 +540,7 @@
         </div>
 
         <!-- Column 2: Phone -->
-        <div>
+        <div data-reveal-text data-delay="2">
           <i
             data-lucide="phone"
             class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
@@ -560,7 +560,7 @@
         </div>
 
         <!-- Column 3: Office -->
-        <div>
+        <div data-reveal-text data-delay="3">
           <i
             data-lucide="map-pin"
             class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
@@ -671,6 +671,10 @@
     navLinks.forEach(link => link.addEventListener('click', closeMenu));
   </script>
 
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
   <!-- GSAP & Core Animations Runtime -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -678,3 +682,5 @@
 
 </body>
 </html>
+
+

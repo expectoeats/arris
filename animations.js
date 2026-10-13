@@ -701,6 +701,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------------------------------------------------------------------------
+  // 9. Mobile Navigation Accordion Submenus (Solution 1)
+  // ---------------------------------------------------------------------------
+  function initMobileMenuAccordions() {
+    const accordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+    if (!accordionBtns.length) return;
+
+    accordionBtns.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const item = btn.closest('.mobile-accordion-item');
+        const submenu = item ? item.querySelector('.mobile-submenu') : null;
+        const icon = btn.querySelector('.accordion-icon');
+        if (!submenu) return;
+
+        const isOpen = submenu.style.maxHeight && submenu.style.maxHeight !== '0px';
+
+        // Close all other open accordions for a sleek accordion behavior
+        document.querySelectorAll('.mobile-accordion-item').forEach((other) => {
+          if (other !== item) {
+            const otherSub = other.querySelector('.mobile-submenu');
+            const otherIcon = other.querySelector('.accordion-icon');
+            if (otherSub) otherSub.style.maxHeight = '0px';
+            if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+          }
+        });
+
+        if (isOpen) {
+          submenu.style.maxHeight = '0px';
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        } else {
+          submenu.style.maxHeight = submenu.scrollHeight + 'px';
+          if (icon) icon.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  }
+
   initMegaDropdownShuffle();
   initMegaDropdownHoverIntent();
+  initMobileMenuAccordions();
 });
