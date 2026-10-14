@@ -7,18 +7,18 @@
   font-display: swap;
 }
 
-/* Heading Font — Beausite Classic Trial (matching HBA reference) */
+/* Heading Font — Beausite Fit Trial */
 @font-face {
-  font-family: 'BeausiteClassic';
-  src: url('font/heading-font/BeausiteClassicTrial-Thin-BF6424edc005b26.otf') format('opentype');
+  font-family: 'BeausiteFit';
+  src: url('font/heading-font/BeausiteFitTrial-Thin-BF6424edbf331f1.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'BeausiteClassic';
-  src: url('font/heading-font/BeausiteClassicTrial-Light-BF6424edc039e51.otf') format('opentype');
+  font-family: 'BeausiteFit';
+  src: url('font/heading-font/BeausiteFitTrial-Light-BF6424edbf3ecef.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
