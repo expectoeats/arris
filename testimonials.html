@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials | ARRIS ARCHITECTS</title>
+  
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '300',
+            normal: '400',
+            medium: '500',
+            semibold: '600',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#141414',
+              cardDark: '#1E1E1E',
+              footerDark: '#161616',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img {
+      image-rendering: auto;
+    }
+
+    /* Hide scrollbar for mobile carousels */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Navbar Dropdown for PRACTICE */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 220px;
+      background: rgba(22, 22, 22, 0.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu li {
+      width: 100%;
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 22px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-align: left;
+      white-space: nowrap;
+      transition: color 0.2s ease, background-color 0.2s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-arris-cream text-black antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION WITH NAVIGATION                                           -->
+  <!-- ========================================================================= -->
+  <header id="hero-section" class="relative w-full h-[90vh] sm:h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden z-10">
+    <!-- Hero Background Video -->
+    <div class="hero-media-wrapper absolute inset-0 w-full h-full overflow-hidden">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="video/testimonial/ONLY TESTIMONIALS.mp4 - Google Drive.mp4" type="video/mp4">
+      </video>
+      <!-- Gradient overlay for legibility -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.60) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+      ></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav
+      class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate"
+    >
+      <!-- Logo: Pure White on dark video hero -->
+      <a href="index.html" class="inline-block">
+        <img
+          src="images/image 7.png"
+          alt="Arris Architects Logo"
+          class="h-8 sm:h-10 lg:h-10 w-auto drop-shadow-sm brightness-100"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul
+        class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase"
+      >
+        <li>
+          <a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a>
+        </li>
+        <li class="nav-dropdown-expertise">
+          <a href="expertise-interior.html" class="hover:text-white/70 transition-colors py-2 block">EXPERTISE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="expertise-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Architecture
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      Interiors
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                      Commercial
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      Residential
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                      Cinema &amp; Multiplex Design
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      Entertainment Spaces
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      Schools
+                    </a>
+                  </li>
+                  <li>
+                    <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      Installations
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="expertise-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="expertise-img-peek"
+                      src="images/dorpdow-shuffle/project1.2.png"
+                      alt="Preview Stack"
+                      class="expertise-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="expertise-img-main"
+                      src="images/dorpdow-shuffle/DPS.png"
+                      alt="Architecture - Delhi Public School"
+                      class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="expertise-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="expertise-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-dropdown-practice">
+          <a href="about-arris.html" class="hover:text-white/70 transition-colors py-2 block">PRACTICE</a>
+          <!-- Mega Dropdown Panel with Image Shuffle -->
+          <div class="practice-dropdown-menu">
+            <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <!-- Left: Category List -->
+              <div class="w-[44%] flex flex-col justify-center">
+                <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <li>
+                    <a href="about-arris.html" class="practice-nav-item" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                      About Arris
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                      Design Philosophy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="design-process.html" class="practice-nav-item" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
+                      Design Process
+                    </a>
+                  </li>
+                  <li>
+                    <a href="careers.html" class="practice-nav-item" data-img="images/careers/image 10.png" data-peek="images/about/Rectangle 30.png">
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a href="legacy.html" class="practice-nav-item" data-img="images/legacy/Rectangle 3.png" data-peek="images/legacy/Rectangle 4.png">
+                      Legacy
+                    </a>
+                  </li>
+                  <li>
+                    <a href="testimonials.html" class="practice-nav-item active" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
+                      Testimonials
+                    </a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Right: Image Card Stack with Shuffle Animation -->
+              <div class="w-[56%] flex justify-end">
+                <div class="practice-card-stack relative">
+                  <!-- Peek Card (Bottom stacked layer) -->
+                  <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <img
+                      id="practice-img-peek"
+                      src="images/about/Rectangle 30.png"
+                      alt="Preview Stack"
+                      class="practice-img-peek w-full h-full object-cover block"
+                    />
+                  </div>
+
+                  <!-- Main Card (Top layer) -->
+                  <div id="practice-card-main" class="practice-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <img
+                      id="practice-img-main"
+                      src="images/about/Rectangle 29.png"
+                      alt="Testimonials Preview"
+                      class="practice-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                    />
+                    <img
+                      id="practice-img-fade"
+                      src=""
+                      alt="Crossfade Layer"
+                      class="practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <a href="index.html#leadership" class="hover:text-white/70 transition-colors">STUDIO</a>
+        </li>
+        <li>
+          <a href="contact.html" class="hover:text-white/70 transition-colors">CONTACT</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Trigger -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-11 h-10"
+        aria-label="Toggle Navigation"
+      >
+        <span class="w-7 h-[2px] bg-white rounded-full transition-transform"></span>
+        <span class="w-7 h-[2px] bg-white rounded-full mr-1 transition-transform"></span>
+        <span class="w-7 h-[2px] bg-white rounded-full mr-2 transition-transform"></span>
+      </button>
+    </nav>
+
+    <!-- Desktop Hero Text Overlay -->
+    <div class="hidden lg:block absolute bottom-12 sm:bottom-16 lg:bottom-24 left-6 sm:left-12 xl:left-[97px] z-10 hero-content-animate">
+      <span class="block text-white/80 text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3 sm:mb-4">
+        ABOUT US
+      </span>
+      <h1 class="text-white text-[36px] sm:text-[52px] lg:text-[64px] font-[300] leading-[1.05] tracking-normal max-w-[800px]">
+        Testimonials
+      </h1>
+    </div>
+
+    <!-- Mobile Drawer Overlay -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img
+            src="images/image 7.png"
+            alt="Arris Architects Logo"
+            class="h-8 w-auto brightness-100"
+          />
+        </a>
+        <button
+          id="mobile-menu-close"
+          class="text-white p-2 focus:outline-none"
+          aria-label="Close Menu"
+        >
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <ul
+        class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto"
+      >
+        <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
+        <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
+        <li><a href="expertise-interior.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Expertise</a></li>
+        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Arris</a></li>
+        <li><a href="design-process.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Design Process</a></li>
+        <li><a href="careers.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Careers</a></li>
+        <li><a href="legacy.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Legacy</a></li>
+        <li><a href="testimonials.html" class="mobile-nav-link text-white transition-colors block py-2">Testimonials</a></li>
+        <li><a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Studio</a></li>
+        <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact</a></li>
+      </ul>
+
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. "WHAT THEY'RE SAYING" HEADING SECTION - Cream Background               -->
+  <!-- ========================================================================= -->
+  <section id="testimonials" class="relative z-20 bg-arris-cream pt-16 sm:pt-20 lg:pt-28 pb-10 sm:pb-14 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto text-center">
+      <h2
+        class="text-black text-[32px] sm:text-[42px] lg:text-[56px] font-[300] leading-[1.1] tracking-tight"
+        data-reveal-text
+      >
+        What they're Saying
+      </h2>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. TESTIMONIAL CARDS SECTION - Cream Background                           -->
+  <!-- ========================================================================= -->
+  <section class="relative z-20 bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+
+      <!-- Large Full-Width Card -->
+      <div class="w-full mb-5 lg:mb-6" data-reveal-animation>
+        <div class="w-full h-[300px] sm:h-[420px] lg:h-[520px] bg-[#D9D9D9] rounded-2xl"></div>
+      </div>
+
+      <!-- Row 1: 3 Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5 mb-5 lg:mb-6">
+        <div data-reveal-animation>
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+        <div data-reveal-animation data-delay="1">
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+        <div data-reveal-animation data-delay="2">
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+      </div>
+
+      <!-- Row 2: 3 Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
+        <div data-reveal-animation>
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+        <div data-reveal-animation data-delay="1">
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+        <div data-reveal-animation data-delay="2">
+          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. CONTACT US SECTION - Cream Background                                  -->
+  <!-- ========================================================================= -->
+  <section
+    id="contact"
+    class="bg-arris-cream pt-10 sm:pt-14 pb-16 sm:pb-24 px-6 sm:px-12 xl:px-[97px]"
+  >
+    <div class="max-w-[1920px] mx-auto">
+      <h2
+        class="text-black text-[28px] sm:text-[34px] lg:text-[38px] font-[300] leading-tight tracking-tight mb-2 sm:mb-3"
+        data-reveal-text
+      >
+        Contact us
+      </h2>
+      <p
+        class="text-black/80 text-[14px] sm:text-[15px] font-[300] leading-[150%] max-w-[646px] mb-10 sm:mb-14"
+        data-reveal-text
+        data-delay="1"
+      >
+        Have any questions? Feel free to contact us for more information.
+      </p>
+
+      <!-- 3 Contact Columns / Mobile vertical stack -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-16">
+        <!-- Column 1: Email -->
+        <div data-reveal-text>
+          <i
+            data-lucide="mail"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
+          ></i>
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">Email</h4>
+          <p
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
+          >
+            Have a question or idea? Drop us an email we'd love to hear from you.
+          </p>
+          <a
+            href="mailto:arrisarch@gmail.com"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
+          >
+            arrisarch@gmail.com
+          </a>
+        </div>
+
+        <!-- Column 2: Phone -->
+        <div data-reveal-text data-delay="1">
+          <i
+            data-lucide="phone"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
+          ></i>
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">Phone</h4>
+          <p
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
+          >
+            Have a question? Give us a call — we're happy to help.
+          </p>
+          <a
+            href="tel:+912225829387"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 hover:text-neutral-600 transition-colors"
+          >
+            +912225829387, +912225828996
+          </a>
+        </div>
+
+        <!-- Column 3: Office -->
+        <div data-reveal-text data-delay="2">
+          <i
+            data-lucide="map-pin"
+            class="w-6 h-6 stroke-[1.5] text-neutral-800 mb-2.5"
+          ></i>
+          <h4 class="text-[22px] sm:text-[24px] lg:text-[26px] font-normal text-black mb-2">
+            Office
+          </h4>
+          <p
+            class="text-black/75 text-[14px] font-[300] leading-[150%] max-w-[340px] mb-3"
+          >
+            Find us at our office.
+          </p>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-[14px] font-[300] text-black underline underline-offset-2 leading-relaxed hover:text-neutral-600 transition-colors block max-w-[380px]"
+          >
+            711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. FOOTER                                                                  -->
+  <!-- ========================================================================= -->
+  <footer
+    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-12 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
+  >
+    <div class="max-w-[1920px] mx-auto">
+      <!-- Desktop & Tablet: Row; Mobile: Centered Vertical Stack -->
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 lg:pb-10"
+      >
+        <!-- Logo -->
+        <a href="index.html" class="inline-block mx-auto lg:mx-0">
+          <img
+            src="images/image 7.png"
+            alt="Arris Architects Logo"
+            class="h-8 sm:h-9 lg:h-11 w-auto brightness-0 invert"
+          />
+        </a>
+
+        <!-- Footer Navigation Links -->
+        <ul
+          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white font-light text-center"
+        >
+          <li><a href="index.html" class="hover:text-white/70 transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white/70 transition-colors">About Us</a></li>
+          <li><a href="expertise-interior.html" class="hover:text-white/70 transition-colors">Link Three</a></li>
+          <li><a href="projects.html" class="hover:text-white/70 transition-colors">Link Four</a></li>
+          <li><a href="contact.html" class="hover:text-white/70 transition-colors">Link Five</a></li>
+        </ul>
+
+        <!-- Social Icons -->
+        <div class="flex items-center justify-center space-x-6 sm:space-x-5 my-2 lg:my-0">
+          <a href="#" aria-label="Facebook">
+            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="Twitter / X">
+            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="w-full max-w-[380px] sm:max-w-none mx-auto border-t border-neutral-700/60 my-6 sm:my-0"></div>
+
+      <!-- Bottom Row: Copyright & Legal Links -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center pt-6 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
+      >
+        <div
+          class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 text-[13px] sm:text-[14px] text-white/90"
+        >
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Privacy Policy</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Terms of Service</a>
+          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Cookies Settings</a>
+        </div>
+        <div class="pt-2 sm:pt-0 text-neutral-400">&copy; 2026 . All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Initialize Lucide Icons -->
+  <script>
+    lucide.createIcons();
+
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const closeBtn = document.getElementById("mobile-menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const navLinks = document.querySelectorAll(".mobile-nav-link");
+
+    function openMenu() {
+      mobileMenu.classList.remove("opacity-0", "pointer-events-none", "translate-x-full");
+      mobileMenu.classList.add("opacity-100", "pointer-events-auto", "translate-x-0");
+      document.body.classList.add("overflow-hidden");
+    }
+
+    function closeMenu() {
+      mobileMenu.classList.remove("opacity-100", "pointer-events-auto", "translate-x-0");
+      mobileMenu.classList.add("opacity-0", "pointer-events-none", "translate-x-full");
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    if (menuBtn) menuBtn.addEventListener("click", openMenu);
+    if (closeBtn) closeBtn.addEventListener("click", closeMenu);
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+  </script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP & Animations Runtime -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+
+</body>
+</html>
