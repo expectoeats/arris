@@ -37,41 +37,43 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
-  // 0B. Hero Scroll Parallax & Curtain Reveal (Matching HBA Reference)
+  // 0B. Hero Scroll Parallax & Curtain Reveal (Exact HBA Reference Implementation)
   // ---------------------------------------------------------------------------
   const heroSection = document.querySelector('#hero-section');
-  if (heroSection && window.gsap && window.ScrollTrigger) {
-    const heroImg = heroSection.querySelector('.hero-media-wrapper img, .hero-bg-animate');
-    const heroNav = heroSection.querySelector('nav');
+  const heroMedia = document.querySelector('#hero-section .hero-media-wrapper');
 
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
+  if (heroSection && heroMedia) {
+    // Initial state: show hero video
+    heroMedia.classList.add('show');
+
+    if (window.ScrollTrigger) {
+      // Show/hide video based on hero visibility (exactly matches HBA reference)
+      ScrollTrigger.create({
         trigger: heroSection,
-        start: 'top top',
+        start: 'top top+=10px',
         end: 'bottom top',
-        pin: true,
-        pinSpacing: true,
-        scrub: true,
-        invalidateOnRefresh: true,
+        markers: false,
+        onEnter: () => heroMedia.classList.add('show'),
+        onLeave: () => heroMedia.classList.remove('show'),
+        onEnterBack: () => heroMedia.classList.add('show'),
+        onLeaveBack: () => heroMedia.classList.remove('show'),
+      });
+
+      // Subtle nav fade-out on initial scroll down
+      const heroNav = heroSection.querySelector('nav');
+      if (heroNav && window.gsap) {
+        gsap.to(heroNav, {
+          y: -30,
+          opacity: 0,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: heroSection,
+            start: 'top top',
+            end: '35% top',
+            scrub: true,
+          },
+        });
       }
-    });
-
-    if (heroNav) {
-      heroTl.to(heroNav, {
-        opacity: 0,
-        y: -30,
-        ease: 'power1.out',
-        duration: 0.35,
-      }, 0);
-    }
-
-    if (heroImg) {
-      heroTl.to(heroImg, {
-        scale: 1.08,
-        yPercent: 14,
-        ease: 'none',
-        duration: 1,
-      }, 0);
     }
   }
 

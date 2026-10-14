@@ -4,6 +4,16 @@
 /* ========================================================================= */
 
 /* ------------------------------------------------------------------------- */
+/* GLOBAL HEADING FONT — Beausite Classic Trial (Thin/Light)                 */
+/* Applied to all h1–h6 across entire website                                */
+/* ------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'BeausiteClassic', 'SF Pro Display', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+}
+
+/* ------------------------------------------------------------------------- */
 /* 1. Signature Image / Media Scroll-Reveal (Clip-Path Unmasking)             */
 /* Reference: [data-reveal-animation] with cubic-bezier(0.19, 1, 0.22, 1)    */
 /* ------------------------------------------------------------------------- */
@@ -371,37 +381,66 @@ html.lenis, html.lenis body {
 }
 
 /* ------------------------------------------------------------------------- */
-/* 8. Hero Parallax & Curtain Reveal (Matching Reference Website HBA)        */
+/* 8. Hero Parallax & Curtain Reveal (Exact Reference Website HBA)           */
 /* ------------------------------------------------------------------------- */
 #hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
-  height: 100lvh;
-  overflow: hidden;
-  z-index: 10;
+  height: 100svh;
+  min-height: 580px;
+  /* Do NOT set z-index here — avoid creating a stacking context so
+     the fixed .hero-media-wrapper escapes to the viewport stacking context */
+  z-index: auto !important;
 }
 
 #hero-section .hero-media-wrapper {
-  position: absolute;
+  position: fixed !important;
   inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  height: 100svh;
   overflow: hidden;
-  transform: translateZ(0);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  will-change: opacity;
 }
 
+#hero-section .hero-media-wrapper.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#hero-section .hero-media-wrapper video,
 #hero-section .hero-media-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform-origin: center center;
+}
+
+#hero-section nav {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+/* All sections/footer after the hero must sit above the fixed video backdrop */
+body > section,
+body > footer,
+body > div#mobile-menu {
+  position: relative;
+  z-index: 20;
 }
 
 #who-we-are {
-  position: relative;
-  z-index: 20;
   background-color: #F4F0EB;
 }
 
