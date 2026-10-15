@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -323,12 +323,66 @@
             </div>
           </div>
         </li>
-        <li>
-          <a href="index.html#leadership" class="hover:text-white/70 transition-colors">STUDIO</a>
-        </li>
-        <li>
-          <a href="contact.html" class="hover:text-white/70 transition-colors">CONTACT</a>
-        </li>
+                  <li class="nav-dropdown-studio">
+            <a href="index.html#leadership" class="hover:text-white/70 transition-colors py-2 block">STUDIO</a>
+            <!-- Mega Dropdown Panel (Text Only) -->
+            <div class="studio-dropdown-menu">
+              <div class="w-full flex flex-col justify-center">
+                <ul class="flex flex-col space-y-4 xl:space-y-5">
+                  <li>
+                    <a href="about-arris.html#meet-the-team" class="studio-nav-item">
+                      Meet the team
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#culture" class="studio-nav-item">
+                      Culture
+                    </a>
+                  </li>
+                  <li>
+                    <a href="publications.html" class="studio-nav-item">
+                      Insights / Journal
+                    </a>
+                  </li>
+                  <li>
+                    <a href="index.html#events" class="studio-nav-item">
+                      Events
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-dropdown-contact">
+            <a href="contact.html" class="hover:text-white/70 transition-colors py-2 block">CONTACT</a>
+            <!-- Mega Dropdown Panel (Text Only) -->
+            <div class="contact-dropdown-menu">
+              <div class="w-full flex flex-col justify-center">
+                <ul class="flex flex-col space-y-4 xl:space-y-5">
+                  <li>
+                    <a href="careers.html" class="contact-nav-item">
+                      Work with us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="about-arris.html#profiles" class="contact-nav-item">
+                      Profiles
+                    </a>
+                  </li>
+                  <li>
+                    <a href="careers.html" class="contact-nav-item">
+                      Careers
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#social" class="contact-nav-item">
+                      Social media
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
       </ul>
 
       <!-- Mobile Menu Trigger -->
@@ -418,37 +472,120 @@
   <!-- 3. TESTIMONIAL CARDS SECTION - Cream Background                           -->
   <!-- ========================================================================= -->
   <section class="relative z-20 bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
+    <div class="max-w-[1920px] mx-auto space-y-5 lg:space-y-6">
 
-      <!-- Large Full-Width Card -->
-      <div class="w-full mb-5 lg:mb-6" data-reveal-animation>
-        <div class="w-full h-[300px] sm:h-[420px] lg:h-[520px] bg-[#D9D9D9] rounded-2xl"></div>
+      <!-- Card 1: Full-Width -->
+      <div class="bg-white rounded-2xl p-8 sm:p-10 lg:p-12 shadow-sm border border-neutral-100" data-reveal-animation>
+        <div class="mb-5">
+          <h4 class="text-[20px] sm:text-[22px] font-normal text-neutral-900">Honourable Shri Manish Jaiswal MoP</h4>
+          <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">DPS Hzb</p>
+        </div>
+        <div class="text-[15px] sm:text-[17px] text-neutral-700 font-light leading-relaxed space-y-4 max-w-[900px]">
+          <p>We have been associated with Shubhashish since 2001, when he was a young Project Architect working on my multiplex project in Surat. Even then, his confidence, design capability, and commitment stood out clearly.</p>
+          <p>When we decided to take up our first school project, Angel High School, in 2007, we had no hesitation in approaching Arris Architects. What he presented to us was far beyond our expectations &mdash; a concept truly ahead of its time. His ideas on school design and campus planning were visionary. The project, executed in phases, continues to evolve even today, and AHS has become a landmark in our city.</p>
+          <p>Later, when the DPS Society approached us, we once again turned to Shubhashish to design the new school within the adjacent campus &mdash; but with a clear brief that the two schools must retain distinct identities. He responded with a design that was graceful, dignified, and worthy of the DPS brand.</p>
+          <p>Today, we feel proud owners of both these institutions. The thoughtful designs have positively impacted students, teachers, and parents alike &mdash; and as stakeholders, the projects have brought us immense respect and goodwill within the community.</p>
+        </div>
+        <div class="flex items-center space-x-1 text-amber-400 mt-7">
+          <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+        </div>
       </div>
 
-      <!-- Row 1: 3 Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5 mb-5 lg:mb-6">
-        <div data-reveal-animation>
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+      <!-- Row: 2 Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-neutral-100 flex flex-col justify-between" data-reveal-animation>
+          <div>
+            <div class="mb-5">
+              <h4 class="text-[20px] sm:text-[22px] font-normal text-neutral-900">Avneet Uberoi</h4>
+              <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">Bottle House</p>
+            </div>
+            <div class="text-[15px] sm:text-[17px] text-neutral-700 font-light leading-relaxed space-y-4">
+              <p>When we decided to transform what was once an iconic building into our home, we knew it was not going to be an ordinary architectural project. We wanted to preserve the character and memories associated with the building while creating a space that truly felt like ours.</p>
+              <p>From our first conversation, Shubhashish understood that we were looking for more than just a beautifully designed house. We wanted a home that was sophisticated, functional and timeless, while still retaining the soul of the original structure. He brought all of that to life.</p>
+              <p>The Bottle House is now a home we are deeply proud of &mdash; every room tells a story, and every corner reflects thoughtful design.</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-1 text-amber-400 mt-7">
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          </div>
         </div>
-        <div data-reveal-animation data-delay="1">
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-neutral-100 flex flex-col justify-between" data-reveal-animation data-delay="1">
+          <div>
+            <div class="mb-5">
+              <h4 class="text-[20px] sm:text-[22px] font-normal text-neutral-900">Anuj Agarwal</h4>
+              <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">Pro-Vice Chairman DPS Panvel, Chairman, Credo Schools</p>
+            </div>
+            <div class="text-[15px] sm:text-[17px] text-neutral-700 font-light leading-relaxed space-y-4">
+              <p>Working with Arris architects is a pleasure. They balance the architectural vision and the project realities beautifully, have a deep understanding of our priorities, and operates responsively and professionally to all matters. Their motto of involve evolve and solve led to a beautiful, practical, and successful start to our institute.</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-1 text-amber-400 mt-7">
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          </div>
         </div>
-        <div data-reveal-animation data-delay="2">
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
-        </div>
+
       </div>
 
-      <!-- Row 2: 3 Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-5">
-        <div data-reveal-animation>
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+      <!-- Row: 2 More Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-neutral-100 flex flex-col justify-between" data-reveal-animation>
+          <div>
+            <div class="mb-5">
+              <h4 class="text-[20px] sm:text-[22px] font-normal text-neutral-900">Atul Goel</h4>
+              <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">Managing Director &mdash; E-City Ventures, Essel Group</p>
+            </div>
+            <div class="text-[15px] sm:text-[17px] text-neutral-700 font-light leading-relaxed space-y-4">
+              <p>Your design has helped contribute to the success of both our malls. As always, your design has helped contribute to the success of both our malls at Lucknow and Coimbatore. The resounding testimony to the successful design is that both the malls have been 100% occupied even during the severe global recession.</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-1 text-amber-400 mt-7">
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          </div>
         </div>
-        <div data-reveal-animation data-delay="1">
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-neutral-100 flex flex-col justify-between" data-reveal-animation data-delay="1">
+          <div>
+            <div class="mb-5">
+              <h4 class="text-[20px] sm:text-[22px] font-normal text-neutral-900">Gunnita Malhotra</h4>
+              <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">KGT International</p>
+            </div>
+            <div class="text-[15px] sm:text-[17px] text-neutral-700 font-light leading-relaxed space-y-4">
+              <p>Beyond the conventional to create indulging environments for a design program, has become a relentless habit of Arris Architects &amp; this is what appeals to me most. Their prerogatives for design elements are at par with material trends and innovative learning initiatives by KGT, International.</p>
+              <p>Best calculus are student enrichment and their guardian satisfaction, which proves it. Their designs and our methods are together paving a way for much needed paradigm shift, in the education spectrum. Wishing Arris All the very Best!</p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-1 text-amber-400 mt-7">
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+            <i data-lucide="star" class="w-[20px] h-[20px] fill-amber-400 stroke-none"></i>
+          </div>
         </div>
-        <div data-reveal-animation data-delay="2">
-          <div class="w-full h-[200px] sm:h-[240px] lg:h-[300px] bg-[#D9D9D9] rounded-2xl"></div>
-        </div>
+
       </div>
 
     </div>

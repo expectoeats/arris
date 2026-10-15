@@ -511,6 +511,14 @@ document.addEventListener('DOMContentLoaded', () => {
       {
         trigger: document.querySelector('.nav-dropdown-practice'),
         menu: document.querySelector('.practice-dropdown-menu'),
+      },
+      {
+        trigger: document.querySelector('.nav-dropdown-studio'),
+        menu: document.querySelector('.studio-dropdown-menu'),
+      },
+      {
+        trigger: document.querySelector('.nav-dropdown-contact'),
+        menu: document.querySelector('.contact-dropdown-menu'),
       }
     ];
 
@@ -563,7 +571,14 @@ document.addEventListener('DOMContentLoaded', () => {
       clearTimeout(closeTimer);
 
       const rect = trigger ? trigger.getBoundingClientRect() : null;
-      const targetLeft = rect ? Math.max(0, rect.left - 40) : null;
+      let targetLeft = rect ? Math.max(0, rect.left - 40) : null;
+
+      // Text-only dropdown panels (Studio & Contact):
+      // Dock curtain starting directly beneath trigger text with 32px padding-left,
+      // so menu links line up exactly beneath the trigger word and never obscure other navbar items.
+      if (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) {
+        targetLeft = rect ? Math.max(0, rect.left - 32) : null;
+      }
 
       // Activate dim overlay
       if (overlay) overlay.classList.add('is-active');
@@ -582,7 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Restore standard 0.75s slide transition and glide across to new position
         menu.style.transition = '';
         menu.style.left = targetLeft + 'px';
-        menu.style.paddingLeft = '52px';
+        menu.style.paddingLeft = (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
 
         // Clean up outgoing menu
         activeMenu.classList.remove('is-active');
@@ -608,7 +623,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (targetLeft !== null) {
           menu.style.left = targetLeft + 'px';
-          menu.style.paddingLeft = '52px';
+          menu.style.paddingLeft = (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
         }
         menu.classList.add('is-active');
         activeMenu = menu;
@@ -644,7 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
       trigger.addEventListener('mouseenter', () => open(menu, trigger));
       trigger.addEventListener('mouseleave', () => scheduleClose());
 
-      // Only the top-level anchor (EXPERTISE / PRACTICE) toggles menu on click
+      // Only the top-level anchor (EXPERTISE / PRACTICE / STUDIO / CONTACT) toggles menu on click
       const triggerLink = trigger.querySelector(':scope > a');
       if (triggerLink) {
         triggerLink.addEventListener('click', (e) => {
@@ -674,15 +689,15 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // 3. When hovering other TOP-LEVEL navbar items (PROJECTS, STUDIO, CONTACT), close cleanly.
+    // 3. When hovering other TOP-LEVEL navbar items (PROJECTS), close cleanly.
     const otherTopNavItems = document.querySelectorAll(
-      'header nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice), ' +
-      'nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice)'
+      'header nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice):not(.nav-dropdown-studio):not(.nav-dropdown-contact), ' +
+      'nav > ul > li:not(.nav-dropdown-expertise):not(.nav-dropdown-practice):not(.nav-dropdown-studio):not(.nav-dropdown-contact)'
     );
 
     otherTopNavItems.forEach((li) => {
       li.addEventListener('mouseenter', () => {
-        if (li.closest('.expertise-dropdown-menu, .practice-dropdown-menu, .mega-dropdown-menu')) return;
+        if (li.closest('.expertise-dropdown-menu, .practice-dropdown-menu, .studio-dropdown-menu, .contact-dropdown-menu, .mega-dropdown-menu')) return;
         closeAll();
       });
     });
@@ -695,7 +710,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Close if user clicks outside of navbar and dropdowns
     document.addEventListener('click', (e) => {
       const isInside = e.target.closest(
-        '.nav-dropdown-expertise, .nav-dropdown-practice, .expertise-dropdown-menu, .practice-dropdown-menu, .mega-dropdown-menu'
+        '.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-studio, .nav-dropdown-contact, .expertise-dropdown-menu, .practice-dropdown-menu, .studio-dropdown-menu, .contact-dropdown-menu, .mega-dropdown-menu'
       );
       if (!isInside) {
         closeAll();
