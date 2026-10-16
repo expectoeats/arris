@@ -540,6 +540,7 @@ body.overflow-hidden #mobile-menu-btn {
 /* Mega dropdown panel sliding curtain (Reference HBA-style) */
 .expertise-dropdown-menu,
 .practice-dropdown-menu,
+.projects-dropdown-menu,
 .studio-dropdown-menu,
 .contact-dropdown-menu,
 .mega-dropdown-menu {
@@ -680,6 +681,7 @@ body.overflow-hidden #mobile-menu-btn {
 .practice-dropdown-menu.is-active,
 .studio-dropdown-menu.is-active,
 .contact-dropdown-menu.is-active,
+.projects-dropdown-menu.is-active,
 .mega-dropdown-menu.is-active {
   opacity: 1 !important;
   visibility: visible !important;
@@ -693,6 +695,8 @@ nav:has(.expertise-dropdown-menu:hover) ul > li > a,
 nav:has(.nav-dropdown-practice:hover) ul > li > a,
 nav:has(.practice-dropdown-menu:hover) ul > li > a,
 nav:has(.nav-dropdown-studio:hover) ul > li > a,
+nav:has(.nav-dropdown-projects:hover) ul > li > a,
+nav:has(.projects-dropdown-menu:hover) ul > li > a,
 nav:has(.studio-dropdown-menu:hover) ul > li > a,
 nav:has(.nav-dropdown-contact:hover) ul > li > a,
 nav:has(.contact-dropdown-menu:hover) ul > li > a,
@@ -707,6 +711,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   .expertise-dropdown-menu,
   .practice-dropdown-menu,
   .studio-dropdown-menu,
+  .projects-dropdown-menu,
   .contact-dropdown-menu,
   .mega-dropdown-menu,
   .mega-dropdown-overlay {
@@ -717,6 +722,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 /* Waterfall Cascade: Sub-links initial state (pushed down and hidden) */
 .expertise-dropdown-menu ul > li,
 .practice-dropdown-menu ul > li,
+.projects-dropdown-menu ul > li,
 .studio-dropdown-menu ul > li,
 .contact-dropdown-menu ul > li {
   opacity: 0;
@@ -727,6 +733,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 /* Staggered waterfall cascade when curtain reaches docked position (0.75s initial delay) */
 .expertise-dropdown-menu.is-active ul > li,
 .practice-dropdown-menu.is-active ul > li,
+.projects-dropdown-menu.is-active ul > li,
 .studio-dropdown-menu.is-active ul > li,
 .contact-dropdown-menu.is-active ul > li {
   opacity: 1;
@@ -735,24 +742,28 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 
 .expertise-dropdown-menu.is-active ul > li:nth-child(1),
 .practice-dropdown-menu.is-active ul > li:nth-child(1),
+.projects-dropdown-menu.is-active ul > li:nth-child(1),
 .studio-dropdown-menu.is-active ul > li:nth-child(1),
 .contact-dropdown-menu.is-active ul > li:nth-child(1) {
   transition: opacity 0.5s ease 0.75s, transform 0.5s ease 0.75s;
 }
 .expertise-dropdown-menu.is-active ul > li:nth-child(2),
 .practice-dropdown-menu.is-active ul > li:nth-child(2),
+.projects-dropdown-menu.is-active ul > li:nth-child(2),
 .studio-dropdown-menu.is-active ul > li:nth-child(2),
 .contact-dropdown-menu.is-active ul > li:nth-child(2) {
   transition: opacity 0.5s ease 0.80s, transform 0.5s ease 0.80s;
 }
 .expertise-dropdown-menu.is-active ul > li:nth-child(3),
 .practice-dropdown-menu.is-active ul > li:nth-child(3),
+.projects-dropdown-menu.is-active ul > li:nth-child(3),
 .studio-dropdown-menu.is-active ul > li:nth-child(3),
 .contact-dropdown-menu.is-active ul > li:nth-child(3) {
   transition: opacity 0.5s ease 0.85s, transform 0.5s ease 0.85s;
 }
 .expertise-dropdown-menu.is-active ul > li:nth-child(4),
 .practice-dropdown-menu.is-active ul > li:nth-child(4),
+.projects-dropdown-menu.is-active ul > li:nth-child(4),
 .studio-dropdown-menu.is-active ul > li:nth-child(4),
 .contact-dropdown-menu.is-active ul > li:nth-child(4) {
   transition: opacity 0.5s ease 0.90s, transform 0.5s ease 0.90s;
@@ -773,10 +784,14 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 .practice-dropdown-menu.is-active ul > li:nth-child(8) {
   transition: opacity 0.5s ease 1.10s, transform 0.5s ease 1.10s;
 }
+.expertise-dropdown-menu.is-active ul > li:nth-child(9) {
+  transition: opacity 0.5s ease 1.15s, transform 0.5s ease 1.15s;
+}
 
 /* Menu items inside dropdown */
 .expertise-nav-item,
 .practice-nav-item,
+.projects-nav-item,
 .studio-nav-item,
 .contact-nav-item,
 .mega-nav-item {
@@ -840,6 +855,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 /* Card stack fades in as curtain lands */
 .expertise-card-stack,
 .practice-card-stack,
+.projects-card-stack,
 .mega-card-stack {
   position: relative;
   width: 310px;
@@ -851,6 +867,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 
 .expertise-dropdown-menu.is-active .expertise-card-stack,
 .practice-dropdown-menu.is-active .practice-card-stack,
+.projects-dropdown-menu.is-active .projects-card-stack,
 .mega-dropdown-menu.is-active .mega-card-stack {
   opacity: 1;
   transform: translateY(0);

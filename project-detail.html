@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -242,10 +242,10 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO HEADER WITH OVERLAY NAVIGATION (EXACT PROJECTS - 01.PNG)          -->
   <!-- ========================================================================= -->
-  <section class="relative w-full min-h-[640px] sm:min-h-[720px] lg:min-h-[860px] xl:min-h-[940px] bg-neutral-950 flex flex-col justify-between overflow-hidden">
+  <header id="hero-section" class="relative w-full min-h-[640px] sm:min-h-[720px] lg:min-h-[860px] xl:min-h-[940px] bg-neutral-950 flex flex-col justify-between">
     
     <!-- Hero Background Image -->
-    <div class="absolute inset-0 z-0">
+    <div class="absolute inset-0 z-0 overflow-hidden">
       <img 
         id="hero-bg-img" 
         src="images/project-detail/rajhans_skylar_hero.png" 
@@ -257,66 +257,138 @@
     </div>
 
     <!-- Navigation Bar (Overlay on top of Hero) -->
-    <header class="relative z-20 w-full">
-      <nav class="relative flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
-        <!-- White Logo -->
-        <a href="index.html" class="inline-block transition-opacity hover:opacity-80">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-9 w-auto brightness-100" />
+    <nav class="relative z-20 w-full flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
+        <!-- Logo -->
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 sm:h-10 lg:h-10 w-auto drop-shadow-sm brightness-100" />
         </a>
 
-        <!-- Desktop Nav Links -->
-        <div class="hidden md:flex items-center space-x-10 lg:space-x-14">
-          <ul class="flex items-center space-x-10 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
-            <li><a href="projects.html" class="font-[300] text-white border-b border-white pb-0.5">PROJECTS</a></li>
+        <!-- Desktop Navigation Links -->
+        <ul class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
+            <li class="nav-dropdown-projects">
+            <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
+            <!-- Mega Dropdown Panel with Image Shuffle -->
+            <div class="projects-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <!-- Left: Category List -->
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="projects.html" class="projects-nav-item active" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/projects/dps_hazaribaug.png">
+                        Project Selection
+                      </a>
+                    </li>
+                    <li>
+                      <a href="projects.html" class="projects-nav-item" data-img="images/projects/dps_hazaribaug.png" data-peek="images/projects/rajhans_skylar.png">
+                        Individual Project Pages
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-info" class="projects-nav-item" data-img="images/projects/rajhans_skylar.png" data-peek="images/projects/bottle_house.png">
+                        Project Information
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-gallery" class="projects-nav-item" data-img="images/project-detail/gallery_1_wide.png" data-peek="images/project-detail/gallery_2_aerial.png">
+                        Project Gallery
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#related-projects" class="projects-nav-item" data-img="images/projects/times_tower_new.png" data-peek="images/projects/devgn_cinex_bellona.png">
+                        Related Projects
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Right: Image Card Stack with Shuffle Animation -->
+                <div class="w-[56%] flex justify-end">
+                  <div class="projects-card-stack relative">
+                    <!-- Peek Card (Bottom stacked layer) -->
+                    <div id="projects-card-peek" class="projects-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                      <img
+                        id="projects-img-peek"
+                        src="images/projects/dps_hazaribaug.png"
+                        alt="Preview Stack"
+                        class="projects-img-peek w-full h-full object-cover block"
+                      />
+                    </div>
+
+                    <!-- Main Card (Top layer) -->
+                    <div id="projects-card-main" class="projects-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img
+                        id="projects-img-main"
+                        src="images/projects/devgn_cinex_bellona.png"
+                        alt="Projects Preview"
+                        class="projects-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                      />
+                      <img
+                        id="projects-img-fade"
+                        src=""
+                        alt="Crossfade Layer"
+                        class="projects-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
             <li class="nav-dropdown-expertise">
-              <a href="expertise-interior.html" class="text-white/80 hover:text-white transition-colors py-2 block">EXPERTISE</a>
+              <a href="expertise-interior.html" class="hover:text-white/70 transition-colors py-2 block">EXPERTISE</a>
               <!-- Mega Dropdown Panel with Image Shuffle -->
               <div class="expertise-dropdown-menu">
                 <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
                   <!-- Left: Category List -->
                   <div class="w-[44%] flex flex-col justify-center">
-                    <ul class="flex flex-col space-y-3 xl:space-y-4">
-                      <li>
-                        <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
-                          Architecture
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
-                          Interiors
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
-                          Commercial
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
-                          Residential
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
-                          Cinema &amp; Multiplex Design
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
-                          Entertainment Spaces
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
-                          Schools
-                        </a>
-                      </li>
-                      <li>
-                        <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
-                          Installations
-                        </a>
-                      </li>
-                    </ul>
+                  <ul class="flex flex-col space-y-2 xl:space-y-2.5">
+                    <li>
+                      <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                        Architecture
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                        Interiors
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Schools
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                        Cinemas
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#commercial" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                        Commercial
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                        Residential
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                        Entertainment &amp; Leisure
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#auditoriums" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Auditoriums
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#hospitality" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                        Hospitality
+                      </a>
+                    </li>
+                  </ul>
                   </div>
 
                   <!-- Right: Image Card Stack with Shuffle Animation -->
@@ -353,49 +425,39 @@
               </div>
             </li>
             <li class="nav-dropdown-practice">
-              <a href="about-arris.html" class="text-white/80 hover:text-white transition-colors py-2 block">PRACTICE</a>
+              <a href="about-arris.html" class="hover:text-white/70 transition-colors py-2 block">PRACTICE</a>
               <!-- Mega Dropdown Panel with Image Shuffle -->
               <div class="practice-dropdown-menu">
                 <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
                   <!-- Left: Category List -->
                   <div class="w-[44%] flex flex-col justify-center">
-                    <ul class="flex flex-col space-y-3 xl:space-y-4">
-                      <li>
-                        <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
-                          About Arris
-                        </a>
-                      </li>
-                      <li>
-                        <a href="about-arris.html#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
-                          Design Philosophy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="design-process.html" class="practice-nav-item" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
-                          Design Process
-                        </a>
-                      </li>
-                      <li>
-                        <a href="careers.html" class="practice-nav-item" data-img="images/careers/image 10.png" data-peek="images/about/Rectangle 30.png">
-                          Careers
-                        </a>
-                      </li>
-                      <li>
-                        <a href="legacy.html" class="practice-nav-item" data-img="images/legacy/Rectangle 3.png" data-peek="images/legacy/Rectangle 4.png">
-                          Legacy
-                        </a>
-                      </li>
-                      <li>
-                        <a href="testimonials.html" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
-                          Testimonials
-                        </a>
-                      </li>
-                      <li>
-                        <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
-                          Contact
-                        </a>
-                      </li>
-                    </ul>
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                        About Arris
+                      </a>
+                    </li>
+                    <li>
+                      <a href="about-arris.html#design-philosophy" class="practice-nav-item" data-img="images/about/Rectangle 3.png" data-peek="images/about/Rectangle 4.png">
+                        Design Philosophy
+                      </a>
+                    </li>
+                    <li>
+                      <a href="design-process.html" class="practice-nav-item" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
+                        Design Process
+                      </a>
+                    </li>
+                    <li>
+                      <a href="testimonials.html" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
+                        Testimonials
+                      </a>
+                    </li>
+                    <li>
+                      <a href="publications.html" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 1.png">
+                        Publications
+                      </a>
+                    </li>
+                  </ul>
                   </div>
 
                   <!-- Right: Image Card Stack with Shuffle Animation -->
@@ -491,13 +553,7 @@
               </div>
             </div>
           </li>
-          </ul>
-          
-          <!-- Moon Icon matching design -->
-          <div class="text-white/70 hover:text-white transition-colors cursor-pointer pl-2" title="Theme Mode">
-            <i data-lucide="moon" class="w-4 h-4"></i>
-          </div>
-        </div>
+        </ul>
 
         <!-- Mobile Menu Trigger -->
         <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10" aria-label="Toggle Navigation">
@@ -506,92 +562,6 @@
           <span class="w-6 h-0.5 bg-white rounded-full"></span>
         </button>
       </nav>
-    </header>
-
-    <!-- Mobile Drawer Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="inline-block">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
-        </a>
-        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
-          <i data-lucide="x" class="w-7 h-7"></i>
-        </button>
-      </div>
-
-      <!-- Scrollable Navigation Items Container -->
-      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
-        <ul class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide">
-          <!-- 1. Projects -->
-          <li>
-            <a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
-              Projects
-            </a>
-          </li>
-
-          <!-- 2. Expertise Accordion -->
-          <li class="mobile-accordion-item">
-            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
-              <span>Expertise</span>
-              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
-            </button>
-            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
-              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
-              <a href="expertise-interior.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interior Design</a>
-              <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
-              <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
-              <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinema &amp; Multiplex</a>
-              <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
-              <a href="expertise-interior.html#installations" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Installations</a>
-            </div>
-          </li>
-
-          <!-- 3. Practice Accordion -->
-          <li class="mobile-accordion-item">
-            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
-              <span>Practice</span>
-              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
-            </button>
-            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
-              <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
-              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
-              <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
-              <a href="careers.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Careers</a>
-              <a href="legacy.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Legacy</a>
-            </div>
-          </li>
-
-          <!-- 4. Studio -->
-          <li>
-            <a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
-              Studio
-            </a>
-          </li>
-
-          <!-- 5. Publications -->
-          <li>
-            <a href="publications.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
-              Publications
-            </a>
-          </li>
-
-          <!-- 6. Contact Us -->
-          <li>
-            <a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
-        <span>&copy; 2026 Arris Architects</span>
-        <div class="flex space-x-4 text-white">
-          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
-        </div>
-      </div>
-    </div>
 
     <!-- Hero Bottom-Left Project Title Block -->
     <div class="relative z-10 w-full px-6 sm:px-12 xl:px-[97px] pb-12 sm:pb-16 lg:pb-20 max-w-[1920px] mx-auto mt-auto">
@@ -604,13 +574,100 @@
         </h1>
       </div>
     </div>
-  </section>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-block">
+        <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+      </a>
+      <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+        <i data-lucide="x" class="w-7 h-7"></i>
+      </button>
+    </div>
+
+    <!-- Scrollable Navigation Items Container -->
+    <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+      <ul class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide">
+        <!-- 1. Projects -->
+        <li>
+          <a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Projects
+          </a>
+        </li>
+
+        <!-- 2. Expertise Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Expertise</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
+            <a href="expertise-interior.html#interiors" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interiors</a>
+            <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
+            <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinemas</a>
+            <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
+            <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
+            <a href="expertise-interior.html#entertainment" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Entertainment &amp; Leisure</a>
+            <a href="expertise-interior.html#auditoriums" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Auditoriums</a>
+            <a href="expertise-interior.html#hospitality" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Hospitality</a>
+          </div>
+        </li>
+
+        <!-- 3. Practice Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Practice</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
+            <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+            <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
+            <a href="testimonials.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Testimonials</a>
+            <a href="publications.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Publications</a>
+          </div>
+        </li>
+
+        <!-- 4. Studio -->
+        <li>
+          <a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Studio
+          </a>
+        </li>
+
+        <!-- 5. Publications -->
+        <li>
+          <a href="publications.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Publications
+          </a>
+        </li>
+
+        <!-- 6. Contact Us -->
+        <li>
+          <a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">
+            Contact Us
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+      <span>&copy; 2026 Arris Architects</span>
+      <div class="flex space-x-4 text-white">
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ========================================================================= -->
   <!-- 2. PROJECT STORY & SPECIFICATIONS (CREAM SECTION #F4F0EB)                 -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+  <section id="project-info" class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-20 items-start">
         
@@ -695,7 +752,7 @@
   <!-- ========================================================================= -->
   <!-- 3. PROJECT GALLERY SECTION (DARK THEME #181818)                           -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-galleryDark text-white py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+  <section id="project-gallery" class="bg-arris-galleryDark text-white py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
       
       <!-- Section Title -->
@@ -759,7 +816,7 @@
   <!-- ========================================================================= -->
   <!-- 4. RELATED PROJECTS SECTION (CREAM #F4F0EB)                               -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px] border-b border-neutral-300">
+  <section id="related-projects" class="bg-arris-cream py-16 sm:py-24 lg:py-28 px-6 sm:px-12 xl:px-[97px] border-b border-neutral-300">
     <div class="max-w-[1920px] mx-auto">
       
       <!-- Section Title -->

@@ -138,7 +138,76 @@
 
         <!-- Desktop Nav Links -->
         <ul class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
-          <li><a href="projects.html" class="hover:text-white/70 transition-colors">PROJECTS</a></li>
+          <li class="nav-dropdown-projects">
+            <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
+            <!-- Mega Dropdown Panel with Image Shuffle -->
+            <div class="projects-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <!-- Left: Category List -->
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="projects.html" class="projects-nav-item active" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/projects/dps_hazaribaug.png">
+                        Project Selection
+                      </a>
+                    </li>
+                    <li>
+                      <a href="projects.html" class="projects-nav-item" data-img="images/projects/dps_hazaribaug.png" data-peek="images/projects/rajhans_skylar.png">
+                        Individual Project Pages
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-info" class="projects-nav-item" data-img="images/projects/rajhans_skylar.png" data-peek="images/projects/bottle_house.png">
+                        Project Information
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-gallery" class="projects-nav-item" data-img="images/project-detail/gallery_1_wide.png" data-peek="images/project-detail/gallery_2_aerial.png">
+                        Project Gallery
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#related-projects" class="projects-nav-item" data-img="images/projects/times_tower_new.png" data-peek="images/projects/devgn_cinex_bellona.png">
+                        Related Projects
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Right: Image Card Stack with Shuffle Animation -->
+                <div class="w-[56%] flex justify-end">
+                  <div class="projects-card-stack relative">
+                    <!-- Peek Card (Bottom stacked layer) -->
+                    <div id="projects-card-peek" class="projects-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                      <img
+                        id="projects-img-peek"
+                        src="images/projects/dps_hazaribaug.png"
+                        alt="Preview Stack"
+                        class="projects-img-peek w-full h-full object-cover block"
+                      />
+                    </div>
+
+                    <!-- Main Card (Top layer) -->
+                    <div id="projects-card-main" class="projects-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img
+                        id="projects-img-main"
+                        src="images/projects/devgn_cinex_bellona.png"
+                        alt="Projects Preview"
+                        class="projects-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                      />
+                      <img
+                        id="projects-img-fade"
+                        src=""
+                        alt="Crossfade Layer"
+                        class="projects-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          
           <li class="nav-dropdown-expertise">
             <a
               href="expertise-architecture.html"
@@ -150,15 +219,25 @@
               <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
                 <!-- Left: Category List -->
                 <div class="w-[44%] flex flex-col justify-center">
-                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <ul class="flex flex-col space-y-2 xl:space-y-2.5">
                     <li>
-                      <a href="expertise-architecture.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
                         Architecture
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
                         Interiors
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Schools
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                        Cinemas
                       </a>
                     </li>
                     <li>
@@ -172,23 +251,18 @@
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
-                        Cinema &amp; Multiplex Design
-                      </a>
-                    </li>
-                    <li>
                       <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
-                        Entertainment Spaces
+                        Entertainment &amp; Leisure
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
-                        Schools
+                      <a href="expertise-interior.html#auditoriums" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Auditoriums
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
-                        Installations
+                      <a href="expertise-interior.html#hospitality" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                        Hospitality
                       </a>
                     </li>
                   </ul>
@@ -217,7 +291,7 @@
                 <div class="w-[44%] flex flex-col justify-center">
                   <ul class="flex flex-col space-y-3 xl:space-y-4">
                     <li>
-                      <a href="about-arris.html" class="practice-nav-item" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
+                      <a href="about-arris.html" class="practice-nav-item active" data-img="images/about/Rectangle 1.png" data-peek="images/about/Rectangle 3.png">
                         About Arris
                       </a>
                     </li>
@@ -227,18 +301,8 @@
                       </a>
                     </li>
                     <li>
-                      <a href="design-process.html" class="practice-nav-item active" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
+                      <a href="design-process.html" class="practice-nav-item" data-img="images/design-process/image 10.png" data-peek="images/design-process/image 15.png">
                         Design Process
-                      </a>
-                    </li>
-                    <li>
-                      <a href="careers.html" class="practice-nav-item" data-img="images/careers/image 10.png" data-peek="images/about/Rectangle 30.png">
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a href="legacy.html" class="practice-nav-item" data-img="images/legacy/Rectangle 3.png" data-peek="images/legacy/Rectangle 4.png">
-                        Legacy
                       </a>
                     </li>
                     <li>
@@ -247,8 +311,8 @@
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
-                        Contact
+                      <a href="publications.html" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 1.png">
+                        Publications
                       </a>
                     </li>
                   </ul>

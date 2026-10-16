@@ -379,6 +379,14 @@ document.addEventListener('DOMContentLoaded', () => {
       'images/dorpdow-shuffle/project1.2.png',
       'images/dorpdow-shuffle/Rectangle 6 (3).png',
       'images/dorpdow-shuffle/Rectangle 6 (4).png',
+      // Projects images
+      'images/projects/devgn_cinex_bellona.png',
+      'images/projects/dps_hazaribaug.png',
+      'images/projects/rajhans_skylar.png',
+      'images/projects/bottle_house.png',
+      'images/projects/times_tower_new.png',
+      'images/project-detail/gallery_1_wide.png',
+      'images/project-detail/gallery_2_aerial.png',
       // Practice images
       'images/about/Rectangle 1.png',
       'images/about/Rectangle 3.png',
@@ -392,21 +400,21 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
     });
 
-    const dropdowns = document.querySelectorAll('.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
+    const dropdowns = document.querySelectorAll('.nav-dropdown-projects, .nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
     dropdowns.forEach((dropdown) => {
-      const items = dropdown.querySelectorAll('.expertise-nav-item, .practice-nav-item, .mega-nav-item');
-      const mainCard = dropdown.querySelector('#expertise-card-main, #practice-card-main, .expertise-card-main, .practice-card-main, .mega-card-main');
-      const mainImg = dropdown.querySelector('#expertise-img-main, #practice-img-main, .expertise-img-main, .practice-img-main, .mega-img-main');
-      const peekCard = dropdown.querySelector('#expertise-card-peek, #practice-card-peek, .expertise-card-peek, .practice-card-peek, .mega-card-peek');
-      const peekImg = dropdown.querySelector('#expertise-img-peek, #practice-img-peek, .expertise-img-peek, .practice-img-peek, .mega-img-peek');
+      const items = dropdown.querySelectorAll('.projects-nav-item, .expertise-nav-item, .practice-nav-item, .mega-nav-item');
+      const mainCard = dropdown.querySelector('#projects-card-main, #expertise-card-main, #practice-card-main, .projects-card-main, .expertise-card-main, .practice-card-main, .mega-card-main');
+      const mainImg = dropdown.querySelector('#projects-img-main, #expertise-img-main, #practice-img-main, .projects-img-main, .expertise-img-main, .practice-img-main, .mega-img-main');
+      const peekCard = dropdown.querySelector('#projects-card-peek, #expertise-card-peek, #practice-card-peek, .projects-card-peek, .expertise-card-peek, .practice-card-peek, .mega-card-peek');
+      const peekImg = dropdown.querySelector('#projects-img-peek, #expertise-img-peek, #practice-img-peek, .projects-img-peek, .expertise-img-peek, .practice-img-peek, .mega-img-peek');
 
       if (!items.length || !mainImg || !mainCard) return;
 
       // 2. Ensure dual-layer crossfade image element exists inside front card
-      let fadeImg = mainCard.querySelector('.expertise-img-fade, .practice-img-fade, .mega-img-fade');
+      let fadeImg = mainCard.querySelector('.projects-img-fade, .expertise-img-fade, .practice-img-fade, .mega-img-fade');
       if (!fadeImg) {
         fadeImg = document.createElement('img');
-        fadeImg.className = 'mega-img-fade expertise-img-fade practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform';
+        fadeImg.className = 'mega-img-fade projects-img-fade expertise-img-fade practice-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform';
         fadeImg.alt = 'Crossfade Preview';
         mainCard.appendChild(fadeImg);
       }
@@ -504,6 +512,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   function initMegaDropdownHoverIntent() {
     const dropdownGroups = [
+      {
+        trigger: document.querySelector('.nav-dropdown-projects'),
+        menu: document.querySelector('.projects-dropdown-menu'),
+      },
       {
         trigger: document.querySelector('.nav-dropdown-expertise'),
         menu: document.querySelector('.expertise-dropdown-menu'),
@@ -658,6 +670,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // 1. Top nav item hover & click:
       trigger.addEventListener('mouseenter', () => open(menu, trigger));
       trigger.addEventListener('mouseleave', () => scheduleClose());
+
+      const topAnchor = trigger.querySelector(':scope > a');
+      if (topAnchor) {
+        topAnchor.addEventListener('mouseenter', () => open(menu, trigger));
+      }
 
       // Only the top-level anchor (EXPERTISE / PRACTICE / STUDIO / CONTACT) toggles menu on click
       const triggerLink = trigger.querySelector(':scope > a');

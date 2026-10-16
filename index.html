@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -180,12 +180,74 @@
         <ul
           class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase"
         >
-          <li>
-            <a
-              href="projects.html"
-              class="hover:text-white/70 transition-colors"
-              >PROJECTS</a
-            >
+          <li class="nav-dropdown-projects">
+            <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
+            <!-- Mega Dropdown Panel with Image Shuffle -->
+            <div class="projects-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <!-- Left: Category List -->
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                    <li>
+                      <a href="projects.html" class="projects-nav-item active" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/projects/dps_hazaribaug.png">
+                        Project Selection
+                      </a>
+                    </li>
+                    <li>
+                      <a href="projects.html" class="projects-nav-item" data-img="images/projects/dps_hazaribaug.png" data-peek="images/projects/rajhans_skylar.png">
+                        Individual Project Pages
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-info" class="projects-nav-item" data-img="images/projects/rajhans_skylar.png" data-peek="images/projects/bottle_house.png">
+                        Project Information
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#project-gallery" class="projects-nav-item" data-img="images/project-detail/gallery_1_wide.png" data-peek="images/project-detail/gallery_2_aerial.png">
+                        Project Gallery
+                      </a>
+                    </li>
+                    <li>
+                      <a href="project-detail.html#related-projects" class="projects-nav-item" data-img="images/projects/times_tower_new.png" data-peek="images/projects/devgn_cinex_bellona.png">
+                        Related Projects
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Right: Image Card Stack with Shuffle Animation -->
+                <div class="w-[56%] flex justify-end">
+                  <div class="projects-card-stack relative">
+                    <!-- Peek Card (Bottom stacked layer) -->
+                    <div id="projects-card-peek" class="projects-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                      <img
+                        id="projects-img-peek"
+                        src="images/projects/dps_hazaribaug.png"
+                        alt="Preview Stack"
+                        class="projects-img-peek w-full h-full object-cover block"
+                      />
+                    </div>
+
+                    <!-- Main Card (Top layer) -->
+                    <div id="projects-card-main" class="projects-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img
+                        id="projects-img-main"
+                        src="images/projects/devgn_cinex_bellona.png"
+                        alt="Projects Preview"
+                        class="projects-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
+                      />
+                      <img
+                        id="projects-img-fade"
+                        src=""
+                        alt="Crossfade Layer"
+                        class="projects-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
           <li class="nav-dropdown-expertise">
             <a
@@ -198,7 +260,7 @@
               <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
                 <!-- Left: Category List -->
                 <div class="w-[44%] flex flex-col justify-center">
-                  <ul class="flex flex-col space-y-3 xl:space-y-4">
+                  <ul class="flex flex-col space-y-2 xl:space-y-2.5">
                     <li>
                       <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
                         Architecture
@@ -207,6 +269,16 @@
                     <li>
                       <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
                         Interiors
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Schools
+                      </a>
+                    </li>
+                    <li>
+                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                        Cinemas
                       </a>
                     </li>
                     <li>
@@ -220,23 +292,18 @@
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
-                        Cinema &amp; Multiplex Design
-                      </a>
-                    </li>
-                    <li>
                       <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
-                        Entertainment Spaces
+                        Entertainment &amp; Leisure
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#schools" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
-                        Schools
+                      <a href="expertise-interior.html#auditoriums" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                        Auditoriums
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#installations" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/dorpdow-shuffle/project1.2.png">
-                        Installations
+                      <a href="expertise-interior.html#hospitality" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                        Hospitality
                       </a>
                     </li>
                   </ul>
@@ -299,23 +366,13 @@
                       </a>
                     </li>
                     <li>
-                      <a href="careers.html" class="practice-nav-item" data-img="images/careers/image 10.png" data-peek="images/about/Rectangle 30.png">
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a href="legacy.html" class="practice-nav-item" data-img="images/legacy/Rectangle 3.png" data-peek="images/legacy/Rectangle 4.png">
-                        Legacy
-                      </a>
-                    </li>
-                    <li>
                       <a href="testimonials.html" class="practice-nav-item" data-img="images/about/Rectangle 29.png" data-peek="images/about/Rectangle 30.png">
                         Testimonials
                       </a>
                     </li>
                     <li>
-                      <a href="contact.html" class="practice-nav-item" data-img="images/about/Rectangle 31.png" data-peek="images/about/Rectangle 1.png">
-                        Contact
+                      <a href="publications.html" class="practice-nav-item" data-img="images/about/Rectangle 30.png" data-peek="images/about/Rectangle 1.png">
+                        Publications
                       </a>
                     </li>
                   </ul>
@@ -477,41 +534,15 @@
             <div
               class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
             >
-              <a
-                href="expertise-architecture.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Architecture</a
-              >
-              <a
-                href="expertise-interior.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Interior Design</a
-              >
-              <a
-                href="expertise-interior.html#commercial"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Commercial</a
-              >
-              <a
-                href="expertise-interior.html#residential"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Residential</a
-              >
-              <a
-                href="expertise-interior.html#cinema"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Cinema &amp; Multiplex</a
-              >
-              <a
-                href="expertise-interior.html#schools"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Schools</a
-              >
-              <a
-                href="expertise-interior.html#installations"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Installations</a
-              >
+              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
+              <a href="expertise-interior.html#interiors" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interiors</a>
+              <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
+              <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinemas</a>
+              <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
+              <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
+              <a href="expertise-interior.html#entertainment" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Entertainment &amp; Leisure</a>
+              <a href="expertise-interior.html#auditoriums" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Auditoriums</a>
+              <a href="expertise-interior.html#hospitality" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Hospitality</a>
             </div>
           </li>
 
@@ -527,31 +558,11 @@
             <div
               class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
             >
-              <a
-                href="about-arris.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >About Arris</a
-              >
-              <a
-                href="about-arris.html#design-philosophy"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Design Philosophy</a
-              >
-              <a
-                href="design-process.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Design Process</a
-              >
-              <a
-                href="careers.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Careers</a
-              >
-              <a
-                href="legacy.html"
-                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
-                >Legacy</a
-              >
+              <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
+              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+              <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
+              <a href="testimonials.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Testimonials</a>
+              <a href="publications.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Publications</a>
             </div>
           </li>
 
@@ -689,14 +700,6 @@
               What we do
             </h2>
           </div>
-          <p
-            class="text-white text-[18px] sm:text-[19px] lg:text-[18px] font-[300] leading-[26px] sm:leading-[29px] lg:leading-[32px] tracking-[0.01em] max-w-[704px]"
-            data-reveal-text
-            data-delay="1"
-          >
-            Explore our range of services designed to meet your needs and
-            deliver <br> the right solutions.
-          </p>
         </div>
 
         <!-- 5 Service Cards Carousel on Mobile, Grid on Desktop -->
@@ -1172,84 +1175,147 @@
           Awards & Recognition
         </h2>
 
-        <!-- Awards Carousel on Mobile, Grid on Desktop -->
-        <div
-          class="flex overflow-x-auto lg:grid lg:grid-cols-4 gap-4 lg:gap-8 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory"
-        >
-          <!-- Award 1: FOAID -->
-          <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-            <div
-              class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
-            >
-              <img
-                src="images/awards/Rectangle 12.png"
-                alt="FOAID"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
+        <!-- Awards Horizontal Scroll with Arrow Buttons (Exact Original Card & Image Size) -->
+        <div class="relative">
+          <!-- Prev Arrow -->
+          <button
+            id="awards-prev"
+            class="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200 hidden"
+            aria-label="Previous Award"
+          >
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+
+          <!-- Scrollable Track (Exact original gap-4 lg:gap-8 and card sizing) -->
+          <div
+            id="awards-track"
+            class="flex gap-4 lg:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0"
+          >
+            <!-- Award 1: FOAID -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 12.png"
+                  alt="FOAID"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                FOAID
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2023</p>
             </div>
-            <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
-              FOAID
-            </h4>
-            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2023</p>
+
+            <!-- Award 2: NDTV Design & Architect of the year -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 23.png"
+                  alt="NDTV Design &amp; Architect of the year"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                NDTV Design &amp; Architect of the year
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">
+                2015
+              </p>
+            </div>
+
+            <!-- Award 3: Design Wall -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 24.png"
+                  alt="Design Wall"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Design Wall
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2016</p>
+            </div>
+
+            <!-- Award 4: Cinema -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 25.png"
+                  alt="Cinema"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Cinema
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2009</p>
+            </div>
           </div>
 
-          <!-- Award 2: NDTV Design & Architect of the year -->
-          <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-            <div
-              class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
-            >
-              <img
-                src="images/awards/Rectangle 23.png"
-                alt="NDTV Design & Architect of the year"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
-              NDTV Design & Architect of the year
-            </h4>
-            <p class="text-[16px] text-neutral-500 font-light mt-0.5">
-              2015
-            </p>
-          </div>
-
-          <!-- Award 3: Design Wall -->
-          <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-            <div
-              class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
-            >
-              <img
-                src="images/awards/Rectangle 24.png"
-                alt="Design Wall"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
-              Design Wall
-            </h4>
-            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2016</p>
-          </div>
-
-          <!-- Award 4: Cinema -->
-          <div class="flex-none w-[70vw] sm:w-[260px] lg:w-auto snap-center">
-            <div
-              class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
-            >
-              <img
-                src="images/awards/Rectangle 25.png"
-                alt="Cinema"
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                loading="lazy"
-              />
-            </div>
-            <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
-              Cinema
-            </h4>
-            <p class="text-[16px] text-neutral-500 font-light mt-0.5">2009</p>
-          </div>
+          <!-- Next Arrow -->
+          <button
+            id="awards-next"
+            class="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+            aria-label="Next Award"
+          >
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
         </div>
+
+        <!-- Awards Scroll Script -->
+        <script>
+          (function () {
+            var track = document.getElementById('awards-track');
+            var prev  = document.getElementById('awards-prev');
+            var next  = document.getElementById('awards-next');
+            if (!track || !prev || !next) return;
+
+            function cardWidth() {
+              var first = track.querySelector('.flex-none');
+              if (!first) return 300;
+              var style = window.getComputedStyle(track);
+              var gap = parseFloat(style.columnGap || style.gap) || 32;
+              return first.offsetWidth + gap;
+            }
+
+            function updateButtons() {
+              if (track.scrollLeft <= 5) {
+                prev.classList.add('hidden');
+              } else {
+                prev.classList.remove('hidden');
+              }
+              if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
+                next.classList.add('hidden');
+              } else {
+                next.classList.remove('hidden');
+              }
+            }
+
+            prev.addEventListener('click', function () {
+              track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+            });
+            next.addEventListener('click', function () {
+              track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+            });
+            track.addEventListener('scroll', updateButtons);
+            window.addEventListener('resize', updateButtons);
+            setTimeout(updateButtons, 150);
+          })();
+        </script>
       </div>
     </section>
 
@@ -1286,7 +1352,7 @@
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[13px] sm:text-[14px] text-neutral-700 font-light leading-relaxed space-y-3">
+                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3">
                   <p>
                     We have been associated with Shubhashish since 2001, when he was a young Project Architect working on my multiplex project in Surat. Even then, his confidence, design capability, and commitment stood out clearly.
                   </p>
@@ -1337,7 +1403,7 @@
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[13px] sm:text-[14px] text-neutral-700 font-light leading-relaxed space-y-3">
+                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3">
                   <p>
                     When we decided to transform what was once an iconic building into our home, we knew it was not going to be an ordinary architectural project. We wanted to preserve the character and memories associated with the building while creating a space that truly felt like ours.
                   </p>
@@ -1388,7 +1454,7 @@
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[13px] sm:text-[14px] text-neutral-700 font-light leading-relaxed">
+                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed">
                   <p>
                     Working with Arris architects is a pleasure. They balance the architectural vision and the project realities beautifully, have a deep understanding of our priorities, and operates responsively and professionally to all matters. Their motto of involve evolve and solve led to a beautiful, practical, and successful start to our institute.&rdquo;
                   </p>
