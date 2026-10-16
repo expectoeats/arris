@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -59,7 +59,7 @@
       image-rendering: auto;
     }
 
-    /* Publication section heading with trailing line */
+    /* Publication section heading with trailing line - luxury architectural reveal */
     .pub-heading {
       display: flex;
       align-items: center;
@@ -72,48 +72,140 @@
       flex: 1;
       height: 1px;
       background: rgba(0, 0, 0, 0.2);
-      margin-left: 20px;
+      margin-left: 24px;
+      transform-origin: left center;
+      transform: scaleX(0);
+      transition: transform 1.3s cubic-bezier(0.19, 1, 0.22, 1) 0.25s;
+    }
+    .pub-heading.is-revealed .pub-line {
+      transform: scaleX(1);
     }
 
-    /* Publication card hover lift */
+    /* Publication card animation & hover - harmonized with animations.css */
     .pub-card {
-      transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
+      cursor: pointer;
     }
-    .pub-card:hover {
-      transform: translateY(-6px);
+    .pub-card.is-revealed:hover {
+      transform: translateY(-8px) !important;
     }
-    .pub-card img {
-      transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    .pub-card .pub-img-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+      transition: box-shadow 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
-    .pub-card:hover img {
-      transform: scale(1.03);
+    .pub-card:hover .pub-img-wrap {
+      box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.12);
     }
-  </style>
+    .pub-card .pub-img-wrap.is-revealed img,
+    .pub-card .pub-img-wrap.animation-complete img {
+      transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .pub-card:hover .pub-img-wrap.is-revealed img,
+    .pub-card:hover .pub-img-wrap.animation-complete img {
+      transform: scale(1.045);
+    }
+
+    /* -- PDF Viewer Modal ---------------------------------------------------- */
+    #pdf-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+    }
+    #pdf-modal.is-open { display: flex; }
+
+    #pdf-modal .pdf-modal-inner {
+      display: flex;
+      flex-direction: column;
+      width: 92vw;
+      max-width: 960px;
+      height: 92vh;
+      background: #111;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+    }
+    .pdf-modal-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #0d0d0d;
+      flex-shrink: 0;
+      min-height: 48px;
+    }
+    .pdf-modal-title {
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      font-family: -apple-system, sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 50px);
+    }
+    #pdf-modal-close {
+      width: 32px;
+      height: 32px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    #pdf-modal-close:hover { background: rgba(255,255,255,0.25); }
+
+    .pdf-embed-wrap {
+      flex: 1;
+      overflow: hidden;
+      background: #2a2a2a;
+    }
+    .pdf-embed-wrap object,
+    .pdf-embed-wrap embed {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
 
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION WITH NAVIGATION (CONFERENCE ROOM BG - FIGMA)              -->
   <!-- ========================================================================= -->
-  <header class="relative w-full overflow-hidden">
-    <div class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[460px] overflow-hidden">
+  <header id="hero-section" class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[520px] overflow-hidden z-10">
+    <!-- Hero Background Image (Curtain Reveal & Entrance Zoom matching Homepage) -->
+    <div class="hero-media-wrapper absolute inset-0 w-full h-full overflow-hidden">
+      <img
+        src="images/publications/Rectangle 53.png"
+        alt="Arris Architects Studio - Conference Room"
+        class="w-full h-full object-cover object-center hero-bg-animate"
+      />
+      <!-- Gradient overlay for legibility -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.4) 100%);"
+      ></div>
+    </div>
 
-      <!-- Hero Background Image -->
-      <div class="absolute inset-0 w-full h-full overflow-hidden">
-        <img
-          src="images/publications/Rectangle 53.png"
-          alt="Arris Architects Studio - Conference Room"
-          class="w-full h-full object-cover object-center"
-        />
-        <!-- Gradient overlay for legibility -->
-        <div
-          class="absolute inset-0 pointer-events-none"
-          style="background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.4) 100%);"
-        ></div>
-      </div>
-
-      <!-- Navigation Bar -->
-      <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+    <!-- Navigation Bar -->
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
         <!-- Logo -->
         <a href="index.html" class="inline-block">
           <img src="images/image 7.png" alt="Arris Architects Logo" class="h-10 sm:h-11 lg:h-14 w-auto" />
@@ -384,238 +476,272 @@
         </button>
       </nav>
 
-      <!-- Hero Text Overlay (Bottom Left) -->
-      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px]" data-reveal-text>
+      <!-- Hero Text Overlay (Bottom Left - entrance fade & lift matching Homepage) -->
+      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px] hero-content-animate">
         <span class="block text-white text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3">PUBLICATIONS</span>
         <h1 class="text-white text-[40px] sm:text-[52px] lg:text-[68px] font-[300] leading-[1.05] tracking-tight">
           Stories that define<br>
           our journey
         </h1>
       </div>
-    </div>
-
-    <!-- Mobile Drawer Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-2xl z-50 flex flex-col justify-between p-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
-      <div class="flex items-center justify-between">
-        <a href="index.html" class="inline-block">
-          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
-        </a>
-        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
-          <i data-lucide="x" class="w-7 h-7"></i>
-        </button>
-      </div>
-
-      <ul class="flex flex-col space-y-6 text-white text-2xl font-[300] tracking-wide my-auto">
-        <li><a href="index.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Home</a></li>
-        <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Projects</a></li>
-        <li><a href="expertise-architecture.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Expertise</a></li>
-        <li><a href="about-arris.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">About Us</a></li>
-        <li><a href="design-process.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Design Process</a></li>
-        <li><a href="index.html#leadership" class="mobile-nav-link font-[300] text-white transition-colors block py-2">Studio</a></li>
-        <li><a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-2">Contact Us</a></li>
-      </ul>
-
-      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
-        <span>&copy; 2026 Arris Architects</span>
-        <div class="flex space-x-4 text-white">
-          <a href="#" aria-label="Instagram"><img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 object-contain opacity-80" /></a>
-          <a href="#" aria-label="LinkedIn"><img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 object-contain opacity-80" /></a>
-        </div>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile Drawer Overlay (Matching Homepage Accordion Architecture) -->
+  <div id="mobile-menu" class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full">
+    <div class="flex items-center justify-between">
+      <a href="index.html" class="inline-block">
+        <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+      </a>
+      <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+        <i data-lucide="x" class="w-7 h-7"></i>
+      </button>
+    </div>
+
+    <!-- Scrollable Navigation Items Container -->
+    <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+      <ul class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide">
+        <!-- 1. Projects -->
+        <li>
+          <a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">Projects</a>
+        </li>
+
+        <!-- 2. Expertise Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Expertise</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
+            <a href="expertise-interior.html#interiors" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interiors</a>
+            <a href="expertise-interior.html#schools" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
+            <a href="expertise-interior.html#cinema" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinemas</a>
+            <a href="expertise-interior.html#commercial" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
+            <a href="expertise-interior.html#residential" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
+            <a href="expertise-interior.html#entertainment" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Entertainment &amp; Leisure</a>
+            <a href="expertise-interior.html#auditoriums" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Auditoriums</a>
+            <a href="expertise-interior.html#hospitality" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Hospitality</a>
+          </div>
+        </li>
+
+        <!-- 3. Practice Accordion -->
+        <li class="mobile-accordion-item">
+          <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
+            <span>Practice</span>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+          </button>
+          <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+            <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
+            <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+            <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
+            <a href="testimonials.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Testimonials</a>
+            <a href="publications.html" class="mobile-nav-link block py-1 text-base text-white font-medium transition-colors">Publications</a>
+          </div>
+        </li>
+
+        <!-- 4. Studio -->
+        <li>
+          <a href="index.html#leadership" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">Studio</a>
+        </li>
+
+        <!-- 5. Publications -->
+        <li>
+          <a href="publications.html" class="mobile-nav-link text-white font-medium block py-1.5">Publications</a>
+        </li>
+
+        <!-- 6. Contact Us -->
+        <li>
+          <a href="contact.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pt-6 border-t border-neutral-800 flex justify-between items-center text-xs text-neutral-400">
+      <span>&copy; 2026 Arris Architects</span>
+      <div class="flex space-x-4 text-white">
+        <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+        <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+      </div>
+    </div>
+  </div>
 
 
   <!-- ========================================================================= -->
-  <!-- 2. BOOKS SECTION                                                          -->
+  <!-- 2. PUBLICATIONS GRID                                                      -->
   <!-- ========================================================================= -->
   <section class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
-      <!-- Section Heading with trailing line -->
-      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
-        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
-          Books
-        </h2>
-        <span class="pub-line"></span>
-      </div>
-
-      <!-- 3 Publication Cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
 
-        <!-- Book 1 -->
-        <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
-            <img
-              src="images/publications/1.png"
-              alt="Wav-Cinema - Arris Architects Publication"
-              class="w-full h-full object-cover"
-            />
+        <!-- Card 1: Atlas of World Interior Design -->
+        <div class="pub-card group" data-reveal-text>
+          <div class="pub-pdf-trigger cursor-pointer" data-pdf="images/publications/intl publication 1 atlas.pdf">
+            <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+              <img
+                src="images/publications/internation publication 1 atlas.png"
+                alt="Atlas of World Interior Design - Arris Architects Publication"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+              Atlas of World Interior Design
+            </h3>
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2021</p>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            Wav-Cinema
-          </h3>
         </div>
 
-        <!-- Book 2 -->
-        <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 2: Audio Visual World -->
+        <div class="pub-card group" data-reveal-text data-delay="1">
+          <div class="pub-pdf-trigger cursor-pointer" data-pdf="images/publications/intl publication 2 av world.pdf">
+            <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+              <img
+                src="images/publications/2.jpeg"
+                alt="Audio Visual World - Arris Architects Publication"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+              Audio Visual World
+            </h3>
+          </div>
+        </div>
+
+        <!-- Card 3: Cinema Architecture -->
+        <div class="pub-card group" data-reveal-text data-delay="2">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/2.png"
+              src="images/publications/3.PNG"
               alt="Cinema Architecture - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2017</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
             Cinema Architecture
           </h3>
         </div>
 
-        <!-- Book 3 -->
-        <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 4: Design Wall, 2016 -->
+        <div class="pub-card group" data-reveal-text>
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/3.png"
-              alt="Atlas of World Interior Design - Arris Architects Publication"
+              src="images/publications/4.PNG"
+              alt="Design Wall 2016 - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">2019</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            Atlas of World Interior<br class="hidden sm:block"> Design
+            Design Wall, 2016
           </h3>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================================================= -->
-  <!-- 3. MAGAZINES SECTION                                                      -->
-  <!-- ========================================================================= -->
-  <section class="bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
-      <!-- Section Heading with trailing line -->
-      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
-        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
-          Magazines
-        </h2>
-        <span class="pub-line"></span>
-      </div>
-
-      <!-- 3 Publication Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
-
-        <!-- Magazine 1 -->
-        <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 5: Sri Sakthi Cinemas, Erode -->
+        <div class="pub-card group" data-reveal-text data-delay="1">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/1.png"
-              alt="Commercial Design - Arris Architects Magazine Feature"
+              src="images/publications/5.PNG"
+              alt="Sri Sakthi Cinemas Erode - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2015</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            Commercial Design
+            Sri Sakthi Cinemas, Erode
           </h3>
         </div>
 
-        <!-- Magazine 2 -->
-        <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 6: DNC Cinemas, Salem -->
+        <div class="pub-card group" data-reveal-text data-delay="2">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/2.png"
-              alt="Design Matrix - Arris Architects Magazine Feature"
+              src="images/publications/6.PNG"
+              alt="DNC Cinemas Salem - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2015</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            Design Matrix
+            DNC Cinemas, Salem
           </h3>
         </div>
 
-        <!-- Magazine 3 -->
-        <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 7: Rajhans Cinemas Precia, Vesu, Surat -->
+        <div class="pub-card group" data-reveal-text>
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/3.png"
-              alt="Design Solution - Arris Architects Magazine Feature"
+              src="images/publications/7.PNG"
+              alt="Rajhans Cinemas Precia Vesu Surat - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Dec - Jan 2014</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            Design Solution
+            Rajhans Cinemas Precia, Vesu, Surat
           </h3>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ========================================================================= -->
-  <!-- 4. NEWSPAPER SECTION                                                     -->
-  <!-- ========================================================================= -->
-  <section class="bg-arris-cream pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
-      <!-- Section Heading with trailing line -->
-      <div class="pub-heading mb-12 sm:mb-14 lg:mb-16" data-reveal-text>
-        <h2 class="pub-title text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-normal">
-          Newspaper
-        </h2>
-        <span class="pub-line"></span>
-      </div>
-
-      <!-- 3 Publication Cards -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
-
-        <!-- Newspaper 1 -->
-        <div class="pub-card" data-reveal-text>
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 8: Devgn [NY] Cinemas Swagat, Gandhinagar -->
+        <div class="pub-card group" data-reveal-text data-delay="1">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/1.png"
-              alt="DNA - Arris Architects Newspaper Feature"
+              src="images/publications/8.PNG"
+              alt="Devgn NY Cinemas Swagat Gandhinagar - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Jan 2009</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            DNA
+            Devgn [NY] Cinemas Swagat, Gandhinagar
           </h3>
         </div>
 
-        <!-- Newspaper 2 -->
-        <div class="pub-card" data-reveal-text data-delay="1">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 9: Rajhans CBD Mall, Ahmedabad -->
+        <div class="pub-card group" data-reveal-text data-delay="2">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/2.png"
-              alt="WAN - Arris Architects Newspaper Feature"
+              src="images/publications/9.PNG"
+              alt="Rajhans CBD Mall Ahmedabad - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">Sep 2009</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            WAN
+            Rajhans CBD Mall, Ahmedabad
           </h3>
         </div>
 
-        <!-- Newspaper 3 -->
-        <div class="pub-card" data-reveal-text data-delay="2">
-          <div class="w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+        <!-- Card 10: Devgn [NY] Cinex, Elan Epic Mall, Gurugram -->
+        <div class="pub-card group" data-reveal-text>
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
-              src="images/publications/3.png"
-              alt="WAN - Arris Architects Newspaper Feature"
+              src="images/publications/10.PNG"
+              alt="Devgn NY Cinex Elan Epic Mall Gurugram - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <p class="text-black/50 text-[13px] sm:text-[14px] font-[300] leading-[1.4] mb-1">July 2009</p>
           <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
-            WAN
+            Devgn [NY] Cinex, Elan Epic Mall, Gurugram
+          </h3>
+        </div>
+
+        <!-- Card 11: Rajhans Cinemas, Surat -->
+        <div class="pub-card group" data-reveal-text data-delay="1">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+            <img
+              src="images/publications/11.PNG"
+              alt="Rajhans Cinemas Surat - Arris Architects Publication"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Rajhans Cinemas, Surat
+          </h3>
+        </div>
+
+        <!-- Card 12: Devgn [NY] Cinex, Guwahati -->
+        <div class="pub-card group" data-reveal-text data-delay="2">
+          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+            <img
+              src="images/publications/12.PNG"
+              alt="Devgn NY Cinex Guwahati - Arris Architects Publication"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            Devgn [NY] Cinex, Guwahati
           </h3>
         </div>
 
@@ -807,7 +933,65 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="animations.js"></script>
 
+  <!-- ========================================================================= -->
+  <!-- PDF VIEWER MODAL (PDF.js canvas renderer)                                 -->
+  <!-- ========================================================================= -->
+  <div id="pdf-modal" role="dialog" aria-modal="true" aria-label="PDF Viewer">
+    <div class="pdf-modal-inner">
+      <div class="pdf-modal-topbar">
+        <span id="pdf-modal-title" class="pdf-modal-title"></span>
+        <button id="pdf-modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="pdf-embed-wrap">
+        <object id="pdf-object" data="" type="application/pdf" width="100%" height="100%">
+          <embed id="pdf-embed" src="" type="application/pdf" width="100%" height="100%" />
+        </object>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var modal    = document.getElementById('pdf-modal');
+      var pdfObj   = document.getElementById('pdf-object');
+      var pdfEmbed = document.getElementById('pdf-embed');
+      var closeBtn = document.getElementById('pdf-modal-close');
+      var titleEl  = document.getElementById('pdf-modal-title');
+      var triggers = document.querySelectorAll('[data-pdf]');
+
+      function openPDF(src, label) {
+        // Encode each path segment so spaces work correctly
+        var encoded = src.split('/').map(function(p) { return encodeURIComponent(p); }).join('/');
+        pdfObj.data   = encoded;
+        pdfEmbed.src  = encoded;
+        titleEl.textContent = label || '';
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closePDF() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        // Clear after transition so the viewer stops
+        setTimeout(function() {
+          pdfObj.data  = '';
+          pdfEmbed.src = '';
+        }, 200);
+      }
+
+      triggers.forEach(function(el) {
+        el.addEventListener('click', function() {
+          var src   = el.getAttribute('data-pdf');
+          var label = el.querySelector('h3') ? el.querySelector('h3').textContent.trim() : '';
+          openPDF(src, label);
+        });
+      });
+
+      closeBtn.addEventListener('click', closePDF);
+      modal.addEventListener('click', function(e) { if (e.target === modal) closePDF(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePDF(); });
+    })();
+  </script>
+
 </body>
 </html>
-
-
