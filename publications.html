@@ -85,6 +85,10 @@
     .pub-card {
       transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 0.6s cubic-bezier(0.19, 1, 0.22, 1) !important;
       cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .pub-card.is-revealed:hover {
       transform: translateY(-8px) !important;
@@ -125,9 +129,9 @@
     #pdf-modal .pdf-modal-inner {
       display: flex;
       flex-direction: column;
-      width: 92vw;
-      max-width: 960px;
-      height: 92vh;
+      width: 98vw;
+      max-width: 1400px;
+      height: 96vh;
       background: #111;
       border-radius: 6px;
       overflow: hidden;
@@ -213,74 +217,8 @@
 
         <!-- Desktop Nav Links -->
         <ul class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase">
-          <li class="nav-dropdown-projects">
+          <li>
             <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
-            <!-- Mega Dropdown Panel with Image Shuffle -->
-            <div class="projects-dropdown-menu">
-              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
-                <!-- Left: Category List -->
-                <div class="w-[44%] flex flex-col justify-center">
-                  <ul class="flex flex-col space-y-3 xl:space-y-4">
-                    <li>
-                      <a href="projects.html" class="projects-nav-item active" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/projects/dps_hazaribaug.png">
-                        Project Selection
-                      </a>
-                    </li>
-                    <li>
-                      <a href="projects.html" class="projects-nav-item" data-img="images/projects/dps_hazaribaug.png" data-peek="images/projects/rajhans_skylar.png">
-                        Individual Project Pages
-                      </a>
-                    </li>
-                    <li>
-                      <a href="project-detail.html#project-info" class="projects-nav-item" data-img="images/projects/rajhans_skylar.png" data-peek="images/projects/bottle_house.png">
-                        Project Information
-                      </a>
-                    </li>
-                    <li>
-                      <a href="project-detail.html#project-gallery" class="projects-nav-item" data-img="images/project-detail/gallery_1_wide.png" data-peek="images/project-detail/gallery_2_aerial.png">
-                        Project Gallery
-                      </a>
-                    </li>
-                    <li>
-                      <a href="project-detail.html#related-projects" class="projects-nav-item" data-img="images/projects/times_tower_new.png" data-peek="images/projects/devgn_cinex_bellona.png">
-                        Related Projects
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Right: Image Card Stack with Shuffle Animation -->
-                <div class="w-[56%] flex justify-end">
-                  <div class="projects-card-stack relative">
-                    <!-- Peek Card (Bottom stacked layer) -->
-                    <div id="projects-card-peek" class="projects-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
-                      <img
-                        id="projects-img-peek"
-                        src="images/projects/dps_hazaribaug.png"
-                        alt="Preview Stack"
-                        class="projects-img-peek w-full h-full object-cover block"
-                      />
-                    </div>
-
-                    <!-- Main Card (Top layer) -->
-                    <div id="projects-card-main" class="projects-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
-                      <img
-                        id="projects-img-main"
-                        src="images/projects/devgn_cinex_bellona.png"
-                        alt="Projects Preview"
-                        class="projects-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
-                      />
-                      <img
-                        id="projects-img-fade"
-                        src=""
-                        alt="Crossfade Layer"
-                        class="projects-img-fade absolute inset-0 w-full h-full object-cover block opacity-0 pointer-events-none will-change-transform"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </li>
           
           <li class="nav-dropdown-expertise">
@@ -477,11 +415,9 @@
       </nav>
 
       <!-- Hero Text Overlay (Bottom Left - entrance fade & lift matching Homepage) -->
-      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[640px] hero-content-animate">
-        <span class="block text-white text-[11px] sm:text-[12px] font-[300] tracking-[0.22em] uppercase mb-3">PUBLICATIONS</span>
-        <h1 class="text-white text-[40px] sm:text-[52px] lg:text-[68px] font-[300] leading-[1.05] tracking-tight">
-          Stories that define<br>
-          our journey
+      <div class="absolute bottom-14 sm:bottom-20 lg:bottom-28 left-6 sm:left-12 xl:left-[97px] z-10 hero-content-animate">
+        <h1 class="text-white text-[40px] sm:text-[48px] lg:text-[58px] font-[300] leading-[1.08] tracking-tight">
+          Publications
         </h1>
       </div>
   </header>
@@ -570,20 +506,20 @@
   <!-- 2. PUBLICATIONS GRID                                                      -->
   <!-- ========================================================================= -->
   <section class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
-    <div class="max-w-[1920px] mx-auto">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14">
+    <div class="max-w-[1140px] mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-12 sm:gap-x-16 lg:gap-x-20 gap-y-16 sm:gap-y-20 lg:gap-y-24 justify-items-center">
 
         <!-- Card 1: Atlas of World Interior Design -->
         <div class="pub-card group" data-reveal-text>
           <div class="pub-pdf-trigger cursor-pointer" data-pdf="images/publications/intl publication 1 atlas.pdf">
-            <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+            <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
               <img
                 src="images/publications/internation publication 1 atlas.png"
                 alt="Atlas of World Interior Design - Arris Architects Publication"
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
               Atlas of World Interior Design
             </h3>
           </div>
@@ -592,14 +528,14 @@
         <!-- Card 2: Audio Visual World -->
         <div class="pub-card group" data-reveal-text data-delay="1">
           <div class="pub-pdf-trigger cursor-pointer" data-pdf="images/publications/intl publication 2 av world.pdf">
-            <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+            <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
               <img
                 src="images/publications/2.jpeg"
                 alt="Audio Visual World - Arris Architects Publication"
                 class="w-full h-full object-cover"
               />
             </div>
-            <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+            <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
               Audio Visual World
             </h3>
           </div>
@@ -607,140 +543,140 @@
 
         <!-- Card 3: Cinema Architecture -->
         <div class="pub-card group" data-reveal-text data-delay="2">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/3.png"
               alt="Cinema Architecture - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Cinema Architecture
           </h3>
         </div>
 
         <!-- Card 4: Design Wall, 2016 -->
         <div class="pub-card group" data-reveal-text>
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/4.PNG"
               alt="Design Wall 2016 - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Design Wall, 2016
           </h3>
         </div>
 
         <!-- Card 5: Sri Sakthi Cinemas, Erode -->
         <div class="pub-card group" data-reveal-text data-delay="1">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/5.PNG"
               alt="Sri Sakthi Cinemas Erode - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Sri Sakthi Cinemas, Erode
           </h3>
         </div>
 
         <!-- Card 6: DNC Cinemas, Salem -->
         <div class="pub-card group" data-reveal-text data-delay="2">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/6.PNG"
               alt="DNC Cinemas Salem - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             DNC Cinemas, Salem
           </h3>
         </div>
 
         <!-- Card 7: Rajhans Cinemas Precia, Vesu, Surat -->
         <div class="pub-card group" data-reveal-text>
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/7.PNG"
               alt="Rajhans Cinemas Precia Vesu Surat - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Rajhans Cinemas Precia, Vesu, Surat
           </h3>
         </div>
 
         <!-- Card 8: Devgn [NY] Cinemas Swagat, Gandhinagar -->
         <div class="pub-card group" data-reveal-text data-delay="1">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/8.PNG"
               alt="Devgn NY Cinemas Swagat Gandhinagar - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Devgn [NY] Cinemas Swagat, Gandhinagar
           </h3>
         </div>
 
         <!-- Card 9: Rajhans CBD Mall, Ahmedabad -->
         <div class="pub-card group" data-reveal-text data-delay="2">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/9.PNG"
               alt="Rajhans CBD Mall Ahmedabad - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Rajhans CBD Mall, Ahmedabad
           </h3>
         </div>
 
         <!-- Card 10: Devgn [NY] Cinex, Elan Epic Mall, Gurugram -->
         <div class="pub-card group" data-reveal-text>
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/10.PNG"
               alt="Devgn NY Cinex Elan Epic Mall Gurugram - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Devgn [NY] Cinex, Elan Epic Mall, Gurugram
           </h3>
         </div>
 
         <!-- Card 11: Rajhans Cinemas, Surat -->
         <div class="pub-card group" data-reveal-text data-delay="1">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/11.PNG"
               alt="Rajhans Cinemas Surat - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Rajhans Cinemas, Surat
           </h3>
         </div>
 
         <!-- Card 12: Devgn [NY] Cinex, Guwahati -->
         <div class="pub-card group" data-reveal-text data-delay="2">
-          <div class="pub-img-wrap w-full aspect-[3/4] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
+          <div class="pub-img-wrap w-full aspect-[2/3] overflow-hidden bg-black/5 mb-4" data-reveal-animation>
             <img
               src="images/publications/12.PNG"
               alt="Devgn NY Cinex Guwahati - Arris Architects Publication"
               class="w-full h-full object-cover"
             />
           </div>
-          <h3 class="text-black text-[18px] sm:text-[20px] font-[400] leading-[1.3] tracking-normal">
+          <h3 class="text-black text-[15px] sm:text-[16px] font-[400] leading-[1.35] tracking-normal">
             Devgn [NY] Cinex, Guwahati
           </h3>
         </div>

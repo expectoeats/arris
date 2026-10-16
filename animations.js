@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
     });
 
-    const dropdowns = document.querySelectorAll('.nav-dropdown-projects, .nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
+    const dropdowns = document.querySelectorAll('.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
     dropdowns.forEach((dropdown) => {
       const items = dropdown.querySelectorAll('.projects-nav-item, .expertise-nav-item, .practice-nav-item, .mega-nav-item');
       const mainCard = dropdown.querySelector('#projects-card-main, #expertise-card-main, #practice-card-main, .projects-card-main, .expertise-card-main, .practice-card-main, .mega-card-main');
@@ -512,10 +512,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   function initMegaDropdownHoverIntent() {
     const dropdownGroups = [
-      {
-        trigger: document.querySelector('.nav-dropdown-projects'),
-        menu: document.querySelector('.projects-dropdown-menu'),
-      },
       {
         trigger: document.querySelector('.nav-dropdown-expertise'),
         menu: document.querySelector('.expertise-dropdown-menu'),
