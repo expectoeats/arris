@@ -46,17 +46,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial state: show hero video
     heroMedia.classList.add('show');
 
+    // Ensure hero video plays and stays muted for browser autoplay policy
+    const heroVideo = heroMedia.querySelector('video');
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.defaultMuted = true;
+      heroVideo.playsInline = true;
+      const playPromise = heroVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {});
+      }
+    }
+
     if (window.ScrollTrigger) {
       // Show/hide video based on hero visibility (exactly matches HBA reference)
       ScrollTrigger.create({
         trigger: heroSection,
-        start: 'top top+=10px',
+        start: 'top top',
         end: 'bottom top',
         markers: false,
         onEnter: () => heroMedia.classList.add('show'),
         onLeave: () => heroMedia.classList.remove('show'),
         onEnterBack: () => heroMedia.classList.add('show'),
-        onLeaveBack: () => heroMedia.classList.remove('show'),
+        onLeaveBack: () => heroMedia.classList.add('show'),
       });
 
       // Subtle nav fade-out on initial scroll down

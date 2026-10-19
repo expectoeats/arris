@@ -144,17 +144,42 @@
       class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] z-10"
     >
       <!-- Hero Background Video (position: fixed handled by CSS — HBA curtain reveal) -->
-      <div class="hero-media-wrapper">
+      <div class="hero-media-wrapper show">
 
         <!-- Hero Video -->
         <video
+          id="hero-video"
           src="video/Video Project.mp4"
           autoplay
           muted
           loop
           playsinline
           preload="auto"
-        ></video>
+          class="w-full h-full object-cover"
+        >
+          <source src="video/Video Project.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Video Autoplay Enforcement -->
+        <script>
+          (function () {
+            var v = document.getElementById("hero-video");
+            if (v) {
+              v.muted = true;
+              v.defaultMuted = true;
+              var tryPlay = function () {
+                var p = v.play();
+                if (p !== undefined) {
+                  p.catch(function () {});
+                }
+              };
+              tryPlay();
+              ["click", "touchstart", "scroll", "keydown"].forEach(function (e) {
+                window.addEventListener(e, tryPlay, { once: true, passive: true });
+              });
+            }
+          })();
+        </script>
 
         <!-- Gradient overlay -->
         <div
@@ -197,12 +222,12 @@
                 <div class="w-[44%] flex flex-col justify-center">
                   <ul class="flex flex-col space-y-2 xl:space-y-2.5">
                     <li>
-                      <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      <a href="expertise-architecture.html" class="expertise-nav-item active" data-img="images/interior/Rectangle 65.png" data-peek="images/interior/Rectangle 66.png">
                         Architecture
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      <a href="expertise-interior.html#interiors" class="expertise-nav-item" data-img="images/interior/Rectangle 66.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
                         Interiors
                       </a>
                     </li>
@@ -212,7 +237,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/DPS.png">
+                      <a href="expertise-interior.html#cinema" class="expertise-nav-item" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/dorpdow-shuffle/project1.2.png">
                         Cinemas
                       </a>
                     </li>
@@ -222,22 +247,22 @@
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      <a href="expertise-interior.html#residential" class="expertise-nav-item" data-img="images/projects/aldona_villa.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
                         Residential
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      <a href="expertise-interior.html#entertainment" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/projects/devgn_cinex_bellona.png">
                         Entertainment &amp; Leisure
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#auditoriums" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      <a href="expertise-interior.html#auditoriums" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (4).png" data-peek="images/projects/devgn_cinex_bellona.png">
                         Auditoriums
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html#hospitality" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 1.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      <a href="expertise-interior.html#hospitality" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/interior/Rectangle 66.png">
                         Hospitality
                       </a>
                     </li>
@@ -246,12 +271,12 @@
 
                 <!-- Right: Image Card Stack with Shuffle Animation -->
                 <div class="w-[56%] flex justify-end">
-                  <div class="expertise-card-stack relative">
+                  <div class="expertise-card-stack relative overflow-hidden">
                     <!-- Peek Card (Bottom stacked layer) -->
                     <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
                       <img
                         id="expertise-img-peek"
-                        src="images/dorpdow-shuffle/project1.2.png"
+                        src="images/interior/Rectangle 66.png"
                         alt="Preview Stack"
                         class="expertise-img-peek w-full h-full object-cover block"
                       />
@@ -261,8 +286,8 @@
                     <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
                       <img
                         id="expertise-img-main"
-                        src="images/dorpdow-shuffle/DPS.png"
-                        alt="Architecture - Delhi Public School"
+                        src="images/interior/Rectangle 65.png"
+                        alt="Architecture"
                         class="expertise-img-main absolute inset-0 w-full h-full object-cover block will-change-transform"
                       />
                       <img
@@ -315,7 +340,7 @@
 
                 <!-- Right: Image Card Stack with Shuffle Animation -->
                 <div class="w-[56%] flex justify-end">
-                  <div class="practice-card-stack relative">
+                  <div class="practice-card-stack relative overflow-hidden">
                     <!-- Peek Card (Bottom stacked layer) -->
                     <div id="practice-card-peek" class="practice-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
                       <img
@@ -862,7 +887,6 @@
               >2026</span
             >
           </div>
-          <div class="sticky_gallery--content-bg"></div>
         </div>
 
         <!-- Pinned Main Hero Media (Image 1) -->
@@ -930,7 +954,6 @@
               >2026</span
             >
           </div>
-          <div class="sticky_gallery--content-bg"></div>
         </div>
 
         <!-- Pinned Main Hero Media -->
@@ -939,6 +962,8 @@
             <img
               src="images/DPS.png"
               alt="DPS Hazaribaug Institutional Campus"
+              style="object-position: center bottom;"
+              class="object-bottom"
             />
           </figure>
         </div>
@@ -998,7 +1023,6 @@
               >ONGOING</span
             >
           </div>
-          <div class="sticky_gallery--content-bg"></div>
         </div>
 
         <!-- Pinned Main Hero Media -->
@@ -1066,7 +1090,6 @@
               >2024</span
             >
           </div>
-          <div class="sticky_gallery--content-bg"></div>
         </div>
 
         <!-- Pinned Main Hero Media -->
@@ -1075,6 +1098,8 @@
             <img
               src="images/project 4.png"
               alt="Rajhans Precia Luxury Cinema Lobby"
+              style="object-position: center top;"
+              class="object-top"
             />
           </figure>
         </div>
@@ -1401,29 +1426,6 @@
                 </div>
               </div>
 
-              <!-- 5 Star Rating -->
-              <div class="flex items-center space-x-1 text-amber-400 mt-6">
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-              </div>
             </div>
 
             <!-- Testimonial 2 (Avneet Uberoi) -->
@@ -1452,29 +1454,6 @@
                 </div>
               </div>
 
-              <!-- 5 Star Rating -->
-              <div class="flex items-center space-x-1 text-amber-400 mt-6">
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-              </div>
             </div>
 
             <!-- Testimonial 3 (Anuj Agarwal) -->
@@ -1500,29 +1479,6 @@
                 </div>
               </div>
 
-              <!-- 5 Star Rating -->
-              <div class="flex items-center space-x-1 text-amber-400 mt-6">
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-                <i
-                  data-lucide="star"
-                  class="w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] fill-amber-400 stroke-none"
-                ></i>
-              </div>
             </div>
           </div>
         </div>
@@ -1602,7 +1558,7 @@
             >
               Ar. Satish Shetty
             </h4>
-            <p class="text-[20px]-xs text-neutral-500 font-light mt-0.5">
+            <p class="text-[20px] text-neutral-500 font-light mt-0.5">
               Director
             </p>
           </div>

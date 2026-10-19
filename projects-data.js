@@ -11,7 +11,7 @@ const ARRIS_PROJECTS = {
     category: 'Cinemas',
     location: 'Thane',
     year: '2026',
-    heroImage: 'images/project1.2.png',
+    heroImage: 'images/project 1.png',
     storyImage: 'images/project 1.png',
     description: "Inspired by Art Deco elegance, the interiors of the Devgn Cinex Bellona cinema in Mumbai celebrates bold geometry, rich symmetry, and metallic accents, layered with retro nostalgia — marquee signage, plush velvet seating, vintage posters, and patterned carpets. The fusion creates an atmosphere where every corner echoes the romance of yesterday's drama while captivating today's audience.",
     specs: {
