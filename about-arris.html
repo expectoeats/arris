@@ -173,7 +173,7 @@
         <img
           src="images/image 7.png"
           alt="Arris Architects Logo"
-          class="h-10 sm:h-11 lg:h-14 w-auto drop-shadow-sm brightness-100"
+          class="h-9 sm:h-10 lg:h-12 w-auto drop-shadow-sm brightness-100"
         />
       </a>
 
@@ -400,11 +400,6 @@
                       Careers
                     </a>
                   </li>
-                  <li>
-                    <a href="#social" class="contact-nav-item">
-                      Social media
-                    </a>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -497,11 +492,11 @@
         </div>
 
         <!-- 2. Grand Lobby / Concession Image: Mobile Order 2, Desktop Col 2 Row 1 -->
-        <div class="order-2 lg:col-start-2 lg:row-start-1 w-full overflow-hidden mb-0 lg:mb-8" data-reveal-animation>
+        <div class="order-2 lg:col-start-2 lg:row-start-1 w-full max-w-[500px] xl:max-w-[540px] overflow-hidden rounded-lg sm:rounded-xl mb-0 lg:mb-8" data-reveal-animation>
           <img
             src="images/about/Rectangle 4.png"
             alt="Grand Cinema Concession Lobby with Slatted Wooden Ceiling"
-            class="w-full h-[192px] sm:h-[240px] lg:h-auto object-cover block"
+            class="w-full h-[200px] sm:h-[260px] lg:h-[300px] xl:h-[340px] object-cover object-center block"
           />
         </div>
 
@@ -513,11 +508,11 @@
         </div>
 
         <!-- 4. Arched Corridor Image: Mobile Order 4, Desktop Col 1 Row 2 -->
-        <div class="order-4 lg:col-start-1 lg:row-start-2 w-full overflow-hidden max-w-[520px]" data-reveal-animation>
+        <div class="order-4 lg:col-start-1 lg:row-start-2 w-full overflow-hidden max-w-[420px] rounded-lg sm:rounded-xl" data-reveal-animation>
           <img
             src="images/about/Rectangle 3.png"
             alt="Arched Corridor with Mural Wall and Tile Flooring"
-            class="w-full h-auto object-cover block"
+            class="w-full h-[240px] sm:h-[280px] lg:h-[300px] xl:h-[320px] object-cover object-center block"
           />
         </div>
 
@@ -531,21 +526,14 @@
   <section class="bg-arris-dark text-white pt-14 sm:pt-20 lg:pt-28 pb-16 sm:pb-20 lg:pb-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
 
-      <!-- Title & Paragraph -->
-      <div class="flex flex-col lg:flex-row lg:items-start justify-between mb-8 sm:mb-12 lg:mb-16 gap-6 lg:gap-16">
+      <!-- Title -->
+      <div class="mb-8 sm:mb-12 lg:mb-16">
         <h2
-          class="w-full lg:w-[45%] text-white text-[28px] sm:text-[34px] lg:text-[44px] font-[300] leading-[1.15] tracking-tight"
+          class="text-white text-[28px] sm:text-[34px] lg:text-[44px] font-[300] leading-[1.15] tracking-tight"
           data-reveal-text
         >
           Where architecture<br>meets experience.
         </h2>
-        <p
-          class="w-full lg:w-[55%] text-white/80 text-[13.5px] sm:text-[14.5px] lg:text-[15px] font-[300] leading-[22px] sm:leading-[24px] lg:leading-[26px] tracking-normal max-w-[620px]"
-          data-reveal-text
-          data-delay="1"
-        >
-          We believe exceptional architecture begins with understanding how people interact with a space. Every detail from material and texture to light and proportion is carefully considered to create spaces that feel distinctive and enduring.
-        </p>
       </div>
 
       <!-- Carousel / Responsive Images Row -->
@@ -874,72 +862,98 @@
   <!-- ========================================================================= -->
   <!-- 7. FOOTER (Matching Figma Mobile Centered Layout & Desktop Responsive)    -->
   <!-- ========================================================================= -->
-  <footer
-    class="bg-arris-footerDark text-white pt-14 sm:pt-16 pb-12 sm:pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
-  >
-    <div class="max-w-[1920px] mx-auto">
-      <!-- Desktop & Tablet: Row; Mobile: Centered Vertical Stack matching Figma exactly -->
-      <div
-        class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 lg:pb-10"
-      >
-        <!-- Logo -->
-        <a href="index.html" class="inline-block mx-auto lg:mx-0">
-          <img
-            src="images/image 7.png"
-            alt="Arris Architects Logo"
-            class="h-8 sm:h-9 lg:h-11 w-auto brightness-0 invert"
-          />
-        </a>
-
-        <!-- Footer Navigation Links: Stacked centered on mobile, horizontal on desktop -->
-        <ul
-          class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 lg:gap-10 text-[14px] sm:text-[15px] text-white font-light text-center"
-        >
-          <li><a href="index.html" class="hover:text-white/70 transition-colors">Home</a></li>
-          <li><a href="about-arris.html" class="hover:text-white/70 transition-colors">About Us</a></li>
-          <li><a href="expertise-interior.html" class="hover:text-white/70 transition-colors">Link Three</a></li>
-          <li><a href="projects.html" class="hover:text-white/70 transition-colors">Link Four</a></li>
-          <li><a href="contact.html" class="hover:text-white/70 transition-colors">Link Five</a></li>
-        </ul>
-
-        <!-- Social Icons: Centered 5 icons -->
-        <div class="flex items-center justify-center space-x-6 sm:space-x-5 my-2 lg:my-0">
-          <a href="#" aria-label="Facebook">
-            <img src="images/Vector.png" alt="Facebook" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="#" aria-label="Instagram">
-            <img src="images/Vector (1).png" alt="Instagram" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="#" aria-label="Twitter / X">
-            <img src="images/Vector (2).png" alt="X" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
-          </a>
-          <a href="#" aria-label="YouTube">
-            <img src="images/Youtube.png" alt="YouTube" class="w-4 h-4 sm:w-5 sm:h-5 object-contain opacity-90 hover:opacity-100 transition-opacity" />
-          </a>
-        </div>
-      </div>
-
-      <!-- Divider -->
-      <div class="w-full max-w-[380px] sm:max-w-none mx-auto border-t border-neutral-700/60 my-6 sm:my-0"></div>
-
-      <!-- Bottom Row / Mobile Stack: Copyright & Legal Links -->
-      <div
-        class="flex flex-col sm:flex-row items-center justify-center pt-6 sm:pt-8 text-[13px] sm:text-[14px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
-      >
+      <footer
+      class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
+    >
+      <div class="max-w-[1920px] mx-auto">
+        <!-- Top / Main Block: Logo, Nav, Socials (Stacked centered on mobile, flex-row on desktop) -->
         <div
-          class="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-6 text-[13px] sm:text-[14px] text-white/90"
+          class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
         >
-          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Terms of Service</a>
-          <a href="#" class="underline underline-offset-4 hover:text-white transition-colors">Cookies Settings</a>
+          <!-- Logo -->
+          <a href="index.html" class="inline-block mx-auto lg:mx-0">
+            <img
+              src="images/image 7.png"
+              alt="Arris Architects Logo"
+              class="h-9 lg:h-14 w-auto"
+            />
+          </a>
+
+          <!-- Footer Navigation Links -->
+          <ul
+            class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[16px] text-white/90 font-light text-center"
+          >
+            <li>
+              <a href="index.html" class="hover:text-white transition-colors">Home</a>
+            </li>
+            <li>
+              <a href="about-arris.html" class="hover:text-white transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="index.html#what-we-do" class="hover:text-white transition-colors"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="projects.html" class="hover:text-white transition-colors"
+                >Projects</a
+              >
+            </li>
+            <li>
+              <a href="testimonials.html" class="hover:text-white transition-colors"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-white transition-colors"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+
+          <!-- Social Icons -->
+          <div class="flex items-center space-x-6 lg:space-x-5">
+            <a href="https://www.instagram.com/arrisarchitects/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="#" aria-label="Twitter / X">
+              <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+            <a href="https://www.youtube.com/@ArrisArchitects1" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            </a>
+          </div>
         </div>
-        <div class="pt-2 sm:pt-0 text-neutral-400">&copy; 2026 . All rights reserved.</div>
+
+        <!-- Divider -->
+        <div class="w-full border-t border-neutral-800"></div>
+
+        <!-- Bottom Row: Copyright & Legal -->
+        <div
+          class="flex flex-col sm:flex-row items-center justify-center pt-8 text-[16px] text-neutral-400 font-light gap-4 sm:gap-10 text-center"
+        >
+          <div>&copy; 2026. All rights reserved.</div>
+          <div
+            class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6"
+          >
+            <a href="#" class="hover:text-neutral-300 transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-neutral-300 transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="hover:text-neutral-300 transition-colors"
+              >Cookies Settings</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Initialize Lucide Icons -->
   <script>
