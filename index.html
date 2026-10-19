@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -172,13 +172,13 @@
           <img
             src="images/image 7.png"
             alt="Arris Architects Logo"
-            class="h-8 sm:h-10 lg:h-10 w-auto drop-shadow-sm brightness-100"
+            class="h-10 sm:h-11 lg:h-14 w-auto drop-shadow-sm brightness-100"
           />
         </a>
 
         <!-- Desktop Navigation Links -->
         <ul
-          class="hidden md:flex items-center space-x-10 gap-20 lg:space-x-14 text-white text-[12px] font-[300] tracking-[0.22em] uppercase"
+          class="hidden md:flex items-center gap-12 lg:gap-[140px] xl:gap-[160px] text-white text-[12px] font-[300] tracking-[0.22em] uppercase"
         >
           <li>
             <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
@@ -1117,22 +1117,25 @@
 
         <!-- Awards Horizontal Scroll with Arrow Buttons (Exact Original Card & Image Size) -->
         <div class="relative">
-          <!-- Prev Arrow -->
+          <!-- Prev Arrow (Matching Figma Design) -->
           <button
             id="awards-prev"
-            class="absolute -left-3 sm:-left-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200 hidden"
+            class="absolute left-1 lg:-left-12 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer hidden group"
             aria-label="Previous Award"
           >
-            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+              <polygon points="18,10 12,16 18,22" fill="currentColor" />
+            </svg>
           </button>
 
-          <!-- Scrollable Track (Exact original gap-4 lg:gap-8 and card sizing) -->
+          <!-- Scrollable Track (Exact gap-10 and 4-card fit to prevent 5th image peeking) -->
           <div
             id="awards-track"
-            class="flex gap-4 lg:gap-8 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0"
+            class="flex gap-4 lg:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 w-full lg:w-[calc(100%-48px)]"
           >
             <!-- Award 1: FOAID -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
               <div
                 class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
               >
@@ -1150,7 +1153,7 @@
             </div>
 
             <!-- Award 2: NDTV Design & Architect of the year -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
               <div
                 class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
               >
@@ -1170,7 +1173,7 @@
             </div>
 
             <!-- Award 3: Design Wall -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
               <div
                 class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
               >
@@ -1188,7 +1191,7 @@
             </div>
 
             <!-- Award 4: Cinema -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2rem)/4)] lg:min-w-[calc((100%-3*2rem)/4)] snap-start">
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
               <div
                 class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
               >
@@ -1204,15 +1207,162 @@
               </h4>
               <p class="text-[16px] text-neutral-500 font-light mt-0.5">2009</p>
             </div>
+
+            <!-- Award 5: Creative Minds Next 2025 -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 103.png"
+                  alt="Creative Minds Next"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Creative Minds Next
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2025</p>
+            </div>
+
+            <!-- Award 6: Creative Minds Next 2024 -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 104.png"
+                  alt="Creative Minds Next"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Creative Minds Next
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2024</p>
+            </div>
+
+            <!-- Award 7: FOAID 10 -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 103 (1).png"
+                  alt="FOAID 10"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                FOAID 10
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2023</p>
+            </div>
+
+            <!-- Award 8: Design Wall -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 104 (1).png"
+                  alt="Design Wall"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Design Wall
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2016</p>
+            </div>
+
+            <!-- Award 9: NDTV Design & Architect of the year -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 104 (2).png"
+                  alt="NDTV Design &amp; Architect of the year"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                NDTV Design &amp; Architect of the year
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2015</p>
+            </div>
+
+            <!-- Award 10: Autodesk Nominee -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 103 (2).png"
+                  alt="Autodesk Nominee"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Autodesk Nominee
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2014</p>
+            </div>
+
+            <!-- Award 11: iGEN 50 -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 104 (3).png"
+                  alt="iGEN 50"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                iGEN 50
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2013</p>
+            </div>
+
+            <!-- Award 12: Big Cine Expo -->
+            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+              <div
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+              >
+                <img
+                  src="images/awards/Rectangle 104 (4).png"
+                  alt="Big Cine Expo"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+                Big Cine Expo
+              </h4>
+              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2019</p>
+            </div>
           </div>
 
-          <!-- Next Arrow -->
+          <!-- Next Arrow (Matching Figma Exact Design) -->
           <button
             id="awards-next"
-            class="absolute -right-3 sm:-right-5 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 flex items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200"
+            class="absolute right-1 lg:right-0 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
             aria-label="Next Award"
           >
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+              <polygon points="14,10 20,16 14,22" fill="currentColor" />
+            </svg>
           </button>
         </div>
 
@@ -1253,6 +1403,7 @@
             });
             track.addEventListener('scroll', updateButtons);
             window.addEventListener('resize', updateButtons);
+            window.addEventListener('load', updateButtons);
             setTimeout(updateButtons, 150);
           })();
         </script>
@@ -1297,7 +1448,7 @@
                     We have been associated with Shubhashish since 2001, when he was a young Project Architect working on my multiplex project in Surat. Even then, his confidence, design capability, and commitment stood out clearly.
                   </p>
                   <p>
-                    When we decided to take up our first school project, Angel High School, in 2007, we had no hesitation in approaching Arris Architects. What he presented to us was far beyond our expectations &mdash; a concept truly ahead of its time. His ideas on school design and campus planning were visionary. The project, <a href="testimonials.html" class="underline text-neutral-500 hover:text-neutral-900 transition-colors">Read More</a>
+                    When we decided to take up our first school project, Angel High School, in 2007, we had no hesitation in approaching Arris Architects. What he presented to us was far beyond our expectations &mdash; a concept truly ahead of its time. His ideas on school design and campus planning were visionary. The project, <a href="testimonials.html" class="underline text-blue-600 hover:text-blue-800 transition-colors">Read More</a>
                   </p>
                 </div>
               </div>
@@ -1348,7 +1499,7 @@
                     When we decided to transform what was once an iconic building into our home, we knew it was not going to be an ordinary architectural project. We wanted to preserve the character and memories associated with the building while creating a space that truly felt like ours.
                   </p>
                   <p>
-                    From our first conversation, Shubhashish understood that we were looking for more than just a beautifully designed house. We wanted a home that was sophisticated, functional and timeless, while still <a href="testimonials.html" class="underline text-neutral-500 hover:text-neutral-900 transition-colors">Read More</a>
+                    From our first conversation, Shubhashish understood that we were looking for more than just a beautifully designed house. We wanted a home that was sophisticated, functional and timeless, while still <a href="testimonials.html" class="underline text-blue-600 hover:text-blue-800 transition-colors">Read More</a>
                   </p>
                 </div>
               </div>
@@ -1426,14 +1577,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Next Arrow Floating Button (Desktop) -->
-          <button
-            class="hidden md:flex absolute -right-4 sm:-right-6 w-11 h-11 rounded-full bg-white shadow-md border border-neutral-200 items-center justify-center text-neutral-800 hover:bg-neutral-900 hover:text-white transition-colors duration-200 z-10"
-            aria-label="Next Testimonial"
-          >
-            <i data-lucide="chevron-right" class="w-5 h-5"></i>
-          </button>
         </div>
 
         <!-- View All Button -->
