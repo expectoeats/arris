@@ -11,26 +11,36 @@ const ARRIS_PROJECTS = {
     category: 'Cinemas',
     location: 'Thane',
     year: '2026',
-    heroImage: 'images/project 1.png',
-    storyImage: 'images/project 1.png',
+    heroImage: 'images/Devgn Cinex Bellona/2.jpeg',
+    storyImage: 'images/Devgn Cinex Bellona/bellona-story.png',
     description: "Inspired by Art Deco elegance, the interiors of the Devgn Cinex Bellona cinema in Mumbai celebrates bold geometry, rich symmetry, and metallic accents, layered with retro nostalgia — marquee signage, plush velvet seating, vintage posters, and patterned carpets. The fusion creates an atmosphere where every corner echoes the romance of yesterday's drama while captivating today's audience.",
     specs: {
-      rev: 'REV. 04.24',
       location: 'Thane',
       scope: 'Cinema, Interiors',
       typology: 'Cinema',
       siteArea: '3 Screens, 620 Seats',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/project 1.3.png', alt: 'Devgn Cinex Bellona Luxury Foyer' },
-      { url: 'images/project-detail/gallery_2_aerial.png', alt: 'Devgn Cinex Bellona Exterior Plaza' },
-      { url: 'images/project-detail/gallery_3_pool.png', alt: 'Devgn Cinex Bellona Concourse Walk' },
-      { url: 'images/project-detail/gallery_1_wide.png', alt: 'Devgn Cinex Bellona Architectural Lounge' }
+      {
+        "url": "images/Devgn Cinex Bellona/2.jpeg",
+        "alt": "Devgn Cinex Bellona Main Concourse"
+      },
+      {
+        "url": "images/Devgn Cinex Bellona/10.jpg",
+        "alt": "Devgn Cinex Bellona Auditorium Lighting"
+      },
+      {
+        "url": "images/Devgn Cinex Bellona/6.jpg",
+        "alt": "Devgn Cinex Bellona Arched Auditorium Hall"
+      },
+      {
+        "url": "images/Devgn Cinex Bellona/11.jpg",
+        "alt": "Devgn Cinex Bellona VIP Insignia Lounge"
+      }
     ],
     related: ['times-tower-new', 'rajhans-precia', 'ib-suncity'],
-    cardImage: 'images/projects/devgn_cinex_bellona.png'
+    cardImage: 'images/Devgn Cinex Bellona/2.jpeg'
   },
 
   // 2. Rajhans Skylar (Commercial, Surat) - Exact match to user reference screenshot
@@ -41,26 +51,36 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Surat',
     year: '2026',
-    heroImage: 'images/project-detail/rajhans_skylar_hero.png',
-    storyImage: 'images/project-detail/rajhans_skylar_atrium.png',
+    heroImage: 'images/Rajhans Skylar Commercial Surat/Cam_01.jpg',
+    storyImage: 'images/Rajhans Skylar Commercial Surat/Interior_Atrium_Cam13.jpg',
     description: "This project brings together contemporary interior spaces with a thoughtfully designed landscape that complements the overall built environment. Our scope focused on the atrium, lobby spaces, gym, café and other key interior areas, creating cohesive and inviting spaces through considered materials and detailing. The landscape integrates lush planting with carefully placed sculptural elements that soften the effect of the built form, creating a more welcoming and engaging experience around the building. Together, the interiors and landscape create a refined environment that balances functionality, visual identity and a sense of openness.",
     specs: {
-      rev: 'REV. 04.24',
       location: 'Surat',
       scope: 'Commercial, Interiors, Landscape, F&B',
       typology: 'Commercial',
       siteArea: '1,32,720, sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/project-detail/gallery_1_wide.png', alt: 'Rajhans Skylar Dynamic Elevation' },
-      { url: 'images/project-detail/gallery_2_aerial.png', alt: 'Rajhans Skylar Aerial View' },
-      { url: 'images/project-detail/gallery_3_pool.png', alt: 'Rajhans Skylar Landscaped Forecourt' },
-      { url: 'images/project-detail/gallery_4_lounge.png', alt: 'Rajhans Skylar Atrium Lighting' }
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Cam_01.jpg",
+        "alt": "Rajhans Skylar Iconic Elevation"
+      },
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Interior_Atrium_Cam13.jpg",
+        "alt": "Rajhans Skylar Central Atrium"
+      },
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Interior_Reception_Cam04.jpg",
+        "alt": "Rajhans Skylar Grand Reception Lobby"
+      },
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Cam_03.jpg",
+        "alt": "Rajhans Skylar Landscaped Commercial Promenade"
+      }
     ],
     related: ['times-tower-new', 'rajhans-precia', 'ib-suncity'],
-    cardImage: 'images/projects/rajhans_skylar.png'
+    cardImage: 'images/Rajhans Skylar Commercial Surat/Cam_01.jpg'
   },
 
   // 3. DPS Hazaribaug (Schools, Hazaribaug)
@@ -75,19 +95,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/big_5 1.png',
     description: "DPS Hazaribaug represents a benchmark in institutional architecture, seamlessly integrating open-air learning pavilions with sustainable climate-responsive building envelopes. The campus utilizes passive solar orientation, shaded courtyards, and native landscaping to craft an inspiring, calm educational sanctuary for future generations.",
     specs: {
-      rev: 'REV. 02.26',
       location: 'Hazaribaug, Jharkhand',
       scope: 'Campus Masterplan, Architecture, Interiors',
       typology: 'Institutional / School',
       siteArea: '2,40,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/Rectangle 6 (1).png', alt: 'DPS Hazaribaug Central Courtyard' },
-      { url: 'images/dorpdow-shuffle/DPS.png', alt: 'DPS Hazaribaug Main Façade' },
-      { url: 'images/design-process/Rectangle 86.png', alt: 'DPS Hazaribaug Learning Pods' },
-      { url: 'images/projects/dps_hazaribaug.png', alt: 'DPS Hazaribaug Exterior Campus' }
+      {
+        "url": "images/big_5 1.png",
+        "alt": "DPS Hazaribaug Main Academic Block"
+      },
+      {
+        "url": "images/Rectangle 6 (1).png",
+        "alt": "DPS Hazaribaug Central Courtyard & Shaded Pavilions"
+      },
+      {
+        "url": "images/about/Rectangle 31.png",
+        "alt": "DPS Hazaribaug Campus Learning Wings"
+      },
+      {
+        "url": "images/projects/dps_hazaribaug.png",
+        "alt": "DPS Hazaribaug Institutional Entrance & Lawn"
+      }
     ],
     related: ['ahs-hazaribaug', 'ib-suncity', 'aldona-villa'],
     cardImage: 'images/projects/dps_hazaribaug.png'
@@ -101,26 +131,36 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Aldona, Goa',
     year: 'Ongoing',
-    heroImage: 'images/Rectangle 7.png',
-    storyImage: 'images/big_5 1 (1).png',
+    heroImage: 'images/aldona Villa/10 FINAL_2.png',
+    storyImage: 'images/aldona Villa/1_8.png',
     description: "Nestled into the lush riverside topography of Aldona, this private sanctuary marries traditional Goan vernacular architecture with streamlined contemporary luxury. Deep verandas, exposed timber rafters, and cascading water features blur the boundaries between domestic intimacy and surrounding nature.",
     specs: {
-      rev: 'REV. 05.25',
       location: 'Aldona, Goa',
       scope: 'Architecture, Interior Design, Landscape',
       typology: 'Luxury Villa / Residential',
       siteArea: '18,500 sq.ft',
       status: 'Ongoing',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/Rectangle 6 (2).png', alt: 'Aldona Villa Poolside Patio' },
-      { url: 'images/about/Rectangle 4.png', alt: 'Aldona Villa Master Suite Lounge' },
-      { url: 'images/legacy/Rectangle 4.png', alt: 'Aldona Villa Garden Courtyard' },
-      { url: 'images/projects/aldona_villa.png', alt: 'Aldona Villa Sunset Elevation' }
+      {
+        "url": "images/aldona Villa/10 FINAL_2.png",
+        "alt": "Aldona Villa Pool & Architecture"
+      },
+      {
+        "url": "images/aldona Villa/1_8.png",
+        "alt": "Aldona Villa Lily Pond Entry Pavilion"
+      },
+      {
+        "url": "images/aldona Villa/BED-1-2_3.png",
+        "alt": "Aldona Villa Master Bedroom Suite"
+      },
+      {
+        "url": "images/aldona Villa/4_5.png",
+        "alt": "Aldona Villa Palm Avenue Gate & Landscape"
+      }
     ],
     related: ['bottle-house', 'hazaribaug-bungalow', 'rajhans-skylar'],
-    cardImage: 'images/projects/aldona_villa.png'
+    cardImage: 'images/aldona Villa/10 FINAL_2.png'
   },
 
   // 5. Times Tower New (Commercial, Mumbai)
@@ -131,26 +171,36 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Mumbai',
     year: '2019',
-    heroImage: 'images/projects/times_tower_new.png',
-    storyImage: 'images/interior/Rectangle 65.png',
+    heroImage: 'images/Times Tower New/E_PHX2662_LR.jpg',
+    storyImage: 'images/Times Tower New/E_PHX2667_LR.jpg',
     description: "Times Tower New redefines commercial corporate environments in Mumbai. With an emphasis on flexible workspaces, acoustic privacy, and high-performance energy envelopes, the tower delivers state-of-the-art corporate infrastructure that fosters collaborative focus and organizational prestige.",
     specs: {
-      rev: 'REV. 01.19',
       location: 'Mumbai, Maharashtra',
       scope: 'Commercial Architecture, Workspace Interiors',
       typology: 'Commercial High-Rise',
       siteArea: '85,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/interior/Rectangle 66.png', alt: 'Times Tower Boardroom' },
-      { url: 'images/architecture/Rectangle 65.png', alt: 'Times Tower Grand Lobby' },
-      { url: 'images/interior/Rectangle 111.png', alt: 'Times Tower Executive Suite' },
-      { url: 'images/projects/times_tower_new.png', alt: 'Times Tower Exterior View' }
+      {
+        "url": "images/Times Tower New/E_PHX2574_LR.jpg",
+        "alt": "Times Tower New Executive Boardroom"
+      },
+      {
+        "url": "images/Times Tower New/E_PHX2740_LR.jpg",
+        "alt": "Times Tower New Open Lounge with Copper Ductwork"
+      },
+      {
+        "url": "images/Times Tower New/E_PHX2712_LR.jpg",
+        "alt": "Times Tower New Executive Cabin"
+      },
+      {
+        "url": "images/Times Tower New/E_PHX2729_LR.jpg",
+        "alt": "Times Tower New Director's Lounge"
+      }
     ],
     related: ['rajhans-skylar', 'rajhans-precia', 'devgn-cinex-bellona'],
-    cardImage: 'images/projects/times_tower_new.png'
+    cardImage: 'images/Times Tower New/E_PHX2662_LR.jpg'
   },
 
   // 6. Devgn Cinex Ahmedabad (Cinemas, Ahmedabad)
@@ -161,26 +211,36 @@ const ARRIS_PROJECTS = {
     category: 'Cinemas',
     location: 'Ahmedabad',
     year: '2022',
-    heroImage: 'images/interior/Rectangle 67 (1).png',
-    storyImage: 'images/projects/devgn_cinex_ahmedabad.png',
+    heroImage: 'images/Devgn Cinex Ahmedabad/01.jpg',
+    storyImage: 'images/Devgn Cinex Ahmedabad/02.jpg',
     description: "Devgn Cinex Ahmedabad elevates theatrical architecture into a multisensory art form. Featuring parametric ceiling baffles, warm brass lighting accents, and custom acoustic wall compositions, every space is tuned to immerse viewers in uncompromised luxury and theatrical grandeur.",
     specs: {
-      rev: 'REV. 03.22',
       location: 'Ahmedabad, Gujarat',
       scope: 'Multiplex Architecture, Cinema Interiors, F&B',
       typology: 'Cinema & Multiplex',
       siteArea: '4 Screens, 850 Seats',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/project1.2.png', alt: 'Devgn Cinex Ahmedabad Auditorium' },
-      { url: 'images/project 1.3.png', alt: 'Devgn Cinex Concourse Lounge' },
-      { url: 'images/interior/Rectangle 68.png', alt: 'Devgn Cinex VIP Box' },
-      { url: 'images/projects/devgn_cinex_ahmedabad.png', alt: 'Devgn Cinex Entrance Foyer' }
+      {
+        "url": "images/Devgn Cinex Ahmedabad/01.jpg",
+        "alt": "Devgn Cinex Ahmedabad Grand Foyer"
+      },
+      {
+        "url": "images/Devgn Cinex Ahmedabad/06.jpg",
+        "alt": "Devgn Cinex Ahmedabad Concourse Lounge"
+      },
+      {
+        "url": "images/Devgn Cinex Ahmedabad/17.jpg",
+        "alt": "Devgn Cinex Ahmedabad Auditorium Seating"
+      },
+      {
+        "url": "images/Devgn Cinex Ahmedabad/21.jpg",
+        "alt": "Devgn Cinex Ahmedabad VIP Lounge"
+      }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-elan', 'la-trichy'],
-    cardImage: 'images/projects/devgn_cinex_ahmedabad.png'
+    cardImage: 'images/Devgn Cinex Ahmedabad/01.jpg'
   },
 
   // 7. IB Suncity (Schools, Gurugram)
@@ -191,26 +251,36 @@ const ARRIS_PROJECTS = {
     category: 'Schools',
     location: 'Gurugram',
     year: '2020',
-    heroImage: 'images/interior/Rectangle 68.png',
-    storyImage: 'images/projects/ib_suncity.png',
+    heroImage: 'images/IB Suncity/Suncity School-5.jpg',
+    storyImage: 'images/IB Suncity/Suncity School-13.jpg',
     description: "Designed for progressive international education, IB Suncity balances vibrant communal recreation pods with focused study zones. Sunlit central corridors, ergonomic learning classrooms, and eco-friendly tactile materials create an inspiring campus atmosphere for students of all ages.",
     specs: {
-      rev: 'REV. 06.20',
       location: 'Gurugram, Haryana',
       scope: 'Campus Masterplan, Educational Interiors',
       typology: 'International School',
       siteArea: '1,10,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/dorpdow-shuffle/DPS.png', alt: 'IB Suncity Campus Grounds' },
-      { url: 'images/design-process/image 10.png', alt: 'IB Suncity Interactive Library' },
-      { url: 'images/about/Rectangle 30.png', alt: 'IB Suncity Multipurpose Hall' },
-      { url: 'images/projects/ib_suncity.png', alt: 'IB Suncity Elevation' }
+      {
+        "url": "images/IB Suncity/Suncity School-5.jpg",
+        "alt": "IB Suncity Campus Exterior"
+      },
+      {
+        "url": "images/IB Suncity/Suncity School-13.jpg",
+        "alt": "IB Suncity Main Academic Courtyard"
+      },
+      {
+        "url": "images/IB Suncity/Suncity School-19.jpg",
+        "alt": "IB Suncity Learning Spaces"
+      },
+      {
+        "url": "images/IB Suncity/Suncity School-7.jpg",
+        "alt": "IB Suncity Sports & Outdoor Grounds"
+      }
     ],
     related: ['dps-hazaribaug', 'ahs-hazaribaug', 'times-tower-new'],
-    cardImage: 'images/projects/ib_suncity.png'
+    cardImage: 'images/IB Suncity/Suncity School-5.jpg'
   },
 
   // 8. AHS Hazaribaug (Schools, Hazaribaug)
@@ -221,26 +291,36 @@ const ARRIS_PROJECTS = {
     category: 'Schools',
     location: 'Hazaribaug',
     year: 'Ongoing',
-    heroImage: 'images/projects/ahs_hazaribaug.png',
-    storyImage: 'images/architecture/Rectangle 67.png',
+    heroImage: 'images/AHS Hazaribaug/IMG_20190412_104900.jpg',
+    storyImage: 'images/AHS Hazaribaug/DSC06574.JPG',
     description: "AHS Hazaribaug integrates traditional institutional permanence with responsive contemporary architectural craft. The complex features tiered auditoriums, modular STEM laboratories, and shaded perimeter circulation corridors harmoniously anchored into the surrounding landscape.",
     specs: {
-      rev: 'REV. 02.25',
       location: 'Hazaribaug, Jharkhand',
       scope: 'Architecture, Structural Design, Campus Planning',
       typology: 'High School & Academy',
       siteArea: '1,85,000 sq.ft',
       status: 'Ongoing',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 68.png', alt: 'AHS Hazaribaug Courtyard Walk' },
-      { url: 'images/architecture/Rectangle 69.png', alt: 'AHS Hazaribaug Academic Wing' },
-      { url: 'images/DPS.png', alt: 'AHS Hazaribaug Amphitheatre' },
-      { url: 'images/projects/ahs_hazaribaug.png', alt: 'AHS Hazaribaug Building Gate' }
+      {
+        "url": "images/AHS Hazaribaug/IMG_20190412_104900.jpg",
+        "alt": "AHS Hazaribaug Campus Overview"
+      },
+      {
+        "url": "images/AHS Hazaribaug/DSC06591.JPG",
+        "alt": "AHS Hazaribaug Academic Building"
+      },
+      {
+        "url": "images/AHS Hazaribaug/DSC06622.JPG",
+        "alt": "AHS Hazaribaug School Courtyard"
+      },
+      {
+        "url": "images/AHS Hazaribaug/DSC06715.JPG",
+        "alt": "AHS Hazaribaug Learning Wings"
+      }
     ],
     related: ['dps-hazaribaug', 'ib-suncity', 'hazaribaug-bungalow'],
-    cardImage: 'images/projects/ahs_hazaribaug.png'
+    cardImage: 'images/AHS Hazaribaug/IMG_20190412_104900.jpg'
   },
 
   // 9. LA Trichy (Cinemas, Trichy)
@@ -255,19 +335,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/interior/Rectangle 69 (1).png',
     description: "LA Trichy brings international standard cinema architecture to Tamil Nadu. Featuring fluted timber wall treatments, golden architectural arches, and expansive multi-level reception lobbies, it stands as a premier regional cinema entertainment destination.",
     specs: {
-      rev: 'REV. 04.26',
       location: 'Tiruchirappalli, Tamil Nadu',
       scope: 'Multiplex Architecture, Premium Lounges',
       typology: 'Cinema & Entertainment',
       siteArea: '5 Screens, 1,150 Seats',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/project 1.3.png', alt: 'LA Trichy Concourse' },
-      { url: 'images/project1.2.png', alt: 'LA Trichy Screen Auditorium' },
-      { url: 'images/dorpdow-shuffle/project 4.png', alt: 'LA Trichy VIP Lounge' },
-      { url: 'images/projects/la_trichy.png', alt: 'LA Trichy Grand Entrance' }
+      {
+        "url": "images/projects/la_trichy.png",
+        "alt": "LA Trichy Multiplex Entrance"
+      },
+      {
+        "url": "images/project1.2.png",
+        "alt": "LA Trichy Screen Auditorium Hall"
+      },
+      {
+        "url": "images/project 1.3.png",
+        "alt": "LA Trichy Luxury Concourse"
+      },
+      {
+        "url": "images/Rectangle 6 (3).png",
+        "alt": "LA Trichy VIP Cinema Lounge"
+      }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-ahmedabad', 'devgn-cinex-elan'],
     cardImage: 'images/projects/la_trichy.png'
@@ -281,26 +371,36 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Raipur',
     year: '2025',
-    heroImage: 'images/projects/bottle_house.png',
-    storyImage: 'images/legacy/Rectangle 3.png',
+    heroImage: 'images/bottle house/BOTTLE HOUSE 3.png',
+    storyImage: 'images/bottle house/D5_Scene 3_20240216_154847.png',
     description: "An innovative residential villa crafted around organic fluidity and environmental sustainability. Featuring distinctive curvilinear silhouettes, natural thermal cooling masonry, and floor-to-ceiling glass pavilions opening onto private garden courtyards.",
     specs: {
-      rev: 'REV. 01.25',
       location: 'Raipur, Chhattisgarh',
       scope: 'Architecture, Sustainable Engineering, Interior',
       typology: 'Eco-Luxury Residential',
       siteArea: '14,200 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/legacy/Rectangle 4.png', alt: 'Bottle House Courtyard' },
-      { url: 'images/about/Rectangle 1.png', alt: 'Bottle House Living Pavilion' },
-      { url: 'images/about/Rectangle 4.png', alt: 'Bottle House Master Veranda' },
-      { url: 'images/projects/bottle_house.png', alt: 'Bottle House Curvilinear Facade' }
+      {
+        "url": "images/bottle house/BOTTLE HOUSE 3.png",
+        "alt": "Bottle House Iconic Curvilinear Facade"
+      },
+      {
+        "url": "images/bottle house/D5_Scene 11_20240216_153737.png",
+        "alt": "Bottle House Garden & Veranda"
+      },
+      {
+        "url": "images/bottle house/D5_Scene 12_20240216_153922.png",
+        "alt": "Bottle House Living Pavilion"
+      },
+      {
+        "url": "images/bottle house/D5_Scene 13_20240216_155330.png",
+        "alt": "Bottle House Evening Architecture"
+      }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'rajhans-precia'],
-    cardImage: 'images/projects/bottle_house.png'
+    cardImage: 'images/bottle house/BOTTLE HOUSE 3.png'
   },
 
   // 11. Hazaribaug Bungalow (Residential, Hazaribaug)
@@ -311,26 +411,36 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Hazaribaug',
     year: 'Ongoing',
-    heroImage: 'images/projects/hazaribaug_bungalow.png',
-    storyImage: 'images/interior/Rectangle 68 (1).png',
+    heroImage: 'images/Hazaribaug Bungalow/Scene 1_1.png',
+    storyImage: 'images/Hazaribaug Bungalow/FORMAL LIVING ROOM.png',
     description: "Set against tranquil forested foothills, Hazaribaug Bungalow reinterprets classic residential architecture through local dry-stacked stone, deep cantilevered overhangs, and continuous sightlines that bring the surrounding landscape directly into the home.",
     specs: {
-      rev: 'REV. 03.24',
       location: 'Hazaribaug, Jharkhand',
       scope: 'Residential Architecture, Landscape, Interior',
       typology: 'Private Estate / Bungalow',
       siteArea: '22,000 sq.ft',
       status: 'Ongoing',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/about/Rectangle 3.png', alt: 'Hazaribaug Bungalow Garden Terrace' },
-      { url: 'images/legacy/Rectangle 53.png', alt: 'Hazaribaug Bungalow Living Lounge' },
-      { url: 'images/architecture/Rectangle 66.png', alt: 'Hazaribaug Bungalow Dining Wing' },
-      { url: 'images/projects/hazaribaug_bungalow.png', alt: 'Hazaribaug Bungalow Exterior' }
+      {
+        "url": "images/Hazaribaug Bungalow/Scene 1_1.png",
+        "alt": "Hazaribaug Bungalow Front Elevation"
+      },
+      {
+        "url": "images/Hazaribaug Bungalow/FORMAL LIVING ROOM.png",
+        "alt": "Hazaribaug Bungalow Formal Living Room"
+      },
+      {
+        "url": "images/Hazaribaug Bungalow/DINING.png",
+        "alt": "Hazaribaug Bungalow Dining Lounge"
+      },
+      {
+        "url": "images/Hazaribaug Bungalow/CANOPY.png",
+        "alt": "Hazaribaug Bungalow Garden Canopy"
+      }
     ],
     related: ['aldona-villa', 'bottle-house', 'dps-hazaribaug'],
-    cardImage: 'images/projects/hazaribaug_bungalow.png'
+    cardImage: 'images/Hazaribaug Bungalow/Scene 1_1.png'
   },
 
   // 12. Devgn Cinex Elan (Cinemas, Gurugram)
@@ -341,26 +451,36 @@ const ARRIS_PROJECTS = {
     category: 'Cinemas',
     location: 'Gurugram',
     year: '2024',
-    heroImage: 'images/projects/devgn_cinex_elan.png',
-    storyImage: 'images/project 1.png',
+    heroImage: 'images/Devgn Cinex Elan/02.jpg',
+    storyImage: 'images/Devgn Cinex Elan/03.jpg',
     description: "Located within Gurugram's prime lifestyle retail hub, Devgn Cinex Elan introduces boutique cinema luxury. Ergonomic plush recliners, intimate acoustic volumes, and sculptural brass light installations deliver an unforgettable entertainment journey.",
     specs: {
-      rev: 'REV. 04.24',
       location: 'Gurugram, Haryana',
       scope: 'Multiplex Interiors, VIP Lounges, Acoustics',
       typology: 'Boutique Cinema',
       siteArea: '4 Screens, 520 Seats',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/project1.2.png', alt: 'Devgn Cinex Elan Auditorium' },
-      { url: 'images/project 1.3.png', alt: 'Devgn Cinex Elan Ticket Lounge' },
-      { url: 'images/dorpdow-shuffle/project 4.png', alt: 'Devgn Cinex Elan Concessions' },
-      { url: 'images/projects/devgn_cinex_elan.png', alt: 'Devgn Cinex Elan Facade' }
+      {
+        "url": "images/Devgn Cinex Elan/02.jpg",
+        "alt": "Devgn Cinex Elan Multiplex Concourse"
+      },
+      {
+        "url": "images/Devgn Cinex Elan/07.jpg",
+        "alt": "Devgn Cinex Elan Auditorium"
+      },
+      {
+        "url": "images/Devgn Cinex Elan/08.jpg",
+        "alt": "Devgn Cinex Elan Ticket Lounge"
+      },
+      {
+        "url": "images/Devgn Cinex Elan/10.jpg",
+        "alt": "Devgn Cinex Elan Concession Area"
+      }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-ahmedabad', 'ib-suncity'],
-    cardImage: 'images/projects/devgn_cinex_elan.png'
+    cardImage: 'images/Devgn Cinex Elan/02.jpg'
   },
 
   // 13. Rajhans Precia (Commercial, Surat)
@@ -371,26 +491,36 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Surat',
     year: '2024',
-    heroImage: 'images/project 4.png',
-    storyImage: 'images/projects/rajhans_precia.png',
+    heroImage: 'images/Rajhans Precia/DJI_20250120213924_0431_D.jpg',
+    storyImage: 'images/Rajhans Precia/KZP00127.jpg',
     description: "Rajhans Precia is an ultra-premium diamond retail and commercial landmark in Surat. An undulating parametric glass envelope, grand central sunlit atrium, and seamless circulation provide an international-caliber retail and corporate atmosphere.",
     specs: {
-      rev: 'REV. 05.24',
       location: 'Surat, Gujarat',
       scope: 'Commercial Mall, Retail Interiors, Atrium',
       typology: 'Commercial / Retail Hub',
       siteArea: '1,75,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/interior/Rectangle 53.png', alt: 'Rajhans Precia Atrium Skylight' },
-      { url: 'images/architecture/Rectangle 111.png', alt: 'Rajhans Precia Retail Promenade' },
-      { url: 'images/project-detail/gallery_1_wide.png', alt: 'Rajhans Precia Exterior Lighting' },
-      { url: 'images/projects/rajhans_precia.png', alt: 'Rajhans Precia Iconic Facade' }
+      {
+        "url": "images/Rajhans Precia/DJI_20250120213924_0431_D.jpg",
+        "alt": "Rajhans Precia Aerial Night View"
+      },
+      {
+        "url": "images/Rajhans Precia/KZP00127.jpg",
+        "alt": "Rajhans Precia Concession Lounge"
+      },
+      {
+        "url": "images/Rajhans Precia/KZP00285.jpg",
+        "alt": "Rajhans Precia Cinema Lobby Architecture"
+      },
+      {
+        "url": "images/Rajhans Precia/KZP00350.jpg",
+        "alt": "Rajhans Precia Atrium Promenade"
+      }
     ],
     related: ['rajhans-skylar', 'times-tower-new', 'devgn-cinex-bellona'],
-    cardImage: 'images/projects/rajhans_precia.png'
+    cardImage: 'images/Rajhans Precia/DJI_20250120213924_0431_D.jpg'
   },
 
   // Safety fallbacks for additional cards from expertise pages:
@@ -405,19 +535,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/Rectangle 68.png',
     description: "An expressive corporate complex featuring clean geometries, deep solar shading louvers, and expansive collaborative workspaces designed to optimize natural daylight throughout the day.",
     specs: {
-      rev: 'REV. 01.13',
       location: 'Raipur, Chhattisgarh',
       scope: 'Architecture, Workspace Design',
       typology: 'Commercial Complex',
       siteArea: '65,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 69.png', alt: 'Quorum Workspace' },
-      { url: 'images/interior/Rectangle 65.png', alt: 'Quorum Reception' },
-      { url: 'images/project-detail/gallery_2_aerial.png', alt: 'Quorum Exterior' },
-      { url: 'images/architecture/Rectangle 67.png', alt: 'Quorum Elevation' }
+      {
+        "url": "images/architecture/Rectangle 67.png",
+        "alt": "Quorum Elevation"
+      },
+      {
+        "url": "images/architecture/Rectangle 68.png",
+        "alt": "Quorum Louvered Facade Detail"
+      },
+      {
+        "url": "images/architecture/Rectangle 69.png",
+        "alt": "Quorum Commercial Workspace"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "Quorum Entrance Atrium"
+      }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'rajhans-precia'],
     cardImage: 'images/architecture/Rectangle 67.png'
@@ -434,19 +574,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/Rectangle 69.png',
     description: "A high-density mixed-use urban development in Mumbai integrating corporate offices, curated retail courtyards, and pedestrian thoroughfares with sustainable passive cooling.",
     specs: {
-      rev: 'REV. 02.16',
       location: 'Mumbai, Maharashtra',
       scope: 'Urban Planning, Architecture',
       typology: 'Mixed-Use Development',
       siteArea: '1,20,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 67.png', alt: 'Urban Square Plaza' },
-      { url: 'images/interior/Rectangle 66.png', alt: 'Urban Square Atrium' },
-      { url: 'images/project-detail/gallery_3_pool.png', alt: 'Urban Square Promenade' },
-      { url: 'images/architecture/Rectangle 68.png', alt: 'Urban Square Tower' }
+      {
+        "url": "images/architecture/Rectangle 68.png",
+        "alt": "Urban Square Tower Facade"
+      },
+      {
+        "url": "images/architecture/Rectangle 67.png",
+        "alt": "Urban Square Public Plaza"
+      },
+      {
+        "url": "images/architecture/Rectangle 69.png",
+        "alt": "Urban Square Commercial Promenade"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "Urban Square Grand Atrium"
+      }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'quorum'],
     cardImage: 'images/architecture/Rectangle 68.png'
@@ -463,19 +613,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/Rectangle 68.png',
     description: "A forward-looking commercial development located in Pune, engineered to balance corporate efficiency with expansive green terraces and biophilic interior spaces.",
     specs: {
-      rev: 'REV. 02.18',
       location: 'Pune, Maharashtra',
       scope: 'Commercial Architecture, Landscape Design',
       typology: 'Business Park & IT Hub',
       siteArea: '1,50,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 67.png', alt: 'Aurelia Business Park Main Court' },
-      { url: 'images/architecture/Rectangle 65.png', alt: 'Aurelia Business Park Lobby' },
-      { url: 'images/project-detail/gallery_2_aerial.png', alt: 'Aurelia Business Park Aerial' },
-      { url: 'images/architecture/Rectangle 69.png', alt: 'Aurelia Business Park Façade' }
+      {
+        "url": "images/architecture/Rectangle 69.png",
+        "alt": "Aurelia Business Park Façade"
+      },
+      {
+        "url": "images/architecture/Rectangle 67.png",
+        "alt": "Aurelia Business Park Central Landscaped Court"
+      },
+      {
+        "url": "images/architecture/Rectangle 68.png",
+        "alt": "Aurelia Business Park Glass Envelope"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "Aurelia Business Park Conference Suite"
+      }
     ],
     related: ['times-tower-new', 'urban-square', 'rajhans-skylar'],
     cardImage: 'images/architecture/Rectangle 69.png'
@@ -492,19 +652,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/Rectangle 66.png',
     description: "An iconic cultural and hospitality pavilion in Ahmedabad characterized by sculptural colonnades, expansive water reflecting pools, and climate-moderating stone brise-soleil.",
     specs: {
-      rev: 'REV. 04.20',
       location: 'Ahmedabad, Gujarat',
       scope: 'Architecture, Hospitality Interiors',
       typology: 'Pavilion & Banquet Complex',
       siteArea: '95,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 111.png', alt: 'The Grand Pavilion Courtyard' },
-      { url: 'images/architecture/Rectangle 68 (1).png', alt: 'The Grand Pavilion Hall' },
-      { url: 'images/project-detail/gallery_3_pool.png', alt: 'The Grand Pavilion Water Feature' },
-      { url: 'images/architecture/Rectangle 67 (1).png', alt: 'The Grand Pavilion Elevation' }
+      {
+        "url": "images/architecture/Rectangle 67 (1).png",
+        "alt": "The Grand Pavilion Elevation"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "The Grand Pavilion Sculptural Colonnade"
+      },
+      {
+        "url": "images/architecture/Rectangle 68 (1).png",
+        "alt": "The Grand Pavilion Reception Hall"
+      },
+      {
+        "url": "images/architecture/Rectangle 69 (1).png",
+        "alt": "The Grand Pavilion Reflecting Pool"
+      }
     ],
     related: ['devgn-cinex-ahmedabad', 'rajhans-precia', 'aldona-villa'],
     cardImage: 'images/architecture/Rectangle 67 (1).png'
@@ -521,19 +691,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/image 9.png',
     description: "An urban residential sanctuary in Bengaluru celebrating vertical greenery, deep recessed balconies, and thermal mass strategies for natural cooling.",
     specs: {
-      rev: 'REV. 06.22',
       location: 'Bengaluru, Karnataka',
       scope: 'Residential Architecture, Interiors',
       typology: 'Luxury Residence',
       siteArea: '24,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 69 (1).png', alt: 'Verde Residence Living Area' },
-      { url: 'images/about/Rectangle 4.png', alt: 'Verde Residence Garden Deck' },
-      { url: 'images/project-detail/gallery_4_lounge.png', alt: 'Verde Residence Lounge' },
-      { url: 'images/architecture/Rectangle 68 (1).png', alt: 'Verde Residence Facade' }
+      {
+        "url": "images/architecture/Rectangle 68 (1).png",
+        "alt": "Verde Residence Elevation"
+      },
+      {
+        "url": "images/architecture/Rectangle 69 (1).png",
+        "alt": "Verde Residence Double-Height Living Salon"
+      },
+      {
+        "url": "images/about/Rectangle 1.png",
+        "alt": "Verde Residence Biophilic Garden Lounge"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "Verde Residence Dining Suite"
+      }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'bottle-house'],
     cardImage: 'images/architecture/Rectangle 68 (1).png'
@@ -550,19 +730,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/architecture/Rectangle 65.png',
     description: "A flagship corporate center in Hyderabad combining sleek crystalline architectural geometries with high-performance workplace interiors.",
     specs: {
-      rev: 'REV. 01.24',
       location: 'Hyderabad, Telangana',
       scope: 'Commercial Architecture, Workplace Planning',
       typology: 'Corporate Headquarters',
       siteArea: '1,40,000 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/architecture/Rectangle 111.png', alt: 'Aria Corporate Centre Atrium' },
-      { url: 'images/interior/Rectangle 66.png', alt: 'Aria Corporate Centre Conference Suite' },
-      { url: 'images/project-detail/gallery_1_wide.png', alt: 'Aria Corporate Centre Plaza' },
-      { url: 'images/architecture/Rectangle 69 (1).png', alt: 'Aria Corporate Centre Elevation' }
+      {
+        "url": "images/architecture/Rectangle 69 (1).png",
+        "alt": "Aria Corporate Centre Crystalline Tower Elevation"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "Aria Corporate Centre Grand Atrium"
+      },
+      {
+        "url": "images/architecture/Rectangle 68.png",
+        "alt": "Aria Corporate Centre High-Efficiency Curtain Wall"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "Aria Corporate Centre Conference Suite"
+      }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'aurelia-business-park'],
     cardImage: 'images/architecture/Rectangle 69 (1).png'
@@ -579,19 +769,29 @@ const ARRIS_PROJECTS = {
     storyImage: 'images/interior/Rectangle 65.png',
     description: "A bespoke residential interior in Mumbai marrying luxurious Italian marble finishes with minimal architectural detailing and custom ambient lighting.",
     specs: {
-      rev: 'REV. 03.16',
       location: 'Mumbai, Maharashtra',
       scope: 'Luxury Interior Architecture',
       typology: 'High-End Residential Penthouse',
       siteArea: '9,500 sq.ft',
       status: 'Completed',
-      leadPartner: 'A. Chhatwal, RIBA'
     },
     gallery: [
-      { url: 'images/interior/Rectangle 66.png', alt: 'The Grand Residence Living Salon' },
-      { url: 'images/interior/Rectangle 67.png', alt: 'The Grand Residence Master Suite' },
-      { url: 'images/interior/Rectangle 111.png', alt: 'The Grand Residence Dining Hall' },
-      { url: 'images/interior/Rectangle 69.png', alt: 'The Grand Residence Overview' }
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "The Grand Residence Living Salon"
+      },
+      {
+        "url": "images/interior/Rectangle 67.png",
+        "alt": "The Grand Residence Master Suite"
+      },
+      {
+        "url": "images/interior/Rectangle 111.png",
+        "alt": "The Grand Residence Dining Hall"
+      },
+      {
+        "url": "images/interior/Rectangle 69.png",
+        "alt": "The Grand Residence Overview"
+      }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'bottle-house'],
     cardImage: 'images/interior/Rectangle 69.png'

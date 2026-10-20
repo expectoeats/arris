@@ -108,12 +108,14 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   overflow: hidden;
   z-index: 1;
+  text-shadow: none !important;
   transition: color 0.4s cubic-bezier(0.19, 1, 0.22, 1), border-color 0.4s ease;
 }
 
 .btn-wipe .btn__text {
   position: relative;
   z-index: 2;
+  text-shadow: none !important;
   transition: color 0.35s ease;
 }
 
@@ -135,6 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-wipe:hover .btn__text {
   color: #000000 !important;
+  text-shadow: none !important;
 }
 
 .btn-wipe.wipe-out .btn__bg {
@@ -243,9 +246,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sticky_gallery--content h3,
-.sticky_gallery--content .btn-wipe,
 .sticky_gallery--content-details span {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+.sticky_gallery--content .btn-wipe,
+.sticky_gallery--content .btn-wipe .btn__text {
+  text-shadow: none !important;
 }
 
 .sticky_gallery--content {
