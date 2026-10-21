@@ -384,6 +384,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Preload all shuffle images into browser memory to eliminate decoding stutter
     const preloadList = [
       // Expertise images
+      'images/Rectangle 1.png',
       'images/dorpdow-shuffle/DPS.png',
       'images/dorpdow-shuffle/Rectangle 1.png',
       'images/dorpdow-shuffle/project 4.png',
