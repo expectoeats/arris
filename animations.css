@@ -929,3 +929,12 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 
 
 
+
+
+/* Mobile: Hide awards arrows completely on mobile devices */
+@media (max-width: 1023px) {
+  #awards-prev,
+  #awards-next {
+    display: none !important;
+  }
+}

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -16,9 +16,9 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['"SF Pro Display"', 'sans-serif'],
-              display: ['"SF Pro Display"', 'sans-serif'],
-              text: ['"SF Pro Display"', 'sans-serif'],
+              sans: ['"SF Pro Display"', "sans-serif"],
+              display: ['"SF Pro Display"', "sans-serif"],
+              text: ['"SF Pro Display"', "sans-serif"],
             },
             fontWeight: {
               light: "300",
@@ -105,7 +105,10 @@
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+        transition:
+          opacity 0.25s ease,
+          transform 0.25s ease,
+          visibility 0.25s ease;
         z-index: 100;
       }
       .nav-dropdown:hover .nav-dropdown-menu {
@@ -127,7 +130,9 @@
         text-transform: uppercase;
         text-align: left;
         white-space: nowrap;
-        transition: color 0.2s ease, background-color 0.2s ease;
+        transition:
+          color 0.2s ease,
+          background-color 0.2s ease;
       }
       .nav-dropdown-menu a:hover {
         color: #ffffff;
@@ -145,7 +150,6 @@
     >
       <!-- Hero Background Video (position: fixed handled by CSS — HBA curtain reveal) -->
       <div class="hero-media-wrapper show">
-
         <!-- Hero Video -->
         <video
           id="hero-video"
@@ -174,9 +178,14 @@
                 }
               };
               tryPlay();
-              ["click", "touchstart", "scroll", "keydown"].forEach(function (e) {
-                window.addEventListener(e, tryPlay, { once: true, passive: true });
-              });
+              ["click", "touchstart", "scroll", "keydown"].forEach(
+                function (e) {
+                  window.addEventListener(e, tryPlay, {
+                    once: true,
+                    passive: true,
+                  });
+                },
+              );
             }
           })();
         </script>
@@ -184,7 +193,14 @@
         <!-- Gradient overlay -->
         <div
           class="absolute inset-0 pointer-events-none"
-          style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+          style="
+            background: linear-gradient(
+              0deg,
+              rgba(0, 0, 0, 0.55) 0%,
+              rgba(0, 0, 0, 0.15) 50%,
+              rgba(0, 0, 0, 0.35) 100%
+            );
+          "
         ></div>
       </div>
 
@@ -203,11 +219,14 @@
 
         <!-- Desktop Navigation Links -->
         <ul
-          class="hidden md:flex items-center gap-12 lg:gap-[140px] xl:gap-[160px] text-white text-[12px] font-[300] tracking-[0.22em] uppercase"
+          class="hidden md:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white text-[12px] font-[300] tracking-[0.11em] uppercase"
         >
           <li>
-            <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
-            
+            <a
+              href="projects.html"
+              class="hover:text-white/70 transition-colors py-2 block"
+              >PROJECTS</a
+            >
           </li>
           <li class="nav-dropdown-expertise">
             <a
@@ -217,52 +236,99 @@
             >
             <!-- Mega Dropdown Panel with Image Shuffle -->
             <div class="expertise-dropdown-menu">
-              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+              <div
+                class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full"
+              >
                 <!-- Left: Category List -->
                 <div class="w-[44%] flex flex-col justify-center">
                   <ul class="flex flex-col space-y-2 xl:space-y-2.5">
                     <li>
-                      <a href="expertise-architecture.html" class="expertise-nav-item" data-img="images/Rectangle 1.png" data-peek="images/interior/Rectangle 66.png">
+                      <a
+                        href="expertise-architecture.html"
+                        class="expertise-nav-item"
+                        data-img="images/Rectangle 1.png"
+                        data-peek="images/interior/Rectangle 66.png"
+                      >
                         Architecture
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-interior.html" class="expertise-nav-item" data-img="images/interior/Rectangle 66.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      <a
+                        href="expertise-interior.html"
+                        class="expertise-nav-item"
+                        data-img="images/aldona Villa/BED-1-2_3.png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png"
+                      >
                         Interiors
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-schools.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/DPS.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      <a
+                        href="expertise-schools.html"
+                        class="expertise-nav-item"
+                        data-img="images/dorpdow-shuffle/DPS.png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png"
+                      >
                         Schools
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-cinemas.html" class="expertise-nav-item" data-img="images/projects/devgn_cinex_bellona.png" data-peek="images/dorpdow-shuffle/project1.2.png">
+                      <a
+                        href="expertise-cinemas.html"
+                        class="expertise-nav-item"
+                        data-img="images/projects/devgn_cinex_bellona.png"
+                        data-peek="images/dorpdow-shuffle/project1.2.png"
+                      >
                         Cinemas
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-commercial.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project 4.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png">
+                      <a
+                        href="expertise-commercial.html"
+                        class="expertise-nav-item"
+                        data-img="images/dorpdow-shuffle/project 4.png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 6 (3).png"
+                      >
                         Commercial
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-residential.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (2).png" data-peek="images/dorpdow-shuffle/project 4.png">
+                      <a
+                        href="expertise-residential.html"
+                        class="expertise-nav-item"
+                        data-img="images/dorpdow-shuffle/Rectangle 6 (2).png"
+                        data-peek="images/dorpdow-shuffle/project 4.png"
+                      >
                         Residential
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-entertainment-leisure.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/Rectangle 6 (3).png" data-peek="images/dorpdow-shuffle/Rectangle 1.png">
+                      <a
+                        href="expertise-entertainment-leisure.html"
+                        class="expertise-nav-item"
+                        data-img="images/dorpdow-shuffle/Rectangle 6 (3).png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 1.png"
+                      >
                         Entertainment &amp; Leisure
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-auditoriums.html" class="expertise-nav-item" data-img="images/dorpdow-shuffle/project1.2.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png">
+                      <a
+                        href="expertise-auditoriums.html"
+                        class="expertise-nav-item"
+                        data-img="images/dorpdow-shuffle/project1.2.png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 6 (4).png"
+                      >
                         Auditoriums
                       </a>
                     </li>
                     <li>
-                      <a href="expertise-hospitality.html" class="expertise-nav-item" data-img="images/interior/Rectangle 66.png" data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png">
+                      <a
+                        href="expertise-hospitality.html"
+                        class="expertise-nav-item"
+                        data-img="images/interior/Rectangle 66.png"
+                        data-peek="images/dorpdow-shuffle/Rectangle 6 (2).png"
+                      >
                         Hospitality
                       </a>
                     </li>
@@ -273,7 +339,10 @@
                 <div class="w-[56%] flex justify-end">
                   <div class="expertise-card-stack relative overflow-hidden">
                     <!-- Peek Card (Bottom stacked layer) -->
-                    <div id="expertise-card-peek" class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300">
+                    <div
+                      id="expertise-card-peek"
+                      class="expertise-card-peek absolute inset-0 translate-y-6 scale-[0.98] overflow-hidden shadow-xl pointer-events-none transition-transform duration-300"
+                    >
                       <img
                         id="expertise-img-peek"
                         src="images/interior/Rectangle 66.png"
@@ -283,7 +352,10 @@
                     </div>
 
                     <!-- Main Card (Top layer) -->
-                    <div id="expertise-card-main" class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                    <div
+                      id="expertise-card-main"
+                      class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl"
+                    >
                       <img
                         id="expertise-img-main"
                         src="images/Rectangle 1.png"
@@ -303,7 +375,11 @@
             </div>
           </li>
           <li class="nav-dropdown-practice">
-            <a href="about-arris.html" class="hover:text-white/70 transition-colors py-2 block">PRACTICE</a>
+            <a
+              href="about-arris.html"
+              class="hover:text-white/70 transition-colors py-2 block"
+              >PRACTICE</a
+            >
             <!-- Mega Dropdown Panel (Text Only) -->
             <div class="practice-dropdown-menu">
               <div class="w-full flex flex-col justify-center">
@@ -314,7 +390,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="about-arris.html#design-philosophy" class="practice-nav-item">
+                    <a
+                      href="about-arris.html#design-philosophy"
+                      class="practice-nav-item"
+                    >
                       Design Philosophy
                     </a>
                   </li>
@@ -338,7 +417,11 @@
             </div>
           </li>
           <li class="nav-dropdown-studio">
-            <a href="meet-the-team.html" class="hover:text-white/70 transition-colors py-2 block">STUDIO</a>
+            <a
+              href="meet-the-team.html"
+              class="hover:text-white/70 transition-colors py-2 block"
+              >STUDIO</a
+            >
             <!-- Mega Dropdown Panel (Text Only) -->
             <div class="studio-dropdown-menu">
               <div class="w-full flex flex-col justify-center">
@@ -349,7 +432,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="meet-the-team.html#culture" class="studio-nav-item">
+                    <a
+                      href="meet-the-team.html#culture"
+                      class="studio-nav-item"
+                    >
                       Culture
                     </a>
                   </li>
@@ -359,12 +445,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="events.html" class="studio-nav-item">
-                      Events
-                    </a>
+                    <a href="events.html" class="studio-nav-item"> Events </a>
                   </li>
                   <li>
-                    <a href="meet-the-team.html#timeline" class="studio-nav-item">
+                    <a href="legacy.html#timeline" class="studio-nav-item">
                       Timeline
                     </a>
                   </li>
@@ -373,7 +457,11 @@
             </div>
           </li>
           <li class="nav-dropdown-contact">
-            <a href="contact.html" class="hover:text-white/70 transition-colors py-2 block">CONTACT</a>
+            <a
+              href="contact.html"
+              class="hover:text-white/70 transition-colors py-2 block"
+              >CONTACT</a
+            >
             <!-- Mega Dropdown Panel (Text Only) -->
             <div class="contact-dropdown-menu">
               <div class="w-full flex flex-col justify-center">
@@ -384,7 +472,10 @@
                     </a>
                   </li>
                   <li>
-                    <a href="about-arris.html#profiles" class="contact-nav-item">
+                    <a
+                      href="about-arris.html#profiles"
+                      class="contact-nav-item"
+                    >
                       Profiles
                     </a>
                   </li>
@@ -435,7 +526,9 @@
       </div>
 
       <!-- Scrollable Navigation Items Container -->
-      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+      <div
+        class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar"
+      >
         <ul
           class="flex flex-col space-y-4 text-white text-xl sm:text-2xl font-[300] tracking-wide"
         >
@@ -455,20 +548,59 @@
               class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
             >
               <span>Expertise</span>
-              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+              <i
+                data-lucide="chevron-down"
+                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
+              ></i>
             </button>
             <div
               class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
             >
-              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Architecture</a>
-              <a href="expertise-interior.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Interiors</a>
-              <a href="expertise-schools.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Schools</a>
-              <a href="expertise-cinemas.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Cinemas</a>
-              <a href="expertise-commercial.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Commercial</a>
-              <a href="expertise-residential.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Residential</a>
-              <a href="expertise-entertainment-leisure.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Entertainment &amp; Leisure</a>
-              <a href="expertise-auditoriums.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Auditoriums</a>
-              <a href="expertise-hospitality.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Hospitality</a>
+              <a
+                href="expertise-architecture.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Architecture</a
+              >
+              <a
+                href="expertise-interior.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Interiors</a
+              >
+              <a
+                href="expertise-schools.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Schools</a
+              >
+              <a
+                href="expertise-cinemas.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Cinemas</a
+              >
+              <a
+                href="expertise-commercial.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Commercial</a
+              >
+              <a
+                href="expertise-residential.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Residential</a
+              >
+              <a
+                href="expertise-entertainment-leisure.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Entertainment &amp; Leisure</a
+              >
+              <a
+                href="expertise-auditoriums.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Auditoriums</a
+              >
+              <a
+                href="expertise-hospitality.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Hospitality</a
+              >
             </div>
           </li>
 
@@ -479,16 +611,39 @@
               class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
             >
               <span>Practice</span>
-              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+              <i
+                data-lucide="chevron-down"
+                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
+              ></i>
             </button>
             <div
               class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
             >
-              <a href="about-arris.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">About Arris</a>
-              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
-              <a href="design-process.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Design Process</a>
-              <a href="testimonials.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Testimonials</a>
-              <a href="publications.html" class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors">Publications</a>
+              <a
+                href="about-arris.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >About Arris</a
+              >
+              <a
+                href="about-arris.html#design-philosophy"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Design Philosophy</a
+              >
+              <a
+                href="design-process.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Design Process</a
+              >
+              <a
+                href="testimonials.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Testimonials</a
+              >
+              <a
+                href="publications.html"
+                class="mobile-nav-link block py-1 text-base text-neutral-400 hover:text-white transition-colors"
+                >Publications</a
+              >
             </div>
           </li>
 
@@ -545,11 +700,11 @@
     >
       <div class="max-w-[1920px] mx-auto">
         <!-- Desktop Section Tag: SF Pro, 36px, Weight 274, 100% line height, 2% letter spacing -->
-        <h3
-          class="hidden lg:block text-black text-[36px] font-[300] leading-none tracking-[0.02em] mb-5 sm:mb-7"
+        <h2
+          class="hidden lg:block text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-normal mb-5 sm:mb-7"
         >
           Who we are
-        </h3>
+        </h2>
 
         <div
           class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start"
@@ -571,34 +726,36 @@
           >
             <!-- Mobile-only Section Tag: SF Pro, 28px on mobile -->
             <h3
-              class="lg:hidden text-black text-[28px] sm:text-[32px] font-[300] leading-none tracking-[0.02em] mb-6 sm:mb-8"
+              class="lg:hidden text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-normal mb-[1.8rem] sm:mb-3"
             >
               Who we are
             </h3>
 
             <!-- Desktop Main Heading: SF Pro, 48px, Weight 274, perfectly top-aligned with top edge of image -->
             <h2
-              class="text-black text-[26px] sm:text-[32px] lg:text-[30px] font-[300] leading-none tracking-normal mb-4 lg:-mt-1"
+              class="text-black text-[16px] sm:text-[28px] lg:text-[32px] font-[300] leading-tight tracking-normal mb-0 sm:mb-3 lg:-mt-1"
             >
               Arris Architects
             </h2>
 
             <!-- Body text: SF Pro, 22px on desktop, 15px on mobile, Justified -->
             <div
-              class="space-y-1 text-black text-[15px] sm:text-[18px] lg:text-[18px] font-[300] leading-[24px] sm:leading-[30px] lg:leading-[30px] tracking-normal text-left sm:text-justify"
+              class="space-y-1 text-black text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[26px] lg:leading-[28px] tracking-normal text-left sm:text-justify"
             >
               <p>
-                Arris is a collaboration of individuals with excelling
-                capacities in various facets of Architectural, Urban &amp;
-                Design practices. Setup in 2004-05, Arris has delivered a gamut
-                of designed buildings and spaces including Shopping Malls and
-                Multiplexes, Amusement parks, Educational Institutions and
-                High-End Residential Complexes and Corporate Offices.
-                Arris's articulated practice has built a reputation for High
-                Quality Design Solutions delivered within record time schedules.
-                Distinctive aspect of the firm has been an accurate
-                interpretation of the client's requirements and converting them
-                into reality through cost effective design solutions.
+                At Arris Architects, we believe in the dual pillars of client
+                service and design excellence. Across education, cinema and
+                commercial developments, we bring together design thinking,
+                technical rigour and an understanding of how spaces are
+                experienced. Our work lies in balancing complex parameters and
+                always going a step further every time.
+              </p>
+              <br />
+              <p>
+                Through considered planning and integrated design, we create spaces that respond to
+                their context, enrich everyday experiences and retain their
+                relevance over time. For us, good design is not simply about
+                what is built, but how it is experienced.   
               </p>
             </div>
           </div>
@@ -620,11 +777,11 @@
         >
           <div>
             <h2
-              class="text-white text-[28px] sm:text-[32px] lg:text-[32px] font-[300] leading-[38px] sm:leading-[46px] lg:leading-[52px] tracking-normal"
-              data-reveal-text
-            >
-              What we do
-            </h2>
+          class="text-white text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-normal"
+          data-reveal-text
+        >
+          What we do
+        </h2>
           </div>
         </div>
 
@@ -634,7 +791,7 @@
         >
           <!-- Card 1: Architecture -->
           <div
-          style="border-radius: 5px;"
+            style="border-radius: 5px"
             class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[430px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
@@ -661,7 +818,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Architecture</span
               >
             </div>
@@ -669,7 +826,7 @@
 
           <!-- Card 2: Interior Design -->
           <div
-           style="border-radius: 5px;"
+            style="border-radius: 5px"
             class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
@@ -696,7 +853,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Interior Design</span
               >
             </div>
@@ -704,7 +861,7 @@
 
           <!-- Card 3: Theatre Consultancy -->
           <div
-           style="border-radius: 5px;"
+            style="border-radius: 5px"
             class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
@@ -731,7 +888,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Theatre Consultancy</span
               >
             </div>
@@ -739,7 +896,7 @@
 
           <!-- Card 4: commercial-->
           <div
-           style="border-radius: 5px;"
+            style="border-radius: 5px"
             class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
@@ -766,7 +923,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Commercial</span
               >
             </div>
@@ -774,8 +931,8 @@
 
           <!-- Card 5: School -->
           <div
-           style="border-radius: 5px;"
-            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px]  bg-neutral-900 flex flex-col justify-between shadow-lg"
+            style="border-radius: 5px"
+            class="flex-none w-[62vw] sm:w-[400px] lg:w-auto snap-center group relative overflow-hidden h-[400px] sm:h-[450px] lg:h-[420px] bg-neutral-900 flex flex-col justify-between shadow-lg"
             data-reveal-animation
           >
             <img
@@ -801,7 +958,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white text-[14px] sm:text-[15px] lg:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white text-[15px] sm:text-[16px] font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Schools</span
               >
             </div>
@@ -855,7 +1012,7 @@
         <div class="sticky_gallery--main-media">
           <figure>
             <img
-              src="images/project 1.png"
+              src="images/homepage/project 1.jpg.jpeg"
               alt="Devgn Cinex Bellona Main Arcade"
             />
           </figure>
@@ -866,7 +1023,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/project1.2.png"
+                src="images/homepage/project 1.2.jpg.jpeg"
                 alt="Devgn Cinex Turquoise Auditorium Hall"
               />
             </figure>
@@ -874,7 +1031,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/project 1.3.png"
+                src="images/homepage/project 1.3.jpg.jpeg"
                 alt="Devgn Cinex Luxury Arched Banquet"
               />
             </figure>
@@ -897,7 +1054,7 @@
             <a
               style="border-radius: 10px"
               href="project-detail.html?id=dps-hazaribaug"
-              class="btn-wipe inline-block border border-white/60  px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-[300] text-white transition-colors duration-300"
+              class="btn-wipe inline-block border border-white/60 px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-[300] text-white transition-colors duration-300"
             >
               <span class="btn__text">View Project</span>
             </a>
@@ -923,9 +1080,9 @@
         <div class="sticky_gallery--main-media">
           <figure>
             <img
-              src="images/DPS.png"
+              src="images/homepage/project 2.jpg.jpeg"
               alt="DPS Hazaribaug Institutional Campus"
-              style="object-position: center bottom;"
+              style="object-position: center bottom"
               class="object-bottom"
             />
           </figure>
@@ -936,7 +1093,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/big_5 1.png"
+                src="images/homepage/project 2.2.jpg.jpeg"
                 alt="DPS Hazaribaug Covered Walkway overlooking Lawn"
               />
             </figure>
@@ -944,7 +1101,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/Rectangle 6 (1).png"
+                src="images/homepage/project 2.3.jpg.jpeg"
                 alt="Delhi Public School Hazaribag Entrance and Courtyard Stairs"
               />
             </figure>
@@ -1035,7 +1192,7 @@
             <a
               style="border-radius: 10px"
               href="project-detail.html?id=rajhans-precia"
-              class="btn-wipe inline-block border border-white/60  px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-[300] text-white transition-colors duration-300"
+              class="btn-wipe inline-block border border-white/60 px-7 py-2.5 text-xs uppercase tracking-[0.2em] font-[300] text-white transition-colors duration-300"
             >
               <span class="btn__text">View Project</span>
             </a>
@@ -1063,7 +1220,7 @@
             <img
               src="images/project 4.png"
               alt="Rajhans Precia Luxury Cinema Lobby"
-              style="object-position: center top;"
+              style="object-position: center top"
               class="object-top"
             />
           </figure>
@@ -1100,7 +1257,7 @@
     >
       <div class="max-w-[1920px] mx-auto">
         <h2
-          class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-8 sm:mb-10"
+          class="text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-tight mb-8 sm:mb-10"
         >
           Awards & Recognition
         </h2>
@@ -1110,11 +1267,22 @@
           <!-- Prev Arrow (Matching Figma Design) -->
           <button
             id="awards-prev"
-            class="absolute left-1 lg:-left-12 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer hidden group"
+            class="hidden lg:flex absolute -left-12 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
             aria-label="Previous Award"
           >
-            <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+            <svg
+              class="w-8 h-8 text-black transition-transform"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                r="14.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
               <polygon points="18,10 12,16 18,22" fill="currentColor" />
             </svg>
           </button>
@@ -1122,183 +1290,274 @@
           <!-- Scrollable Track (Exact gap-10 and 4-card fit to prevent 5th image peeking) -->
           <div
             id="awards-track"
-            class="flex gap-4 lg:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 w-full lg:w-[calc(100%-48px)]"
+            class="flex gap-3 lg:gap-10 overflow-x-auto no-scrollbar snap-x snap-mandatory scroll-smooth pb-4 -mx-6 px-6 sm:-mx-8 sm:px-8 lg:mx-0 lg:px-0 w-full lg:w-[calc(100%-48px)]"
           >
             <!-- Award 1: FOAID 2025 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/1.png"
                   alt="FOAID 2025 - Devgn Cinex, Thane"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 FOAID 2025
               </h4>
-              <p class="text-[16px] text-neutral-700 font-light mt-0.5">Commercial Interiors</p>
-              <p class="text-[14px] text-neutral-500 font-light">Devgn Cinex, Thane</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-600 font-light mt-0.5"
+              >
+                Commercial Interiors
+              </p>
+              <p class="text-[12px] sm:text-[13px] text-neutral-500 font-light">
+                Devgn Cinex, Thane
+              </p>
             </div>
 
             <!-- Award 2: FOAID 2024 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/2.png"
                   alt="FOAID 2024 - LA Cinemas, Trichy"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 FOAID 2024
               </h4>
-              <p class="text-[16px] text-neutral-700 font-light mt-0.5">Commercial Interiors</p>
-              <p class="text-[14px] text-neutral-500 font-light">LA Cinemas, Trichy</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-600 font-light mt-0.5"
+              >
+                Commercial Interiors
+              </p>
+              <p class="text-[12px] sm:text-[13px] text-neutral-500 font-light">
+                LA Cinemas, Trichy
+              </p>
             </div>
 
             <!-- Award 3: FOAID 2024 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/3.png"
                   alt="FOAID 2024 - Aldona Villa, Goa"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 FOAID 2024
               </h4>
-              <p class="text-[16px] text-neutral-700 font-light mt-0.5">Residential Architecture</p>
-              <p class="text-[14px] text-neutral-500 font-light">Aldona Villa, Goa</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-600 font-light mt-0.5"
+              >
+                Residential Architecture
+              </p>
+              <p class="text-[12px] sm:text-[13px] text-neutral-500 font-light">
+                Aldona Villa, Goa
+              </p>
             </div>
 
             <!-- Award 4: FOAID 2023 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/4.png"
                   alt="FOAID 2023 - Adult Orphanage at Kamshet, Pune"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 FOAID 2023
               </h4>
-              <p class="text-[16px] text-neutral-700 font-light mt-0.5">Institutional Buildings</p>
-              <p class="text-[14px] text-neutral-500 font-light">Adult Orphanage at Kamshet, Pune</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-600 font-light mt-0.5"
+              >
+                Institutional Buildings
+              </p>
+              <p class="text-[12px] sm:text-[13px] text-neutral-500 font-light">
+                Adult Orphanage at Kamshet, Pune
+              </p>
             </div>
 
             <!-- Award 5: Design Wall, 2016 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/5.png"
                   alt="Design Wall, 2016"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 Design Wall
               </h4>
-              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2016</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+              >
+                2016
+              </p>
             </div>
 
             <!-- Award 6: NDTV Design & Architect of the year Awards, 2015 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/6.png"
                   alt="NDTV Design &amp; Architect of the year Awards, 2015"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 NDTV Design &amp; Architect of the year Awards
               </h4>
-              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2015 (Certificate of Honour)</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+              >
+                2015 (Certificate of Honour)
+              </p>
             </div>
 
             <!-- Award 7: NDTV Design & Architect of the year Awards, 2014 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/7.png"
                   alt="NDTV Design &amp; Architect of the year Awards, 2014"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 NDTV Design &amp; Architect of the year Awards
               </h4>
-              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2014 (Nominee)</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+              >
+                2014 (Nominee)
+              </p>
             </div>
 
             <!-- Award 8: I-GEN Design Forum; I-GEN 50, 2013 -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/8.png"
                   alt="I-GEN Design Forum; I-GEN 50, 2013"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 I-GEN Design Forum
               </h4>
-              <p class="text-[16px] text-neutral-500 font-light mt-0.5">I-GEN 50, 2013</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+              >
+                I-GEN 50, 2013
+              </p>
             </div>
 
             <!-- Award 9: Big Cine Expo -->
-            <div class="flex-none w-[70vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-start">
+            <div
+              class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
+            >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4"
+                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-[#D9D9D9] mb-4 p-2.5 sm:p-3 flex items-center justify-center"
               >
                 <img
                   src="images/awards/9.png"
                   alt="Big Cine Expo"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
-              <h4 class="text-[24px] font-normal text-neutral-900 leading-snug">
+              <h4
+                class="text-[15px] sm:text-[16px] font-[400] text-neutral-900 leading-snug"
+              >
                 Big Cine Expo
               </h4>
-              <p class="text-[16px] text-neutral-500 font-light mt-0.5">2013, 2018, 2022, 2023, 2025, 2026</p>
+              <p
+                class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+              >
+                2013, 2018, 2022, 2023, 2025, 2026
+              </p>
             </div>
           </div>
 
           <!-- Next Arrow (Matching Figma Exact Design) -->
           <button
             id="awards-next"
-            class="absolute right-1 lg:right-0 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
+            class="hidden lg:flex absolute right-0 top-[37%] -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
             aria-label="Next Award"
           >
-            <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+            <svg
+              class="w-8 h-8 text-black transition-transform"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="16"
+                cy="16"
+                r="14.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
               <polygon points="14,10 20,16 14,22" fill="currentColor" />
             </svg>
           </button>
@@ -1307,13 +1566,13 @@
         <!-- Awards Scroll Script -->
         <script>
           (function () {
-            var track = document.getElementById('awards-track');
-            var prev  = document.getElementById('awards-prev');
-            var next  = document.getElementById('awards-next');
+            var track = document.getElementById("awards-track");
+            var prev = document.getElementById("awards-prev");
+            var next = document.getElementById("awards-next");
             if (!track || !prev || !next) return;
 
             function cardWidth() {
-              var first = track.querySelector('.flex-none');
+              var first = track.querySelector(".flex-none");
               if (!first) return 300;
               var style = window.getComputedStyle(track);
               var gap = parseFloat(style.columnGap || style.gap) || 32;
@@ -1321,27 +1580,31 @@
             }
 
             function updateButtons() {
+              if (window.innerWidth < 1024) return;
               if (track.scrollLeft <= 5) {
-                prev.classList.add('hidden');
+                prev.classList.add("hidden");
               } else {
-                prev.classList.remove('hidden');
+                prev.classList.remove("hidden");
               }
-              if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 5) {
-                next.classList.add('hidden');
+              if (
+                track.scrollLeft + track.clientWidth >=
+                track.scrollWidth - 5
+              ) {
+                next.classList.add("hidden");
               } else {
-                next.classList.remove('hidden');
+                next.classList.remove("hidden");
               }
             }
 
-            prev.addEventListener('click', function () {
-              track.scrollBy({ left: -cardWidth(), behavior: 'smooth' });
+            prev.addEventListener("click", function () {
+              track.scrollBy({ left: -cardWidth(), behavior: "smooth" });
             });
-            next.addEventListener('click', function () {
-              track.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+            next.addEventListener("click", function () {
+              track.scrollBy({ left: cardWidth(), behavior: "smooth" });
             });
-            track.addEventListener('scroll', updateButtons);
-            window.addEventListener('resize', updateButtons);
-            window.addEventListener('load', updateButtons);
+            track.addEventListener("scroll", updateButtons);
+            window.addEventListener("resize", updateButtons);
+            window.addEventListener("load", updateButtons);
             setTimeout(updateButtons, 150);
           })();
         </script>
@@ -1357,7 +1620,7 @@
     >
       <div class="max-w-[1920px] mx-auto">
         <h2
-          class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-8 sm:mb-10"
+          class="text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-tight mb-8 sm:mb-10"
         >
           Testimonials
         </h2>
@@ -1372,25 +1635,43 @@
               <div>
                 <!-- Author Header -->
                 <div class="mb-4">
-                  <h4 class="text-[18px] sm:text-[20px] font-normal text-neutral-900">
+                  <h4
+                    class="text-[18px] sm:text-[20px] font-normal text-neutral-900"
+                  >
                     Honourable Shri Manish Jaiswal MoP
                   </h4>
-                  <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">
+                  <p
+                    class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+                  >
                     DPS Hzb
                   </p>
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3">
+                <div
+                  class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3"
+                >
                   <p>
-                    We have been associated with Shubhashish since 2001, when he was a young Project Architect working on my multiplex project in Surat. Even then, his confidence, design capability, and commitment stood out clearly.
+                    We have been associated with Shubhashish since 2001, when he
+                    was a young Project Architect working on my multiplex
+                    project in Surat. Even then, his confidence, design
+                    capability, and commitment stood out clearly.
                   </p>
                   <p>
-                    When we decided to take up our first school project, Angel High School, in 2007, we had no hesitation in approaching Arris Architects. What he presented to us was far beyond our expectations &mdash; a concept truly ahead of its time. His ideas on school design and campus planning were visionary. The project, <a href="testimonials.html" class="underline text-blue-600 hover:text-blue-800 transition-colors">Read More</a>
+                    When we decided to take up our first school project, Angel
+                    High School, in 2007, we had no hesitation in approaching
+                    Arris Architects. What he presented to us was far beyond our
+                    expectations &mdash; a concept truly ahead of its time. His
+                    ideas on school design and campus planning were visionary.
+                    The project,
+                    <a
+                      href="testimonials.html"
+                      class="underline text-blue-600 hover:text-blue-800 transition-colors"
+                      >Read More</a
+                    >
                   </p>
                 </div>
               </div>
-
             </div>
 
             <!-- Testimonial 2 (Avneet Uberoi) -->
@@ -1400,25 +1681,42 @@
               <div>
                 <!-- Author Header -->
                 <div class="mb-4">
-                  <h4 class="text-[18px] sm:text-[20px] font-normal text-neutral-900">
+                  <h4
+                    class="text-[18px] sm:text-[20px] font-normal text-neutral-900"
+                  >
                     Avneet Uberoi
                   </h4>
-                  <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">
+                  <p
+                    class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+                  >
                     Bottle House
                   </p>
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3">
+                <div
+                  class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed space-y-3"
+                >
                   <p>
-                    When we decided to transform what was once an iconic building into our home, we knew it was not going to be an ordinary architectural project. We wanted to preserve the character and memories associated with the building while creating a space that truly felt like ours.
+                    When we decided to transform what was once an iconic
+                    building into our home, we knew it was not going to be an
+                    ordinary architectural project. We wanted to preserve the
+                    character and memories associated with the building while
+                    creating a space that truly felt like ours.
                   </p>
                   <p>
-                    From our first conversation, Shubhashish understood that we were looking for more than just a beautifully designed house. We wanted a home that was sophisticated, functional and timeless, while still <a href="testimonials.html" class="underline text-blue-600 hover:text-blue-800 transition-colors">Read More</a>
+                    From our first conversation, Shubhashish understood that we
+                    were looking for more than just a beautifully designed
+                    house. We wanted a home that was sophisticated, functional
+                    and timeless, while still
+                    <a
+                      href="testimonials.html"
+                      class="underline text-blue-600 hover:text-blue-800 transition-colors"
+                      >Read More</a
+                    >
                   </p>
                 </div>
               </div>
-
             </div>
 
             <!-- Testimonial 3 (Anuj Agarwal) -->
@@ -1428,22 +1726,32 @@
               <div>
                 <!-- Author Header -->
                 <div class="mb-4">
-                  <h4 class="text-[18px] sm:text-[20px] font-normal text-neutral-900">
+                  <h4
+                    class="text-[18px] sm:text-[20px] font-normal text-neutral-900"
+                  >
                     Anuj Agarwal
                   </h4>
-                  <p class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5">
+                  <p
+                    class="text-[13px] sm:text-[14px] text-neutral-500 font-light mt-0.5"
+                  >
                     Pro-Vice Chairman DPS Panvel, Chairman, Credo Schools
                   </p>
                 </div>
 
                 <!-- Quote Body -->
-                <div class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed">
+                <div
+                  class="text-[15px] sm:text-[16px] text-neutral-700 font-light leading-relaxed"
+                >
                   <p>
-                    Working with Arris architects is a pleasure. They balance the architectural vision and the project realities beautifully, have a deep understanding of our priorities, and operates responsively and professionally to all matters. Their motto of involve evolve and solve led to a beautiful, practical, and successful start to our institute.&rdquo;
+                    Working with Arris architects is a pleasure. They balance
+                    the architectural vision and the project realities
+                    beautifully, have a deep understanding of our priorities,
+                    and operates responsively and professionally to all matters.
+                    Their motto of involve evolve and solve led to a beautiful,
+                    practical, and successful start to our institute.&rdquo;
                   </p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -1470,7 +1778,7 @@
     >
       <div class="max-w-[1920px] mx-auto">
         <h2
-          class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-8 sm:mb-10"
+          class="text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-tight mb-8 sm:mb-10"
           data-reveal-text
         >
           Our Leadership Team
@@ -1495,11 +1803,13 @@
               />
             </div>
             <h4
-              class="text-[26px] font-normal text-neutral-900 mt-4 tracking-tight"
+              class="text-[20px] font-[300] text-neutral-900 mt-2 sm:mt-4 tracking-tight"
             >
               Ar. Subhashish Modi
             </h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">
+            <p
+              class="text-[15px] text-neutral-500 font-light mt-0.5"
+            >
               Director
             </p>
           </div>
@@ -1519,11 +1829,13 @@
               />
             </div>
             <h4
-              class="text-[26px] font-normal text-neutral-900 mt-4 tracking-tight"
+              class="text-[20px] font-[300] text-neutral-900 mt-2 sm:mt-4 tracking-tight"
             >
               Ar. Satish Shetty
             </h4>
-            <p class="text-[20px] text-neutral-500 font-light mt-0.5">
+            <p
+              class="text-[15px] text-neutral-500 font-light mt-0.5"
+            >
               Director
             </p>
           </div>
@@ -1540,13 +1852,13 @@
     >
       <div class="max-w-[1920px] mx-auto">
         <h2
-          class="text-black text-[28px] sm:text-[32px] lg:text-[36px] font-[300] leading-none tracking-tight mb-3"
+          class="text-black text-[32px] sm:text-[28px] lg:text-[32px] font-[300] leading-snug tracking-tight mb-2 sm:mb-3"
           data-reveal-text
         >
           Contact us
         </h2>
         <p
-          class="text-black text-[16px] sm:text-[19px] lg:text-[22px] font-[300] leading-[150%] max-w-[646px] mb-12 sm:mb-16"
+          class="text-black text-[13px] sm:text-[15px] lg:text-[16px] font-[300] leading-relaxed max-w-[646px] mb-8 sm:mb-12 lg:mb-16"
           data-reveal-text
           data-delay="1"
         >
@@ -1554,23 +1866,27 @@
         </p>
 
         <!-- 3 Contact Columns (Stacked on mobile, 3-col on desktop) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 lg:gap-16">
           <!-- Column 1: Email -->
           <div>
             <i
               data-lucide="mail"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+              class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"
             ></i>
-            <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Email</h4>
+            <h4
+              class="text-[25px] sm:text-[18px] lg:text-[20px] font-[300] text-neutral-900 mb-1 sm:mb-2"
+            >
+              Email
+            </h4>
             <p
-              class="text-black text-[16px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+              class="text-black text-[13px] sm:text-[14px] lg:text-[16px] font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question or idea? Drop us an email we'd love to hear from
               you.
             </p>
             <a
               href="mailto:arrisarch@gmail.com"
-              class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+              class="text-[13px] sm:text-[14px] lg:text-[16px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors"
             >
               arrisarch@gmail.com
             </a>
@@ -1580,17 +1896,21 @@
           <div>
             <i
               data-lucide="phone"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+              class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"
             ></i>
-            <h4 class="text-[32px] font-normal text-neutral-900 mb-2">Phone</h4>
+            <h4
+              class="text-[25px] sm:text-[18px] lg:text-[20px] font-[300] text-neutral-900 mb-1 sm:mb-2"
+            >
+              Phone
+            </h4>
             <p
-              class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+              class="text-black text-[13px] sm:text-[14px] lg:text-[16px] font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question? Give us a call &mdash; we're happy to help.
             </p>
             <a
               href="tel:+912225829387"
-              class="text-[18px] font-normal text-neutral-900 underline hover:text-neutral-600 transition-colors"
+              class="text-[13px] sm:text-[14px] lg:text-[16px] font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors"
             >
               +912225829387, +912225828996
             </a>
@@ -1600,13 +1920,15 @@
           <div>
             <i
               data-lucide="map-pin"
-              class="w-7 h-7 stroke-[1.5] text-neutral-800 mb-2"
+              class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"
             ></i>
-            <h4 class="text-[32px] font-normal text-neutral-900 mb-2">
+            <h4
+              class="text-[25px] sm:text-[18px] lg:text-[20px] font-[300] text-neutral-900 mb-1 sm:mb-2"
+            >
               Office
             </h4>
             <p
-              class="text-black text-[15px] sm:text-[16px] font-[300] leading-[150%] max-w-[379px] mb-3"
+              class="text-black text-[13px] sm:text-[14px] lg:text-[16px] font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
             >
               Find us at our office.
             </p>
@@ -1614,7 +1936,7 @@
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-[18px] font-normal text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
+              class="text-[13px] sm:text-[14px] lg:text-[16px] font-[300] text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
             >
               711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle
               Industrial Estate, Thane West, Thane, Maharashtra 400604
@@ -1627,7 +1949,7 @@
     <!-- ========================================================================= -->
     <!-- 10. FOOTER (MATCHING SLICE 20 & 21)                                       -->
     <!-- ========================================================================= -->
-        <footer
+    <footer
       class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900"
     >
       <div class="max-w-[1920px] mx-auto">
@@ -1636,28 +1958,36 @@
           class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
         >
           <!-- Logo -->
-          <a href="index.html" class="inline-block mx-auto lg:mx-0">
-            <img
-              src="images/image 7.png"
+          <div class="flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+            <a href="index.html" class="inline-block">
+              <img src="images/image 7.png"
               alt="Arris Architects Logo"
               class="h-9 lg:h-14 w-auto"
             />
-          </a>
+            </a>
+            <span class="text-white/60 text-[8px] lg:text-[12px] font-[300] tracking-[0.18em] uppercase mt-1">Design Studio LLP</span>
+          </div>
 
           <!-- Footer Navigation Links -->
           <ul
             class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 text-[16px] text-white/90 font-light text-center"
           >
             <li>
-              <a href="index.html" class="hover:text-white transition-colors">Home</a>
+              <a href="index.html" class="hover:text-white transition-colors"
+                >Home</a
+              >
             </li>
             <li>
-              <a href="about-arris.html" class="hover:text-white transition-colors"
+              <a
+                href="about-arris.html"
+                class="hover:text-white transition-colors"
                 >About Us</a
               >
             </li>
             <li>
-              <a href="index.html#what-we-do" class="hover:text-white transition-colors"
+              <a
+                href="index.html#what-we-do"
+                class="hover:text-white transition-colors"
                 >Services</a
               >
             </li>
@@ -1667,7 +1997,9 @@
               >
             </li>
             <li>
-              <a href="testimonials.html" class="hover:text-white transition-colors"
+              <a
+                href="testimonials.html"
+                class="hover:text-white transition-colors"
                 >Testimonials</a
               >
             </li>
@@ -1680,17 +2012,43 @@
 
           <!-- Social Icons -->
           <div class="flex items-center space-x-6 lg:space-x-5">
-            <a href="https://www.instagram.com/arrisarchitects/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <a
+              href="https://www.instagram.com/arrisarchitects/?hl=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img
+                src="images/Vector (1).png"
+                alt="Instagram"
+                class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
             </a>
             <a href="#" aria-label="Twitter / X">
-              <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img
+                src="images/Vector (2).png"
+                alt="X"
+                class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
             </a>
             <a href="#" aria-label="LinkedIn">
-              <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+              <img
+                src="images/LinkedIn.png"
+                alt="LinkedIn"
+                class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
             </a>
-            <a href="https://www.youtube.com/@ArrisArchitects1" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+            <a
+              href="https://www.youtube.com/@ArrisArchitects1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <img
+                src="images/Youtube.png"
+                alt="YouTube"
+                class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
             </a>
           </div>
         </div>
@@ -1765,7 +2123,7 @@
       // ── Pause hero video when any navbar dropdown is open ──────────────────
       const heroVideo = document.getElementById("hero-video");
       const navDropdowns = document.querySelectorAll(
-        ".nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-studio, .nav-dropdown-contact"
+        ".nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-studio, .nav-dropdown-contact",
       );
 
       if (heroVideo && navDropdowns.length) {
@@ -1788,6 +2146,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="animations.js"></script>
-
   </body>
 </html>

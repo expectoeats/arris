@@ -385,6 +385,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadList = [
       // Expertise images
       'images/Rectangle 1.png',
+      'images/aldona Villa/BED-1-2_3.png',
       'images/dorpdow-shuffle/DPS.png',
       'images/dorpdow-shuffle/Rectangle 1.png',
       'images/dorpdow-shuffle/project 4.png',
