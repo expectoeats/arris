@@ -412,7 +412,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
     });
 
-    const dropdowns = document.querySelectorAll('.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-mega');
+    const dropdowns = document.querySelectorAll('.nav-dropdown-expertise, .nav-dropdown-mega');
     dropdowns.forEach((dropdown) => {
       const items = dropdown.querySelectorAll('.projects-nav-item, .expertise-nav-item, .practice-nav-item, .mega-nav-item');
       const mainCard = dropdown.querySelector('#projects-card-main, #expertise-card-main, #practice-card-main, .projects-card-main, .expertise-card-main, .practice-card-main, .mega-card-main');
@@ -596,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Text-only dropdown panels (Studio & Contact):
       // Dock curtain starting directly beneath trigger text with 32px padding-left,
       // so menu links line up exactly beneath the trigger word and never obscure other navbar items.
-      if (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) {
+      if (menu.classList.contains('practice-dropdown-menu') || menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) {
         targetLeft = rect ? Math.max(0, rect.left - 32) : null;
       }
 
@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Restore standard 0.75s slide transition and glide across to new position
         menu.style.transition = '';
         menu.style.left = targetLeft + 'px';
-        menu.style.paddingLeft = (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
+        menu.style.paddingLeft = (menu.classList.contains('practice-dropdown-menu') || menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
 
         // Clean up outgoing menu
         activeMenu.classList.remove('is-active');
@@ -643,7 +643,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (targetLeft !== null) {
           menu.style.left = targetLeft + 'px';
-          menu.style.paddingLeft = (menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
+          menu.style.paddingLeft = (menu.classList.contains('practice-dropdown-menu') || menu.classList.contains('studio-dropdown-menu') || menu.classList.contains('contact-dropdown-menu')) ? '32px' : '52px';
         }
         menu.classList.add('is-active');
         activeMenu = menu;
