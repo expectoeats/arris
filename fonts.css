@@ -28,15 +28,17 @@
    ARRIS TYPOGRAPHY DESIGN SYSTEM — 4 CORE TEXT SIZES (SINGLE SOURCE OF TRUTH)
    --------------------------------------------------------------------------
    Desktop (>=1024px) : Large Heading 64px | Heading 50px | Sub-heading 32px | Body 16px
-   Tablet  (>=640px)  : Large Heading 48px | Heading 36px | Sub-heading 26px | Body 16px
-   Mobile  (<640px)   : Large Heading 32px | Heading 26px | Sub-heading 20px | Body 15px
+   Tablet  (>=640px)  : Large Heading 48px | Heading 38px | Sub-heading 26px | Body 16px
+   Mobile  (<640px)   : Large Heading 42px | Heading 38px | Sub-heading 24px | Body 18px / line-height 27px
+   --------------------------------------------------------------------------
+   Extra tier (optional) : Body Small 16px mobile / 14px desktop — award descriptions only
    --------------------------------------------------------------------------
    Site par sirf yahi 4 sizes use hongi. Size badalna ho to sirf yahan change karein.
    ========================================================================== */
 
 /* Variant 1: Large Heading — page / project titles */
 .t-display {
-  font-size: 32px;
+  font-size: 42px;
 }
 @media (min-width: 640px) {
   .t-display {
@@ -51,11 +53,11 @@
 
 /* Variant 2: Heading — section titles */
 .t-heading {
-  font-size: 26px;
+  font-size: 38px;
 }
 @media (min-width: 640px) {
   .t-heading {
-    font-size: 36px;
+    font-size: 38px;
   }
 }
 @media (min-width: 1024px) {
@@ -66,7 +68,7 @@
 
 /* Variant 3: Sub-heading — card titles, block / sub titles */
 .t-subheading {
-  font-size: 20px;
+  font-size: 24px;
 }
 @media (min-width: 640px) {
   .t-subheading {
@@ -81,7 +83,7 @@
 
 /* Variant 3b: Sub-heading Name — specifically for names in cards (Homepage Testimonials/Leadership) */
 .t-name {
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.1;
 }
 @media (min-width: 640px) {
@@ -97,11 +99,29 @@
 
 /* Variant 4: Body — paragraphs, links, labels, UI / micro text */
 .t-body {
-  font-size: 15px;
+  font-size: 18px;
+}
+@media (max-width: 639px) {
+  .t-body {
+    line-height: 27px;
+  }
 }
 @media (min-width: 640px) {
   .t-body {
     font-size: 16px;
+  }
+}
+
+/* Variant 4b: Body Small — award descriptions / secondary metadata
+   (one step below Body) */
+.t-body-sm {
+  font-size: 14px;
+  line-height: 1.25;
+}
+@media (min-width: 640px) {
+  .t-body-sm {
+    font-size: 13px;
+    line-height: 1.25;
   }
 }
 
@@ -110,12 +130,8 @@
   font-size: 12px;
 }
 
-/* Variant 6: Footer Tag — specifically for "Design Studio LLP" */
+/* Variant 6: Footer Tag — specifically for "Design Studio LLP"
+   (same size on every device, matching the laptop preview) */
 .t-footer-tag {
-  font-size: 9px;
-}
-@media (min-width: 1024px) {
-  .t-footer-tag {
-    font-size: 12px;
-  }
+  font-size: 12px;
 }

@@ -250,10 +250,10 @@
         id="hero-bg-img" 
         src="images/project-detail/rajhans_skylar_hero.png" 
         alt="Project Hero Banner" 
-        class="w-full h-full object-cover object-center brightness-95"
+        class="w-full h-full object-cover object-center brightness-[0.97]"
       />
-      <!-- Gradient overlay to guarantee perfect text contrast -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/60 pointer-events-none"></div>
+      <!-- Gradient overlay for text contrast (Lighter version) -->
+      <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-black/25 pointer-events-none"></div>
     </div>
 
     <!-- Navigation Bar (Overlay on top of Hero) -->
@@ -378,11 +378,6 @@
                   <li>
                     <a href="design-process.html" class="practice-nav-item">
                       Design Process
-                    </a>
-                  </li>
-                  <li>
-                    <a href="testimonials.html" class="practice-nav-item">
-                      Testimonials
                     </a>
                   </li>
                   <li>
@@ -585,7 +580,7 @@
         <div class="lg:col-span-7 flex flex-col justify-between h-full pt-2 lg:pt-0 order-1 lg:order-2">
           
           <!-- Narrative Description Paragraph -->
-          <p id="project-description" data-reveal-text class="t-body font-[300] leading-[170%] text-black text-justify lg:text-left mb-12 sm:mb-16 lg:mb-20">
+          <p id="project-description" data-reveal-text class="t-body font-[300] leading-[27px] text-black text-justify lg:text-left mb-12 sm:mb-16 lg:mb-20">
             This project brings together contemporary interior spaces with a thoughtfully designed landscape that complements the overall built environment. Our scope focused on the atrium, lobby spaces, gym, caf� and other key interior areas, creating cohesive and inviting spaces through considered materials and detailing. The landscape integrates lush planting with carefully placed sculptural elements that soften the effect of the built form, creating a more welcoming and engaging experience around the building. Together, the interiors and landscape create a refined environment that balances functionality, visual identity and a sense of openness.
           </p>
 
@@ -651,52 +646,9 @@
       </h2>
 
       <!-- Visual Showcase Layout (Mobile: Stacked full-width, Desktop: Interactive Expanding Flex Accordion) -->
+      <!-- Dynamic Gallery Container -->
       <div id="gallery-container" class="gallery-accordion w-full">
-        
-        <!-- Gallery Item 1 -->
-        <div class="gallery-item group" data-index="0">
-          <div class="gallery-overlay"></div>
-          <img 
-            id="gallery-img-1" 
-            src="images/project-detail/gallery_1_wide.png" 
-            alt="Gallery View 1" 
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Gallery Item 2 -->
-        <div class="gallery-item group" data-index="1">
-          <div class="gallery-overlay"></div>
-          <img 
-            id="gallery-img-2" 
-            src="images/project-detail/gallery_2_aerial.png" 
-            alt="Gallery View 2" 
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Gallery Item 3 -->
-        <div class="gallery-item group" data-index="2">
-          <div class="gallery-overlay"></div>
-          <img 
-            id="gallery-img-3" 
-            src="images/project-detail/gallery_3_pool.png" 
-            alt="Gallery View 3" 
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Gallery Item 4 -->
-        <div class="gallery-item group" data-index="3">
-          <div class="gallery-overlay"></div>
-          <img 
-            id="gallery-img-4" 
-            src="images/project-detail/gallery_4_lounge.png" 
-            alt="Gallery View 4" 
-            class="w-full h-full object-cover"
-          />
-        </div>
-
+        <!-- Gallery items will be injected by JavaScript -->
       </div>
 
     </div>
@@ -735,7 +687,7 @@
           Contact us
         </h2>
         <p
-          class="text-black t-body font-[300] leading-relaxed max-w-[646px] mb-8 sm:mb-12 lg:mb-16"
+          class="text-black t-body font-[300] leading-[27px] max-w-[646px] mb-8 sm:mb-12 lg:mb-16"
           data-reveal-text
           data-delay="1"
         >
@@ -752,7 +704,7 @@
             ></i>
             <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Email</h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question or idea? Drop us an email we'd love to hear from
               you.
@@ -773,7 +725,7 @@
             ></i>
             <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Phone</h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question? Give us a call &mdash; we're happy to help.
             </p>
@@ -795,7 +747,7 @@
               Office
             </h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Find us at our office.
             </p>
@@ -803,7 +755,7 @@
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="t-body font-[300] text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
+              class="t-body font-[300] text-neutral-900 underline leading-[27px] hover:text-neutral-600 transition-colors block"
             >
               711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle
               Industrial Estate, Thane West, Thane, Maharashtra 400604
@@ -826,11 +778,11 @@
           class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
         >
           <!-- Logo -->
-          <div class="flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+          <div class="flex flex-col items-start mx-0">
             <a href="index.html" class="inline-block">
               <img src="images/image 7.png"
               alt="Arris Architects Logo"
-              class="h-9 lg:h-14 w-auto"
+              class="h-14 w-auto"
             />
             </a>
             <span class="text-white/60 t-footer-tag font-[300] tracking-[0.18em] uppercase mt-1">Design Studio LLP</span>
@@ -859,11 +811,6 @@
               >
             </li>
             <li>
-              <a href="testimonials.html" class="hover:text-white transition-colors"
-                >Testimonials</a
-              >
-            </li>
-            <li>
               <a href="contact.html" class="hover:text-white transition-colors"
                 >Contact Us</a
               >
@@ -874,9 +821,6 @@
           <div class="flex items-center space-x-6 lg:space-x-5">
             <a href="https://www.instagram.com/arrisarchitects/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
-            </a>
-            <a href="#" aria-label="Twitter / X">
-              <img src="images/Vector (2).png" alt="X" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
             </a>
             <a href="https://in.linkedin.com/company/arris-architects-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
@@ -986,18 +930,22 @@
         <span>${project.specs.status}</span>
       `;
     }
-    // Render Gallery Images
-    if (project.gallery && project.gallery.length >= 4) {
-      const g1 = document.getElementById('gallery-img-1');
-      const g2 = document.getElementById('gallery-img-2');
-      const g3 = document.getElementById('gallery-img-3');
-      const g4 = document.getElementById('gallery-img-4');
-
-      if (g1) { g1.src = project.gallery[0].url; g1.alt = project.gallery[0].alt; }
-      if (g2) { g2.src = project.gallery[1].url; g2.alt = project.gallery[1].alt; }
-      if (g3) { g3.src = project.gallery[2].url; g3.alt = project.gallery[2].alt; }
-      if (g4) { g4.src = project.gallery[3].url; g4.alt = project.gallery[3].alt; }
+    // 3. Update Gallery Images Dynamically
+    const galleryContainer = document.getElementById('gallery-container');
+    if (project.gallery && project.gallery.length > 0) {
+      galleryContainer.innerHTML = project.gallery.map((item, index) => `
+        <div class="gallery-item group" data-index="${index}">
+          <div class="gallery-overlay"></div>
+          <img 
+            src="${item.url}" 
+            alt="${item.alt || project.title + ' Gallery ' + (index + 1)}" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      `).join('');
     }
+
+    // 4. Initialize GSAP Scroll Animations for project details
 
     // Render Related Projects
     const relatedContainer = document.getElementById('related-projects-grid');
@@ -1029,11 +977,9 @@
       });
     }
 
-    // =========================================================================
-    // Dynamic Expanding Gallery Accordion Touch & Click Logic
-    // =========================================================================
-    const galleryAccordion = document.getElementById('gallery-container');
+    // Initialize Accordion interactions AFTER injecting items
     const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryAccordion = document.getElementById('gallery-container');
 
     if (galleryAccordion && galleryItems.length) {
       galleryItems.forEach(item => {

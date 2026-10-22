@@ -12,7 +12,7 @@ const ARRIS_PROJECTS = {
     location: 'Thane',
     year: '2026',
     heroImage: 'images/Devgn Cinex Bellona/2.jpeg',
-    storyImage: 'images/Devgn Cinex Bellona/bellona-story.png',
+    storyImage: 'images/Devgn Cinex Bellona/1.jpeg',
     description: "Inspired by Art Deco elegance, the interiors of the Devgn Cinex Bellona cinema in Mumbai celebrates bold geometry, rich symmetry, and metallic accents, layered with retro nostalgia — marquee signage, plush velvet seating, vintage posters, and patterned carpets. The fusion creates an atmosphere where every corner echoes the romance of yesterday's drama while captivating today's audience.",
     specs: {
       location: 'Thane',
@@ -23,16 +23,24 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
+        "url": "images/Devgn Cinex Bellona/1.jpeg",
+        "alt": "Devgn Cinex Bellona Entry"
+      },
+      {
         "url": "images/Devgn Cinex Bellona/2.jpeg",
         "alt": "Devgn Cinex Bellona Main Concourse"
       },
       {
-        "url": "images/Devgn Cinex Bellona/10.jpg",
-        "alt": "Devgn Cinex Bellona Auditorium Lighting"
+        "url": "images/Devgn Cinex Bellona/4.jpeg",
+        "alt": "Devgn Cinex Bellona Ceiling Detail"
       },
       {
         "url": "images/Devgn Cinex Bellona/6.jpg",
         "alt": "Devgn Cinex Bellona Arched Auditorium Hall"
+      },
+      {
+        "url": "images/Devgn Cinex Bellona/9.jpg",
+        "alt": "Devgn Cinex Bellona Concession Stand"
       },
       {
         "url": "images/Devgn Cinex Bellona/11.jpg",
@@ -77,6 +85,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Rajhans Skylar Commercial Surat/Cam_03.jpg",
         "alt": "Rajhans Skylar Landscaped Commercial Promenade"
+      },
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Cam_04.jpg",
+        "alt": "Rajhans Skylar Modern Facade"
+      },
+      {
+        "url": "images/Rajhans Skylar Commercial Surat/Cam_05.jpg",
+        "alt": "Rajhans Skylar Architectural Detail"
       }
     ],
     related: ['times-tower-new', 'rajhans-precia', 'ib-suncity'],
@@ -131,8 +147,8 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Aldona, Goa',
     year: 'Ongoing',
-    heroImage: 'images/aldona Villa/10 FINAL_2.png',
-    storyImage: 'images/aldona Villa/1_8.png',
+    heroImage: 'images/aldona Villa/1_8.jpg',
+    storyImage: 'images/aldona Villa/4_5.jpg',
     description: "Nestled into the lush riverside topography of Aldona, this private sanctuary marries traditional Goan vernacular architecture with streamlined contemporary luxury. Deep verandas, exposed timber rafters, and cascading water features blur the boundaries between domestic intimacy and surrounding nature.",
     specs: {
       location: 'Aldona, Goa',
@@ -143,24 +159,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/aldona Villa/10 FINAL_2.png",
-        "alt": "Aldona Villa Pool & Architecture"
+        "url": "images/aldona Villa/1_8.jpg",
+        "alt": "Aldona Villa Riverside Elevation"
       },
       {
-        "url": "images/aldona Villa/1_8.png",
-        "alt": "Aldona Villa Lily Pond Entry Pavilion"
+        "url": "images/aldona Villa/4_5.jpg",
+        "alt": "Aldona Villa Architecture & Landscape"
       },
       {
-        "url": "images/aldona Villa/BED-1-2_3.png",
-        "alt": "Aldona Villa Master Bedroom Suite"
+        "url": "images/aldona Villa/10 FINAL_2.jpg",
+        "alt": "Aldona Villa Pool View"
       },
       {
-        "url": "images/aldona Villa/4_5.png",
-        "alt": "Aldona Villa Palm Avenue Gate & Landscape"
+        "url": "images/aldona Villa/11_7.jpg",
+        "alt": "Aldona Villa Exterior Evening"
+      },
+      {
+        "url": "images/aldona Villa/LR-1_7.jpg",
+        "alt": "Aldona Villa Living Room"
+      },
+      {
+        "url": "images/aldona Villa/BED-1-2_3.jpg",
+        "alt": "Aldona Villa Master Bedroom"
       }
     ],
     related: ['bottle-house', 'hazaribaug-bungalow', 'rajhans-skylar'],
-    cardImage: 'images/aldona Villa/10 FINAL_2.png'
+    cardImage: 'images/aldona Villa/1_8.jpg'
   },
 
   // 5. Times Tower New (Commercial, Mumbai)
@@ -197,6 +221,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Times Tower New/E_PHX2729_LR.jpg",
         "alt": "Times Tower New Director's Lounge"
+      },
+      {
+        "url": "images/Times Tower New/E_PHX2662_LR.jpg",
+        "alt": "Times Tower New Corporate Office"
+      },
+      {
+        "url": "images/Times Tower New/E_PHX2667_LR.jpg",
+        "alt": "Times Tower New Modern Workspace"
       }
     ],
     related: ['rajhans-skylar', 'rajhans-precia', 'devgn-cinex-bellona'],
@@ -227,16 +259,24 @@ const ARRIS_PROJECTS = {
         "alt": "Devgn Cinex Ahmedabad Grand Foyer"
       },
       {
-        "url": "images/Devgn Cinex Ahmedabad/06.jpg",
+        "url": "images/Devgn Cinex Ahmedabad/02.jpg",
         "alt": "Devgn Cinex Ahmedabad Concourse Lounge"
       },
       {
-        "url": "images/Devgn Cinex Ahmedabad/17.jpg",
+        "url": "images/Devgn Cinex Ahmedabad/06.jpg",
         "alt": "Devgn Cinex Ahmedabad Auditorium Seating"
       },
       {
-        "url": "images/Devgn Cinex Ahmedabad/21.jpg",
+        "url": "images/Devgn Cinex Ahmedabad/09.jpg",
         "alt": "Devgn Cinex Ahmedabad VIP Lounge"
+      },
+      {
+        "url": "images/Devgn Cinex Ahmedabad/17.jpg",
+        "alt": "Devgn Cinex Ahmedabad Cinema Experience"
+      },
+      {
+        "url": "images/Devgn Cinex Ahmedabad/21.jpg",
+        "alt": "Devgn Cinex Ahmedabad Premium Seating"
       }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-elan', 'la-trichy'],
@@ -277,6 +317,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/IB Suncity/Suncity School-7.jpg",
         "alt": "IB Suncity Sports & Outdoor Grounds"
+      },
+      {
+        "url": "images/IB Suncity/Suncity School-1.jpg",
+        "alt": "IB Suncity Modern Facade"
+      },
+      {
+        "url": "images/IB Suncity/Suncity School-10.jpg",
+        "alt": "IB Suncity Educational Wing"
       }
     ],
     related: ['dps-hazaribaug', 'ahs-hazaribaug', 'times-tower-new'],
@@ -291,8 +339,8 @@ const ARRIS_PROJECTS = {
     category: 'Schools',
     location: 'Hazaribaug',
     year: 'Ongoing',
-    heroImage: 'images/AHS Hazaribaug/IMG_20190412_104900.jpg',
-    storyImage: 'images/AHS Hazaribaug/DSC06574.JPG',
+    heroImage: 'images/AHS Hazaribaug/DSC06724.JPG.jpg',
+    storyImage: 'images/AHS Hazaribaug/DSC06574.jpg',
     description: "AHS Hazaribaug integrates traditional institutional permanence with responsive contemporary architectural craft. The complex features tiered auditoriums, modular STEM laboratories, and shaded perimeter circulation corridors harmoniously anchored into the surrounding landscape.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
@@ -307,16 +355,24 @@ const ARRIS_PROJECTS = {
         "alt": "AHS Hazaribaug Campus Overview"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06591.JPG",
+        "url": "images/AHS Hazaribaug/DSC06574.jpg",
+        "alt": "AHS Hazaribaug Main Academic Block"
+      },
+      {
+        "url": "images/AHS Hazaribaug/DSC06591.jpg",
         "alt": "AHS Hazaribaug Academic Building"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06622.JPG",
+        "url": "images/AHS Hazaribaug/DSC06622.jpg",
         "alt": "AHS Hazaribaug School Courtyard"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06715.JPG",
-        "alt": "AHS Hazaribaug Learning Wings"
+        "url": "images/AHS Hazaribaug/DSC06691.jpg",
+        "alt": "AHS Hazaribaug Campus Pathway"
+      },
+      {
+        "url": "images/AHS Hazaribaug/DSC06712.jpg",
+        "alt": "AHS Hazaribaug Institutional Facade"
       }
     ],
     related: ['dps-hazaribaug', 'ib-suncity', 'hazaribaug-bungalow'],
@@ -357,6 +413,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Rectangle 6 (3).png",
         "alt": "LA Trichy VIP Cinema Lounge"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "LA Trichy Premium Lounge"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "LA Trichy Modern Architecture"
       }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-ahmedabad', 'devgn-cinex-elan'],
@@ -371,8 +435,8 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Raipur',
     year: '2025',
-    heroImage: 'images/bottle house/BOTTLE HOUSE 3.png',
-    storyImage: 'images/bottle house/D5_Scene 3_20240216_154847.png',
+    heroImage: 'images/bottle house/1.jpg',
+    storyImage: 'images/bottle house/BOTTLE HOUSE 3.jpg',
     description: "An innovative residential villa crafted around organic fluidity and environmental sustainability. Featuring distinctive curvilinear silhouettes, natural thermal cooling masonry, and floor-to-ceiling glass pavilions opening onto private garden courtyards.",
     specs: {
       location: 'Raipur, Chhattisgarh',
@@ -383,24 +447,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/bottle house/BOTTLE HOUSE 3.png",
-        "alt": "Bottle House Iconic Curvilinear Facade"
+        "url": "images/bottle house/1.jpg",
+        "alt": "Bottle House Iconic Facade"
       },
       {
-        "url": "images/bottle house/D5_Scene 11_20240216_153737.png",
-        "alt": "Bottle House Garden & Veranda"
+        "url": "images/bottle house/2.jpg",
+        "alt": "Bottle House Modern Architecture"
       },
       {
-        "url": "images/bottle house/D5_Scene 12_20240216_153922.png",
-        "alt": "Bottle House Living Pavilion"
+        "url": "images/bottle house/BOTTLE HOUSE 3.jpg",
+        "alt": "Bottle House Curvilinear Design"
       },
       {
-        "url": "images/bottle house/D5_Scene 13_20240216_155330.png",
-        "alt": "Bottle House Evening Architecture"
+        "url": "images/bottle house/D5_Scene 11_20240216_153737.jpg",
+        "alt": "Bottle House Garden View"
+      },
+      {
+        "url": "images/bottle house/D5_Scene 12_20240216_153922.jpg",
+        "alt": "Bottle House Interior Pavilion"
+      },
+      {
+        "url": "images/bottle house/D5_Scene 13_20240216_155330.jpg",
+        "alt": "Bottle House Night View"
       }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'rajhans-precia'],
-    cardImage: 'images/bottle house/BOTTLE HOUSE 3.png'
+    cardImage: 'images/bottle house/1.jpg'
   },
 
   // 11. Hazaribaug Bungalow (Residential, Hazaribaug)
@@ -437,6 +509,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Hazaribaug Bungalow/CANOPY.png",
         "alt": "Hazaribaug Bungalow Garden Canopy"
+      },
+      {
+        "url": "images/Hazaribaug Bungalow/ENTRY 1.png",
+        "alt": "Hazaribaug Bungalow Entrance Gateway"
+      },
+      {
+        "url": "images/Hazaribaug Bungalow/GATE 2.png",
+        "alt": "Hazaribaug Bungalow Perimeter Wall"
       }
     ],
     related: ['aldona-villa', 'bottle-house', 'dps-hazaribaug'],
@@ -467,6 +547,10 @@ const ARRIS_PROJECTS = {
         "alt": "Devgn Cinex Elan Multiplex Concourse"
       },
       {
+        "url": "images/Devgn Cinex Elan/03.jpg",
+        "alt": "Devgn Cinex Elan Boutique Cinema Entrance"
+      },
+      {
         "url": "images/Devgn Cinex Elan/07.jpg",
         "alt": "Devgn Cinex Elan Auditorium"
       },
@@ -477,6 +561,10 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Devgn Cinex Elan/10.jpg",
         "alt": "Devgn Cinex Elan Concession Area"
+      },
+      {
+        "url": "images/Devgn Cinex Elan/11.jpg",
+        "alt": "Devgn Cinex Elan VIP Seating"
       }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-ahmedabad', 'ib-suncity'],
@@ -517,6 +605,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/Rajhans Precia/KZP00350.jpg",
         "alt": "Rajhans Precia Atrium Promenade"
+      },
+      {
+        "url": "images/Rajhans Precia/KZP00183.jpg",
+        "alt": "Rajhans Precia Modern Interiors"
+      },
+      {
+        "url": "images/Rajhans Precia/KZP00451.jpg",
+        "alt": "Rajhans Precia Premium Retail"
       }
     ],
     related: ['rajhans-skylar', 'times-tower-new', 'devgn-cinex-bellona'],
@@ -557,6 +653,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 65.png",
         "alt": "Quorum Entrance Atrium"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "Quorum Modern Architecture"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "Quorum Workspace Lounge"
       }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'rajhans-precia'],
@@ -596,6 +700,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 65.png",
         "alt": "Urban Square Grand Atrium"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "Urban Square Modern Architecture"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "Urban Square Office Lounge"
       }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'quorum'],
@@ -635,6 +747,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 66.png",
         "alt": "Aurelia Business Park Conference Suite"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "Aurelia Business Park Modern Architecture"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "Aurelia Business Park Entry Atrium"
       }
     ],
     related: ['times-tower-new', 'urban-square', 'rajhans-skylar'],
@@ -674,6 +794,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/architecture/Rectangle 69 (1).png",
         "alt": "The Grand Pavilion Reflecting Pool"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "The Grand Pavilion Interior Lounge"
+      },
+      {
+        "url": "images/interior/Rectangle 66.png",
+        "alt": "The Grand Pavilion Banquet Space"
       }
     ],
     related: ['devgn-cinex-ahmedabad', 'rajhans-precia', 'aldona-villa'],
@@ -713,6 +841,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 66.png",
         "alt": "Verde Residence Dining Suite"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "Verde Residence Modern Architecture"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "Verde Residence Entrance Atrium"
       }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'bottle-house'],
@@ -752,6 +888,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 66.png",
         "alt": "Aria Corporate Centre Conference Suite"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "Aria Corporate Centre Entrance Lobby"
+      },
+      {
+        "url": "images/architecture/Rectangle 67.png",
+        "alt": "Aria Corporate Centre Modern Facade"
       }
     ],
     related: ['times-tower-new', 'rajhans-skylar', 'aurelia-business-park'],
@@ -791,6 +935,14 @@ const ARRIS_PROJECTS = {
       {
         "url": "images/interior/Rectangle 69.png",
         "alt": "The Grand Residence Overview"
+      },
+      {
+        "url": "images/interior/Rectangle 65.png",
+        "alt": "The Grand Residence Entrance Foyer"
+      },
+      {
+        "url": "images/architecture/Rectangle 111.png",
+        "alt": "The Grand Residence Modern Architecture"
       }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'bottle-house'],

@@ -87,6 +87,14 @@
         image-rendering: auto;
       }
 
+      /* DPS Hazaribaug: Strictly Mobile Devices Only (< 640px) */
+      @media (max-width: 639px) {
+        .dps-mobile-align {
+          transform: translate(-3.5%, -20%) scale(1.6) !important;
+          transform-origin: center center !important;
+        }
+      }
+
       /* Navbar Dropdown for PRACTICE */
       .nav-dropdown {
         position: relative;
@@ -400,11 +408,6 @@
                   <li>
                     <a href="design-process.html" class="practice-nav-item">
                       Design Process
-                    </a>
-                  </li>
-                  <li>
-                    <a href="testimonials.html" class="practice-nav-item">
-                      Testimonials
                     </a>
                   </li>
                   <li>
@@ -740,7 +743,7 @@
 
             <!-- Body text: SF Pro, 22px on desktop, 15px on mobile, Justified -->
             <div
-              class="space-y-1 text-black t-body font-[300] leading-[22px] sm:leading-[26px] lg:leading-[28px] tracking-normal text-left sm:text-justify"
+              class="space-y-1 text-black t-body font-[300] leading-[27px] sm:leading-[26px] lg:leading-[28px] tracking-normal text-left sm:text-justify"
             >
               <p>
                 At Arris Architects, we believe in the dual pillars of client
@@ -818,7 +821,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white t-body font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white t-body font-[300] leading-[27px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Architecture</span
               >
             </div>
@@ -853,7 +856,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white t-body font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white t-body font-[300] leading-[27px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Interior Design</span
               >
             </div>
@@ -888,7 +891,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white t-body font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white t-body font-[300] leading-[27px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Theatre Consultancy</span
               >
             </div>
@@ -923,7 +926,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white t-body font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white t-body font-[300] leading-[27px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Commercial</span
               >
             </div>
@@ -958,7 +961,7 @@
               class="absolute bottom-0 inset-x-0 h-[65px] card-glass-bar flex items-center justify-center px-3 z-10"
             >
               <span
-                class="text-white t-body font-[300] leading-[22px] sm:leading-[24px] tracking-[0.02em] text-center"
+                class="text-white t-body font-[300] leading-[27px] sm:leading-[24px] tracking-[0.02em] text-center"
                 >Schools</span
               >
             </div>
@@ -1082,8 +1085,8 @@
             <img
               src="images/homepage/project 2.jpg.jpeg"
               alt="DPS Hazaribaug Institutional Campus"
+              class="dps-mobile-align"
               style="object-position: center bottom"
-              class="object-bottom"
             />
           </figure>
         </div>
@@ -1297,26 +1300,26 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/1.png"
                   alt="FOAID 2025 - Devgn Cinex, Thane"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 FOAID 2025
               </h4>
               <p
-                class="t-body text-neutral-600 font-light mt-0.5"
+                class="t-body-sm text-neutral-600 font-light"
               >
                 Commercial Interiors
               </p>
-              <p class="t-body text-neutral-500 font-light">
+              <p class="t-body-sm text-neutral-500 font-light mt-0.5">
                 Devgn Cinex, Thane
               </p>
             </div>
@@ -1326,26 +1329,26 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/2.png"
                   alt="FOAID 2024 - LA Cinemas, Trichy"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 FOAID 2024
               </h4>
               <p
-                class="t-body text-neutral-600 font-light mt-0.5"
+                class="t-body-sm text-neutral-600 font-light"
               >
                 Commercial Interiors
               </p>
-              <p class="t-body text-neutral-500 font-light">
+              <p class="t-body-sm text-neutral-500 font-light mt-0.5">
                 LA Cinemas, Trichy
               </p>
             </div>
@@ -1355,26 +1358,26 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/3.png"
                   alt="FOAID 2024 - Aldona Villa, Goa"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 FOAID 2024
               </h4>
               <p
-                class="t-body text-neutral-600 font-light mt-0.5"
+                class="t-body-sm text-neutral-600 font-light"
               >
                 Residential Architecture
               </p>
-              <p class="t-body text-neutral-500 font-light">
+              <p class="t-body-sm text-neutral-500 font-light mt-0.5">
                 Aldona Villa, Goa
               </p>
             </div>
@@ -1384,26 +1387,26 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/4.png"
                   alt="FOAID 2023 - Adult Orphanage at Kamshet, Pune"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 FOAID 2023
               </h4>
               <p
-                class="t-body text-neutral-600 font-light mt-0.5"
+                class="t-body-sm text-neutral-600 font-light"
               >
                 Institutional Buildings
               </p>
-              <p class="t-body text-neutral-500 font-light">
+              <p class="t-body-sm text-neutral-500 font-light mt-0.5">
                 Adult Orphanage at Kamshet, Pune
               </p>
             </div>
@@ -1413,22 +1416,22 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/5.png"
                   alt="Design Wall, 2016"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 Design Wall
               </h4>
               <p
-                class="t-body text-neutral-500 font-light mt-0.5"
+                class="t-body-sm text-neutral-500 font-light mt-0.5"
               >
                 2016
               </p>
@@ -1439,22 +1442,22 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/6.png"
                   alt="NDTV Design &amp; Architect of the year Awards, 2015"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 NDTV Design &amp; Architect of the year Awards
               </h4>
               <p
-                class="t-body text-neutral-500 font-light mt-0.5"
+                class="t-body-sm text-neutral-500 font-light mt-0.5"
               >
                 2015 (Certificate of Honour)
               </p>
@@ -1465,22 +1468,22 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/7.png"
                   alt="NDTV Design &amp; Architect of the year Awards, 2014"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 NDTV Design &amp; Architect of the year Awards
               </h4>
               <p
-                class="t-body text-neutral-500 font-light mt-0.5"
+                class="t-body-sm text-neutral-500 font-light mt-0.5"
               >
                 2014 (Nominee)
               </p>
@@ -1491,22 +1494,22 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/8.png"
                   alt="I-GEN Design Forum; I-GEN 50, 2013"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 I-GEN Design Forum
               </h4>
               <p
-                class="t-body text-neutral-500 font-light mt-0.5"
+                class="t-body-sm text-neutral-500 font-light mt-0.5"
               >
                 I-GEN 50, 2013
               </p>
@@ -1517,22 +1520,22 @@
               class="flex-none w-[62vw] sm:w-[260px] lg:w-[calc((100%-3*2.5rem)/4)] lg:min-w-[calc((100%-3*2.5rem)/4)] snap-center lg:snap-start"
             >
               <div
-                class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center"
+                class="w-full aspect-[550/803] overflow-hidden rounded-2xl lg:rounded-md mb-4 flex items-center justify-center [isolation:isolate]"
               >
                 <img
                   src="images/awards/9.png"
                   alt="Big Cine Expo"
-                  class="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
+                  class="w-full h-full object-cover rounded-2xl lg:rounded-md hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
               </div>
               <h4
-                class="t-body font-[400] text-neutral-900 leading-snug"
+                class="t-body font-[400] text-neutral-900 leading-tight mb-1"
               >
                 Big Cine Expo
               </h4>
               <p
-                class="t-body text-neutral-500 font-light mt-0.5"
+                class="t-body-sm text-neutral-500 font-light mt-0.5"
               >
                 2013, 2018, 2022, 2023, 2025, 2026
               </p>
@@ -1649,7 +1652,7 @@
 
                 <!-- Quote Body -->
                 <div
-                  class="t-body text-neutral-700 font-light leading-relaxed space-y-3"
+                  class="t-body text-neutral-700 font-light leading-[27px] space-y-3"
                 >
                   <p>
                     We have been associated with Shubhashish since 2001, when he
@@ -1695,7 +1698,7 @@
 
                 <!-- Quote Body -->
                 <div
-                  class="t-body text-neutral-700 font-light leading-relaxed space-y-3"
+                  class="t-body text-neutral-700 font-light leading-[27px] space-y-3"
                 >
                   <p>
                     When we decided to transform what was once an iconic
@@ -1740,7 +1743,7 @@
 
                 <!-- Quote Body -->
                 <div
-                  class="t-body text-neutral-700 font-light leading-relaxed"
+                  class="t-body text-neutral-700 font-light leading-[27px]"
                 >
                   <p>
                     Working with Arris architects is a pleasure. They balance
@@ -1858,7 +1861,7 @@
           Contact us
         </h2>
         <p
-          class="text-black t-body font-[300] leading-relaxed max-w-[646px] mb-8 sm:mb-12 lg:mb-16"
+          class="text-black t-body font-[300] leading-[27px] max-w-[646px] mb-8 sm:mb-12 lg:mb-16"
           data-reveal-text
           data-delay="1"
         >
@@ -1879,7 +1882,7 @@
               Email
             </h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question or idea? Drop us an email we'd love to hear from
               you.
@@ -1904,7 +1907,7 @@
               Phone
             </h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Have a question? Give us a call &mdash; we're happy to help.
             </p>
@@ -1928,7 +1931,7 @@
               Office
             </h4>
             <p
-              class="text-black t-body font-[300] leading-relaxed max-w-[379px] mb-2 sm:mb-3"
+              class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3"
             >
               Find us at our office.
             </p>
@@ -1936,7 +1939,7 @@
               href="https://maps.google.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="t-body font-[300] text-neutral-900 underline leading-relaxed hover:text-neutral-600 transition-colors block"
+              class="t-body font-[300] text-neutral-900 underline leading-[27px] hover:text-neutral-600 transition-colors block"
             >
               711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle
               Industrial Estate, Thane West, Thane, Maharashtra 400604
@@ -1958,11 +1961,11 @@
           class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10"
         >
           <!-- Logo -->
-          <div class="flex flex-col items-center lg:items-start mx-auto lg:mx-0">
+          <div class="flex flex-col items-start mx-0">
             <a href="index.html" class="inline-block">
               <img src="images/image 7.png"
               alt="Arris Architects Logo"
-              class="h-9 lg:h-14 w-auto"
+              class="h-14 w-auto"
             />
             </a>
             <span class="text-white/60 t-footer-tag font-[300] tracking-[0.18em] uppercase mt-1">Design Studio LLP</span>
@@ -1997,13 +2000,6 @@
               >
             </li>
             <li>
-              <a
-                href="testimonials.html"
-                class="hover:text-white transition-colors"
-                >Testimonials</a
-              >
-            </li>
-            <li>
               <a href="contact.html" class="hover:text-white transition-colors"
                 >Contact Us</a
               >
@@ -2021,13 +2017,6 @@
               <img
                 src="images/Vector (1).png"
                 alt="Instagram"
-                class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
-              />
-            </a>
-            <a href="#" aria-label="Twitter / X">
-              <img
-                src="images/Vector (2).png"
-                alt="X"
                 class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity"
               />
             </a>
