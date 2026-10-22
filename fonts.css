@@ -79,6 +79,21 @@
   }
 }
 
+/* Variant 3b: Sub-heading Name — specifically for names in cards (Homepage Testimonials/Leadership) */
+.t-name {
+  font-size: 20px;
+}
+@media (min-width: 640px) {
+  .t-name {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .t-name {
+    font-size: 26px;
+  }
+}
+
 /* Variant 4: Body — paragraphs, links, labels, UI / micro text */
 .t-body {
   font-size: 15px;
