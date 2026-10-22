@@ -832,7 +832,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   line-height: 1.35;
   text-transform: none;
   /* 10px right shift transition on hover matching reference site */
-  transition: color 0.28s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1), font-size 0.28s ease !important;
+  transition: color 0.28s ease, padding-left 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 @media (min-width: 1440px) {
@@ -841,7 +841,6 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   .studio-nav-item,
   .contact-nav-item,
   .mega-nav-item {
-    font-size: 17px;
     padding: 7px 0;
   }
 }
@@ -858,7 +857,6 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 .mega-nav-item:hover,
 .mega-nav-item.active {
   color: #ffffff;
-  font-size: 21px;
   font-weight: 400;
   padding-left: 10px !important;
 }
@@ -874,7 +872,6 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   .contact-nav-item.active,
   .mega-nav-item:hover,
   .mega-nav-item.active {
-    font-size: 23px;
     padding-left: 10px !important;
   }
 }
