@@ -45,6 +45,10 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+      html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+      }
       body {
         font-family: "SF Pro Display", sans-serif;
         font-weight: 300;
@@ -1630,10 +1634,12 @@
 
         <!-- Testimonials Card & Carousel -->
         <div class="relative flex items-center">
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <div
+            class="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory w-full"
+          >
             <!-- Testimonial 1 (Honourable Shri Manish Jaiswal MoP) -->
             <div
-              class="bg-white rounded-lg p-6 sm:p-7 shadow-sm border border-neutral-100 flex flex-col justify-between min-h-[360px] sm:min-h-[420px]"
+              class="flex-none w-[85vw] sm:w-[480px] lg:w-auto snap-center bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col justify-between"
             >
               <div>
                 <!-- Author Header -->
@@ -1679,7 +1685,7 @@
 
             <!-- Testimonial 2 (Avneet Uberoi) -->
             <div
-              class="hidden md:flex bg-white rounded-lg p-6 sm:p-7 shadow-sm border border-neutral-100 flex-col justify-between min-h-[360px] sm:min-h-[420px]"
+              class="flex-none w-[85vw] sm:w-[480px] lg:w-auto snap-center bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col justify-between"
             >
               <div>
                 <!-- Author Header -->
@@ -1724,7 +1730,7 @@
 
             <!-- Testimonial 3 (Anuj Agarwal) -->
             <div
-              class="hidden md:flex bg-white rounded-lg p-6 sm:p-7 shadow-sm border border-neutral-100 flex-col justify-between min-h-[360px] sm:min-h-[420px]"
+              class="flex-none w-[85vw] sm:w-[480px] lg:w-auto snap-center bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-neutral-100 flex flex-col justify-between"
             >
               <div>
                 <!-- Author Header -->

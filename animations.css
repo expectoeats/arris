@@ -7,6 +7,11 @@
 /* GLOBAL HEADING FONT — Beausite Classic Trial (Thin/Light)                 */
 /* Applied to all h1–h6 across entire website                                */
 /* ------------------------------------------------------------------------- */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'BeausiteFit', 'SF Pro Display', sans-serif;
   font-weight: 100;
@@ -733,7 +738,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
 }
 
 /* On mobile/small screens, hide desktop fixed mega panels */
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .expertise-dropdown-menu,
   .practice-dropdown-menu,
   .studio-dropdown-menu,
