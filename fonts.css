@@ -82,6 +82,7 @@
 /* Variant 3b: Sub-heading Name — specifically for names in cards (Homepage Testimonials/Leadership) */
 .t-name {
   font-size: 20px;
+  line-height: 1.1;
 }
 @media (min-width: 640px) {
   .t-name {
