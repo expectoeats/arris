@@ -59,8 +59,8 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Surat',
     year: '2026',
-    heroImage: 'images/Rajhans Skylar Commercial Surat/Cam_01.jpg',
-    storyImage: 'images/Rajhans Skylar Commercial Surat/Interior_Atrium_Cam13.jpg',
+    heroImage: 'images/Rajhans Skylar commercial/Cam_01.jpg',
+    storyImage: 'images/Rajhans Skylar commercial/Interior_Atrium_Cam13.jpg',
     description: "This project brings together contemporary interior spaces with a thoughtfully designed landscape that complements the overall built environment. Our scope focused on the atrium, lobby spaces, gym, café and other key interior areas, creating cohesive and inviting spaces through considered materials and detailing. The landscape integrates lush planting with carefully placed sculptural elements that soften the effect of the built form, creating a more welcoming and engaging experience around the building. Together, the interiors and landscape create a refined environment that balances functionality, visual identity and a sense of openness.",
     specs: {
       location: 'Surat',
@@ -71,32 +71,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Cam_01.jpg",
+        "url": "images/Rajhans Skylar commercial/Cam_01.jpg",
         "alt": "Rajhans Skylar Iconic Elevation"
       },
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Interior_Atrium_Cam13.jpg",
+        "url": "images/Rajhans Skylar commercial/Interior_Atrium_Cam13.jpg",
         "alt": "Rajhans Skylar Central Atrium"
       },
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Interior_Reception_Cam04.jpg",
+        "url": "images/Rajhans Skylar commercial/Interior_Reception_Cam04.jpg",
         "alt": "Rajhans Skylar Grand Reception Lobby"
       },
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Cam_03.jpg",
+        "url": "images/Rajhans Skylar commercial/Cam_03.jpg",
         "alt": "Rajhans Skylar Landscaped Commercial Promenade"
       },
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Cam_04.jpg",
+        "url": "images/Rajhans Skylar commercial/Cam_04.jpg",
         "alt": "Rajhans Skylar Modern Facade"
       },
       {
-        "url": "images/Rajhans Skylar Commercial Surat/Cam_05.jpg",
+        "url": "images/Rajhans Skylar commercial/Cam_05.jpg",
         "alt": "Rajhans Skylar Architectural Detail"
       }
     ],
     related: ['times-tower-new', 'rajhans-precia', 'ib-suncity'],
-    cardImage: 'images/Rajhans Skylar Commercial Surat/Cam_01.jpg'
+    cardImage: 'images/Rajhans Skylar commercial/Cam_01.jpg'
   },
 
   // 3. DPS Hazaribaug (Schools, Hazaribaug)
@@ -107,8 +107,8 @@ const ARRIS_PROJECTS = {
     category: 'Schools',
     location: 'Hazaribaug',
     year: '2026',
-    heroImage: 'images/DPS.png',
-    storyImage: 'images/big_5 1.png',
+    heroImage: 'images/homepage/project 2.jpg.jpeg',
+    storyImage: 'images/DPS Hazaribaug/_U2A2008.jpg',
     description: "DPS Hazaribaug represents a benchmark in institutional architecture, seamlessly integrating open-air learning pavilions with sustainable climate-responsive building envelopes. The campus utilizes passive solar orientation, shaded courtyards, and native landscaping to craft an inspiring, calm educational sanctuary for future generations.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
@@ -119,24 +119,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/big_5 1.png",
+        "url": "images/DPS Hazaribaug/_U2A2047.jpg",
         "alt": "DPS Hazaribaug Main Academic Block"
       },
       {
-        "url": "images/Rectangle 6 (1).png",
+        "url": "images/DPS Hazaribaug/_U2A2008.jpg",
         "alt": "DPS Hazaribaug Central Courtyard & Shaded Pavilions"
       },
       {
-        "url": "images/about/Rectangle 31.png",
+        "url": "images/DPS Hazaribaug/_U2A2062.jpg",
         "alt": "DPS Hazaribaug Campus Learning Wings"
       },
       {
-        "url": "images/projects/dps_hazaribaug.png",
+        "url": "images/DPS Hazaribaug/_U2A2065.jpg",
         "alt": "DPS Hazaribaug Institutional Entrance & Lawn"
+      },
+      {
+        "url": "images/DPS Hazaribaug/_U2A2154.jpg",
+        "alt": "DPS Hazaribaug Covered Walkway"
+      },
+      {
+        "url": "images/DPS Hazaribaug/_U2A2200.jpg",
+        "alt": "DPS Hazaribaug Campus Overview"
       }
     ],
     related: ['ahs-hazaribaug', 'ib-suncity', 'aldona-villa'],
-    cardImage: 'images/projects/dps_hazaribaug.png'
+    cardImage: 'images/DPS Hazaribaug/_U2A2047.jpg'
   },
 
   // 4. Aldona Villa (Residential, Goa)
@@ -195,8 +203,8 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Mumbai',
     year: '2019',
-    heroImage: 'images/Times Tower New/E_PHX2662_LR.jpg',
-    storyImage: 'images/Times Tower New/E_PHX2667_LR.jpg',
+    heroImage: 'images/Times tower new/E_PHX2662_LR.jpg',
+    storyImage: 'images/Times tower new/E_PHX2667_LR.jpg',
     description: "Times Tower New redefines commercial corporate environments in Mumbai. With an emphasis on flexible workspaces, acoustic privacy, and high-performance energy envelopes, the tower delivers state-of-the-art corporate infrastructure that fosters collaborative focus and organizational prestige.",
     specs: {
       location: 'Mumbai, Maharashtra',
@@ -207,32 +215,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/Times Tower New/E_PHX2574_LR.jpg",
+        "url": "images/Times tower new/E_PHX2574_LR.jpg",
         "alt": "Times Tower New Executive Boardroom"
       },
       {
-        "url": "images/Times Tower New/E_PHX2740_LR.jpg",
+        "url": "images/Times tower new/E_PHX2740_LR.jpg",
         "alt": "Times Tower New Open Lounge with Copper Ductwork"
       },
       {
-        "url": "images/Times Tower New/E_PHX2712_LR.jpg",
+        "url": "images/Times tower new/E_PHX2712_LR.jpg",
         "alt": "Times Tower New Executive Cabin"
       },
       {
-        "url": "images/Times Tower New/E_PHX2729_LR.jpg",
+        "url": "images/Times tower new/E_PHX2729_LR.jpg",
         "alt": "Times Tower New Director's Lounge"
       },
       {
-        "url": "images/Times Tower New/E_PHX2662_LR.jpg",
+        "url": "images/Times tower new/E_PHX2662_LR.jpg",
         "alt": "Times Tower New Corporate Office"
       },
       {
-        "url": "images/Times Tower New/E_PHX2667_LR.jpg",
+        "url": "images/Times tower new/E_PHX2667_LR.jpg",
         "alt": "Times Tower New Modern Workspace"
       }
     ],
     related: ['rajhans-skylar', 'rajhans-precia', 'devgn-cinex-bellona'],
-    cardImage: 'images/Times Tower New/E_PHX2662_LR.jpg'
+    cardImage: 'images/Times tower new/E_PHX2662_LR.jpg'
   },
 
   // 6. Devgn Cinex Ahmedabad (Cinemas, Ahmedabad)
@@ -387,8 +395,8 @@ const ARRIS_PROJECTS = {
     category: 'Cinemas',
     location: 'Trichy',
     year: '2026',
-    heroImage: 'images/projects/la_trichy.png',
-    storyImage: 'images/interior/Rectangle 69 (1).png',
+    heroImage: 'images/LA Trichy/1.jpg',
+    storyImage: 'images/LA Trichy/2.jpg',
     description: "LA Trichy brings international standard cinema architecture to Tamil Nadu. Featuring fluted timber wall treatments, golden architectural arches, and expansive multi-level reception lobbies, it stands as a premier regional cinema entertainment destination.",
     specs: {
       location: 'Tiruchirappalli, Tamil Nadu',
@@ -399,32 +407,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/projects/la_trichy.png",
+        "url": "images/LA Trichy/1.jpg",
         "alt": "LA Trichy Multiplex Entrance"
       },
       {
-        "url": "images/project1.2.png",
+        "url": "images/LA Trichy/3.jpg",
         "alt": "LA Trichy Screen Auditorium Hall"
       },
       {
-        "url": "images/project 1.3.png",
+        "url": "images/LA Trichy/4.jpg",
         "alt": "LA Trichy Luxury Concourse"
       },
       {
-        "url": "images/Rectangle 6 (3).png",
+        "url": "images/LA Trichy/5.jpg",
         "alt": "LA Trichy VIP Cinema Lounge"
       },
       {
-        "url": "images/interior/Rectangle 66.png",
+        "url": "images/LA Trichy/6.jpg",
         "alt": "LA Trichy Premium Lounge"
       },
       {
-        "url": "images/architecture/Rectangle 111.png",
+        "url": "images/LA Trichy/7.jpg",
         "alt": "LA Trichy Modern Architecture"
       }
     ],
     related: ['devgn-cinex-bellona', 'devgn-cinex-ahmedabad', 'devgn-cinex-elan'],
-    cardImage: 'images/projects/la_trichy.png'
+    cardImage: 'images/LA Trichy/1.jpg'
   },
 
   // 10. Bottle House (Residential, Raipur)
@@ -579,8 +587,8 @@ const ARRIS_PROJECTS = {
     category: 'Commercial',
     location: 'Surat',
     year: '2024',
-    heroImage: 'images/Rajhans Precia/DJI_20250120213924_0431_D.jpg',
-    storyImage: 'images/Rajhans Precia/KZP00127.jpg',
+    heroImage: 'images/Rajhans precia/DJI_20250120213924_0431_D.jpg',
+    storyImage: 'images/Rajhans precia/KZP00127.jpg',
     description: "Rajhans Precia is an ultra-premium diamond retail and commercial landmark in Surat. An undulating parametric glass envelope, grand central sunlit atrium, and seamless circulation provide an international-caliber retail and corporate atmosphere.",
     specs: {
       location: 'Surat, Gujarat',
@@ -591,32 +599,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/Rajhans Precia/DJI_20250120213924_0431_D.jpg",
+        "url": "images/Rajhans precia/DJI_20250120213924_0431_D.jpg",
         "alt": "Rajhans Precia Aerial Night View"
       },
       {
-        "url": "images/Rajhans Precia/KZP00127.jpg",
+        "url": "images/Rajhans precia/KZP00127.jpg",
         "alt": "Rajhans Precia Concession Lounge"
       },
       {
-        "url": "images/Rajhans Precia/KZP00285.jpg",
+        "url": "images/Rajhans precia/KZP00285.jpg",
         "alt": "Rajhans Precia Cinema Lobby Architecture"
       },
       {
-        "url": "images/Rajhans Precia/KZP00350.jpg",
+        "url": "images/Rajhans precia/KZP00350.jpg",
         "alt": "Rajhans Precia Atrium Promenade"
       },
       {
-        "url": "images/Rajhans Precia/KZP00183.jpg",
+        "url": "images/Rajhans precia/KZP00183.jpg",
         "alt": "Rajhans Precia Modern Interiors"
       },
       {
-        "url": "images/Rajhans Precia/KZP00451.jpg",
+        "url": "images/Rajhans precia/KZP00451.jpg",
         "alt": "Rajhans Precia Premium Retail"
       }
     ],
     related: ['rajhans-skylar', 'times-tower-new', 'devgn-cinex-bellona'],
-    cardImage: 'images/Rajhans Precia/DJI_20250120213924_0431_D.jpg'
+    cardImage: 'images/Rajhans precia/DJI_20250120213924_0431_D.jpg'
   },
 
   // Safety fallbacks for additional cards from expertise pages:
