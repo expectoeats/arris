@@ -13,7 +13,7 @@ const ARRIS_PROJECTS = {
     year: '2026',
     heroImage: 'images/Devgn Cinex Bellona/2.jpeg',
     storyImage: 'images/Devgn Cinex Bellona/1.jpeg',
-    description: "Inspired by Art Deco elegance, the interiors of the Devgn Cinex Bellona cinema in Mumbai celebrates bold geometry, rich symmetry, and metallic accents, layered with retro nostalgia — marquee signage, plush velvet seating, vintage posters, and patterned carpets. The fusion creates an atmosphere where every corner echoes the romance of yesterday's drama while captivating today's audience.",
+    description: "Inspired by Art Deco elegance, the interiors of this Devgn Cinemas flagship property in Mumbai celebrates bold geometry, rich symmetry, and metallic accents, layered with retro nostalgia—marquee signage, plush velvet seating, vintage posters, and patterned carpets. This fusion creates an atmosphere where every corner echoes the romance of yesterday's cinema while resonating with today's audience.",
     specs: {
       location: 'Thane',
       scope: 'Cinema, Interiors',
@@ -109,7 +109,7 @@ const ARRIS_PROJECTS = {
     year: '2026',
     heroImage: 'images/homepage/project 2.jpg.jpeg',
     storyImage: 'images/DPS Hazaribaug/_U2A2008.jpg',
-    description: "DPS Hazaribaug represents a benchmark in institutional architecture, seamlessly integrating open-air learning pavilions with sustainable climate-responsive building envelopes. The campus utilizes passive solar orientation, shaded courtyards, and native landscaping to craft an inspiring, calm educational sanctuary for future generations.",
+    description: "DPS Hazaribaug presents a strong architectural presence defined by its rhythmic facade and bold vertical frames. The building overlooks a generous sports ground, creating a clear visual connection between the academic spaces and the active campus landscape. Its formal geometry and restrained material palette lend the campus a sense of timelessness, authority, and institutional character.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Campus Masterplan, Architecture, Interiors',
@@ -157,7 +157,7 @@ const ARRIS_PROJECTS = {
     year: 'Ongoing',
     heroImage: 'images/aldona Villa/1_8.jpg',
     storyImage: 'images/aldona Villa/4_5.jpg',
-    description: "Nestled into the lush riverside topography of Aldona, this private sanctuary marries traditional Goan vernacular architecture with streamlined contemporary luxury. Deep verandas, exposed timber rafters, and cascading water features blur the boundaries between domestic intimacy and surrounding nature.",
+    description: "The villa, designed for a nuclear urban family, offers a serene escape in Aldona, a picturesque village along the Mapusa river, renowned for its tranquility and lush landscapes. The design harmonizes with the natural environment, minimizing impact on the site while embracing the site's natural contours. A central concept of fluidity and continuity guides the layout, where spaces flow seamlessly, eliminating corners and walls to encourage movement and interaction. Open courtyards and green pockets foster a connection between the indoors and nature, enhancing the overall aesthetic while creating a nurturing, communal atmosphere.",
     specs: {
       location: 'Aldona, Goa',
       scope: 'Architecture, Interior Design, Landscape',
@@ -205,7 +205,7 @@ const ARRIS_PROJECTS = {
     year: '2019',
     heroImage: 'images/Times tower new/E_PHX2662_LR.jpg',
     storyImage: 'images/Times tower new/E_PHX2667_LR.jpg',
-    description: "Times Tower New redefines commercial corporate environments in Mumbai. With an emphasis on flexible workspaces, acoustic privacy, and high-performance energy envelopes, the tower delivers state-of-the-art corporate infrastructure that fosters collaborative focus and organizational prestige.",
+    description: "Times Tower New is a contemporary commercial office interior designed to create a refined and dynamic workplace environment. The design brings together warm wood finishes, glass partitions, textured surfaces and integrated lighting to balance a formal corporate character with comfortable collaborative spaces. Carefully curated furniture, artwork, and colour accents add warmth and identity across the boardrooms, lounges, reception and meeting areas. The result is a cohesive workplace that combines functionality and sophistication.",
     specs: {
       location: 'Mumbai, Maharashtra',
       scope: 'Commercial Architecture, Workspace Interiors',
@@ -253,7 +253,7 @@ const ARRIS_PROJECTS = {
     year: '2022',
     heroImage: 'images/Devgn Cinex Ahmedabad/01.jpg',
     storyImage: 'images/Devgn Cinex Ahmedabad/02.jpg',
-    description: "Devgn Cinex Ahmedabad elevates theatrical architecture into a multisensory art form. Featuring parametric ceiling baffles, warm brass lighting accents, and custom acoustic wall compositions, every space is tuned to immerse viewers in uncompromised luxury and theatrical grandeur.",
+    description: "Named after actor Ajay Devgn, the owner, this cinema is one of the most premium and luxurious properties of the 'Devgn Cinema' chain with state-of-the-art features and amenities for Ahmedabad's movie-goers to enjoy. This multiplex is filled with comfort, luxury, and a homely feeling all of which is enveloped by filmy, 'Bollywood'-inspired interiors.",
     specs: {
       location: 'Ahmedabad, Gujarat',
       scope: 'Multiplex Architecture, Cinema Interiors, F&B',
@@ -301,7 +301,7 @@ const ARRIS_PROJECTS = {
     year: '2020',
     heroImage: 'images/IB Suncity/Suncity School-5.jpg',
     storyImage: 'images/IB Suncity/Suncity School-13.jpg',
-    description: "Designed for progressive international education, IB Suncity balances vibrant communal recreation pods with focused study zones. Sunlit central corridors, ergonomic learning classrooms, and eco-friendly tactile materials create an inspiring campus atmosphere for students of all ages.",
+    description: "Instead of a traditional classroom structure, coming from an industrial way of thinking about schools, the space was organized so as to have a positive impact on how you behave, move around and learn. A learning journey is thus created, from early years to high school, utilizing the IB resources and supporting the school's vision for team-teaching, flexible learning groups and individualized timetables. Ample space around each student also complies with the IB rules unlike shared desk seating.",
     specs: {
       location: 'Gurugram, Haryana',
       scope: 'Campus Masterplan, Educational Interiors',
@@ -349,7 +349,7 @@ const ARRIS_PROJECTS = {
     year: 'Ongoing',
     heroImage: 'images/AHS Hazaribaug/DSC06724.JPG.jpg',
     storyImage: 'images/AHS Hazaribaug/DSC06574.jpg',
-    description: "AHS Hazaribaug integrates traditional institutional permanence with responsive contemporary architectural craft. The complex features tiered auditoriums, modular STEM laboratories, and shaded perimeter circulation corridors harmoniously anchored into the surrounding landscape.",
+    description: "The design for this school is based off the 7 senses supporting a child's sensory development leading to an inter and intra-personal growth. The solid standing entrance frames are set against subdued curved forms in the landscape. The intermingling of the 3 solid frames carves out a combination of indoor and outdoor spaces in between them. These symbolize the journey of a child amidst the education system, eventually coming out as an extremely evolved version of themselves.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Architecture, Structural Design, Campus Planning',
@@ -397,7 +397,7 @@ const ARRIS_PROJECTS = {
     year: '2026',
     heroImage: 'images/LA Trichy/1.jpg',
     storyImage: 'images/LA Trichy/2.jpg',
-    description: "LA Trichy brings international standard cinema architecture to Tamil Nadu. Featuring fluted timber wall treatments, golden architectural arches, and expansive multi-level reception lobbies, it stands as a premier regional cinema entertainment destination.",
+    description: "The interior design represents flow through both physical forms and movements through the space. The seamless transition between the ancillary spaces and theatres is brought to life through meticulously designed curves, versatile use of marble and contrasting materials for a dynamic visual effect.",
     specs: {
       location: 'Tiruchirappalli, Tamil Nadu',
       scope: 'Multiplex Architecture, Premium Lounges',
@@ -445,7 +445,7 @@ const ARRIS_PROJECTS = {
     year: '2025',
     heroImage: 'images/bottle house/1.jpg',
     storyImage: 'images/bottle house/BOTTLE HOUSE 3.jpg',
-    description: "An innovative residential villa crafted around organic fluidity and environmental sustainability. Featuring distinctive curvilinear silhouettes, natural thermal cooling masonry, and floor-to-ceiling glass pavilions opening onto private garden courtyards.",
+    description: "This contemporary residence is a harmonious blend of modern architectural expression and luxury. Defined by geometric forms, a rich interplay of stone, warm wood, and expansive glazing, the design creates an identity without imposing on the existing surroundings. Thoughtfully integrated courtyards, landscaped pockets, and seamless indoor-outdoor transitions bring nature into the everyday living experience. A 'bottle' as a central concept was an interesting guideline owing to the family's ancestral relationship with the bottle manufacturing business.",
     specs: {
       location: 'Raipur, Chhattisgarh',
       scope: 'Architecture, Sustainable Engineering, Interior',
@@ -493,7 +493,7 @@ const ARRIS_PROJECTS = {
     year: 'Ongoing',
     heroImage: 'images/Hazaribaug Bungalow/Scene 1_1.jpg',
     storyImage: 'images/Hazaribaug Bungalow/FORMAL LIVING ROOM.jpg',
-    description: "Set against tranquil forested foothills, Hazaribaug Bungalow reinterprets classic residential architecture through local dry-stacked stone, deep cantilevered overhangs, and continuous sightlines that bring the surrounding landscape directly into the home.",
+    description: "Rooted in the serene landscape of Hazaribagh, this residence is envisioned as a contemporary sanctuary that seamlessly blends modern architecture with the tranquility of nature. Defined by clean geometric forms, expansive glazing and a warm palette of natural materials, the design creates a dialogue between indoor and outdoor living. Thoughtfully curated interiors, landscaped courtyards and intimate gathering spaces bring together understated luxury and everyday comfort. The result is a home that celebrates the art of refined living.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Residential Architecture, Landscape, Interior',
@@ -541,7 +541,7 @@ const ARRIS_PROJECTS = {
     year: '2024',
     heroImage: 'images/Devgn Cinex Elan/02.jpg',
     storyImage: 'images/Devgn Cinex Elan/03.jpg',
-    description: "Located within Gurugram's prime lifestyle retail hub, Devgn Cinex Elan introduces boutique cinema luxury. Ergonomic plush recliners, intimate acoustic volumes, and sculptural brass light installations deliver an unforgettable entertainment journey.",
+    description: "This cinema experience is a delightful fusion of luxury and community connection which embraces the drama and grandeur of storytelling. The narrative here balances the cutting-edge modernity of a global metropolis and the deep cultural threads that tie it back to India's cinematic tradition.",
     specs: {
       location: 'Gurugram, Haryana',
       scope: 'Multiplex Interiors, VIP Lounges, Acoustics',
@@ -589,7 +589,7 @@ const ARRIS_PROJECTS = {
     year: '2024',
     heroImage: 'images/Rajhans precia/DJI_20250120213924_0431_D.jpg',
     storyImage: 'images/Rajhans precia/KZP00127.jpg',
-    description: "Rajhans Precia is an ultra-premium diamond retail and commercial landmark in Surat. An undulating parametric glass envelope, grand central sunlit atrium, and seamless circulation provide an international-caliber retail and corporate atmosphere.",
+    description: "Conceived as a landmark entertainment destination, this 14-screen multiplex brings together contemporary architecture and state-of-the-art amenities to redefine the cinematic experience in Surat. The design strikes a balance between bold architectural expression and refined interiors, creating a seamless journey from arrival to the big screen. Reflecting Surat's evolution into a thriving urban and commercial hub, the project embodies the city's growing appetite for world-class leisure and lifestyle destinations.",
     specs: {
       location: 'Surat, Gujarat',
       scope: 'Commercial Mall, Retail Interiors, Atrium',
