@@ -483,8 +483,8 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Hazaribaug',
     year: 'Ongoing',
-    heroImage: 'images/Hazaribaug Bungalow/Scene 1_1.png',
-    storyImage: 'images/Hazaribaug Bungalow/FORMAL LIVING ROOM.png',
+    heroImage: 'images/Hazaribaug Bungalow/Scene 1_1.jpg',
+    storyImage: 'images/Hazaribaug Bungalow/FORMAL LIVING ROOM.jpg',
     description: "Set against tranquil forested foothills, Hazaribaug Bungalow reinterprets classic residential architecture through local dry-stacked stone, deep cantilevered overhangs, and continuous sightlines that bring the surrounding landscape directly into the home.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
@@ -495,32 +495,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/Hazaribaug Bungalow/Scene 1_1.png",
+        "url": "images/Hazaribaug Bungalow/Scene 1_1.jpg",
         "alt": "Hazaribaug Bungalow Front Elevation"
       },
       {
-        "url": "images/Hazaribaug Bungalow/FORMAL LIVING ROOM.png",
+        "url": "images/Hazaribaug Bungalow/FORMAL LIVING ROOM.jpg",
         "alt": "Hazaribaug Bungalow Formal Living Room"
       },
       {
-        "url": "images/Hazaribaug Bungalow/DINING.png",
+        "url": "images/Hazaribaug Bungalow/DINING.jpg",
         "alt": "Hazaribaug Bungalow Dining Lounge"
       },
       {
-        "url": "images/Hazaribaug Bungalow/CANOPY.png",
+        "url": "images/Hazaribaug Bungalow/CANOPY.jpg",
         "alt": "Hazaribaug Bungalow Garden Canopy"
       },
       {
-        "url": "images/Hazaribaug Bungalow/ENTRY 1.png",
+        "url": "images/Hazaribaug Bungalow/ENTRY 1.jpg",
         "alt": "Hazaribaug Bungalow Entrance Gateway"
       },
       {
-        "url": "images/Hazaribaug Bungalow/GATE 2.png",
+        "url": "images/Hazaribaug Bungalow/GATE 2.jpg",
         "alt": "Hazaribaug Bungalow Perimeter Wall"
       }
     ],
     related: ['aldona-villa', 'bottle-house', 'dps-hazaribaug'],
-    cardImage: 'images/Hazaribaug Bungalow/Scene 1_1.png'
+    cardImage: 'images/Hazaribaug Bungalow/Scene 1_1.jpg'
   },
 
   // 12. Devgn Cinex Elan (Cinemas, Gurugram)

@@ -98,18 +98,35 @@
 }
 
 /* Variant 4: Body — paragraphs, links, labels, UI / micro text */
-.t-body {
-  font-size: 18px;
+p, .t-body {
+  font-size: 18px !important;
   line-height: 27px;
 }
 @media (min-width: 640px) {
-  .t-body {
-    font-size: 18px;
+  p, .t-body {
+    font-size: 18px !important;
+    line-height: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  p, .t-body {
+    font-size: 18px !important;
     line-height: 28px;
   }
 }
 
-/* Variant 4b: Body Small — award descriptions / secondary metadata
+/* Variant 4b: Specification Labels — 14px on desktop as per request */
+.t-spec-label {
+  font-size: 18px !important; /* Default/Mobile matching t-body */
+}
+@media (min-width: 1024px) {
+  .t-spec-label {
+    font-size: 14px !important;
+    line-height: 1.2;
+  }
+}
+
+/* Variant 4c: Body Small — award descriptions / secondary metadata
    (one step below Body) */
 .t-body-sm {
   font-size: 14px;
