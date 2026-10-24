@@ -134,6 +134,35 @@
       resize: vertical;
       min-height: 80px;
     }
+
+    /* ── Success Popup ── */
+    #success-popup-overlay {
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #success-popup-overlay.popup-visible {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+    #success-popup-card {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity  0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #success-popup-overlay.popup-visible #success-popup-card {
+      transform: translateY(0) !important;
+      opacity: 1 !important;
+    }
+    /* Checkmark draw animation */
+    @keyframes checkDraw {
+      from { stroke-dashoffset: 30; opacity: 0; }
+      to   { stroke-dashoffset: 0;  opacity: 1; }
+    }
+    #success-popup-overlay.popup-visible #popup-check-icon {
+      animation: checkDraw 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+    }
+    #popup-check-icon {
+      stroke-dasharray: 30;
+      stroke-dashoffset: 30;
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -443,8 +472,9 @@
             <!-- Email -->
             <div>
               <div class="text-white/60 t-body font-[300] tracking-[0.02em] mb-2">Email</div>
-              <a href="mailto:resume.arrisarch@gmail.com" class="text-white t-body font-[300] hover:text-white/80 transition-colors">
-                resume.arrisarch@gmail.com
+              <!-- <a href="mailto:resume.arrisarch@gmail.com" class="text-white t-body font-[300] hover:text-white/80 transition-colors"> -->
+              <a href="mailto:adarshsingh10803@gmail.com" class="text-white t-body font-[300] hover:text-white/80 transition-colors">
+                adarshsingh10803@gmail.com (Development Testing Email)
               </a>
             </div>
 
@@ -461,22 +491,22 @@
         </div>
 
         <!-- Right Col: Form -->
-        <form class="w-full lg:w-1/2 space-y-2 sm:space-y-3 pt-1" data-reveal-text data-delay="1">
+        <form id="careers-form" class="w-full lg:w-1/2 space-y-2 sm:space-y-3 pt-1" data-reveal-text data-delay="1">
           <div>
-            <input type="text" placeholder="John Doe" class="career-input" autocomplete="name">
+            <input id="career-name" type="text" name="from_name" placeholder="Full Name" class="career-input" autocomplete="name" required>
           </div>
           <div>
-            <input type="email" placeholder="john@example.com" class="career-input" autocomplete="email">
+            <input id="career-email" type="email" name="from_email" placeholder="Email Address" class="career-input" autocomplete="email" required>
           </div>
           <div>
-            <input type="url" placeholder="https://..." class="career-input" autocomplete="off">
+            <input id="career-portfolio" type="url" name="portfolio" placeholder="Portfolio URL (https://...)" class="career-input" autocomplete="off">
           </div>
           <div class="mb-6 sm:mb-8">
-            <textarea placeholder="Brief introduction..." class="career-input" rows="3"></textarea>
+            <textarea id="career-message" name="message" placeholder="Brief introduction..." class="career-input" rows="3"></textarea>
           </div>
-          <button type="submit" class="group relative inline-flex items-center justify-center overflow-hidden border border-white bg-transparent text-white px-5 sm:px-6 py-3 t-nav font-[300] tracking-[0.22em] uppercase transition-all duration-500 hover:text-black">
+          <button type="submit" id="careers-submit-btn" class="group relative inline-flex items-center justify-center overflow-hidden border border-white bg-transparent text-white px-5 sm:px-6 py-3 t-nav font-[300] tracking-[0.22em] uppercase transition-all duration-500 hover:text-black">
             <span class="absolute inset-0 origin-bottom translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
-            <span class="relative z-10">SUBMIT APPLICATION</span>
+            <span class="relative z-10" id="careers-btn-text">SUBMIT APPLICATION</span>
           </button>
         </form>
       </div>
@@ -665,15 +695,159 @@
       </div>
     </footer>
 
+  <!-- ========================================================================= -->
+  <!-- SUCCESS POPUP MODAL                                                       -->
+  <!-- ========================================================================= -->
+  <div id="success-popup-overlay" aria-modal="true" role="dialog" aria-labelledby="popup-title" class="fixed inset-0 z-[200] flex items-center justify-center px-5 opacity-0 pointer-events-none" style="transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);">
+    
+    <!-- Backdrop -->
+    <div id="popup-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+    <!-- Card -->
+    <div id="success-popup-card" class="relative z-10 w-full max-w-[540px] bg-[#151515] border border-white/10 px-10 sm:px-14 py-7 sm:py-8 flex flex-col items-start" style="transform: translateY(32px); transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), opacity 0.4s cubic-bezier(0.16,1,0.3,1); opacity: 0;">
+
+      <!-- Close Button -->
+      <button id="popup-close-btn" aria-label="Close" class="absolute top-5 right-5 text-white/40 hover:text-white transition-colors duration-200 focus:outline-none">
+        <i data-lucide="x" class="w-4 h-4 stroke-[1.5]"></i>
+      </button>
+
+      <!-- Top row: label + checkmark side by side -->
+      <div class="flex items-center gap-4 mb-4 w-full">
+        <div class="w-9 h-9 border border-white/20 flex items-center justify-center flex-shrink-0">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline id="popup-check-icon" points="4 12 9 17 20 7"></polyline>
+          </svg>
+        </div>
+        <span class="text-white/50 t-nav font-[300] tracking-[0.22em] uppercase text-xs">Application Received</span>
+      </div>
+
+      <!-- Heading -->
+      <h2 id="popup-title" class="text-white t-heading font-[300] leading-snug tracking-normal mb-2">
+        Thank you for reaching out.
+      </h2>
+
+      <!-- Body Text -->
+      <p class="text-white/60 t-body font-[300] leading-[1.6] max-w-[400px] mb-5">
+        We've received your application and will review it carefully. If your profile aligns with our current openings, our team will be in touch.
+      </p>
+
+      <!-- Divider -->
+      <div class="w-full border-t border-white/10 mb-5"></div>
+
+      <!-- Info Row -->
+      <div class="flex flex-row gap-12 w-full mb-7">
+        <div>
+          <div class="text-white/40 t-nav font-[300] tracking-[0.15em] uppercase text-[10px] mb-2">Response Time</div>
+          <div class="text-white/90 t-body font-[300]">7–14 business days</div>
+        </div>
+        <div>
+          <div class="text-white/40 t-nav font-[300] tracking-[0.15em] uppercase text-[10px] mb-2">Direct Enquiries</div>
+          <a href="mailto:resume.arrisarch@gmail.com" class="text-white/90 t-body font-[300] hover:text-white transition-colors">resume.arrisarch@gmail.com</a>
+        </div>
+      </div>
+
+      <!-- CTA — full width, centered -->
+      <div class="w-full flex justify-center">
+        <button id="popup-done-btn" class="group relative inline-flex items-center justify-center overflow-hidden border border-white/30 bg-transparent text-white px-10 py-3 t-nav font-[300] tracking-[0.22em] uppercase transition-all duration-500 hover:text-black focus:outline-none">
+          <span class="absolute inset-0 origin-bottom translate-y-full bg-white transition-transform duration-500 ease-out group-hover:translate-y-0"></span>
+          <span class="relative z-10">BACK TO HOME</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "obIiG7CGhu0eHQFNj" });
+    })();
+  </script>
+
   <!-- Scripts -->
   <script>
     lucide.createIcons();
 
-    // Mobile Drawer Toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const closeBtn = document.getElementById('mobile-menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navLinks = document.querySelectorAll('.mobile-nav-link');
+    // ── Success Popup Logic ────────────────────────────────────────────────────
+    const popupOverlay   = document.getElementById('success-popup-overlay');
+    const popupCloseBtn  = document.getElementById('popup-close-btn');
+    const popupDoneBtn   = document.getElementById('popup-done-btn');
+    const popupBackdrop  = document.getElementById('popup-backdrop');
+    const careerForm     = document.getElementById('careers-form');
+    const submitBtn      = document.getElementById('careers-submit-btn');
+    const submitBtnText  = document.getElementById('careers-btn-text');
+
+    function openPopup() {
+      document.body.classList.add('overflow-hidden');
+      popupOverlay.classList.add('popup-visible');
+      document.getElementById('success-popup-card').setAttribute('tabindex', '-1');
+      document.getElementById('success-popup-card').focus();
+    }
+
+    function closePopup() {
+      popupOverlay.classList.remove('popup-visible');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    // Form submit → send email via EmailJS → show popup
+    if (careerForm) {
+      careerForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Show loading state on button
+        submitBtn.disabled = true;
+        submitBtnText.textContent = 'SENDING...';
+
+        const templateParams = {
+          from_name:  document.getElementById('career-name').value,
+          from_email: document.getElementById('career-email').value,
+          portfolio:  document.getElementById('career-portfolio').value || 'Not provided',
+          message:    document.getElementById('career-message').value,
+        };
+
+        emailjs.send('service_zd852b8', 'template_c0rmub6', templateParams)
+          .then(function () {
+            // Success — reset form, show popup
+            careerForm.reset();
+            submitBtn.disabled = false;
+            submitBtnText.textContent = 'SUBMIT APPLICATION';
+            openPopup();
+          }, function (error) {
+            // Error — restore button, alert user
+            submitBtn.disabled = false;
+            submitBtnText.textContent = 'SUBMIT APPLICATION';
+            console.error('EmailJS error:', error);
+            alert('Something went wrong. Please email us directly at resume.arrisarch@gmail.com');
+          });
+      });
+    }
+
+    // Close via × button
+    if (popupCloseBtn) popupCloseBtn.addEventListener('click', closePopup);
+
+    // Close via "BACK TO HOME" → navigate to index after animation
+    if (popupDoneBtn) {
+      popupDoneBtn.addEventListener('click', function () {
+        closePopup();
+        setTimeout(function () { window.location.href = 'index.html'; }, 300);
+      });
+    }
+
+    // Close via backdrop click
+    if (popupBackdrop) popupBackdrop.addEventListener('click', closePopup);
+
+    // Close via Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePopup();
+    });
+    // ── End Popup Logic ────────────────────────────────────────────────────────
+
+    // ── Mobile Drawer Toggle ───────────────────────────────────────────────────
+    const menuBtn        = document.getElementById('mobile-menu-btn');
+    const drawerCloseBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu     = document.getElementById('mobile-menu');
+    const navLinks       = document.querySelectorAll('.mobile-nav-link');
 
     function openMenu() {
       mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
@@ -687,9 +861,10 @@
       document.body.classList.remove('overflow-hidden');
     }
 
-    if (menuBtn) menuBtn.addEventListener('click', openMenu);
-    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    if (menuBtn)        menuBtn.addEventListener('click', openMenu);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(function (link) { link.addEventListener('click', closeMenu); });
+    // ── End Mobile Drawer ──────────────────────────────────────────────────────
   </script>
 
 

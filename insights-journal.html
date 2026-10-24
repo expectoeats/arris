@@ -72,7 +72,19 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION & NAVIGATION                                              -->
   <!-- ========================================================================= -->
-  <header class="relative bg-arris-navy w-full h-[40vh] min-h-[350px] z-30">
+  <header id="hero-section" class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden">
+    <!-- Hero Background (Current: Navy Color, Future: Image) -->
+    <div class="hero-media-wrapper bg-arris-navy show">
+      <!-- Future Image Placeholder -->
+      <!-- <img src="images/insight/hero.jpg" alt="Insights Hero" class="hero-bg-animate" /> -->
+      
+      <!-- Gradient overlay for legibility (matches index.html/about.html) -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+      ></div>
+    </div>
+
     <nav
       class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate"
     >
@@ -168,8 +180,19 @@
       </button>
     </nav>
 
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none px-6">
-      <h1 class="text-white t-display font-[300] tracking-tight hero-content-animate" data-reveal-text>
+    <!-- Desktop Hero Text Overlay (Bottom-Left matching other pages) -->
+    <div class="hidden lg:block absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-20 hero-content-animate">
+      <span class="block text-white/80 t-nav font-[300] tracking-[0.22em] uppercase mb-2">
+        INSIGHTS
+      </span>
+      <h1 class="text-white t-display font-[300] leading-tight tracking-normal" data-reveal-text>
+        Insights & Journal
+      </h1>
+    </div>
+
+    <!-- Mobile Hero Title (Centered matching other pages) -->
+    <div class="lg:hidden absolute inset-0 flex items-center justify-center px-6 pointer-events-none z-20">
+      <h1 class="text-white t-heading font-[300] tracking-tight text-center hero-content-animate" data-reveal-text>
         Insights & Journal
       </h1>
     </div>
@@ -212,10 +235,10 @@
         <div class="aspect-[16/9] overflow-hidden rounded-[4px]">
           <img id="main-slider-img" src="images/insight/insight.png" alt="Arora Residence, Raipur" class="w-full h-full object-cover" />
         </div>
-        <!-- Prev Arrow (Matching Homepage Awards Design) -->
+        <!-- Prev Arrow (Exactly matching homepage Awards section arrows and positioning) -->
         <button
           id="prev-btn"
-          class="flex absolute left-2 sm:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black bg-white/80 sm:bg-transparent hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
+          class="flex absolute left-2 sm:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
           aria-label="Previous image"
         >
           <svg
@@ -235,10 +258,10 @@
           </svg>
         </button>
 
-        <!-- Next Arrow (Matching Homepage Awards Design) -->
+        <!-- Next Arrow (Exactly matching homepage Awards section arrows and positioning) -->
         <button
           id="next-btn"
-          class="flex absolute right-2 sm:-right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black bg-white/80 sm:bg-transparent hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
+          class="flex absolute right-2 sm:-right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
           aria-label="Next image"
         >
           <svg
