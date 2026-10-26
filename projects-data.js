@@ -155,8 +155,8 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Aldona, Goa',
     year: 'Ongoing',
-    heroImage: 'images/aldona Villa/1_8.jpg',
-    storyImage: 'images/aldona Villa/4_5.jpg',
+    heroImage: 'images/Aldona Villa/1_8.jpg',
+    storyImage: 'images/Aldona Villa/4_5.jpg',
     description: "The villa, designed for a nuclear urban family, offers a serene escape in Aldona, a picturesque village along the Mapusa river, renowned for its tranquility and lush landscapes. The design harmonizes with the natural environment, minimizing impact on the site while embracing the site's natural contours. A central concept of fluidity and continuity guides the layout, where spaces flow seamlessly, eliminating corners and walls to encourage movement and interaction. Open courtyards and green pockets foster a connection between the indoors and nature, enhancing the overall aesthetic while creating a nurturing, communal atmosphere.",
     specs: {
       location: 'Aldona, Goa',
@@ -167,32 +167,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/aldona Villa/1_8.jpg",
+        "url": "images/Aldona Villa/1_8.jpg",
         "alt": "Aldona Villa Riverside Elevation"
       },
       {
-        "url": "images/aldona Villa/4_5.jpg",
+        "url": "images/Aldona Villa/4_5.jpg",
         "alt": "Aldona Villa Architecture & Landscape"
       },
       {
-        "url": "images/aldona Villa/10 FINAL_2.jpg",
+        "url": "images/Aldona Villa/10 FINAL_2.jpg",
         "alt": "Aldona Villa Pool View"
       },
       {
-        "url": "images/aldona Villa/11_7.jpg",
+        "url": "images/Aldona Villa/11_7.jpg",
         "alt": "Aldona Villa Exterior Evening"
       },
       {
-        "url": "images/aldona Villa/LR-1_7.jpg",
+        "url": "images/Aldona Villa/LR-1_7.jpg",
         "alt": "Aldona Villa Living Room"
       },
       {
-        "url": "images/aldona Villa/BED-1-2_3.jpg",
+        "url": "images/Aldona Villa/BED-1-2_3.jpg",
         "alt": "Aldona Villa Master Bedroom"
       }
     ],
     related: ['bottle-house', 'hazaribaug-bungalow', 'rajhans-skylar'],
-    cardImage: 'images/aldona Villa/1_8.jpg'
+    cardImage: 'images/Aldona Villa/1_8.jpg'
   },
 
   // 5. Times Tower New (Commercial, Mumbai)
@@ -348,7 +348,7 @@ const ARRIS_PROJECTS = {
     location: 'Hazaribaug',
     year: 'Ongoing',
     heroImage: 'images/AHS Hazaribaug/DSC06724.JPG.jpg',
-    storyImage: 'images/AHS Hazaribaug/DSC06574.jpg',
+    storyImage: 'images/AHS Hazaribaug/DSC06574.JPG',
     description: "The design for this school is based off the 7 senses supporting a child's sensory development leading to an inter and intra-personal growth. The solid standing entrance frames are set against subdued curved forms in the landscape. The intermingling of the 3 solid frames carves out a combination of indoor and outdoor spaces in between them. These symbolize the journey of a child amidst the education system, eventually coming out as an extremely evolved version of themselves.",
     specs: {
       location: 'Hazaribaug, Jharkhand',
@@ -363,23 +363,23 @@ const ARRIS_PROJECTS = {
         "alt": "AHS Hazaribaug Campus Overview"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06574.jpg",
+        "url": "images/AHS Hazaribaug/DSC06574.JPG",
         "alt": "AHS Hazaribaug Main Academic Block"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06591.jpg",
+        "url": "images/AHS Hazaribaug/DSC06591.JPG",
         "alt": "AHS Hazaribaug Academic Building"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06622.jpg",
+        "url": "images/AHS Hazaribaug/DSC06622.JPG",
         "alt": "AHS Hazaribaug School Courtyard"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06691.jpg",
+        "url": "images/AHS Hazaribaug/DSC06691.JPG",
         "alt": "AHS Hazaribaug Campus Pathway"
       },
       {
-        "url": "images/AHS Hazaribaug/DSC06712.jpg",
+        "url": "images/AHS Hazaribaug/DSC06712.JPG",
         "alt": "AHS Hazaribaug Institutional Facade"
       }
     ],
@@ -443,8 +443,8 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Raipur',
     year: '2025',
-    heroImage: 'images/bottle house/1.jpg',
-    storyImage: 'images/bottle house/BOTTLE HOUSE 3.jpg',
+    heroImage: 'images/Bottle house/1.jpg',
+    storyImage: 'images/Bottle house/BOTTLE HOUSE 3.jpg',
     description: "This contemporary residence is a harmonious blend of modern architectural expression and luxury. Defined by geometric forms, a rich interplay of stone, warm wood, and expansive glazing, the design creates an identity without imposing on the existing surroundings. Thoughtfully integrated courtyards, landscaped pockets, and seamless indoor-outdoor transitions bring nature into the everyday living experience. A 'bottle' as a central concept was an interesting guideline owing to the family's ancestral relationship with the bottle manufacturing business.",
     specs: {
       location: 'Raipur, Chhattisgarh',
@@ -455,32 +455,32 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/bottle house/1.jpg",
+        "url": "images/Bottle house/1.jpg",
         "alt": "Bottle House Iconic Facade"
       },
       {
-        "url": "images/bottle house/2.jpg",
+        "url": "images/Bottle house/2.jpg",
         "alt": "Bottle House Modern Architecture"
       },
       {
-        "url": "images/bottle house/BOTTLE HOUSE 3.jpg",
+        "url": "images/Bottle house/BOTTLE HOUSE 3.jpg",
         "alt": "Bottle House Curvilinear Design"
       },
       {
-        "url": "images/bottle house/D5_Scene 11_20240216_153737.jpg",
+        "url": "images/Bottle house/D5_Scene 11_20240216_153737.jpg",
         "alt": "Bottle House Garden View"
       },
       {
-        "url": "images/bottle house/D5_Scene 12_20240216_153922.jpg",
+        "url": "images/Bottle house/D5_Scene 12_20240216_153922.jpg",
         "alt": "Bottle House Interior Pavilion"
       },
       {
-        "url": "images/bottle house/D5_Scene 13_20240216_155330.jpg",
+        "url": "images/Bottle house/D5_Scene 13_20240216_155330.jpg",
         "alt": "Bottle House Night View"
       }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'rajhans-precia'],
-    cardImage: 'images/bottle house/1.jpg'
+    cardImage: 'images/Bottle house/1.jpg'
   },
 
   // 11. Hazaribaug Bungalow (Residential, Hazaribaug)

@@ -1,157 +1,166 @@
-
-@font-face {
-  font-family: 'SF Pro Display';
-  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Heading Font — Beausite Fit Trial */
-@font-face {
-  font-family: 'BeausiteFit';
-  src: url('font/heading-font/BeausiteFitTrial-Thin-BF6424edbf331f1.otf') format('opentype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'BeausiteFit';
-  src: url('font/heading-font/BeausiteFitTrial-Light-BF6424edbf3ecef.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* ==========================================================================
-   ARRIS TYPOGRAPHY DESIGN SYSTEM — 4 CORE TEXT SIZES (SINGLE SOURCE OF TRUTH)
-   --------------------------------------------------------------------------
-   Desktop (>=1024px) : Large Heading 64px | Heading 50px | Sub-heading 32px | Body 18px
-   Tablet  (>=640px)  : Large Heading 48px | Heading 38px | Sub-heading 26px | Body 18px
-   Mobile  (<640px)   : Large Heading 42px | Heading 38px | Sub-heading 24px | Body 18px / line-height 27px
-   --------------------------------------------------------------------------
-   Extra tier (optional) : Body Small 14px mobile / 16px desktop — award descriptions only
-   --------------------------------------------------------------------------
-   Site par sirf yahi 4 sizes use hongi. Size badalna ho to sirf yahan change karein.
-   ========================================================================== */
-
-/* Variant 1: Large Heading — page / project titles */
-.t-display {
-  font-size: 42px;
-}
-@media (min-width: 640px) {
-  .t-display {
-    font-size: 48px;
-  }
-}
-@media (min-width: 1024px) {
-  .t-display {
-    font-size: 64px;
-  }
-}
-
-/* Variant 2: Heading — section titles */
-.t-heading {
-  font-size: 38px;
-}
-@media (min-width: 640px) {
-  .t-heading {
-    font-size: 38px;
-  }
-}
-@media (min-width: 1024px) {
-  .t-heading {
-    font-size: 50px;
-  }
-}
-
-/* Variant 3: Sub-heading — card titles, block / sub titles */
-.t-subheading {
-  font-size: 24px;
-}
-@media (min-width: 640px) {
-  .t-subheading {
-    font-size: 26px;
-  }
-}
-@media (min-width: 1024px) {
-  .t-subheading {
-    font-size: 32px;
-  }
-}
-
-/* Variant 3b: Sub-heading Name — specifically for names in cards (Homepage Testimonials/Leadership) */
-.t-name {
-  font-size: 24px;
-  line-height: 1.1;
-}
-@media (min-width: 640px) {
-  .t-name {
-    font-size: 26px;
-  }
-}
-@media (min-width: 1024px) {
-  .t-name {
-    font-size: 26px;
-  }
-}
-
-/* Variant 4: Body — paragraphs, links, labels, UI / micro text */
-p, .t-body {
-  font-size: 18px !important;
-  line-height: 27px;
-}
-@media (min-width: 640px) {
-  p, .t-body {
-    font-size: 18px !important;
-    line-height: 28px;
-  }
-}
-@media (min-width: 1024px) {
-  p, .t-body {
-    font-size: 18px !important;
-    line-height: 28px;
-  }
-}
-
-/* Variant 4b: Specification Labels — 14px on desktop as per request */
-.t-spec-label {
-  font-size: 18px !important; /* Default/Mobile matching t-body */
-}
-@media (min-width: 1024px) {
-  .t-spec-label {
-    font-size: 14px !important;
-    line-height: 1.2;
-  }
-}
-
-/* Variant 4c: Body Small — award descriptions / secondary metadata
-   (one step below Body) */
-.t-body-sm {
-  font-size: 14px;
-  line-height: 1.25;
-}
-@media (min-width: 640px) {
-  .t-body-sm {
-    font-size: 14px;
-    line-height: 1.25;
-  }
-}
-@media (min-width: 1024px) {
-  .t-body-sm {
-    font-size: 16px;
-    line-height: 24px;
-  }
-}
-
-/* Variant 5: Nav / UI Small — navbar links, project labels, buttons */
-.t-nav {
-  font-size: 12px;
-}
-
-/* Variant 6: Footer Tag — specifically for "Design Studio LLP"
-   (same size on every device, matching the laptop preview) */
-.t-footer-tag {
-  font-size: 12px;
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('font/San-Francisco-Pro-Fonts-master/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Heading Font — Beausite Fit Trial */
+@font-face {
+  font-family: 'BeausiteFit';
+  src: url('font/heading-font/BeausiteFitTrial-Thin-BF6424edbf331f1.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BeausiteFit';
+  src: url('font/heading-font/BeausiteFitTrial-Light-BF6424edbf3ecef.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================================================
+   ARRIS TYPOGRAPHY DESIGN SYSTEM — 4 CORE TEXT SIZES (SINGLE SOURCE OF TRUTH)
+   --------------------------------------------------------------------------
+   Desktop (>=1024px) : Large Heading 64px | Heading 50px | Sub-heading 32px | Body 18px
+   Tablet  (>=640px)  : Large Heading 48px | Heading 38px | Sub-heading 26px | Body 18px
+   Mobile  (<640px)   : Large Heading 42px | Heading 38px | Sub-heading 24px | Body 18px / line-height 27px
+   --------------------------------------------------------------------------
+   Extra tier (optional) : Body Small 14px mobile / 16px desktop — award descriptions only
+   --------------------------------------------------------------------------
+   Site par sirf yahi 4 sizes use hongi. Size badalna ho to sirf yahan change karein.
+   ========================================================================== */
+
+/* Variant 1: Large Heading — page / project titles */
+.t-display {
+  font-size: 42px;
+}
+@media (min-width: 640px) {
+  .t-display {
+    font-size: 48px;
+  }
+}
+@media (min-width: 1024px) {
+  .t-display {
+    font-size: 64px;
+  }
+}
+
+/* Variant 2: Heading — section titles */
+.t-heading {
+  font-size: 38px;
+}
+@media (min-width: 640px) {
+  .t-heading {
+    font-size: 38px;
+  }
+}
+@media (min-width: 1024px) {
+  .t-heading {
+    font-size: 50px;
+  }
+}
+
+/* Variant 3: Sub-heading — card titles, block / sub titles */
+.t-subheading {
+  font-size: 24px;
+}
+@media (min-width: 640px) {
+  .t-subheading {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .t-subheading {
+    font-size: 32px;
+  }
+}
+
+/* Variant 3b: Sub-heading Name — specifically for names in cards (Homepage Testimonials/Leadership) */
+.t-name {
+  font-size: 24px;
+  line-height: 1.1;
+}
+@media (min-width: 640px) {
+  .t-name {
+    font-size: 26px;
+  }
+}
+@media (min-width: 1024px) {
+  .t-name {
+    font-size: 26px;
+  }
+}
+
+/* Variant 4: Body — paragraphs, links, labels, UI / micro text */
+p, .t-body {
+  font-size: 18px !important;
+  line-height: 27px;
+}
+@media (min-width: 640px) {
+  p, .t-body {
+    font-size: 18px !important;
+    line-height: 28px;
+  }
+}
+@media (min-width: 1024px) {
+  p, .t-body {
+    font-size: 18px !important;
+    line-height: 28px;
+  }
+}
+
+/* Variant 4b: Project Specifications Typography Swap
+   - Heading "PROJECT SPECIFICATION" now has the size of the items (14px desktop / 18px mobile)
+   - Items "LOCATION, SCOPE, TYPOLOGY, SITE AREA, STATUS" now have the size of the heading (12px on all devices) */
+.t-spec-title {
+  font-size: 18px !important;
+  line-height: 1.4;
+}
+@media (min-width: 1024px) {
+  .t-spec-title {
+    font-size: 14px !important;
+    line-height: 1.2;
+  }
+}
+
+.t-spec-item,
+.t-spec-label {
+  font-size: 12px !important;
+  line-height: 1.2;
+}
+
+/* Variant 4c: Body Small — award descriptions / secondary metadata
+   (one step below Body) */
+.t-body-sm {
+  font-size: 14px;
+  line-height: 1.25;
+}
+@media (min-width: 640px) {
+  .t-body-sm {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+}
+@media (min-width: 1024px) {
+  .t-body-sm {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* Variant 5: Nav / UI Small — navbar links, project labels, buttons */
+.t-nav {
+  font-size: 12px;
+}
+
+/* Variant 6: Footer Tag — specifically for "Design Studio LLP"
+   (same size on every device, matching the laptop preview) */
+.t-footer-tag {
+  font-size: 12px;
 }

@@ -385,20 +385,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const preloadList = [
       // Expertise images
       'images/Hazaribaug Bungalow/Scene 13_1.jpg',
-      'images/aldona Villa/BED-1-2_3.jpg',
+      'images/Aldona Villa/BED-1-2_3.jpg',
       'images/homepage/project 2.jpg.jpeg',
       'images/Hazaribaug Bungalow/Scene 13_1.jpg',
-      'images/Rajhans precia/DJI_20250120213924_0431_D.jpg',
+      'images/Rajhans Precia/DJI_20250120213924_0431_D.jpg',
       'images/Aldona Villa/17_4.jpg',
       'images/homepage/project 1.2.jpg.jpeg',
-      'images/Rajhans precia/KZP00285.jpg',
-      'images/Rajhans precia/KZP00451.jpg',
+      'images/Rajhans Precia/KZP00285.jpg',
+      'images/Rajhans Precia/KZP00451.jpg',
       // Projects images
       'images/Devgn Cinex Bellona/4.jpeg',
       'images/DPS Hazaribaug/_U2A2047.jpg',
       'images/Rajhans Skylar commercial/Cam_01.jpg',
       'images/projects/bottle_house.png',
-      'images/Times tower new/E_PHX2662_LR.jpg',
+      'images/Times Tower New/E_PHX2662_LR.jpg',
       'images/project-detail/gallery_1_wide.png',
       'images/project-detail/gallery_2_aerial.png',
       // Practice images

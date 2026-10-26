@@ -91,10 +91,31 @@
         image-rendering: auto;
       }
 
+      /* Awards & Recognition: Specific mobile styles for all award cards */
+      @media (max-width: 767px) {
+        #awards-track p.t-body-sm {
+          font-size: 15px !important;
+          line-height: 1.25 !important;
+        }
+        #awards-track p.t-body-sm + p.t-body-sm {
+          margin-top: -2px !important;
+        }
+      }
+
+      /* Testimonials: Perfectly center review cards on mobile */
+      @media (max-width: 1023px) {
+        #testimonials-track {
+          padding-left: max(1.5rem, calc((100vw - 85vw) / 2)) !important;
+          padding-right: max(1.5rem, calc((100vw - 85vw) / 2)) !important;
+          scroll-padding-left: calc((100vw - 85vw) / 2) !important;
+          scroll-padding-right: calc((100vw - 85vw) / 2) !important;
+        }
+      }
+
       /* DPS Hazaribaug: Strictly Mobile Devices Only (< 640px) */
       @media (max-width: 639px) {
         .dps-mobile-align {
-          transform: translate(-3.5%, -20%) scale(1.6) !important;
+          transform: translate(-6%, -20%) scale(1.6) !important;
           transform-origin: center center !important;
         }
       }
@@ -268,7 +289,7 @@
                       <a
                         href="expertise-interior.html"
                         class="expertise-nav-item"
-                        data-img="images/aldona Villa/BED-1-2_3.jpg"
+                        data-img="images/Aldona Villa/BED-1-2_3.jpg"
                         data-peek="images/Aldona Villa/17_4.jpg"
                       >
                         Interiors
@@ -279,7 +300,7 @@
                         href="expertise-schools.html"
                         class="expertise-nav-item"
                         data-img="images/homepage/project 2.jpg.jpeg"
-                        data-peek="images/Rajhans precia/KZP00451.jpg"
+                        data-peek="images/Rajhans Precia/KZP00451.jpg"
                       >
                         Schools
                       </a>
@@ -298,8 +319,8 @@
                       <a
                         href="expertise-commercial.html"
                         class="expertise-nav-item"
-                        data-img="images/Rajhans precia/DJI_20250120213924_0431_D.jpg"
-                        data-peek="images/Rajhans precia/KZP00285.jpg"
+                        data-img="images/Rajhans Precia/DJI_20250120213924_0431_D.jpg"
+                        data-peek="images/Rajhans Precia/KZP00285.jpg"
                       >
                         Commercial
                       </a>
@@ -309,7 +330,7 @@
                         href="expertise-residential.html"
                         class="expertise-nav-item"
                         data-img="images/Aldona Villa/17_4.jpg"
-                        data-peek="images/Rajhans precia/DJI_20250120213924_0431_D.jpg"
+                        data-peek="images/Rajhans Precia/DJI_20250120213924_0431_D.jpg"
                       >
                         Residential
                       </a>
@@ -318,7 +339,7 @@
                       <a
                         href="expertise-entertainment-leisure.html"
                         class="expertise-nav-item"
-                        data-img="images/Rajhans precia/KZP00285.jpg"
+                        data-img="images/Rajhans Precia/KZP00285.jpg"
                         data-peek="images/Hazaribaug Bungalow/Scene 13_1.jpg"
                       >
                         Entertainment &amp; Leisure
@@ -329,7 +350,7 @@
                         href="expertise-auditoriums.html"
                         class="expertise-nav-item"
                         data-img="images/homepage/project 1.2.jpg.jpeg"
-                        data-peek="images/Rajhans precia/KZP00451.jpg"
+                        data-peek="images/Rajhans Precia/KZP00451.jpg"
                       >
                         Auditoriums
                       </a>
@@ -436,14 +457,6 @@
                   <li>
                     <a href="meet-the-team.html" class="studio-nav-item">
                       Meet the team
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="meet-the-team.html#culture"
-                      class="studio-nav-item"
-                    >
-                      Culture
                     </a>
                   </li>
                   <li>
@@ -649,31 +662,75 @@
             </div>
           </li>
 
-          <!-- 4. Studio -->
-          <li>
-            <a
-              href="meet-the-team.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
-              >Studio</a
+          <!-- 4. Studio Accordion -->
+          <li class="mobile-accordion-item">
+            <button
+              type="button"
+              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
             >
+              <span>Studio</span>
+              <i
+                data-lucide="chevron-down"
+                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
+              ></i>
+            </button>
+            <div
+              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
+            >
+              <a
+                href="meet-the-team.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Meet the team</a
+              >
+              <a
+                href="insights-journal.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Insights / Journal</a
+              >
+              <a
+                href="events.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Events</a
+              >
+            </div>
           </li>
 
-          <!-- 5. Publications -->
-          <li>
-            <a
-              href="publications.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
-              >Publications</a
+          <!-- 5. Contact Accordion -->
+          <li class="mobile-accordion-item">
+            <button
+              type="button"
+              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
             >
-          </li>
-
-          <!-- 6. Contact Us -->
-          <li>
-            <a
-              href="contact.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
-              >Contact Us</a
+              <span>Contact</span>
+              <i
+                data-lucide="chevron-down"
+                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
+              ></i>
+            </button>
+            <div
+              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
             >
+              <a
+                href="contact.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Contact Us</a
+              >
+              <a
+                href="careers.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Work with us</a
+              >
+              <a
+                href="about-arris.html#profiles"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Profiles</a
+              >
+              <a
+                href="careers.html"
+                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
+                >Careers</a
+              >
+            </div>
           </li>
         </ul>
       </div>
@@ -1238,7 +1295,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/Rajhans precia/KZP00127.jpg"
+                src="images/Rajhans Precia/KZP00127.jpg"
                 alt="Rajhans Precia Concession Lounge"
               />
             </figure>
@@ -1246,7 +1303,7 @@
           <div class="sticky_gallery--slide">
             <figure class="overflow-hidden rounded-xl sm:rounded-sm shadow-2xl">
               <img
-                src="images/Rajhans precia/KZP00285.jpg"
+                src="images/Rajhans Precia/KZP00285.jpg"
                 alt="Rajhans Precia Chevron Illuminated Auditorium"
               />
             </figure>
@@ -1635,7 +1692,7 @@
         <!-- Testimonials Card & Carousel -->
         <div class="relative flex items-center">
           <div
-            class="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory w-full"
+            id="testimonials-track" class="flex overflow-x-auto lg:grid lg:grid-cols-3 gap-6 pb-4 lg:pb-0 -mx-6 px-6 sm:-mx-12 sm:px-12 xl:mx-0 xl:px-0 no-scrollbar snap-x snap-mandatory w-full"
           >
             <!-- Testimonial 1 (Honourable Shri Manish Jaiswal MoP) -->
             <div
@@ -1765,6 +1822,13 @@
           </div>
         </div>
 
+        <!-- Mobile Testimonials 3-Dots Indicator -->
+        <div class="flex lg:hidden justify-center items-center gap-2 mt-6 mb-2" id="testimonials-dots">
+          <span class="testimonial-dot w-2.5 h-2.5 rounded-full bg-neutral-900 transition-all duration-300"></span>
+          <span class="testimonial-dot w-2 h-2 rounded-full bg-neutral-300 transition-all duration-300"></span>
+          <span class="testimonial-dot w-2 h-2 rounded-full bg-neutral-300 transition-all duration-300"></span>
+        </div>
+
         <!-- View All Button -->
         <div class="mt-8 sm:mt-10">
           <a
@@ -1775,6 +1839,43 @@
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
+        <!-- Testimonials Carousel Dots Sync Script -->
+        <script>
+          (function () {
+            var track = document.getElementById("testimonials-track");
+            var dots = document.querySelectorAll("#testimonials-dots .testimonial-dot");
+            if (!track || !dots.length) return;
+
+            function updateDots() {
+              if (window.innerWidth >= 1024) return;
+              var card = track.querySelector(".flex-none");
+              if (!card) return;
+              var cardWidth = card.offsetWidth;
+              var gap = 24;
+              var activeIndex = Math.round(track.scrollLeft / (cardWidth + gap));
+              activeIndex = Math.max(0, Math.min(activeIndex, dots.length - 1));
+
+              dots.forEach(function (dot, idx) {
+                if (idx === activeIndex) {
+                  dot.className = "testimonial-dot w-2.5 h-2.5 rounded-full bg-neutral-900 transition-all duration-300";
+                } else {
+                  dot.className = "testimonial-dot w-2 h-2 rounded-full bg-neutral-300 transition-all duration-300";
+                }
+              });
+            }
+
+            track.addEventListener("scroll", updateDots, { passive: true });
+            dots.forEach(function (dot, idx) {
+              dot.addEventListener("click", function () {
+                var card = track.querySelector(".flex-none");
+                if (!card) return;
+                var cardWidth = card.offsetWidth;
+                var gap = 24;
+                track.scrollTo({ left: idx * (cardWidth + gap), behavior: "smooth" });
+              });
+            });
+          })();
+        </script>
       </div>
     </section>
 
@@ -1846,6 +1947,32 @@
               class="t-body text-neutral-500 font-light mt-0"
             >
               Director
+            </p>
+          </div>
+
+          <!-- Member 3: Ar. Madhura Oke -->
+          <div
+            class="flex-none w-[75vw] sm:w-[280px] lg:w-auto snap-center"
+            data-reveal-animation
+          >
+            <div
+              class="w-full aspect-[3/4] overflow-hidden rounded-2xl lg:rounded-md shadow-sm bg-neutral-200"
+            >
+              <img
+                src="images/Ar. Madhura Oke.png"
+                alt="Ar. Madhura Oke - Senior Associate"
+                class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <h4
+              class="t-name font-[300] text-neutral-900 mt-2 sm:mt-4 tracking-tight"
+            >
+              Ar. Madhura Oke
+            </h4>
+            <p
+              class="t-body text-neutral-500 font-light mt-0"
+            >
+              Senior Associate
             </p>
           </div>
         </div>
