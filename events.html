@@ -34,6 +34,7 @@
               dark: '#141414',
               cardDark: '#1E1E1E',
               footerDark: '#161616',
+              navy: '#001A33',
             }
           }
         }
@@ -58,6 +59,29 @@
     img {
       image-rendering: auto;
     }
+
+    /* Hero Carousel Styles */
+    .hero-slider-item {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-cover: cover;
+      opacity: 0;
+      transition: opacity 2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1.1);
+      will-change: opacity, transform;
+    }
+
+    .hero-slider-item.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 1;
+    }
+
+    .hero-slider-item.prev {
+      z-index: 0;
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -65,9 +89,33 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION WITH NAVIGATION                                           -->
   <!-- ========================================================================= -->
-  <header id="hero-section" class="relative w-full h-[60vh] sm:h-[70vh] min-h-[400px] overflow-hidden z-10">
-    <!-- Hero Background: Solid Color as per Figma -->
-    <div class="absolute inset-0 w-full h-full bg-[#D9D9D9]"></div>
+  <header id="hero-section" class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[520px] overflow-hidden z-10">
+    <!-- Hero Background (Rotational Carousel) -->
+    <div class="hero-media-wrapper bg-arris-navy bg-[#001A33] show">
+      <div id="hero-carousel" class="absolute inset-0 w-full h-full overflow-hidden">
+        <img 
+          src="images/events/F4.jpg.jpeg" 
+          alt="Arris Events - Professional Gathering" 
+          class="hero-slider-item active object-cover" 
+        />
+        <img 
+          src="images/events/c2.jpeg" 
+          alt="Arris Events - Team Celebration" 
+          class="hero-slider-item object-cover" 
+        />
+        <img 
+          src="images/events/Card 2_ Kayaking & Regatta.png" 
+          alt="Arris Events - Outdoor Adventure" 
+          class="hero-slider-item object-cover" 
+        />
+      </div>
+      
+      <!-- Gradient overlay for legibility -->
+      <div
+        class="absolute inset-0 z-[2] pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.4) 100%);"
+      ></div>
+    </div>
 
     <!-- Navigation Bar -->
     <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
@@ -198,7 +246,7 @@
           <div class="contact-dropdown-menu">
             <div class="w-full flex flex-col justify-center">
               <ul class="flex flex-col space-y-4 xl:space-y-5">
-                <li><a href="careers.html" class="contact-nav-item">Work with us</a></li>
+                <li><a href="work-with-us.html" class="contact-nav-item">Work with us</a></li>
                 <li><a href="about-arris.html#profiles" class="contact-nav-item">Profiles</a></li>
                 <li><a href="careers.html" class="contact-nav-item">Careers</a></li>
               </ul>
@@ -420,7 +468,7 @@
                 >Contact Us</a
               >
               <a
-                href="careers.html"
+                href="work-with-us.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
                 >Work with us</a
               >
@@ -458,7 +506,7 @@
   <!-- ========================================================================= -->
   <!-- 2. ANNUAL AWARDS SECTION                                                  -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
+  <section class="bg-arris-cream relative z-10 py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
       <h2 class="text-black t-heading font-[300] leading-snug mb-12 sm:mb-16" data-reveal-text>
         Annual Awards & Recognition
@@ -742,6 +790,31 @@
     if (menuBtn) menuBtn.addEventListener("click", openMenu);
     if (closeBtn) closeBtn.addEventListener("click", closeMenu);
     navLinks.forEach(link => link.addEventListener("click", closeMenu));
+
+    // Hero Carousel Logic
+    const slides = document.querySelectorAll('.hero-slider-item');
+    let currentSlide = 0;
+    const slideInterval = 6000; // 6 seconds per slide
+
+    function rotateSlides() {
+      const prevSlide = currentSlide;
+      currentSlide = (currentSlide + 1) % slides.length;
+      
+      // Update classes for smooth transition
+      slides[prevSlide].classList.remove('active');
+      slides[prevSlide].classList.add('prev');
+      
+      slides[currentSlide].classList.add('active');
+      
+      // Clean up 'prev' class after transition completes
+      setTimeout(() => {
+        slides[prevSlide].classList.remove('prev');
+      }, 2000); // Matches the 2s opacity transition
+    }
+
+    if (slides.length > 1) {
+      setInterval(rotateSlides, slideInterval);
+    }
   </script>
 
   <!-- Lenis & GSAP -->

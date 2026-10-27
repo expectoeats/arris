@@ -35,6 +35,7 @@
               dark: '#121212',
               cardDark: '#151515',
               footerDark: '#161616',
+              navy: '#001A33',
             }
           }
         }
@@ -170,14 +171,18 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION WITH NAVIGATION (LIGHT GRAY BG - FIGMA)                     -->
   <!-- ========================================================================= -->
-  <header class="relative w-full overflow-hidden">
-    <div class="relative w-full h-[85vh] sm:h-[65vh] lg:h-[85vh] min-h-[360px] overflow-hidden bg-arris-careersHero">
+  <header id="hero-section" class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[520px] overflow-hidden z-10">
+    <!-- Hero Background (Navy Color matching insights-journal.html) -->
+    <div class="hero-media-wrapper bg-arris-navy bg-[#001A33] show">
+      <!-- Gradient overlay for legibility (matches insights-journal.html) -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+      ></div>
+    </div>
 
-      <!-- Subtle gradient strip across top to keep nav text visible (consistent with all pages) -->
-      <div class="absolute inset-x-0 top-0 h-[300px bg-gradient-to-b from-black/35 to-transparent pointer-events-none"></div>
-
-      <!-- Navigation Bar -->
-      <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+    <!-- Navigation Bar -->
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
         <!-- Logo -->
         <a href="index.html" class="inline-block">
           <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 sm:h-10 lg:h-12 w-auto" />
@@ -327,7 +332,7 @@
               <div class="w-full flex flex-col justify-center">
                 <ul class="flex flex-col space-y-4 xl:space-y-5">
                   <li>
-                    <a href="careers.html" class="contact-nav-item">
+                    <a href="work-with-us.html" class="contact-nav-item">
                       Work with us
                     </a>
                   </li>
@@ -356,14 +361,11 @@
       </nav>
 
       <!-- Hero Text Overlay (Bottom Left) -->
-      <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[520px]" data-reveal-text>
-        <span class="block text-black/70 t-nav font-[300] tracking-[0.22em] uppercase mb-2">CAREERS</span>
-        <h1 class="text-black t-display font-[300] leading-tight tracking-normal">
-          Grow, create, and<br>
-          make an impact
+      <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[520px] hero-content-animate" data-reveal-text>
+        <h1 class="text-white t-display font-[300] leading-tight tracking-normal">
+         Careers
         </h1>
       </div>
-    </div>
 
     <!-- Mobile Drawer Overlay -->
     <div
@@ -563,7 +565,7 @@
                 >Contact Us</a
               >
               <a
-                href="careers.html"
+                href="work-with-us.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
                 >Work with us</a
               >
@@ -602,7 +604,7 @@
   <!-- ========================================================================= -->
   <!-- 3. CURRENT OPENINGS SECTION (FIGMA: HEADING LEFT + 2 COL JOBS RIGHT)           -->
   <!-- ========================================================================= -->
-  <section class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+  <section class="bg-arris-cream relative z-10 py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
       <div class="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
         <!-- Left: Section Title -->

@@ -31,7 +31,7 @@ const ARRIS_PROJECTS = {
         "alt": "Devgn Cinex Bellona Main Concourse"
       },
       {
-        "url": "images/Devgn Cinex Bellona/4.jpeg",
+        "url": "images/Devgn Cinex Bellona/11.jpg",
         "alt": "Devgn Cinex Bellona Ceiling Detail"
       },
       {
@@ -43,7 +43,7 @@ const ARRIS_PROJECTS = {
         "alt": "Devgn Cinex Bellona Concession Stand"
       },
       {
-        "url": "images/Devgn Cinex Bellona/11.jpg",
+        "url": "images/Devgn Cinex Bellona/4.jpeg",
         "alt": "Devgn Cinex Bellona VIP Insignia Lounge"
       }
     ],

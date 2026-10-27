@@ -74,6 +74,15 @@
       margin-top: 4rem;
       padding-top: 4rem;
     }
+
+    /* Hero image vertical position (Value in numbers for easy tweaking):
+       - 0% = lowest (founders lowest)
+       - 50% = center (founders highest)
+       - 20% = sweet spot (founders safely below navbar) */
+    #hero-section .hero-media-wrapper img {
+      object-position: center 20% !important;
+      transform-origin: center 20% !important;
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -87,7 +96,8 @@
       <img
         src="images/studio/Rectangle 53.png"
         alt="Arris Architects Studio Hero"
-        class="w-full h-full object-cover object-center hero-bg-animate"
+        class="w-full h-full object-cover hero-bg-animate"
+        style="object-position: center 20% !important; transform-origin: center 20%;"
       />
       <!-- Gradient overlay for legibility -->
       <div
@@ -269,7 +279,7 @@
               <div class="w-full flex flex-col justify-center">
                 <ul class="flex flex-col space-y-4 xl:space-y-5">
                   <li>
-                    <a href="careers.html" class="contact-nav-item">
+                    <a href="work-with-us.html" class="contact-nav-item">
                       Work with us
                     </a>
                   </li>
@@ -506,7 +516,7 @@
                 >Contact Us</a
               >
               <a
-                href="careers.html"
+                href="work-with-us.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
                 >Work with us</a
               >

@@ -35,6 +35,7 @@
               dark: '#121212',
               cardDark: '#151515',
               footerDark: '#161616',
+              navy: '#001A33',
             }
           }
         }
@@ -113,24 +114,18 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION WITH NAVIGATION (LIGHT GRAY BG - FIGMA)                     -->
   <!-- ========================================================================= -->
-  <header class="relative w-full overflow-hidden">
-    <div class="relative w-full h-[85vh] sm:h-[70vh] lg:h-[85vh] min-h-[420px] overflow-hidden bg-arris-careersHero">
+  <header id="hero-section" class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[520px] overflow-hidden z-10">
+    <!-- Hero Background (Navy Color matching insights-journal.html) -->
+    <div class="hero-media-wrapper bg-arris-navy bg-[#001A33] show">
+      <!-- Gradient overlay for legibility (matches insights-journal.html) -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+      ></div>
+    </div>
 
-      <!-- Mobile Hero Background Image (hidden on desktop where solid gray is used) -->
-      <div class="md:hidden absolute inset-0">
-        <img
-          src="images/design-process/Rectangle 86.png"
-          alt="Arris Design Process"
-          class="w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-black/55"></div>
-      </div>
-
-      <!-- Subtle gradient strip across top to keep nav text visible -->
-      <div class="absolute inset-x-0 top-0 h-[220px] bg-gradient-to-b from-black/30 to-transparent pointer-events-none"></div>
-
-      <!-- Navigation Bar -->
-      <nav class="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-7 sm:py-9 max-w-[1920px] mx-auto">
+    <!-- Navigation Bar -->
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
         <!-- Logo -->
         <a href="index.html" class="inline-block">
           <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 sm:h-10 lg:h-12 w-auto" />
@@ -280,7 +275,7 @@
               <div class="w-full flex flex-col justify-center">
                 <ul class="flex flex-col space-y-4 xl:space-y-5">
                   <li>
-                    <a href="careers.html" class="contact-nav-item">
+                    <a href="work-with-us.html" class="contact-nav-item">
                       Work with us
                     </a>
                   </li>
@@ -309,14 +304,12 @@
       </nav>
 
       <!-- Hero Text Overlay (Bottom Left) -->
-      <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[600px]" data-reveal-text>
-        <span class="block text-white md:text-black/70 t-nav font-[300] tracking-[0.22em] uppercase mb-2">DESIGN PROCESS</span>
-        <h1 class="text-white md:text-black t-display font-[300] leading-tight tracking-normal">
+      <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-10 max-w-[600px] hero-content-animate" data-reveal-text>
+        <h1 class="text-white t-display font-[300] leading-tight tracking-normal">
           Every Design Begins<br>
           With Understanding
         </h1>
       </div>
-    </div>
 
     <!-- Mobile Drawer Overlay -->
     <div
@@ -516,7 +509,7 @@
                 >Contact Us</a
               >
               <a
-                href="careers.html"
+                href="work-with-us.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
                 >Work with us</a
               >
