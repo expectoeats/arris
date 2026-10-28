@@ -65,6 +65,19 @@
     nav > ul { position: relative; z-index: 100 !important; }
     nav > ul > li { position: static !important; }
     nav > ul > li > a, nav a.inline-block, #mobile-menu-btn { position: relative !important; z-index: 100 !important; pointer-events: auto !important; }
+
+    /* Hide scrollbar for gallery track while keeping smooth scrolling */
+    #gallery-track::-webkit-scrollbar,
+    .no-scrollbar::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+    #gallery-track,
+    .no-scrollbar {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -421,72 +434,150 @@
   </header>
 
   <!-- ========================================================================= -->
-  <!-- 2. JOURNAL ENTRY SECTION                                                 -->
+  <!-- 2. PRIVATE RESIDENCE — WHO WE ARE LAYOUT (Left Image + Right Text)       -->
   <!-- ========================================================================= -->
-  <section class="bg-white py-16 sm:py-24 lg:py-32 px-6 sm:px-12 xl:px-[97px]">
+  <section
+    id="private-residence"
+    class="bg-arris-cream py-16 sm:py-24 lg:py-20 px-6 sm:px-12 xl:px-[97px]"
+  >
     <div class="max-w-[1920px] mx-auto">
-      <div class="text-center mb-12 sm:mb-16 lg:mb-20" data-reveal-text>
-        <h2 class="text-black t-subheading font-[300] tracking-tight">
-          Private Residence, Raipur
-        </h2>
+
+      <!-- Desktop Section Heading (exact Who We Are heading typography & spacing) -->
+      <h2
+        class="hidden lg:block text-black t-heading font-[300] leading-snug tracking-normal mb-5 sm:mb-7"
+        data-reveal-text
+      >
+        Private Residence Raipur
+      </h2>
+
+      <!-- Flex row with items-start on mobile, lg:items-end on desktop to align text bottom with image bottom -->
+      <div class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12 items-start lg:items-end">
+
+        <!-- Left: Large Image (exact same width & aspect-ratio as Who We Are on homepage) -->
+        <div
+          class="w-full lg:w-[800px] overflow-hidden rounded-2xl lg:rounded-sm shadow-sm"
+          data-reveal-animation
+        >
+          <img
+            id="main-gallery-img"
+            src="images/private residence/VIEW 2_1.jpg"
+            alt="Private Residence Raipur"
+            class="w-full aspect-[789/592] object-cover object-center block"
+          />
+        </div>
+
+        <!-- Right: Text Content (aligned to the bottom of the left image) -->
+        <div
+          class="w-full lg:w-1/2 flex flex-col justify-end items-start pt-0 lg:self-end"
+          data-reveal-text
+        >
+          <!-- Mobile-only heading -->
+          <h3
+            class="lg:hidden text-black t-heading font-[300] leading-snug tracking-normal mb-4 sm:mb-3"
+          >
+            Private Residence Raipur
+          </h3>
+
+          <!-- Body text: natural word spacing (text-left, no justify stretching) matching Who We Are typography -->
+          <div
+            class="space-y-4 text-black t-body font-[300] leading-[27px] sm:leading-[26px] lg:leading-[28px] tracking-normal text-left"
+          >
+            <p>
+              Designed for a family comprising two brothers, their parents, and their respective families, the house is organised across three floors. Accommodating each family while balancing togetherness and privacy. The ground floor brings common areas and amenities together around the food zone near the grandparents' room.
+            </p>
+            <p>
+              This creates opportunities for interaction and connection across generations. Privacy and Vastu form the primary pillars of the design, extending to the landscape and waterbody, which are thoughtfully placed to create vantage points.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="relative w-full max-w-[1100px] mx-auto mb-12 sm:mb-16 lg:mb-20" data-reveal-animation>
-        <div class="aspect-[16/9] overflow-hidden rounded-[4px]">
-          <img id="main-slider-img" src="images/insight/insight.png" alt="Private Residence, Raipur" class="w-full h-full object-cover" />
-        </div>
-        <!-- Prev Arrow (Exactly matching homepage Awards section arrows and positioning) -->
-        <button
-          id="prev-btn"
-          class="flex absolute left-2 sm:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
-          aria-label="Previous image"
-        >
-          <svg
-            class="w-8 h-8 text-black transition-transform"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="16"
-              cy="16"
-              r="14.5"
-              stroke="currentColor"
-              stroke-width="1.5"
-            />
-            <polygon points="18,10 12,16 18,22" fill="currentColor" />
-          </svg>
-        </button>
+      <!-- ===================================================================== -->
+      <!-- 3. IMAGE GALLERY (Figma: 5 visible + 6th peeking + dedicated arrow)   -->
+      <!-- ===================================================================== -->
+      <div class="relative mt-12 sm:mt-14 lg:mt-12" data-reveal-animation>
 
-        <!-- Next Arrow (Exactly matching homepage Awards section arrows and positioning) -->
-        <button
-          id="next-btn"
-          class="flex absolute right-2 sm:-right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
-          aria-label="Next image"
+        <!-- Scrollable Track: lg:w-[calc(100%-48px)] reserves 48px space on right so arrow never overlaps images -->
+        <div
+          id="gallery-track"
+          class="flex gap-4 overflow-x-auto no-scrollbar snap-x scroll-smooth pb-2 w-full lg:w-[calc(100%-48px)]"
         >
-          <svg
-            class="w-8 h-8 text-black transition-transform"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="16"
-              cy="16"
-              r="14.5"
-              stroke="currentColor"
-              stroke-width="1.5"
-            />
+          <!-- Thumb 1 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/Scene 19.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/Scene 19.jpg" alt="Private Residence – View 1" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 2 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/Scene 17_1 (1).jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/Scene 17_1 (1).jpg" alt="Private Residence – Courtyard" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 3 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/VIEW 2_1.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/VIEW 2_1.jpg" alt="Private Residence – Front Elevation" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 4 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/DETAIL 2_1.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/DETAIL 2_1.jpg" alt="Private Residence – Balcony Detail" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 5 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/Scene 15.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/Scene 15.jpg" alt="Private Residence – Angular View" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 6 (peeking) -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/Scene 16.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/Scene 16.jpg" alt="Private Residence – Side Perspective" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+
+          <!-- Thumb 7 -->
+          <div class="gallery-thumb flex-none w-[240px] sm:w-[272px] lg:w-[296px] snap-start cursor-pointer group" data-img="images/private residence/Scene 20_1.jpg">
+            <div class="w-full h-[160px] sm:h-[190px] lg:h-[200px] overflow-hidden rounded-md bg-neutral-200">
+              <img src="images/private residence/Scene 20_1.jpg" alt="Private Residence – Corner Terraces" class="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Next Arrow: placed at right-0 in the dedicated 48px space beside the 6th image (no overlap) -->
+        <button
+          id="gallery-next"
+          class="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
+          aria-label="Next Gallery Images"
+        >
+          <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
             <polygon points="14,10 20,16 14,22" fill="currentColor" />
           </svg>
         </button>
+
+        <!-- Prev Arrow (hidden initially, appears when scrolled) -->
+        <button
+          id="gallery-prev"
+          class="hidden lg:flex absolute -left-10 xl:-left-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
+          aria-label="Previous Gallery Images"
+          style="display:none;"
+        >
+          <svg class="w-8 h-8 text-black transition-transform" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="16" cy="16" r="14.5" stroke="currentColor" stroke-width="1.5" />
+            <polygon points="18,10 12,16 18,22" fill="currentColor" />
+          </svg>
+        </button>
       </div>
 
-      <div class="max-w-[900px] mx-auto text-center" data-reveal-text data-delay="1">
-        <p class="t-body text-black font-normal leading-[1.8]">
-          Designed for a family comprising two brothers, their parents, and their respective families, the house is organised across three floors. Accommodating each family while balancing togetherness and privacy. The ground floor brings common areas and amenities together around the food zone near the grandparents' room. This creates opportunities for interaction and connection across generations. Privacy and Vastu form the primary pillars of the design, extending to the landscape and waterbody, which are thoughtfully placed to create vantage points.
-        </p>
-      </div>
     </div>
   </section>
 
@@ -571,43 +662,69 @@
     if(closeBtn) closeBtn.addEventListener('click', closeMenu);
     navLinks.forEach(l => l.addEventListener('click', closeMenu));
 
-    // Image Slider Interactivity
-    const sliderImg = document.getElementById('main-slider-img');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    
-    const sliderImages = [
-      'images/insight/insight.png',
-      'images/Aldona Villa/17_4.jpg',
-      'images/Aldona Villa/1_8.jpg'
-    ];
-    
-    let currentIndex = 0;
+    // Gallery Carousel — matching homepage Awards section scroll logic
+    (function() {
+      var track = document.getElementById('gallery-track');
+      var nextBtn = document.getElementById('gallery-next');
+      var prevBtn = document.getElementById('gallery-prev');
+      var mainImg = document.getElementById('main-gallery-img');
+      if (!track) return;
 
-    function updateSlider(index) {
-      if (!sliderImg) return;
-      
-      // Fade out effect
-      sliderImg.style.opacity = '0.5';
-      sliderImg.style.transition = 'opacity 0.3s ease';
-      
-      setTimeout(() => {
-        sliderImg.src = sliderImages[index];
-        sliderImg.style.opacity = '1';
-      }, 300);
-    }
+      function getScrollStep() {
+        var first = track.querySelector('.gallery-thumb');
+        if (!first) return 280;
+        var style = window.getComputedStyle(track);
+        var gap = parseFloat(style.columnGap || style.gap) || 16;
+        return first.offsetWidth + gap;
+      }
 
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
-        updateSlider(currentIndex);
+      function updateArrowVisibility() {
+        if (!prevBtn || !nextBtn) return;
+        var maxScroll = track.scrollWidth - track.clientWidth - 5;
+        if (track.scrollLeft > 20) {
+          prevBtn.style.display = 'flex';
+        } else {
+          prevBtn.style.display = 'none';
+        }
+        if (track.scrollLeft >= maxScroll) {
+          nextBtn.style.opacity = '0.35';
+          nextBtn.style.pointerEvents = 'none';
+        } else {
+          nextBtn.style.opacity = '1';
+          nextBtn.style.pointerEvents = 'auto';
+        }
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function() {
+          track.scrollBy({ left: getScrollStep() * 3, behavior: 'smooth' });
+        });
+      }
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function() {
+          track.scrollBy({ left: -getScrollStep() * 3, behavior: 'smooth' });
+        });
+      }
+
+      track.addEventListener('scroll', updateArrowVisibility);
+      updateArrowVisibility();
+
+      // Click thumbnail -> update main image with fade
+      var thumbs = track.querySelectorAll('.gallery-thumb');
+      thumbs.forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+          var imgSrc = thumb.getAttribute('data-img');
+          if (mainImg && imgSrc) {
+            mainImg.style.opacity = '0.4';
+            mainImg.style.transition = 'opacity 0.25s ease';
+            setTimeout(function() {
+              mainImg.src = imgSrc;
+              mainImg.style.opacity = '1';
+            }, 150);
+          }
+        });
       });
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % sliderImages.length;
-        updateSlider(currentIndex);
-      });
-    }
+    })();
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>

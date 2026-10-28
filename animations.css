@@ -470,7 +470,11 @@ body > div#mobile-menu {
 /* ========================================================================= */
 
 /* Navbar elements stacking & positioning */
-header,
+header {
+  position: relative;
+  z-index: auto !important;
+}
+
 header nav,
 nav {
   position: relative;
@@ -543,8 +547,8 @@ body.overflow-hidden #mobile-menu-btn {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 38;
   opacity: 0;
   visibility: hidden;
@@ -735,6 +739,15 @@ nav:has(.nav-dropdown-mega:hover) ul > li > a,
 nav:has(.mega-dropdown-menu:hover) ul > li > a {
   color: #ffffff !important;
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Ensure links INSIDE the dropdown curtain menus are always high-contrast white */
+.expertise-dropdown-menu a,
+.practice-dropdown-menu a,
+.studio-dropdown-menu a,
+.contact-dropdown-menu a,
+.mega-dropdown-menu a {
+  color: #ffffff !important;
 }
 
 /* On mobile/small screens, hide desktop fixed mega panels */

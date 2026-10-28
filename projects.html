@@ -110,6 +110,61 @@
       color: #ffffff;
       background: rgba(255, 255, 255, 0.06);
     }
+      /* Projects Page: Navbar Hover Logo Swap & Text Color */
+    nav:has(.is-active) #navbar-logo-black,
+    header:has(.is-active) #navbar-logo-black,
+    nav:has(.nav-dropdown-expertise:hover) #navbar-logo-black,
+    nav:has(.nav-dropdown-practice:hover) #navbar-logo-black,
+    nav:has(.nav-dropdown-studio:hover) #navbar-logo-black,
+    nav:has(.nav-dropdown-contact:hover) #navbar-logo-black,
+    nav:has(.expertise-dropdown-menu:hover) #navbar-logo-black,
+    nav:has(.practice-dropdown-menu:hover) #navbar-logo-black,
+    nav:has(.studio-dropdown-menu:hover) #navbar-logo-black,
+    nav:has(.contact-dropdown-menu:hover) #navbar-logo-black,
+    header.is-hovered #navbar-logo-black {
+      opacity: 0 !important;
+    }
+
+    nav:has(.is-active) #navbar-logo-white,
+    header:has(.is-active) #navbar-logo-white,
+    nav:has(.nav-dropdown-expertise:hover) #navbar-logo-white,
+    nav:has(.nav-dropdown-practice:hover) #navbar-logo-white,
+    nav:has(.nav-dropdown-studio:hover) #navbar-logo-white,
+    nav:has(.nav-dropdown-contact:hover) #navbar-logo-white,
+    nav:has(.expertise-dropdown-menu:hover) #navbar-logo-white,
+    nav:has(.practice-dropdown-menu:hover) #navbar-logo-white,
+    nav:has(.studio-dropdown-menu:hover) #navbar-logo-white,
+    nav:has(.contact-dropdown-menu:hover) #navbar-logo-white,
+    header.is-hovered #navbar-logo-white {
+      opacity: 1 !important;
+    }
+
+    /* On hover/dropdown active, all navbar links turn crisp white */
+    nav:has(.is-active) ul > li > a,
+    header:has(.is-active) nav ul > li > a,
+    nav:has(.nav-dropdown-expertise:hover) ul > li > a,
+    nav:has(.nav-dropdown-practice:hover) ul > li > a,
+    nav:has(.nav-dropdown-studio:hover) ul > li > a,
+    nav:has(.nav-dropdown-contact:hover) ul > li > a,
+    header.is-hovered nav ul > li > a {
+      color: #ffffff !important;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    /* Inside dropdown menu, all links are crisp white */
+    .expertise-dropdown-menu a,
+    .practice-dropdown-menu a,
+    .studio-dropdown-menu a,
+    .contact-dropdown-menu a {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .expertise-dropdown-menu a:hover,
+    .practice-dropdown-menu a:hover,
+    .studio-dropdown-menu a:hover,
+    .contact-dropdown-menu a:hover,
+    .expertise-nav-item.active {
+      color: #ffffff !important;
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -119,15 +174,26 @@
   <!-- ========================================================================= -->
   <header class="w-full bg-arris-cream">
     <nav class="relative flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto">
-      <!-- Logo -->
-      <a href="index.html" class="inline-block">
-        <img src="images/logo-black.png" alt="Arris Architects Logo" class="h-9 sm:h-10 lg:h-12 w-auto" />
+      <!-- Logo: Black variant normally, White variant (image 7.png) on hover/dropdown active -->
+      <a href="index.html" class="inline-block relative">
+        <img
+          id="navbar-logo-black"
+          src="images/logo-black.png"
+          alt="Arris Architects Logo"
+          class="h-9 sm:h-10 lg:h-12 w-auto transition-opacity duration-300 block"
+        />
+        <img
+          id="navbar-logo-white"
+          src="images/image 7.png"
+          alt="Arris Architects Logo"
+          class="h-9 sm:h-10 lg:h-12 w-auto absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-300 block"
+        />
       </a>
 
       <!-- Desktop Nav Links -->
       <ul class="hidden md:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-black t-nav font-[300] tracking-[0.11em] uppercase">
         <li>
-            <a href="projects.html" class="font-[300] text-black border-b border-black pb-0.5 py-2 block">PROJECTS</a>
+            <a href="projects.html" class="hover:text-black/60 transition-colors py-2 block">PROJECTS</a>
             
           </li>
           
@@ -1205,6 +1271,65 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="animations.js"></script>
+  <!-- Projects Page: Navbar Hover State & Logo Switch Handler -->
+  <script>
+    (function() {
+      const header = document.querySelector('header');
+      const nav = document.querySelector('header nav');
+      const logoBlack = document.getElementById('navbar-logo-black');
+      const logoWhite = document.getElementById('navbar-logo-white');
+      if (!nav || !logoBlack || !logoWhite) return;
+
+      function setHoverState(isHovered) {
+        if (header) {
+          if (isHovered) header.classList.add('is-hovered');
+          else header.classList.remove('is-hovered');
+        }
+        logoBlack.style.opacity = isHovered ? '0' : '1';
+        logoWhite.style.opacity = isHovered ? '1' : '0';
+      }
+
+      const dropdownTriggers = nav.querySelectorAll(
+        '.nav-dropdown-expertise, .nav-dropdown-practice, .nav-dropdown-studio, .nav-dropdown-contact'
+      );
+      const dropdownPanels = document.querySelectorAll(
+        '.expertise-dropdown-menu, .practice-dropdown-menu, .studio-dropdown-menu, .contact-dropdown-menu'
+      );
+
+      dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('mouseenter', () => setHoverState(true));
+        trigger.addEventListener('mouseleave', () => {
+          setTimeout(() => {
+            const anyActive = document.querySelector('.mega-dropdown-overlay.is-active, .expertise-dropdown-menu.is-active, .practice-dropdown-menu.is-active, .studio-dropdown-menu.is-active, .contact-dropdown-menu.is-active');
+            if (!anyActive) setHoverState(false);
+          }, 150);
+        });
+      });
+
+      dropdownPanels.forEach(panel => {
+        panel.addEventListener('mouseenter', () => setHoverState(true));
+        panel.addEventListener('mouseleave', () => {
+          setTimeout(() => {
+            const anyActive = document.querySelector('.mega-dropdown-overlay.is-active, .expertise-dropdown-menu.is-active, .practice-dropdown-menu.is-active, .studio-dropdown-menu.is-active, .contact-dropdown-menu.is-active');
+            if (!anyActive) setHoverState(false);
+          }, 150);
+        });
+      });
+
+      // Observe overlay for when animations.js adds or removes is-active
+      const checkOverlay = setInterval(() => {
+        const overlay = document.querySelector('.mega-dropdown-overlay');
+        if (overlay) {
+          const observer = new MutationObserver(() => {
+            const isActive = overlay.classList.contains('is-active');
+            setHoverState(isActive);
+          });
+          observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
+          clearInterval(checkOverlay);
+        }
+      }, 200);
+    })();
+  </script>
 </body>
 </html>
 
