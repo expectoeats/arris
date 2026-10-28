@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -65,6 +65,10 @@
     nav > ul { position: relative; z-index: 100 !important; }
     nav > ul > li { position: static !important; }
     nav > ul > li > a, nav a.inline-block, #mobile-menu-btn { position: relative !important; z-index: 100 !important; pointer-events: auto !important; }
+    
+    .insight-card:hover img {
+      transform: scale(1.02);
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -72,13 +76,10 @@
   <!-- ========================================================================= -->
   <!-- 1. HERO SECTION & NAVIGATION                                              -->
   <!-- ========================================================================= -->
-  <header id="hero-section" class="relative w-full h-screen min-h-[580px] sm:min-h-[700px] overflow-hidden">
-    <!-- Hero Background (Current: Navy Color, Future: Image) -->
+  <header id="hero-section" class="relative w-full h-[60vh] min-h-[400px] overflow-hidden">
+    <!-- Hero Background (Navy Color) -->
     <div class="hero-media-wrapper bg-arris-navy show">
-      <!-- Future Image Placeholder -->
-      <!-- <img src="images/insight/hero.jpg" alt="Insights Hero" class="hero-bg-animate" /> -->
-      
-      <!-- Gradient overlay for legibility (matches index.html/about.html) -->
+      <!-- Gradient overlay for legibility -->
       <div
         class="absolute inset-0 pointer-events-none"
         style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
@@ -163,7 +164,7 @@
           <div class="contact-dropdown-menu">
             <div class="w-full flex flex-col justify-center">
               <ul class="flex flex-col space-y-4 xl:space-y-5">
-                <li><a href="work-with-us.html" class="contact-nav-item">Work with us</a></li>
+                <li><a href="project-inquiries.html" class="contact-nav-item">Project Inquiries</a></li>
                 <li><a href="about-arris.html#profiles" class="contact-nav-item">Profiles</a></li>
                 <li><a href="careers.html" class="contact-nav-item">Careers</a></li>
               </ul>
@@ -179,21 +180,14 @@
       </button>
     </nav>
 
-    <!-- Desktop Hero Text Overlay (Bottom-Left matching other pages) -->
-    <div class="hidden lg:block absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-20 hero-content-animate">
-    
+    <!-- Desktop Hero Text Overlay -->
+    <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-20 hero-content-animate">
       <h1 class="text-white t-display font-[300] leading-tight tracking-normal" data-reveal-text>
         Insights & Journal
       </h1>
     </div>
 
-    <!-- Mobile Hero Title (Centered matching other pages) -->
-    <div class="lg:hidden absolute inset-0 flex items-center justify-center px-6 pointer-events-none z-20">
-      <h1 class="text-white t-heading font-[300] tracking-tight text-center hero-content-animate" data-reveal-text>
-        Insights & Journal
-      </h1>
-    </div>
-
+    <!-- Mobile Drawer Overlay -->
     <div
       id="mobile-menu"
       class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
@@ -215,289 +209,101 @@
         </button>
       </div>
 
-      <!-- Scrollable Navigation Items Container -->
-      <div
-        class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar"
-      >
-        <ul
-          class="flex flex-col space-y-4 text-white t-subheading font-[300] tracking-wide"
-        >
-          <!-- 1. Projects -->
-          <li>
-            <a
-              href="projects.html"
-              class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5"
-              >Projects</a
-            >
-          </li>
-
-          <!-- 2. Expertise Accordion -->
+      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+        <ul class="flex flex-col space-y-4 text-white t-subheading font-[300] tracking-wide">
+          <li><a href="projects.html" class="mobile-nav-link hover:text-white/70 transition-colors block py-1.5">Projects</a></li>
           <li class="mobile-accordion-item">
-            <button
-              type="button"
-              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
-            >
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
               <span>Expertise</span>
-              <i
-                data-lucide="chevron-down"
-                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
-              ></i>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
             </button>
-            <div
-              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
-            >
-              <a
-                href="expertise-architecture.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Architecture</a
-              >
-              <a
-                href="expertise-interior.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Interiors</a
-              >
-              <a
-                href="expertise-schools.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Schools</a
-              >
-              <a
-                href="expertise-cinemas.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Cinemas</a
-              >
-              <a
-                href="expertise-commercial.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Commercial</a
-              >
-              <a
-                href="expertise-residential.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Residential</a
-              >
-              <a
-                href="expertise-entertainment-leisure.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Entertainment &amp; Leisure</a
-              >
-              <a
-                href="expertise-auditoriums.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Auditoriums</a
-              >
-              <a
-                href="expertise-hospitality.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Hospitality</a
-              >
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Architecture</a>
+              <a href="expertise-interior.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Interiors</a>
+              <a href="expertise-schools.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Schools</a>
+              <a href="expertise-cinemas.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Cinemas</a>
+              <a href="expertise-commercial.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Commercial</a>
+              <a href="expertise-residential.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Residential</a>
+              <a href="expertise-entertainment-leisure.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Entertainment &amp; Leisure</a>
+              <a href="expertise-auditoriums.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Auditoriums</a>
+              <a href="expertise-hospitality.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Hospitality</a>
             </div>
           </li>
-
-          <!-- 3. Practice Accordion -->
           <li class="mobile-accordion-item">
-            <button
-              type="button"
-              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
-            >
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
               <span>Practice</span>
-              <i
-                data-lucide="chevron-down"
-                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
-              ></i>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
             </button>
-            <div
-              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
-            >
-              <a
-                href="about-arris.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >About Arris</a
-              >
-              <a
-                href="about-arris.html#design-philosophy"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Design Philosophy</a
-              >
-              <a
-                href="design-process.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Design Process</a
-              >
-              <a
-                href="testimonials.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Testimonials</a
-              >
-              <a
-                href="publications.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Publications</a
-              >
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="about-arris.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">About Arris</a>
+              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Design Philosophy</a>
+              <a href="design-process.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Design Process</a>
+              <a href="publications.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Publications</a>
             </div>
           </li>
-
-          <!-- 4. Studio Accordion -->
           <li class="mobile-accordion-item">
-            <button
-              type="button"
-              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
-            >
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
               <span>Studio</span>
-              <i
-                data-lucide="chevron-down"
-                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
-              ></i>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
             </button>
-            <div
-              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
-            >
-              <a
-                href="meet-the-team.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Meet the team</a
-              >
-              <a
-                href="insights-journal.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Insights / Journal</a
-              >
-              <a
-                href="events.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Events</a
-              >
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="meet-the-team.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Meet the team</a>
+              <a href="insights-journal.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Insights / Journal</a>
+              <a href="events.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Events</a>
             </div>
           </li>
-
-          <!-- 5. Contact Accordion -->
           <li class="mobile-accordion-item">
-            <button
-              type="button"
-              class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none"
-            >
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left hover:text-white/70 transition-colors focus:outline-none">
               <span>Contact</span>
-              <i
-                data-lucide="chevron-down"
-                class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"
-              ></i>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
             </button>
-            <div
-              class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2"
-            >
-              <a
-                href="contact.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Contact Us</a
-              >
-              <a
-                href="work-with-us.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Work with us</a
-              >
-              <a
-                href="about-arris.html#profiles"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Profiles</a
-              >
-              <a
-                href="careers.html"
-                class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Careers</a
-              >
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="contact.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Contact Us</a>
+              <a href="project-inquiries.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Project Inquiries</a>
+              <a href="about-arris.html#profiles" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Profiles</a>
+              <a href="careers.html" class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors">Careers</a>
             </div>
           </li>
         </ul>
       </div>
 
-      <div
-        class="pt-6 border-t border-neutral-800 flex justify-between items-center t-body text-neutral-400"
-      >
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center t-body text-neutral-400">
         <span>&copy; 2026 Arris Architects</span>
         <div class="flex space-x-4 text-white">
-          <a href="#" aria-label="Instagram"
-            ><i data-lucide="instagram" class="w-4 h-4"></i
-          ></a>
-          <a href="https://in.linkedin.com/company/arris-architects-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-            ><i data-lucide="linkedin" class="w-4 h-4"></i
-          ></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://in.linkedin.com/company/arris-architects-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
         </div>
       </div>
     </div>
   </header>
 
   <!-- ========================================================================= -->
-  <!-- 2. JOURNAL ENTRY SECTION                                                 -->
+  <!-- 2. INSIGHTS GRID SECTION                                                  -->
   <!-- ========================================================================= -->
   <section class="bg-white py-16 sm:py-24 lg:py-32 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
-      <div class="text-center mb-12 sm:mb-16 lg:mb-20" data-reveal-text>
-        <h2 class="text-black t-subheading font-[300] tracking-tight">
-          Private Residence, Raipur
-        </h2>
-      </div>
-
-      <div class="relative w-full max-w-[1100px] mx-auto mb-12 sm:mb-16 lg:mb-20" data-reveal-animation>
-        <div class="aspect-[16/9] overflow-hidden rounded-[4px]">
-          <img id="main-slider-img" src="images/insight/insight.png" alt="Private Residence, Raipur" class="w-full h-full object-cover" />
-        </div>
-        <!-- Prev Arrow (Exactly matching homepage Awards section arrows and positioning) -->
-        <button
-          id="prev-btn"
-          class="flex absolute left-2 sm:-left-8 lg:-left-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
-          aria-label="Previous image"
-        >
-          <svg
-            class="w-8 h-8 text-black transition-transform"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="16"
-              cy="16"
-              r="14.5"
-              stroke="currentColor"
-              stroke-width="1.5"
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        
+        <!-- Insight Card 1: Private Residence, Raipur -->
+        <a href="insight-detail.html" class="insight-card group block" data-reveal-animation>
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-[4px] bg-neutral-100 mb-4">
+            <img 
+              src="images/insight/insight.png" 
+              alt="Private Residence, Raipur" 
+              class="w-full h-full object-cover transition-transform duration-500 ease-out" 
             />
-            <polygon points="18,10 12,16 18,22" fill="currentColor" />
-          </svg>
-        </button>
+          </div>
+          <h3 class="text-black t-subheading font-[300] tracking-tight group-hover:underline">
+            Private Residence, Raipur
+          </h3>
+        </a>
 
-        <!-- Next Arrow (Exactly matching homepage Awards section arrows and positioning) -->
-        <button
-          id="next-btn"
-          class="flex absolute right-2 sm:-right-8 lg:-right-12 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full items-center justify-center text-black hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer group"
-          aria-label="Next image"
-        >
-          <svg
-            class="w-8 h-8 text-black transition-transform"
-            viewBox="0 0 32 32"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle
-              cx="16"
-              cy="16"
-              r="14.5"
-              stroke="currentColor"
-              stroke-width="1.5"
-            />
-            <polygon points="14,10 20,16 14,22" fill="currentColor" />
-          </svg>
-        </button>
-      </div>
-
-      <div class="max-w-[900px] mx-auto text-center" data-reveal-text data-delay="1">
-        <p class="t-body text-black font-normal leading-[1.8]">
-          Designed for a family comprising two brothers, their parents, and their respective families, the house is organised across three floors. Accommodating each family while balancing togetherness and privacy. The ground floor brings common areas and amenities together around the food zone near the grandparents' room. This creates opportunities for interaction and connection across generations. Privacy and Vastu form the primary pillars of the design, extending to the landscape and waterbody, which are thoughtfully placed to create vantage points.
-        </p>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 3. CONTACT US SECTION (from index.html)                                   -->
+  <!-- 3. CONTACT US SECTION                                                     -->
   <!-- ========================================================================= -->
   <section id="contact" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
     <div class="max-w-[1920px] mx-auto">
@@ -522,7 +328,7 @@
           <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"></i>
           <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Office</h4>
           <p class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3">Find us at our office.</p>
-          <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="t-body font-[300] text-neutral-900 underline leading-[27px] hover:text-neutral-600 transition-colors block">
+          <a href="https://maps.app.goo.gl/o5WFSVfSLW5V3hso9" target="_blank" rel="noopener noreferrer" class="t-body font-[300] text-neutral-900 underline leading-[27px] hover:text-neutral-600 transition-colors block">
             711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
           </a>
         </div>
@@ -576,44 +382,6 @@
     if(menuBtn) menuBtn.addEventListener('click', openMenu);
     if(closeBtn) closeBtn.addEventListener('click', closeMenu);
     navLinks.forEach(l => l.addEventListener('click', closeMenu));
-
-    // Image Slider Interactivity
-    const sliderImg = document.getElementById('main-slider-img');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    
-    const sliderImages = [
-      'images/insight/insight.png',
-      'images/Aldona Villa/17_4.jpg',
-      'images/Aldona Villa/1_8.jpg'
-    ];
-    
-    let currentIndex = 0;
-
-    function updateSlider(index) {
-      if (!sliderImg) return;
-      
-      // Fade out effect
-      sliderImg.style.opacity = '0.5';
-      sliderImg.style.transition = 'opacity 0.3s ease';
-      
-      setTimeout(() => {
-        sliderImg.src = sliderImages[index];
-        sliderImg.style.opacity = '1';
-      }, 300);
-    }
-
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + sliderImages.length) % sliderImages.length;
-        updateSlider(currentIndex);
-      });
-
-      nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % sliderImages.length;
-        updateSlider(currentIndex);
-      });
-    }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
