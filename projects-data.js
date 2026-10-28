@@ -17,7 +17,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Thane',
       scope: 'Cinema, Interiors',
-      typology: 'Cinema',
       siteArea: '3 Screens, 620 Seats',
       status: 'Completed',
     },
@@ -65,7 +64,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Surat',
       scope: 'Commercial, Interiors, Landscape, F&B',
-      typology: 'Commercial',
       siteArea: '1,32,720, sq.ft',
       status: 'Completed',
     },
@@ -113,7 +111,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Campus Masterplan, Architecture, Interiors',
-      typology: 'Institutional / School',
       siteArea: '2,40,000 sq.ft',
       status: 'Completed',
     },
@@ -161,7 +158,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Aldona, Goa',
       scope: 'Architecture, Interior Design, Landscape',
-      typology: 'Luxury Villa / Residential',
       siteArea: '18,500 sq.ft',
       status: 'Ongoing',
     },
@@ -209,7 +205,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Mumbai, Maharashtra',
       scope: 'Commercial Architecture, Workspace Interiors',
-      typology: 'Commercial High-Rise',
       siteArea: '85,000 sq.ft',
       status: 'Completed',
     },
@@ -257,7 +252,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Ahmedabad, Gujarat',
       scope: 'Multiplex Architecture, Cinema Interiors, F&B',
-      typology: 'Cinema & Multiplex',
       siteArea: '4 Screens, 850 Seats',
       status: 'Completed',
     },
@@ -305,7 +299,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Gurugram, Haryana',
       scope: 'Campus Masterplan, Educational Interiors',
-      typology: 'International School',
       siteArea: '1,10,000 sq.ft',
       status: 'Completed',
     },
@@ -353,7 +346,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Architecture, Structural Design, Campus Planning',
-      typology: 'High School & Academy',
       siteArea: '1,85,000 sq.ft',
       status: 'Ongoing',
     },
@@ -401,7 +393,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Tiruchirappalli, Tamil Nadu',
       scope: 'Multiplex Architecture, Premium Lounges',
-      typology: 'Cinema & Entertainment',
       siteArea: '5 Screens, 1,150 Seats',
       status: 'Completed',
     },
@@ -449,7 +440,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Raipur, Chhattisgarh',
       scope: 'Architecture, Sustainable Engineering, Interior',
-      typology: 'Eco-Luxury Residential',
       siteArea: '14,200 sq.ft',
       status: 'Completed',
     },
@@ -497,7 +487,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Hazaribaug, Jharkhand',
       scope: 'Residential Architecture, Landscape, Interior',
-      typology: 'Private Estate / Bungalow',
       siteArea: '22,000 sq.ft',
       status: 'Ongoing',
     },
@@ -545,7 +534,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Gurugram, Haryana',
       scope: 'Multiplex Interiors, VIP Lounges, Acoustics',
-      typology: 'Boutique Cinema',
       siteArea: '4 Screens, 520 Seats',
       status: 'Completed',
     },
@@ -593,7 +581,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Surat, Gujarat',
       scope: 'Commercial Mall, Retail Interiors, Atrium',
-      typology: 'Commercial / Retail Hub',
       siteArea: '1,75,000 sq.ft',
       status: 'Completed',
     },
@@ -641,7 +628,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Raipur, Chhattisgarh',
       scope: 'Architecture, Workspace Design',
-      typology: 'Commercial Complex',
       siteArea: '65,000 sq.ft',
       status: 'Completed',
     },
@@ -688,7 +674,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Mumbai, Maharashtra',
       scope: 'Urban Planning, Architecture',
-      typology: 'Mixed-Use Development',
       siteArea: '1,20,000 sq.ft',
       status: 'Completed',
     },
@@ -735,7 +720,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Pune, Maharashtra',
       scope: 'Commercial Architecture, Landscape Design',
-      typology: 'Business Park & IT Hub',
       siteArea: '1,50,000 sq.ft',
       status: 'Completed',
     },
@@ -782,7 +766,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Ahmedabad, Gujarat',
       scope: 'Architecture, Hospitality Interiors',
-      typology: 'Pavilion & Banquet Complex',
       siteArea: '95,000 sq.ft',
       status: 'Completed',
     },
@@ -829,7 +812,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Bengaluru, Karnataka',
       scope: 'Residential Architecture, Interiors',
-      typology: 'Luxury Residence',
       siteArea: '24,000 sq.ft',
       status: 'Completed',
     },
@@ -876,7 +858,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Hyderabad, Telangana',
       scope: 'Commercial Architecture, Workplace Planning',
-      typology: 'Corporate Headquarters',
       siteArea: '1,40,000 sq.ft',
       status: 'Completed',
     },
@@ -923,7 +904,6 @@ const ARRIS_PROJECTS = {
     specs: {
       location: 'Mumbai, Maharashtra',
       scope: 'Luxury Interior Architecture',
-      typology: 'High-End Residential Penthouse',
       siteArea: '9,500 sq.ft',
       status: 'Completed',
     },
