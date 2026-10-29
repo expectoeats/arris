@@ -435,7 +435,7 @@ const ARRIS_PROJECTS = {
     category: 'Residential',
     location: 'Raipur',
     year: '2025',
-    heroImage: 'images/Bottle house/1.jpg',
+    heroImage: 'images/Bottle house/2.jpg',
     storyImage: 'images/Bottle house/BOTTLE HOUSE 3.jpg',
     description: "This contemporary residence is a harmonious blend of modern architectural expression and luxury. Defined by geometric forms, a rich interplay of stone, warm wood, and expansive glazing, the design creates an identity without imposing on the existing surroundings. Thoughtfully integrated courtyards, landscaped pockets, and seamless indoor-outdoor transitions bring nature into the everyday living experience. A 'bottle' as a central concept was an interesting guideline owing to the family's ancestral relationship with the bottle manufacturing business.",
     specs: {
@@ -446,7 +446,7 @@ const ARRIS_PROJECTS = {
     },
     gallery: [
       {
-        "url": "images/Bottle house/1.jpg",
+        "url": "images/Bottle house/2.jpg",
         "alt": "Bottle House Iconic Facade"
       },
       {
@@ -471,7 +471,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['aldona-villa', 'hazaribaug-bungalow', 'rajhans-precia'],
-    cardImage: 'images/Bottle house/1.jpg'
+    cardImage: 'images/Bottle house/2.jpg'
   },
 
   // 11. Hazaribaug Bungalow (Residential, Hazaribaug)
