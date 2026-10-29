@@ -142,6 +142,15 @@
     .proposal-item:last-child {
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
+
+    /* Vision & Story atrium image: crop the bottom (hide pink-dress area) on mobile & tablet only.
+       Desktop (>=1024px) keeps its existing fixed 500px top-aligned crop. */
+    @media (max-width: 1023px) {
+      #vision-story-img {
+        height: auto !important;
+        aspect-ratio: 1250 / 1433;
+      }
+    }
   </style>
 </head>
 <body class="bg-arris-cream text-black antialiased">
@@ -179,7 +188,7 @@
 
       <!-- Desktop Navigation Links -->
       <ul
-        class="hidden md:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white t-nav font-[300] tracking-[0.11em] uppercase"
+        class="hidden lg:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white t-nav font-[300] tracking-[0.11em] uppercase"
       >
         <li>
             <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
@@ -328,7 +337,7 @@
                 <ul class="flex flex-col space-y-4 xl:space-y-5">
                   <li>
                     <a href="project-inquiries.html" class="contact-nav-item">
-                      Project Inquiries
+                      Project Enquiries
                     </a>
                   </li>
                   <li>
@@ -350,7 +359,7 @@
       <!-- Mobile Menu Trigger matching Figma staggered bars -->
       <button
         id="mobile-menu-btn"
-        class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-11 h-10"
+        class="lg:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-11 h-10"
         aria-label="Toggle Navigation"
       >
         <span class="w-7 h-[2px] bg-white rounded-full transition-transform"></span>
@@ -561,7 +570,7 @@
               <a
                 href="project-inquiries.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Project Inquiries</a
+                >Project Enquiries</a
               >
               <a
                 href="profiles.html"
@@ -604,9 +613,11 @@
         <!-- Left: Image (Below text on mobile, Left on desktop) -->
         <div class="w-full lg:w-[700px] overflow-hidden rounded-2xl lg:rounded-sm shadow-sm" data-reveal-animation>
           <img
+            id="vision-story-img"
             src="images/architecture/Rectangle 66.jpeg"
             alt="Arched Corridor Mural"
-            class="w-full h-[500px] object-cover object-center block"
+            class="w-full h-[500px] object-cover block"
+            style="object-position: center top;"
           />
         </div>
 

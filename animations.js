@@ -435,6 +435,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
       let currentSrc = mainImg.getAttribute('src');
 
+      // Start fresh: no category pre-selected, so the preview image stays hidden
+      // until the user actually hovers a menu item (per client request).
+      items.forEach((it) => it.classList.remove('active'));
+
+      // Clear selection again when the cursor leaves the dropdown panel,
+      // so the next time it opens nothing is highlighted and no image shows.
+      const previewPanel = dropdown.querySelector(
+        '.expertise-dropdown-menu, .mega-dropdown-menu'
+      );
+      if (previewPanel) {
+        previewPanel.addEventListener('mouseleave', () => {
+          items.forEach((it) => it.classList.remove('active'));
+        });
+      }
+
       items.forEach((item) => {
         item.addEventListener('mouseenter', () => {
           // Update active menu link within this dropdown
@@ -555,27 +570,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.appendChild(overlay);
     }
 
-    // 2. Add circular Close button with 90deg hover spin to each dropdown panel
-    dropdownGroups.forEach(({ menu }) => {
-      if (!menu) return;
-      if (!menu.querySelector('.mega-dropdown-close')) {
-        const closeBtn = document.createElement('button');
-        closeBtn.className = 'mega-dropdown-close';
-        closeBtn.setAttribute('aria-label', 'Close Menu');
-        closeBtn.innerHTML = `
-          <svg width="44" height="44" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M29.3118 15L29.8775 15.5657L23.0044 22.4388L29.8492 29.2836L29.2836 29.8492L22.4388 23.0044L15.5657 29.8775L15 29.3118L21.8731 22.4388L15.0283 15.594L15.594 15.0283L22.4388 21.8731L29.3118 15Z" fill="#FBFBF9"></path>
-            <circle cx="22.5" cy="22.5" r="22" stroke="rgba(255,255,255,0.35)"></circle>
-          </svg>
-        `;
-        menu.appendChild(closeBtn);
-        closeBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          closeAll();
-        });
-      }
-    });
+    // 2. Circular close (X) button intentionally not added to dropdown panels.
+    //    Desktop menus close via hover-out, click-outside, overlay click, or re-click on trigger.
 
     // Helper: checks whether cursor is currently hovering any trigger or dropdown menu
     function isAnyDropdownHovered() {

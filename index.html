@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
@@ -169,6 +169,22 @@
         color: #ffffff;
         background: rgba(255, 255, 255, 0.06);
       }
+
+      /* "INVOLVE EVOLVE RESOLVE" tagline — device-specific tweaks */
+      /* Mobile only (<768px): 20px text, 2rem bottom margin */
+      @media (max-width: 767px) {
+        .wwd-tagline {
+          font-size: 20px !important;
+          margin-bottom: 2rem;
+        }
+      }
+      /* Tablet only (768px-1023px): 22px text, nudged further right */
+      @media (min-width: 768px) and (max-width: 1023px) {
+        .wwd-tagline {
+          font-size: 22px !important;
+          transform: translateX(24px);
+        }
+      }
     </style>
   </head>
   <body class="antialiased">
@@ -250,7 +266,7 @@
 
         <!-- Desktop Navigation Links -->
         <ul
-          class="hidden md:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white t-nav font-[300] tracking-[0.11em] uppercase"
+          class="hidden lg:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white t-nav font-[300] tracking-[0.11em] uppercase"
         >
           <li>
             <a
@@ -476,7 +492,7 @@
                 <ul class="flex flex-col space-y-4 xl:space-y-5">
                   <li>
                     <a href="project-inquiries.html" class="contact-nav-item">
-                      Project Inquiries
+                      Project Enquiries
                     </a>
                   </li>
                   <li>
@@ -501,7 +517,7 @@
         <!-- Mobile Menu Trigger (Hamburger matching Slice 1) -->
         <button
           id="mobile-menu-btn"
-          class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10"
+          class="lg:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10"
           aria-label="Toggle Navigation"
         >
           <span class="w-7 h-0.5 bg-white rounded-full"></span>
@@ -706,7 +722,7 @@
               <a
                 href="project-inquiries.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Project Inquiries</a
+                >Project Enquiries</a
               >
               <a
                 href="profiles.html"
@@ -820,7 +836,7 @@
       <div class="max-w-[1920px] mx-auto">
         <!-- Header Row: What we do & Sub-heading (INVOLVE EVOLVE RESOLVE) -->
         <div
-          class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-12 sm:mb-16 gap-4 sm:gap-6"
+          class="flex flex-col sm:flex-row sm:items-baseline justify-between lg:mb-12 sm:mb-16 gap-4 sm:gap-6"
         >
           <div>
             <h2
@@ -832,7 +848,7 @@
           </div>
           <div
             style="font-family: 'BeausiteFit', 'SF Pro Display', sans-serif;"
-            class="flex items-center gap-4 sm:gap-6 lg:gap-8 text-white/90 t-subheading font-[300] tracking-wide uppercase"
+            class="wwd-tagline flex items-center gap-4 sm:gap-6 lg:gap-8 text-white/90 t-subheading font-[300] tracking-wide uppercase"
             data-reveal-text
           >
             <span>INVOLVE</span>

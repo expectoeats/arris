@@ -893,7 +893,7 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   }
 }
 
-/* Card stack fades in as curtain lands */
+/* Card stack stays hidden until a specific category is hovered/active */
 .expertise-card-stack,
 .practice-card-stack,
 .projects-card-stack,
@@ -903,13 +903,14 @@ nav:has(.mega-dropdown-menu:hover) ul > li > a {
   height: 390px;
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity 0.6s ease 0.70s, transform 0.6s ease 0.70s;
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-.expertise-dropdown-menu.is-active .expertise-card-stack,
-.practice-dropdown-menu.is-active .practice-card-stack,
-.projects-dropdown-menu.is-active .projects-card-stack,
-.mega-dropdown-menu.is-active .mega-card-stack {
+/* Reveal image card ONLY when a menu item is active (hovered), not on dropdown open */
+.expertise-dropdown-menu:has(.expertise-nav-item.active) .expertise-card-stack,
+.practice-dropdown-menu:has(.practice-nav-item.active) .practice-card-stack,
+.projects-dropdown-menu:has(.projects-nav-item.active) .projects-card-stack,
+.mega-dropdown-menu:has(.mega-nav-item.active) .mega-card-stack {
   opacity: 1;
   transform: translateY(0);
 }
