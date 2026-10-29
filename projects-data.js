@@ -376,7 +376,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['dps-hazaribaug', 'ib-suncity', 'hazaribaug-bungalow'],
-    cardImage: 'images/AHS Hazaribaug/IMG_20190412_104900.jpg'
+    cardImage: 'images/AHS Hazaribaug/DSC06724.JPG.jpg'
   },
 
   // 9. LA Trichy (Cinemas, Trichy)

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -397,7 +397,7 @@
                   </li>
                   <li>
                     <a href="insights-journal.html" class="studio-nav-item">
-                      Insights / Journal
+                      Insight / Journal
                     </a>
                   </li>
                   <li>
@@ -616,7 +616,7 @@
               <a
                 href="insights-journal.html"
                 class="mobile-nav-link block py-1 t-body text-neutral-400 hover:text-white transition-colors"
-                >Insights / Journal</a
+                >Insight / Journal</a
               >
               <a
                 href="events.html"
@@ -1077,12 +1077,17 @@
         const card = document.createElement('a');
         card.href = `project-detail.html?id=${relProj.id}`;
         card.className = 'project-card group cursor-pointer block';
+        
+        // Special positioning for AHS Hazaribaug to prevent "Angel" from being cut off
+        const imgStyle = relProj.id === 'ahs-hazaribaug' ? 'style="object-position: left;"' : '';
+        
         card.innerHTML = `
           <div class="w-full aspect-[550/803] overflow-hidden bg-neutral-200" data-reveal-animation>
             <img 
               src="${relProj.cardImage}" 
               alt="${relProj.title}" 
               class="project-img w-full h-full object-cover transition-transform duration-500 ease-out"
+              ${imgStyle}
             />
           </div>
           <div class="mt-4 t-nav tracking-[0.08em] uppercase text-neutral-800 font-[300]">
