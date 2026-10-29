@@ -47,7 +47,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['times-tower-new', 'rajhans-precia', 'ib-suncity'],
-    cardImage: 'images/Devgn Cinex Bellona/2.jpeg'
+    cardImage: 'images/Devgn Cinex Bellona/4.jpeg'
   },
 
   // 2. Rajhans Skylar (Commercial, Surat) - Exact match to user reference screenshot
@@ -141,7 +141,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['ahs-hazaribaug', 'ib-suncity', 'aldona-villa'],
-    cardImage: 'images/DPS Hazaribaug/_U2A2047.jpg'
+    cardImage: 'images/Rectangle 62.png'
   },
 
   // 4. Aldona Villa (Residential, Goa)
@@ -188,7 +188,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['bottle-house', 'hazaribaug-bungalow', 'rajhans-skylar'],
-    cardImage: 'images/Aldona Villa/1_8.jpg'
+    cardImage: 'images/projects/aldona_villa.png'
   },
 
   // 5. Times Tower New (Commercial, Mumbai)
@@ -329,7 +329,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['dps-hazaribaug', 'ahs-hazaribaug', 'times-tower-new'],
-    cardImage: 'images/IB Suncity/Suncity School-5.jpg'
+    cardImage: 'images/projects/ib_suncity.png'
   },
 
   // 8. AHS Hazaribaug (Schools, Hazaribaug)
@@ -341,6 +341,7 @@ const ARRIS_PROJECTS = {
     location: 'Hazaribaug',
     year: 'Ongoing',
     heroImage: 'images/AHS Hazaribaug/DSC06724.JPG.jpg',
+    heroPosition: 'top',
     storyImage: 'images/AHS Hazaribaug/DSC06574.JPG',
     description: "The design for this school is based off the 7 senses supporting a child's sensory development leading to an inter and intra-personal growth. The solid standing entrance frames are set against subdued curved forms in the landscape. The intermingling of the 3 solid frames carves out a combination of indoor and outdoor spaces in between them. These symbolize the journey of a child amidst the education system, eventually coming out as an extremely evolved version of themselves.",
     specs: {
@@ -517,7 +518,7 @@ const ARRIS_PROJECTS = {
       }
     ],
     related: ['aldona-villa', 'bottle-house', 'dps-hazaribaug'],
-    cardImage: 'images/Hazaribaug Bungalow/Scene 1_1.jpg'
+    cardImage: 'images/projects/hazaribaug_bungalow.png'
   },
 
   // 12. Devgn Cinex Elan (Cinemas, Gurugram)
