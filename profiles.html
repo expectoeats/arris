@@ -1,0 +1,404 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profiles | ARRIS ARCHITECTS</title>
+
+  <!-- Local SF Pro Fonts & Animations -->
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="animations.css">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"SF Pro Display"', '"SF Pro"', '"SF Pro Text"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            display: ['"SF Pro Display"', '"SF Pro"', 'sans-serif'],
+            text: ['"SF Pro Text"', '"SF Pro"', 'sans-serif'],
+          },
+          fontWeight: {
+            light: '300',
+            normal: '300',
+            medium: '400',
+            semibold: '500',
+            bold: '700',
+          },
+          colors: {
+            arris: {
+              cream: '#F4F0EB',
+              creamDark: '#EAE5DD',
+              dark: '#121212',
+              cardDark: '#151515',
+              footerDark: '#161616',
+              navy: '#001A33',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    body {
+      font-family: "SF Pro Display", "SF Pro", "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      background-color: #F4F0EB;
+      color: #000000;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Download Bar Styling */
+    .download-bar {
+      background-color: #D9D9D9;
+    }
+    .download-bar img {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .download-bar:hover img {
+      transform: translateY(2px);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body class="bg-arris-cream text-black antialiased">
+
+  <!-- ========================================================================= -->
+  <!-- 1. HERO SECTION WITH NAVIGATION (Navy Background)                         -->
+  <!-- ========================================================================= -->
+  <header id="hero-section" class="relative w-full h-[85vh] sm:h-[75vh] lg:h-[90vh] min-h-[520px] overflow-hidden z-10">
+    <!-- Hero Background (Navy Color matching insights-journal.html) -->
+    <div class="hero-media-wrapper bg-arris-navy bg-[#001A33] show">
+      <!-- Gradient overlay for legibility -->
+      <div
+        class="absolute inset-0 pointer-events-none"
+        style="background: linear-gradient(0deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.35) 100%);"
+      ></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="relative z-20 flex items-center justify-between px-6 sm:px-12 xl:px-[97px] py-6 sm:py-8 max-w-[1920px] mx-auto hero-nav-animate">
+        <!-- Logo -->
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-9 sm:h-10 lg:h-12 w-auto" />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-8 md:gap-10 lg:gap-[130px] text-white t-nav font-[300] tracking-[0.11em] uppercase">
+          <li>
+            <a href="projects.html" class="hover:text-white/70 transition-colors py-2 block">PROJECTS</a>
+          </li>
+          
+          <li class="nav-dropdown-expertise">
+            <a
+              href="expertise-architecture.html"
+              class="font-[300] text-white hover:text-white/70 transition-colors py-2 block"
+              >EXPERTISE</a
+            >
+            <div class="expertise-dropdown-menu">
+              <div class="flex items-center justify-between gap-6 lg:gap-10 xl:gap-14 w-full">
+                <div class="w-[44%] flex flex-col justify-center">
+                  <ul class="flex flex-col space-y-2 xl:space-y-2.5">
+                    <li><a href="expertise-architecture.html" class="expertise-nav-item active">Architecture</a></li>
+                    <li><a href="expertise-interior.html" class="expertise-nav-item">Interiors</a></li>
+                    <li><a href="expertise-schools.html" class="expertise-nav-item">Schools</a></li>
+                    <li><a href="expertise-cinemas.html" class="expertise-nav-item">Cinemas</a></li>
+                    <li><a href="expertise-commercial.html" class="expertise-nav-item">Commercial</a></li>
+                    <li><a href="expertise-residential.html" class="expertise-nav-item">Residential</a></li>
+                    <li><a href="expertise-entertainment-leisure.html" class="expertise-nav-item">Entertainment &amp; Leisure</a></li>
+                    <li><a href="expertise-auditoriums.html" class="expertise-nav-item">Auditoriums</a></li>
+                    <li><a href="expertise-hospitality.html" class="expertise-nav-item">Hospitality</a></li>
+                  </ul>
+                </div>
+                <div class="w-[56%] flex justify-end">
+                  <div class="expertise-card-stack relative overflow-hidden">
+                    <div class="expertise-card-main absolute inset-0 z-10 overflow-hidden shadow-2xl">
+                      <img src="images/homepage/project 2.jpg.jpeg" alt="Preview" class="w-full h-full object-cover block" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-dropdown-practice">
+            <a href="about-arris.html" class="font-[300] text-white hover:text-white/70 transition-colors py-2 block">PRACTICE</a>
+            <div class="practice-dropdown-menu">
+              <div class="w-full flex flex-col justify-center">
+                <ul class="flex flex-col space-y-4 xl:space-y-5">
+                  <li><a href="about-arris.html" class="practice-nav-item">About Arris</a></li>
+                  <li><a href="about-arris.html#design-philosophy" class="practice-nav-item">Design Philosophy</a></li>
+                  <li><a href="publications.html" class="practice-nav-item">Publications</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-dropdown-studio">
+            <a href="meet-the-team.html" class="hover:text-white/70 transition-colors py-2 block">STUDIO</a>
+            <div class="studio-dropdown-menu">
+              <div class="w-full flex flex-col justify-center">
+                <ul class="flex flex-col space-y-4 xl:space-y-5">
+                  <li><a href="meet-the-team.html" class="studio-nav-item">Meet the team</a></li>
+                  <li><a href="insights-journal.html" class="studio-nav-item">Insights / Journal</a></li>
+                  <li><a href="events.html" class="studio-nav-item">Events</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="nav-dropdown-contact">
+            <a href="contact.html" class="hover:text-white/70 transition-colors py-2 block">CONTACT</a>
+            <div class="contact-dropdown-menu">
+              <div class="w-full flex flex-col justify-center">
+                <ul class="flex flex-col space-y-4 xl:space-y-5">
+                  <li><a href="project-inquiries.html" class="contact-nav-item">Project Inquiries</a></li>
+                  <li><a href="profiles.html" class="contact-nav-item">Profiles</a></li>
+                  <li><a href="careers.html" class="contact-nav-item">Careers</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Mobile Menu Trigger -->
+        <button id="mobile-menu-btn" class="md:hidden text-white p-2 focus:outline-none flex flex-col justify-center items-end space-y-1.5 w-10 h-10" aria-label="Toggle Navigation">
+          <span class="w-7 h-0.5 bg-white rounded-full"></span>
+          <span class="w-5 h-0.5 bg-white rounded-full"></span>
+          <span class="w-6 h-0.5 bg-white rounded-full"></span>
+        </button>
+      </nav>
+
+      <!-- Hero Text Overlay -->
+      <div class="absolute bottom-8 sm:bottom-12 left-6 sm:left-12 xl:left-[97px] z-10 hero-content-animate">
+        <h1 class="text-white t-display font-[300] leading-tight tracking-normal">
+          Profiles
+        </h1>
+      </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-[#0c0c0c] z-[99999] flex flex-col justify-between px-6 py-6 sm:px-12 sm:py-8 transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
+    >
+      <div class="flex items-center justify-between">
+        <a href="index.html" class="inline-block">
+          <img src="images/image 7.png" alt="Arris Architects Logo" class="h-8 w-auto brightness-100" />
+        </a>
+        <button id="mobile-menu-close" class="text-white p-2 focus:outline-none" aria-label="Close Menu">
+          <i data-lucide="x" class="w-7 h-7"></i>
+        </button>
+      </div>
+
+      <div class="my-auto py-4 overflow-y-auto max-h-[calc(100dvh-160px)] no-scrollbar">
+        <ul class="flex flex-col space-y-4 text-white t-subheading font-[300] tracking-wide">
+          <li><a href="projects.html" class="mobile-nav-link block py-1.5">Projects</a></li>
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left focus:outline-none">
+              <span>Expertise</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="expertise-architecture.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Architecture</a>
+              <a href="expertise-interior.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Interiors</a>
+              <a href="expertise-schools.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Schools</a>
+              <a href="expertise-cinemas.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Cinemas</a>
+              <a href="expertise-commercial.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Commercial</a>
+              <a href="expertise-residential.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Residential</a>
+              <a href="expertise-entertainment-leisure.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Entertainment &amp; Leisure</a>
+              <a href="expertise-auditoriums.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Auditoriums</a>
+              <a href="expertise-hospitality.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Hospitality</a>
+            </div>
+          </li>
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left focus:outline-none">
+              <span>Practice</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="about-arris.html" class="mobile-nav-link block py-1 t-body text-neutral-400">About Arris</a>
+              <a href="about-arris.html#design-philosophy" class="mobile-nav-link block py-1 t-body text-neutral-400">Design Philosophy</a>
+              <a href="publications.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Publications</a>
+            </div>
+          </li>
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left focus:outline-none">
+              <span>Studio</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="meet-the-team.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Meet the team</a>
+              <a href="insights-journal.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Insights / Journal</a>
+              <a href="events.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Events</a>
+            </div>
+          </li>
+          <li class="mobile-accordion-item">
+            <button type="button" class="mobile-accordion-btn flex items-center justify-between w-full py-1.5 text-left focus:outline-none">
+              <span>Contact</span>
+              <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 transition-transform duration-300 text-white/80"></i>
+            </button>
+            <div class="mobile-submenu max-h-0 overflow-hidden transition-all duration-300 ease-out pl-3 border-l border-neutral-800 ml-1 mt-1 space-y-2">
+              <a href="contact.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Contact Us</a>
+              <a href="project-inquiries.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Project Inquiries</a>
+              <a href="profiles.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Profiles</a>
+              <a href="careers.html" class="mobile-nav-link block py-1 t-body text-neutral-400">Careers</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pt-6 border-t border-neutral-800 flex justify-between items-center t-body text-neutral-400">
+        <span>&copy; 2026 Arris Architects</span>
+        <div class="flex space-x-4 text-white">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+          <a href="https://in.linkedin.com/company/arris-architects-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i data-lucide="linkedin" class="w-4 h-4"></i></a>
+        </div>
+      </div>
+    </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. CONTENT SECTION                                                        -->
+  <!-- ========================================================================= -->
+  <section class="bg-arris-cream py-16 sm:py-20 lg:py-28 px-6 sm:px-12 xl:px-[97px]">
+    <div class="max-w-[1920px] mx-auto">
+      <h2 class="text-black t-heading font-[300] mb-8 sm:mb-10 lg:mb-12" data-reveal-text>
+        Take a closer look at our work
+      </h2>
+
+      <!-- Download Profile Bar -->
+      <a href="ARRIS ALL PROJECTS PROFILE .pdf" download="ARRIS ALL PROJECTS PROFILE.pdf" class="download-bar group flex items-center justify-between w-full px-4 py-4 sm:py-5 cursor-pointer rounded-[2px]" data-reveal-text data-delay="1">
+        <div class="flex items-center gap-4 sm:gap-6">
+          <!-- Navy Square Icon -->
+          <div class="w-8 h-10 sm:w-9 sm:h-12 bg-arris-navy flex-shrink-0"></div>
+          <span class="text-black t-subheading font-[300] tracking-wide">All projects profile</span>
+        </div>
+        <!-- Download Icon -->
+        <img src="images/download.png" alt="Download Icon" class="w-5 h-5 sm:w-6 sm:h-6 object-contain" />
+      </a>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 5. CONTACT SECTION (MATCHING HOMEPAGE)                                     -->
+  <!-- ========================================================================= -->
+  <section id="contact" class="bg-arris-cream py-16 sm:py-24 px-6 sm:px-12 xl:px-[97px]">
+      <div class="max-w-[1920px] mx-auto">
+        <h2 class="text-black t-heading font-[300] leading-snug tracking-tight mb-2 sm:mb-3" data-reveal-text>Contact us</h2>
+        <p class="text-black t-body font-[300] leading-[27px] max-w-[646px] mb-8 sm:mb-12 lg:mb-16" data-reveal-text data-delay="1">
+          Have any questions? Feel free to contact us for more information.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-10 lg:gap-16">
+          <div data-reveal-text>
+            <i data-lucide="mail" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"></i>
+            <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Email</h4>
+            <p class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3">
+              Have a question or idea? Drop us an email we'd love to hear from you.
+            </p>
+            <a href="mailto:arrisarch@gmail.com" class="t-body font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors">arrisarch@gmail.com</a>
+          </div>
+
+          <div data-reveal-text data-delay="1">
+            <i data-lucide="phone" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"></i>
+            <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Phone</h4>
+            <p class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3">
+              Have a question? Give us a call &mdash; we're happy to help.
+            </p>
+            <a href="tel:+912225829387" class="t-body font-[300] text-neutral-900 underline hover:text-neutral-600 transition-colors">+912225829387, +912225828996</a>
+          </div>
+
+          <div data-reveal-text data-delay="2">
+            <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7 stroke-[1.5] text-neutral-800 mb-1.5 sm:mb-2"></i>
+            <h4 class="t-subheading font-[300] text-neutral-900 mb-1 sm:mb-2">Office</h4>
+            <p class="text-black t-body font-[300] leading-[27px] max-w-[379px] mb-2 sm:mb-3">Find us at our office.</p>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="t-body font-[300] text-neutral-900 underline leading-[27px] hover:text-neutral-600 transition-colors block">
+              711-713 Opal Square, SG Barve Rd, opp. Railadevi TMC Office, Wagle Industrial Estate, Thane West, Thane, Maharashtra 400604
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- ========================================================================= -->
+  <!-- 6. FOOTER (DARK THEME)                                                     -->
+  <!-- ========================================================================= -->
+  <footer class="bg-arris-footerDark text-white pt-16 pb-12 px-6 sm:px-12 xl:px-[97px] border-t border-neutral-900">
+    <div class="max-w-[1920px] mx-auto">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8 pb-10">
+        <div class="flex flex-col items-start mx-0">
+          <a href="index.html" class="inline-block">
+            <img src="images/image 7.png" alt="Arris Architects Logo" class="h-14 w-auto" />
+          </a>
+          <span class="text-white/60 t-footer-tag font-[300] tracking-[0.18em] uppercase mt-1">Design Studio LLP</span>
+        </div>
+
+        <ul class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-5 sm:gap-8 lg:gap-10 t-body text-white/90 font-light text-center">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about-arris.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="index.html#what-we-do" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+
+        <div class="flex items-center space-x-6 lg:space-x-5">
+          <a href="https://www.instagram.com/arrisarchitects/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="images/Vector (1).png" alt="Instagram" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="https://in.linkedin.com/company/arris-architects-pvt-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="images/LinkedIn.png" alt="LinkedIn" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+          <a href="https://www.youtube.com/@ArrisArchitects1" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="images/Youtube.png" alt="YouTube" class="w-5 h-5 object-contain opacity-80 hover:opacity-100 transition-opacity" />
+          </a>
+        </div>
+      </div>
+      <div class="w-full border-t border-neutral-800"></div>
+      <div class="flex flex-col sm:flex-row items-center justify-center pt-8 t-body text-neutral-400 font-light gap-4 sm:gap-10 text-center">
+        <div>&copy; 2026. All rights reserved.</div>
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6">
+          <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+          <a href="#" class="hover:text-neutral-300 transition-colors">Cookies Settings</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    lucide.createIcons();
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+    function openMenu() {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-x-full');
+      mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      document.body.classList.add('overflow-hidden');
+    }
+    function closeMenu() {
+      mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    if (menuBtn) menuBtn.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+  </script>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="animations.js"></script>
+
+</body>
+</html>
+
